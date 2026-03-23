@@ -2,7 +2,7 @@
 
 \chapter{Introducción general} % Main chapter title
 
-\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1}
 \label{IntroGeneral}
 
 En la actualidad, la banca digital se fundamenta en un paradigma de interacción táctil y visual que, si bien es eficiente para la mayoría de los usuarios, impone barreras significativas para personas con discapacidades visuales o motoras.
@@ -11,7 +11,7 @@ El valor central de esta solución reside en la convergencia de la inclusión fi
 
 %----------------------------------------------------------------------------------------
 
-% Define some commands to keep the formatting separated from the content 
+% Define some commands to keep the formatting separated from the content
 \newcommand{\keyword}[1]{\textbf{#1}}
 \newcommand{\tabhead}[1]{\textbf{#1}}
 \newcommand{\code}[1]{\texttt{#1}}
@@ -25,14 +25,22 @@ El valor central de esta solución reside en la convergencia de la inclusión fi
 
 En la última década, la banca digital ha experimentado una transformación radical, migrando de plataformas web tradicionales a aplicaciones móviles que se han consolidado como el principal punto de contacto entre los clientes y las instituciones financieras. En este entorno de alta competitividad, la innovación continua en la experiencia de usuario se ha vuelto un diferenciador estratégico clave para la retención y satisfacción del cliente. Las interfaces conversacionales, impulsadas por los recientes avances en Inteligencia Artificial y Procesamiento de Lenguaje Natural, representan la siguiente frontera en la interacción humano-computadora, permitiendo una comunicación más fluida, rápida e intuitiva. Este proyecto se enmarca en dicha evolución tecnológica, explorando la viabilidad de aplicar tecnologías de reconocimiento y comprensión de voz para la ejecución de operaciones financieras directamente desde el ecosistema de una aplicación de banca móvil.
 
+En el contexto argentino en particular, la adopción de la banca móvil se aceleró de manera significativa a partir de la pandemia de COVID-19, que en 2020 forzó a las instituciones financieras a consolidar sus canales digitales como alternativa al servicio presencial. Según datos del Banco Central de la República Argentina (BCRA), el número de transferencias inmediatas a través de plataformas digitales creció sostenidamente en los años subsiguientes, y el segmento de clientes que gestiona sus finanzas exclusivamente a través del canal móvil representa hoy una fracción sustancial de la base de usuarios de los principales bancos privados del país. El Banco Galicia, como una de las entidades financieras privadas de mayor envergadura del país, no es ajeno a esta tendencia: sus plataformas digitales concentran la gran mayoría de las interacciones cotidianas de sus clientes, como consultas de saldo, transferencias, pagos de servicios y operaciones de inversión.
+
+Es en este escenario de alta digitalización y creciente demanda de experiencias de usuario personalizadas donde la interfaz de voz emerge como una propuesta de valor diferencial. La interacción por voz reduce la carga cognitiva asociada a la navegación entre menús y formularios, y permite ejecutar operaciones en contextos donde el uso de las manos no es posible o no resulta conveniente. Esta convergencia entre la madurez tecnológica de los modelos de lenguaje y la infraestructura de hardware de los dispositivos móviles modernos crea las condiciones necesarias para desarrollar soluciones de voz robustas, seguras y completamente autónomas que no dependan de servicios externos.
+
 
 %----------------------------------------------------------------------------------------
 
 \section{Estado del arte}
 
 En la actualidad, los asistentes de voz de propósito general han alcanzado un grado de madurez notable en tareas de reconocimiento automático de habla y comprensión del lenguaje natural. Sin embargo, la adopción e integración de estas tecnologías en dominios de misión crítica y alta seguridad, como el sector bancario, sigue siendo limitada. Las soluciones bancarias que han incorporado interfaces conversacionales suelen basarse en integraciones en la nube, donde los flujos de audio y datos se envían a servidores externos para su procesamiento. Este enfoque tradicional genera legítimas preocupaciones respecto a la privacidad, la latencia y la exposición de información financiera sensible.
-Para mitigar estos riesgos, la tendencia tecnológica emergente apunta hacia el procesamiento en el dispositivo. Bajo este paradigma, los modelos de Inteligencia Artificial se ejecutan localmente utilizando el hardware del dispositivo móvil, garantizando que los datos acústicos y las intenciones transaccionales del usuario nunca abandonen su teléfono. Esta arquitectura maximiza la seguridad y la confidencialidad, pilares fundamentales para la viabilidad de cualquier solución dentro de la industria financiera.
 
+Entre los casos de referencia más relevantes a nivel internacional, se destaca \keyword{Erica}, el asistente virtual de Bank of America, lanzado en 2018 y considerado uno de los primeros asistentes financieros conversacionales en alcanzar escala masiva. Erica permite a los usuarios realizar consultas de saldo, revisar el historial de transacciones y recibir recomendaciones personalizadas mediante lenguaje natural; sin embargo, su arquitectura depende del procesamiento en la nube, lo que implica la transmisión continua de datos financieros sensibles a servidores externos. De manera similar, iniciativas como \keyword{Eno} de Capital One y los chatbots bancarios desplegados en diversas entidades europeas siguen el mismo paradigma de conectividad remota.
+
+En el ecosistema de Apple, la integración de asistentes de voz en aplicaciones financieras ha explorado el uso de \keyword{SiriKit}, un framework que permite a los desarrolladores exponer ciertas funcionalidades de sus aplicaciones al asistente nativo del sistema operativo. No obstante, esta integración presenta limitaciones en cuanto a la personalización del flujo conversacional y a la capacidad de interpretar intenciones transaccionales complejas y específicas del dominio bancario. El control sobre el procesamiento del lenguaje natural recae sobre los servidores de Apple, lo que no garantiza el nivel de privacidad requerido para operaciones financieras sensibles.
+
+Para mitigar estos riesgos, la tendencia tecnológica emergente apunta hacia el procesamiento en el dispositivo. Bajo este paradigma, los modelos de Inteligencia Artificial se ejecutan localmente utilizando el hardware del dispositivo móvil, garantizando que los datos acústicos y las intenciones transaccionales del usuario nunca abandonen su teléfono. Esta arquitectura maximiza la seguridad y la confidencialidad, pilares fundamentales para la viabilidad de cualquier solución dentro de la industria financiera. El avance en la compresión de modelos de lenguaje, técnicas como la cuantización y la destilación de conocimiento, han hecho factible ejecutar modelos de comprensión del lenguaje natural de alta precisión directamente sobre el procesador neuronal (\keyword{Neural Engine}) de los chips de la serie A y M de Apple, abriendo una nueva generación de aplicaciones de IA privadas y sin latencia de red.
 
 
 %----------------------------------------------------------------------------------------
@@ -48,12 +56,12 @@ El objetivo principal de este trabajo es diseñar, desarrollar y evaluar un prot
 Para alcanzar el objetivo general, se plantean los siguientes objetivos específicos:
 
 \begin{itemize}
-\item \textbf{Mejorar la accesibilidad e inclusión} 
+\item \textbf{Mejorar la accesibilidad e inclusión}
 
 Desarrollar un canal de interacción alternativo que empodere a personas con discapacidades visuales o motoras, reduciendo la dependencia de la navegación táctil tradicional.
-\item \textbf{Garantizar la seguridad y privacidad de los datos} 
+\item \textbf{Garantizar la seguridad y privacidad de los datos}
 
-Implementar modelos de Machine Learning optimizados para ejecutarse de manera estrictamente local mediante Core ML de Apple, asegurando que el audio y los datos sensibles del usuario se procesen íntegramente en el dispositivo. 
+Implementar modelos de Machine Learning optimizados para ejecutarse de manera estrictamente local mediante Core ML de Apple, asegurando que el audio y los datos sensibles del usuario se procesen íntegramente en el dispositivo.
 \item \textbf{Optimizar la experiencia de usuario}
 
 Simplificar operaciones bancarias complejas condensándolas en un único paso conversacional, reduciendo de esta manera la fricción y el tiempo necesario para completar una transacción.
@@ -64,14 +72,14 @@ Generar la documentación arquitectónica y técnica necesaria para facilitar un
 
 \subsection{Alcance y limitaciones}
 
-Con el propósito de mantener el enfoque en la validación tecnológica del motor de Inteligencia Artificial y la experiencia de usuario, el proyecto se delimita bajo parámetros estrictos de alcance. 
+Con el propósito de mantener el enfoque en la validación tecnológica del motor de Inteligencia Artificial y la experiencia de usuario, el proyecto se delimita bajo parámetros estrictos de alcance.
 
 
 \begin{itemize}
-\item \textbf{Dentro del alcance:} 
+\item \textbf{Dentro del alcance:}
 
 El desarrollo contempla exclusivamente la creación de una aplicación prototipo nativa para iOS, la cual operará de manera independiente y aislada. El núcleo técnico abarcará la implementación del pipeline de Inteligencia Artificial en el dispositivo físico, integrando la captura segura de audio, un modelo de reconocimiento automático de habla y un módulo de interpretación de lenguaje natural para extraer intenciones y entidades clave. Dado el carácter de la prueba de concepto, todo el flujo de transacción, la pantalla de confirmación y los resultados de las operaciones se simularán utilizando datos completamente ficticios.
-\item \textbf{Fuera del alcance:} 
+\item \textbf{Fuera del alcance:}
 
 El proyecto no contempla la integración del prototipo, ni de sus componentes, con el código fuente de la aplicación productiva oficial, ni la conexión con APIs, servicios de backend o bases de datos reales de la institución financiera. Asimismo, queda excluida la puesta en marcha en producción y la publicación en la App Store. Desde el punto de vista del manejo de la información, está estrictamente excluido el uso o acceso a datos reales de clientes, así como la ejecución de transacciones que movilicen dinero real. Finalmente, el sistema se limitará al español rioplatense focalizado, dejando fuera del alcance el soporte multilingüe y operaciones financieras distintas a transferencias y consultas.
 
@@ -80,5 +88,10 @@ El proyecto no contempla la integración del prototipo, ni de sus componentes, c
 
 
 \section{Motivación: accesibilidad e inclusión}
+
 El paradigma de diseño predominante en las aplicaciones de banca móvil actuales se basa casi exclusivamente en la interacción táctil y visual. Si bien este enfoque resulta eficiente para la mayoría de los usuarios, presenta barreras tecnológicas y de usabilidad significativas para grupos demográficos importantes. Por un lado, las personas con discapacidades o disminuciones visuales enfrentan el desafío de navegar a través de menús complejos, campos de texto y botones, tareas que a menudo resultan frustrantes incluso con el soporte de las herramientas de accesibilidad nativas de los sistemas operativos. Por otro lado, las personas con discapacidades motoras encuentran que la necesidad de una manipulación precisa de la pantalla dificulta o impide directamente el uso autónomo de la aplicación para realizar operaciones financieras cotidianas.
-La motivación principal de este trabajo es derribar estas barreras tecnológicas, promoviendo una inclusión financiera real mediante el desarrollo de un canal de interacción alternativo. La implementación de un asistente transaccional por voz no solo genera un impacto social positivo al mejorar radicalmente la accesibilidad, sino que también ofrece una experiencia de usuario superior, simplificando operaciones complejas en un único paso conversacional y reduciendo la fricción del proceso.
+
+En Argentina, según datos del Instituto Nacional de Estadística y Censos (INDEC), aproximadamente el 10\% de la población presenta algún tipo de dificultad o limitación permanente. Dentro de este universo, las limitaciones visuales y motoras representan una proporción significativa, configurando un segmento de usuarios que históricamente ha sido desatendido por el diseño centrado en la interfaz táctil. A nivel global, la Organización Mundial de la Salud (OMS) estima que más de 2.200 millones de personas presentan alguna forma de deficiencia visual, de las cuales una fracción importante se encuentra en edad económicamente activa y requiere acceso a servicios financieros. La brecha entre la necesidad de acceso a servicios bancarios y la capacidad de las interfaces actuales para satisfacer dicha necesidad constituye un problema de equidad e inclusión que la tecnología tiene el potencial y la responsabilidad de resolver.
+
+La motivación principal de este trabajo es derribar estas barreras tecnológicas, promoviendo una inclusión financiera real mediante el desarrollo de un canal de interacción alternativo. La implementación de un asistente transaccional por voz no solo genera un impacto social positivo al mejorar radicalmente la accesibilidad, sino que también ofrece una experiencia de usuario superior, simplificando operaciones complejas en un único paso conversacional y reduciendo la fricción del proceso. Más aún, al garantizar que todo el procesamiento ocurra de forma local en el dispositivo, se elimina la resistencia que muchos usuarios podrían tener hacia el uso de comandos de voz en entornos de alta sensibilidad, como lo es la gestión de sus finanzas personales.
+

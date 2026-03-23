@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  23 MAR 2026 11:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  23 MAR 2026 12:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -778,9 +778,7 @@ Package csquotes Info: ... found 'babel' package.
 (./memorianueva.aux (./portada.aux)
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
- (./Chapters/Chapter1.aux)
-(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux)
-(./Chapters/Chapter5.aux))
+ (./Chapters/Chapter1.aux))
 \openout1 = `memorianueva.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
@@ -953,7 +951,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 48.
 
 
-<Figures/fondo.pdf, id=100, 597.55246pt x 845.07718pt>
+<Figures/fondo.pdf, id=40, 597.55246pt x 845.07718pt>
 File: Figures/fondo.pdf Graphic file (type pdf)
 <use Figures/fondo.pdf>
 Package pdftex.def Info: Figures/fondo.pdf  used on input line 51.
@@ -1042,217 +1040,66 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.35 
+l.29 
       [1
 
 
 ]
 
-LaTeX Info: Redefining \. on input line 73.
-LaTeX Info: Redefining \% on input line 73.
+LaTeX Info: Redefining \. on input line 44.
+LaTeX Info: Redefining \% on input line 44.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.73 E
-      l desarrollo contempla exclusivamente la creación de una aplicación ...
-[2])
+l.44 
+      [2]
+
+LaTeX Info: Redefining \. on input line 82.
+LaTeX Info: Redefining \% on input line 82.
+[3]
+
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+[4])
 
 LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
-[3]
-\openout2 = `Chapters/Chapter2.aux'.
-
- (./Chapters/Chapter2.tex
-
-[4
-
-
-
-
-]
-Cap\'{\i }tulo 2.
-
-
-[5]
-<./Figures/word.jpeg, id=222, 259.97125pt x 194.7275pt>
-File: ./Figures/word.jpeg Graphic file (type jpg)
-<use ./Figures/word.jpeg>
-Package pdftex.def Info: ./Figures/word.jpeg  used on input line 74.
-(pdftex.def)             Requested size: 77.99197pt x 58.41869pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 75.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 75.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 79.
-<./Figures/questionMark.png, id=225, 225.84375pt x 225.84375pt>
-File: ./Figures/questionMark.png Graphic file (type png)
-<use ./Figures/questionMark.png>
-Package pdftex.def Info: ./Figures/questionMark.png  used on input line 87.
-(pdftex.def)             Requested size: 83.56087pt x 83.56087pt.
-File: ./Figures/questionMark.png Graphic file (type png)
-<use ./Figures/questionMark.png>
-Package pdftex.def Info: ./Figures/questionMark.png  used on input line 100.
-(pdftex.def)             Requested size: 76.01157pt x 76.01392pt.
-File: ./Figures/questionMark.png Graphic file (type png)
-<use ./Figures/questionMark.png>
-Package pdftex.def Info: ./Figures/questionMark.png  used on input line 107.
-(pdftex.def)             Requested size: 76.01157pt x 76.01392pt.
-File: ./Figures/questionMark.png Graphic file (type png)
-<use ./Figures/questionMark.png>
-Package pdftex.def Info: ./Figures/questionMark.png  used on input line 114.
-(pdftex.def)             Requested size: 76.01157pt x 76.01392pt.
-
-
-LaTeX Info: Redefining \. on input line 120.
-LaTeX Info: Redefining \% on input line 120.
-[6 <./Figures/word.jpeg>]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 12
-2.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
-LaTeX Info: Redefining \. on input line 169.
-LaTeX Info: Redefining \% on input line 169.
-[7 <./Figures/questionMark.png>])
-
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
-[8]
-\openout2 = `Chapters/Chapter3.aux'.
-
- (./Chapters/Chapter3.tex
-Cap\'{\i }tulo 3.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 62.
-
-
-[9
-
-
-
-
-])
-
-LaTeX Info: Redefining \. on input line 105.
-LaTeX Info: Redefining \% on input line 105.
-[10]
-\openout2 = `Chapters/Chapter4.aux'.
-
- (./Chapters/Chapter4.tex
-Cap\'{\i }tulo 4.
-)
-
-[11
-
-
-
-
-]
-\openout2 = `Chapters/Chapter5.aux'.
-
- (./Chapters/Chapter5.tex
-
-[12
-
-
-
-
-]
-Cap\'{\i }tulo 5.
-)
-
-[13]
-
-[14
-
-
-
-]
-Overfull \hbox (11.94348pt too wide) in paragraph at lines 125--125
-[]\T1/ppl/m/n/10.95 John Doe. ^^S  The Book without Title^^T. En: Dummy Pu-blis
-her, 2100, p�gs. 100[]200. 
- []
-
-
-Overfull \hbox (11.21976pt too wide) in paragraph at lines 125--125
-[]\T1/ppl/m/n/10.95 Intel. \T1/ppl/m/it/10.95 Exam-ple Web-si-te\T1/ppl/m/n/10.
-95 . [][]$http : / / example . com$[][]. Dic. de 1988. (Vi-si-ta-do 26[]11[]201
-2). 
- []
-
-
-
-[15] (./memorianueva.aux (./portada.aux)
+[5] (./memorianueva.aux (./portada.aux)
 LaTeX Info: Redefining \sptext on input line 16.
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
- (./Chapters/Chapter1.aux)
-(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux)
-(./Chapters/Chapter5.aux))
+ (./Chapters/Chapter1.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `memorianueva.out' has not changed.
-(rerunfilecheck)             Checksum: 7FCA17E246052201EB9D78CD6ACBE9E9;3952.
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                memorianueva
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: D9AE511A286FF8AB03B83FB063C27C58;1464.
 Package logreq Info: Writing requests to 'memorianueva.run.xml'.
 \openout1 = `memorianueva.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31520 strings out of 473190
- 675652 string characters out of 5715800
- 1474052 words of memory out of 5000000
- 54298 multiletter control sequences out of 15000+600000
- 620144 words of font info for 107 fonts, out of 8000000 for 9000
+ 30585 strings out of 473190
+ 660280 string characters out of 5715800
+ 1258365 words of memory out of 5000000
+ 53483 multiletter control sequences out of 15000+600000
+ 604582 words of font info for 85 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 96i,20n,94p,1969b,1994s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
-, replaced by a fixed one
-
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
-ocal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texl
-ive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025
-/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/texmf-
-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fo
-nts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/ty
-pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw
-/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palati
-no/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr
-i8a.pfb>
-Output written on memorianueva.pdf (25 pages, 235497 bytes).
+ 96i,20n,94p,1969b,1928s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/
+texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texliv
+e/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-d
+ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fon
+ts/type1/urw/palatino/uplri8a.pfb>
+Output written on memorianueva.pdf (15 pages, 127875 bytes).
 PDF statistics:
- 411 PDF objects out of 1000 (max. 8388607)
- 345 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
- 208 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 169 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
