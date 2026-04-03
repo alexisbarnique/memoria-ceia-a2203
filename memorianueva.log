@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  4 APR 2026 01:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  4 APR 2026 01:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -952,7 +952,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 48.
 
 
-<Figures/fondo.pdf, id=96, 597.55246pt x 845.07718pt>
+<Figures/fondo.pdf, id=92, 597.55246pt x 845.07718pt>
 File: Figures/fondo.pdf Graphic file (type pdf)
 <use Figures/fondo.pdf>
 Package pdftex.def Info: Figures/fondo.pdf  used on input line 51.
@@ -1185,7 +1185,7 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
-<./Figures/diagrama-de-componentes.png, id=298, 1020.81375pt x 704.6325pt>
+<./Figures/diagrama-de-componentes.png, id=293, 1020.81375pt x 704.6325pt>
 File: ./Figures/diagrama-de-componentes.png Graphic file (type png)
 <use ./Figures/diagrama-de-componentes.png>
 Package pdftex.def Info: ./Figures/diagrama-de-componentes.png  used on input l
@@ -1203,7 +1203,7 @@ ine 57.
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
 [14 <./Figures/diagrama-de-componentes.png>]
-<./Figures/pipeline-transaccion.png, id=318, 2223.30624pt x 2392.94pt>
+<./Figures/pipeline-transaccion.png, id=313, 2223.30624pt x 2392.94pt>
 File: ./Figures/pipeline-transaccion.png Graphic file (type png)
 <use ./Figures/pipeline-transaccion.png>
 Package pdftex.def Info: ./Figures/pipeline-transaccion.png  used on input line
@@ -1214,36 +1214,34 @@ Package pdftex.def Info: ./Figures/pipeline-transaccion.png  used on input line
 LaTeX Info: Redefining \. on input line 80.
 LaTeX Info: Redefining \% on input line 80.
 [15 <./Figures/pipeline-transaccion.png>]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 90.
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 9
+5.
 
-LaTeX Info: Redefining \. on input line 98.
-LaTeX Info: Redefining \% on input line 98.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+)
+
+LaTeX Info: Redefining \. on input line 119.
+LaTeX Info: Redefining \% on input line 119.
 [16]
 
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
+LaTeX Info: Redefining \. on input line 175.
+LaTeX Info: Redefining \% on input line 175.
 [17]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 11
-5.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 124.
 
+LaTeX Info: Redefining \. on input line 198.
+LaTeX Info: Redefining \% on input line 198.
+[18]
 
-LaTeX Info: Redefining \. on input line 146.
-LaTeX Info: Redefining \% on input line 146.
-[18])
+LaTeX Info: Redefining \. on input line 206.
+LaTeX Info: Redefining \% on input line 206.
+[19])
 
 LaTeX Info: Redefining \. on input line 105.
 LaTeX Info: Redefining \% on input line 105.
-[19]
-
-[20
-
-
-
-]
+[20]
 Overfull \hbox (17.49973pt too wide) in paragraph at lines 125--125
 \T1/ppl/m/n/10.95 per Do-cu-men-ta-tion. 2025. \T1/ppl/m/sc/10.95 url\T1/ppl/m/
 n/10.95 : [][]$https : / / developer . apple . com / documentation /
@@ -1251,7 +1249,11 @@ n/10.95 : [][]$https : / / developer . apple . com / documentation /
 
 
 
-[21]
+[21
+
+
+
+]
 
 LaTeX Info: Redefining \. on input line 125.
 LaTeX Info: Redefining \% on input line 125.
@@ -1280,7 +1282,7 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `memorianueva.out' has not changed.
-(rerunfilecheck)             Checksum: 6F6CE4CE8F9DD5E1CF659B74363A6409;4616.
+(rerunfilecheck)             Checksum: 950B6808CFB4B82CD717C412AF42E4E6;4447.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                memorianueva
@@ -1291,25 +1293,24 @@ Package logreq Info: Writing requests to 'memorianueva.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31584 strings out of 473190
- 680440 string characters out of 5715800
- 1471845 words of memory out of 5000000
- 54351 multiletter control sequences out of 15000+600000
- 614755 words of font info for 98 fonts, out of 8000000 for 9000
+ 31671 strings out of 473190
+ 681581 string characters out of 5715800
+ 1795837 words of memory out of 5000000
+ 54373 multiletter control sequences out of 15000+600000
+ 614688 words of font info for 98 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 96i,20n,94p,1969b,2667s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
-local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/t
-exlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/
-2025/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2025/t
-exmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-di
-st/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/font
-s/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
-/urw/palatino/uplri8a.pfb>
-Output written on memorianueva.pdf (33 pages, 542681 bytes).
+ 96i,20n,94p,1969b,2764s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/
+texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texliv
+e/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-d
+ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fon
+ts/type1/urw/palatino/uplri8a.pfb>
+Output written on memorianueva.pdf (33 pages, 538899 bytes).
 PDF statistics:
- 518 PDF objects out of 1000 (max. 8388607)
- 454 compressed objects within 5 object streams
- 128 named destinations out of 1000 (max. 500000)
- 200 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 588 PDF objects out of 1000 (max. 8388607)
+ 525 compressed objects within 6 object streams
+ 193 named destinations out of 1000 (max. 500000)
+ 192 words of extra memory for PDF output out of 10000 (max. 10000000)
 
