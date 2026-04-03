@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  23 MAR 2026 12:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  4 APR 2026 01:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -778,7 +778,8 @@ Package csquotes Info: ... found 'babel' package.
 (./memorianueva.aux (./portada.aux)
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
- (./Chapters/Chapter1.aux))
+ (./Chapters/Chapter1.aux)
+(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux))
 \openout1 = `memorianueva.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
@@ -951,7 +952,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 48.
 
 
-<Figures/fondo.pdf, id=40, 597.55246pt x 845.07718pt>
+<Figures/fondo.pdf, id=96, 597.55246pt x 845.07718pt>
 File: Figures/fondo.pdf Graphic file (type pdf)
 <use Figures/fondo.pdf>
 Package pdftex.def Info: Figures/fondo.pdf  used on input line 51.
@@ -1046,60 +1047,269 @@ l.29
 
 ]
 
-LaTeX Info: Redefining \. on input line 44.
-LaTeX Info: Redefining \% on input line 44.
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 
+l.42 
       [2]
+Underfull \hbox (badness 1577) in paragraph at lines 75--75
+\T1/ppl/m/n/10.95 una apli-ca-ción in-de-pen-dien-te con
+ []
 
-LaTeX Info: Redefining \. on input line 82.
-LaTeX Info: Redefining \% on input line 82.
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+[]|\T1/ppl/m/n/10.95 Integración pro-duc-ti-va: co-ne-xión
+ []
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 87--87
+[]|\T1/ppl/m/n/10.95 Preparación pa-ra au-di-to-ría: do-cu-
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+LaTeX Info: Redefining \. on input line 101.
+LaTeX Info: Redefining \% on input line 101.
 [3]
 
-LaTeX Info: Redefining \. on input line 97.
-LaTeX Info: Redefining \% on input line 97.
-[4])
+LaTeX Info: Redefining \. on input line 108.
+LaTeX Info: Redefining \% on input line 108.
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
+[]|\T1/ppl/b/n/10.95 Interesado (sta-
+ []
+
+
+Underfull \hbox (badness 8113) in paragraph at lines 118--118
+\T1/ppl/m/n/10.95 (Clientes con o
+ []
+
+
+Underfull \hbox (badness 2818) in paragraph at lines 118--118
+\T1/ppl/m/n/10.95 sin dis-ca-pa-ci-dad
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
+\T1/ppl/m/n/10.95 (Mesa di-rec-ti-va
+ []
+
+
+Underfull \hbox (badness 1527) in paragraph at lines 127--128
+[]|\T1/ppl/m/n/10.95 Cumplimiento irres-tric-to de las
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+[]|\T1/ppl/m/n/10.95 Área de Cum-
+ []
+
+
+Underfull \hbox (badness 3428) in paragraph at lines 130--130
+\T1/ppl/m/n/10.95 pli-mien-to (Com-
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 134--134
+[]|\T1/ppl/m/n/10.95 Desarrolladora /
+ []
+
+
+Underfull \hbox (badness 2837) in paragraph at lines 134--134
+\T1/ppl/m/n/10.95 (Autora del tra-
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 135--136
+\T1/ppl/m/n/10.95 De-mos-trar la via-bi-li-dad téc-ni-ca
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
 
 LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
-[5] (./memorianueva.aux (./portada.aux)
+[5]
+
+LaTeX Info: Redefining \. on input line 103.
+LaTeX Info: Redefining \% on input line 103.
+[6]
+\openout2 = `Chapters/Chapter2.aux'.
+
+ (./Chapters/Chapter2.tex
+Cap\'{\i }tulo 2.
+
+
+[7
+
+
+
+
+]
+
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
+[8]
+
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
+[9]
+
+LaTeX Info: Redefining \. on input line 66.
+LaTeX Info: Redefining \% on input line 66.
+[10]
+
+LaTeX Info: Redefining \. on input line 76.
+LaTeX Info: Redefining \% on input line 76.
+[11])
+
+LaTeX Info: Redefining \. on input line 104.
+LaTeX Info: Redefining \% on input line 104.
+[12]
+\openout2 = `Chapters/Chapter3.aux'.
+
+ (./Chapters/Chapter3.tex
+Cap\'{\i }tulo 3.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+<./Figures/diagrama-de-componentes.png, id=298, 1020.81375pt x 704.6325pt>
+File: ./Figures/diagrama-de-componentes.png Graphic file (type png)
+<use ./Figures/diagrama-de-componentes.png>
+Package pdftex.def Info: ./Figures/diagrama-de-componentes.png  used on input l
+ine 57.
+(pdftex.def)             Requested size: 389.80269pt x 269.07486pt.
+
+
+[13
+
+
+
+
+]
+
+LaTeX Info: Redefining \. on input line 66.
+LaTeX Info: Redefining \% on input line 66.
+[14 <./Figures/diagrama-de-componentes.png>]
+<./Figures/pipeline-transaccion.png, id=318, 2223.30624pt x 2392.94pt>
+File: ./Figures/pipeline-transaccion.png Graphic file (type png)
+<use ./Figures/pipeline-transaccion.png>
+Package pdftex.def Info: ./Figures/pipeline-transaccion.png  used on input line
+ 70.
+(pdftex.def)             Requested size: 389.80269pt x 419.53755pt.
+
+
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
+[15 <./Figures/pipeline-transaccion.png>]
+
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+[16]
+
+LaTeX Info: Redefining \. on input line 104.
+LaTeX Info: Redefining \% on input line 104.
+[17]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 11
+5.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 124.
+
+
+LaTeX Info: Redefining \. on input line 146.
+LaTeX Info: Redefining \% on input line 146.
+[18])
+
+LaTeX Info: Redefining \. on input line 105.
+LaTeX Info: Redefining \% on input line 105.
+[19]
+
+[20
+
+
+
+]
+Overfull \hbox (17.49973pt too wide) in paragraph at lines 125--125
+\T1/ppl/m/n/10.95 per Do-cu-men-ta-tion. 2025. \T1/ppl/m/sc/10.95 url\T1/ppl/m/
+n/10.95 : [][]$https : / / developer . apple . com / documentation /
+ []
+
+
+
+[21]
+
+LaTeX Info: Redefining \. on input line 125.
+LaTeX Info: Redefining \% on input line 125.
+[22]
+Overfull \hbox (2.6412pt too wide) in paragraph at lines 125--125
+[]\T1/ppl/m/n/10.95 Apple Inc. \T1/ppl/m/it/10.95 The Swift Pro-gram-ming Lan-g
+ua-ge: Lan-gua-ge Gui-de\T1/ppl/m/n/10.95 . Vi-si-ta-do el 2026-
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 127.
+LaTeX Info: Redefining \% on input line 127.
+[23] (./memorianueva.aux (./portada.aux)
 LaTeX Info: Redefining \sptext on input line 16.
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
- (./Chapters/Chapter1.aux))
+ (./Chapters/Chapter1.aux)
+(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `memorianueva.out' has not changed.
-(rerunfilecheck)             Checksum: D9AE511A286FF8AB03B83FB063C27C58;1464.
+(rerunfilecheck)             Checksum: 6F6CE4CE8F9DD5E1CF659B74363A6409;4616.
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                memorianueva
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'memorianueva.run.xml'.
 \openout1 = `memorianueva.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30585 strings out of 473190
- 660280 string characters out of 5715800
- 1258365 words of memory out of 5000000
- 53483 multiletter control sequences out of 15000+600000
- 604582 words of font info for 85 fonts, out of 8000000 for 9000
+ 31584 strings out of 473190
+ 680440 string characters out of 5715800
+ 1471845 words of memory out of 5000000
+ 54351 multiletter control sequences out of 15000+600000
+ 614755 words of font info for 98 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 96i,20n,94p,1969b,1928s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
-/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/
-texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texliv
-e/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/
-texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-d
-ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fon
-ts/type1/urw/palatino/uplri8a.pfb>
-Output written on memorianueva.pdf (15 pages, 127875 bytes).
+ 96i,20n,94p,1969b,2667s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
+local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/
+2025/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2025/t
+exmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-di
+st/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/font
+s/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
+/urw/palatino/uplri8a.pfb>
+Output written on memorianueva.pdf (33 pages, 542681 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 518 PDF objects out of 1000 (max. 8388607)
+ 454 compressed objects within 5 object streams
+ 128 named destinations out of 1000 (max. 500000)
+ 200 words of extra memory for PDF output out of 10000 (max. 10000000)
 

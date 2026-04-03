@@ -6,8 +6,6 @@ A level-1 auxiliary file: portada.aux
 A level-1 auxiliary file: Chapters/Chapter1.aux
 A level-1 auxiliary file: Chapters/Chapter2.aux
 A level-1 auxiliary file: Chapters/Chapter3.aux
-A level-1 auxiliary file: Chapters/Chapter4.aux
-A level-1 auxiliary file: Chapters/Chapter5.aux
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
@@ -23,49 +21,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 10180 items from 5000.
 Database file #1: memorianueva-blx.bib
 Database file #2: references.bib
 Biblatex version: 3.20
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 7 entries,
+You've used 37 entries,
             6402 wiz_defined-function locations,
-            1245 strings with 9582 characters,
-and the built_in function-call counts, 27797 in all, are:
-= -- 1556
-> -- 1124
-< -- 183
-+ -- 1016
-- -- 633
-* -- 1348
-:= -- 2909
+            1378 strings with 15167 characters,
+and the built_in function-call counts, 208074 in all, are:
+= -- 15703
+> -- 3764
+< -- 1052
++ -- 5235
+- -- 1248
+* -- 12726
+:= -- 20997
 add.period$ -- 0
-call.type$ -- 7
-change.case$ -- 92
-chr.to.int$ -- 93
-cite$ -- 12
-duplicate$ -- 2928
-empty$ -- 2508
-format.name$ -- 282
-if$ -- 5590
+call.type$ -- 37
+change.case$ -- 715
+chr.to.int$ -- 72
+cite$ -- 72
+duplicate$ -- 21958
+empty$ -- 19302
+format.name$ -- 1961
+if$ -- 43639
 int.to.chr$ -- 0
-int.to.str$ -- 21
+int.to.str$ -- 124
 missing$ -- 0
-newline$ -- 143
-num.names$ -- 302
-pop$ -- 2030
+newline$ -- 929
+num.names$ -- 1967
+pop$ -- 12402
 preamble$ -- 1
-purify$ -- 110
+purify$ -- 874
 quote$ -- 0
-skip$ -- 1172
+skip$ -- 6973
 stack$ -- 0
-substring$ -- 2149
-swap$ -- 711
-text.length$ -- 150
+substring$ -- 26564
+swap$ -- 4465
+text.length$ -- 682
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 226
+type$ -- 1239
 warning$ -- 0
-while$ -- 363
+while$ -- 2479
 width$ -- 0
-write$ -- 137
+write$ -- 893

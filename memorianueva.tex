@@ -77,9 +77,9 @@
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Agregar resumen al índice
-En la presente memoria se desarrolla una prueba de concepto de una aplicación móvil nativa para iOS que integra un pipeline de Inteligencia Artificial capaz de procesar comandos de voz e interpretar intenciones transaccionales de forma 100\% local. Este sistema, diseñado con el objetivo de eliminar barreras de accesibilidad y promover la inclusión financiera, fue desarrollado para ser validado por el equipo de Identidad Digital del Banco Galicia Minorista.
+En la presente memoria se desarrolla una prueba de concepto de una aplicación móvil nativa para iOS, capaz de procesar comandos de voz e interpretar intenciones transaccionales de forma 100\% local. Este sistema, fue desarrollado para ser validado por el equipo de Identidad Digital del Banco Galicia Minorista.
 
-Para su materialización, se utilizaron herramientas del ecosistema Apple como Swift y Xcode, junto con la API AVFoundation para la captura segura de audio. El procesamiento se sostiene en conceptos de Procesamiento de Lenguaje Natural, que integran modelos de reconocimiento automático de habla y comprensión del lenguaje natural a través del framework Core ML, de esa manera se garaniza la privacidad de los datos sensibles y la ejecución eficiente con recursos limitados.
+Para su materialización, se utilizaron herramientas del ecosistema Apple como Swift, Xcode, la API AVFoundation y el framework Core ML.
 
 
 \end{abstract}
@@ -101,8 +101,8 @@ Para su materialización, se utilizaron herramientas del ecosistema Apple como S
 
 % Incluir capítulos desde archivos separados
 \include{Chapters/Chapter1}
-%\include{Chapters/Chapter2}
-%\include{Chapters/Chapter3}
+\include{Chapters/Chapter2}
+\include{Chapters/Chapter3}
 %\include{Chapters/Chapter4}
 %\include{Chapters/Chapter5}
 
@@ -119,10 +119,10 @@ Para su materialización, se utilizaron herramientas del ecosistema Apple como S
 % Bibliografía
 %----------------------------------------------------------------------------------------
 
-%\renewcommand{\bibname}{Bibliografía} % Para asegurarte de que el título sea correcto
-%\phantomsection % Necesario para que el enlace del marcador sea correcto
+\renewcommand{\bibname}{Bibliografía} % Para asegurarte de que el título sea correcto
+\phantomsection % Necesario para que el enlace del marcador sea correcto
 
-%\printbibliography[heading=bibintoc]
+\printbibliography[heading=bibintoc]
 
 \end{document}
 
