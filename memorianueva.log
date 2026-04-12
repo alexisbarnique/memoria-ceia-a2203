@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  7 APR 2026 00:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  12 APR 2026 20:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -789,38 +789,41 @@ Package: tocbasic 2024/10/24 v3.43 KOMA-Script package (handling toc-files)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/xpatch/xpatch.sty
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 ))
-Package hyperref Info: Option `unicode' set `true' on input line 40.
-Package hyperref Info: Option `colorlinks' set `true' on input line 40.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write4
+
+Excluding comment 'comment')
+Package hyperref Info: Option `unicode' set `true' on input line 41.
+Package hyperref Info: Option `colorlinks' set `true' on input line 41.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-
-(./memorianueva.aux (./portada.aux)
+ (./memorianueva.aux (./portada.aux)
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
- (./Chapters/Chapter1.aux)
-(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux))
+
+(./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux))
 \openout1 = `memorianueva.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Info: Redefining \. on input line 62.
-LaTeX Info: Redefining \% on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-d
 ictionary-spanish.trsl
@@ -828,7 +831,7 @@ File: translations-basic-dictionary-spanish.trsl (spanish translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `spanish'. on input line 62.
+or `spanish'. on input line 63.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -858,7 +861,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count464
-Package tocbasic Info: setting babel extension for `lol' on input line 62.
+Package tocbasic Info: setting babel extension for `lol' on input line 63.
 Package biblatex Info: Trying to load language 'spanish'...
 Package biblatex Info: ... file 'spanish.lbx' found.
 
@@ -877,44 +880,44 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'memorianueva.bbl' found.
 
 (./memorianueva.bbl)
-Package biblatex Info: Reference section=0 on input line 62.
-Package biblatex Info: Reference segment=0 on input line 62.
-Package hyperref Info: Link coloring ON on input line 62.
+Package biblatex Info: Reference section=0 on input line 63.
+Package biblatex Info: Reference segment=0 on input line 63.
+Package hyperref Info: Link coloring ON on input line 63.
  (./memorianueva.out) (./memorianueva.out)
-\@outlinefile=\write4
-\openout4 = `memorianueva.out'.
+\@outlinefile=\write5
+\openout5 = `memorianueva.out'.
 
-LaTeX Info: Redefining \sptext on input line 62.
-LaTeX Info: Redefining \lsc on input line 62.
-LaTeX Info: Redefining \. on input line 62.
-LaTeX Info: Redefining \% on input line 62.
-LaTeX Info: Redefining \dotlessi on input line 62.
-Package scrbase Info: activating spanish \lstlistingname on input line 62.
-LaTeX Info: Redefining \sptext on input line 62.
-LaTeX Info: Redefining \lsc on input line 62.
-LaTeX Info: Redefining \. on input line 62.
-LaTeX Info: Redefining \% on input line 62.
-LaTeX Info: Redefining \dotlessi on input line 62.
-Package scrbase Info: activating spanish \acknowledgementname on input line 62.
+LaTeX Info: Redefining \sptext on input line 63.
+LaTeX Info: Redefining \lsc on input line 63.
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+LaTeX Info: Redefining \dotlessi on input line 63.
+Package scrbase Info: activating spanish \lstlistingname on input line 63.
+LaTeX Info: Redefining \sptext on input line 63.
+LaTeX Info: Redefining \lsc on input line 63.
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+LaTeX Info: Redefining \dotlessi on input line 63.
+Package scrbase Info: activating spanish \acknowledgementname on input line 63.
 
-LaTeX Info: Redefining \sptext on input line 62.
-LaTeX Info: Redefining \lsc on input line 62.
-LaTeX Info: Redefining \. on input line 62.
-LaTeX Info: Redefining \% on input line 62.
-LaTeX Info: Redefining \dotlessi on input line 62.
-Package scrbase Info: activating spanish \authorshipname on input line 62.
-LaTeX Info: Redefining \sptext on input line 62.
-LaTeX Info: Redefining \lsc on input line 62.
-LaTeX Info: Redefining \. on input line 62.
-LaTeX Info: Redefining \% on input line 62.
-LaTeX Info: Redefining \dotlessi on input line 62.
-Package scrbase Info: activating spanish \abbrevname on input line 62.
-LaTeX Info: Redefining \sptext on input line 62.
-LaTeX Info: Redefining \lsc on input line 62.
-LaTeX Info: Redefining \. on input line 62.
-LaTeX Info: Redefining \% on input line 62.
-LaTeX Info: Redefining \dotlessi on input line 62.
-Package scrbase Info: activating spanish \byname on input line 62.
+LaTeX Info: Redefining \sptext on input line 63.
+LaTeX Info: Redefining \lsc on input line 63.
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+LaTeX Info: Redefining \dotlessi on input line 63.
+Package scrbase Info: activating spanish \authorshipname on input line 63.
+LaTeX Info: Redefining \sptext on input line 63.
+LaTeX Info: Redefining \lsc on input line 63.
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+LaTeX Info: Redefining \dotlessi on input line 63.
+Package scrbase Info: activating spanish \abbrevname on input line 63.
+LaTeX Info: Redefining \sptext on input line 63.
+LaTeX Info: Redefining \lsc on input line 63.
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+LaTeX Info: Redefining \dotlessi on input line 63.
+Package scrbase Info: activating spanish \byname on input line 63.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -965,7 +968,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 48.
 
 
-<Figures/fondo.pdf, id=92, 597.55246pt x 845.07718pt>
+<Figures/fondo.pdf, id=84, 597.55246pt x 845.07718pt>
 File: Figures/fondo.pdf Graphic file (type pdf)
 <use Figures/fondo.pdf>
 Package pdftex.def Info: Figures/fondo.pdf  used on input line 51.
@@ -987,11 +990,11 @@ al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Figures/fondo.pdf>])
  Resumen
 --------------------
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 81.
+(Font)              <10.95> on input line 82.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 81.
+(Font)              <8> on input line 82.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 81.
+(Font)              <6> on input line 82.
 
 
 [1
@@ -1005,8 +1008,8 @@ LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@toc=\write5
-\openout5 = `memorianueva.toc'.
+\tf@toc=\write6
+\openout6 = `memorianueva.toc'.
 
 
 
@@ -1019,8 +1022,8 @@ LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@lof=\write6
-\openout6 = `memorianueva.lof'.
+\tf@lof=\write7
+\openout7 = `memorianueva.lof'.
 
 
 
@@ -1033,8 +1036,8 @@ LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@lot=\write7
-\openout7 = `memorianueva.lot'.
+\tf@lot=\write8
+\openout8 = `memorianueva.lot'.
 
 
 
@@ -1069,119 +1072,56 @@ been already used, duplicate ignored
                    \relax 
 l.42 
       [2]
-Underfull \hbox (badness 1577) in paragraph at lines 75--75
-\T1/ppl/m/n/10.95 una apli-ca-ción in-de-pen-dien-te con
- []
 
+LaTeX Info: Redefining \. on input line 72.
+LaTeX Info: Redefining \% on input line 72.
+[3])
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-[]|\T1/ppl/m/n/10.95 Integración pro-duc-ti-va: co-ne-xión
- []
-
-
-Underfull \hbox (badness 1484) in paragraph at lines 87--87
-[]|\T1/ppl/m/n/10.95 Preparación pa-ra au-di-to-ría: do-cu-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 94.
-LaTeX Info: Redefining \% on input line 94.
-[3]
-
-LaTeX Info: Redefining \. on input line 102.
-LaTeX Info: Redefining \% on input line 102.
+LaTeX Info: Redefining \. on input line 105.
+LaTeX Info: Redefining \% on input line 105.
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 115--115
-[]|\T1/ppl/b/n/10.95 Interesado (sta-
- []
-
-
-Underfull \hbox (badness 8113) in paragraph at lines 118--118
-\T1/ppl/m/n/10.95 (Clientes con o
- []
-
-
-Underfull \hbox (badness 2818) in paragraph at lines 118--118
-\T1/ppl/m/n/10.95 sin dis-ca-pa-ci-dad
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--122
-\T1/ppl/m/n/10.95 (Mesa di-rec-ti-va
- []
-
-
-Underfull \hbox (badness 1527) in paragraph at lines 127--128
-[]|\T1/ppl/m/n/10.95 Cumplimiento irres-tric-to de las
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--130
-[]|\T1/ppl/m/n/10.95 Área de Cum-
- []
-
-
-Underfull \hbox (badness 3428) in paragraph at lines 130--130
-\T1/ppl/m/n/10.95 pli-mien-to (Com-
- []
-
-
-Underfull \hbox (badness 1231) in paragraph at lines 134--134
-[]|\T1/ppl/m/n/10.95 Desarrolladora /
- []
-
-
-Underfull \hbox (badness 2837) in paragraph at lines 134--134
-\T1/ppl/m/n/10.95 (Autora del tra-
- []
-
-
-Underfull \hbox (badness 1533) in paragraph at lines 135--136
-\T1/ppl/m/n/10.95 De-mos-trar la via-bi-li-dad téc-ni-ca
- []
-
-
-
-LaTeX Info: Redefining \. on input line 145.
-LaTeX Info: Redefining \% on input line 145.
-[5])
-
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
-[6]
 \openout2 = `Chapters/Chapter2.aux'.
 
  (./Chapters/Chapter2.tex
 Cap\'{\i }tulo 2.
 
 
-[7
+[5
 
 
 
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 33
+.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Overfull \hbox (71.31404pt too wide) in paragraph at lines 37--38
+\T1/ppl/m/n/10.95 dad de ope-rar en mo-do \T1/ppl/m/it/10.95 of-fli-ne\T1/ppl/m
+/n/10.95 . Al for-zar la pro-pie-dad \T1/pcr/m/n/10.95 requiresOnDeviceRecognit
+ion\T1/ppl/m/n/10.95 ,
+ []
 
-LaTeX Info: Redefining \. on input line 36.
-LaTeX Info: Redefining \% on input line 36.
-[8]
 
-LaTeX Info: Redefining \. on input line 51.
-LaTeX Info: Redefining \% on input line 51.
-[9]
+Overfull \hbox (37.2436pt too wide) in paragraph at lines 43--44
+\T1/ppl/m/n/10.95 bre-rías es-tán-dar (co-mo Py-Torch o Ten-sor-Flow) al for-ma
+-to pro-pie-ta-rio \T1/pcr/m/n/10.95 .mlpackage\T1/ppl/m/n/10.95 . 
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+[6]
 
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
-[10]
+[7])
 
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
-[11])
-
-LaTeX Info: Redefining \. on input line 105.
-LaTeX Info: Redefining \% on input line 105.
-[12]
+LaTeX Info: Redefining \. on input line 106.
+LaTeX Info: Redefining \% on input line 106.
+[8]
 \openout2 = `Chapters/Chapter3.aux'.
 
  (./Chapters/Chapter3.tex
@@ -1192,87 +1132,93 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
-<./Figures/diagrama-de-componentes.png, id=293, 1020.81375pt x 704.6325pt>
-File: ./Figures/diagrama-de-componentes.png Graphic file (type png)
-<use ./Figures/diagrama-de-componentes.png>
-Package pdftex.def Info: ./Figures/diagrama-de-componentes.png  used on input l
-ine 57.
-(pdftex.def)             Requested size: 389.80269pt x 269.07486pt.
 
-
-[13
+[9
 
 
 
 
 ]
 
-LaTeX Info: Redefining \. on input line 66.
-LaTeX Info: Redefining \% on input line 66.
-[14 <./Figures/diagrama-de-componentes.png>]
-<./Figures/pipeline-transaccion.png, id=313, 2223.30624pt x 2392.94pt>
+LaTeX Info: Redefining \. on input line 68.
+LaTeX Info: Redefining \% on input line 68.
+[10]
+<./Figures/diagrama-de-componentes.png, id=283, 1020.81375pt x 706.89093pt>
+File: ./Figures/diagrama-de-componentes.png Graphic file (type png)
+<use ./Figures/diagrama-de-componentes.png>
+Package pdftex.def Info: ./Figures/diagrama-de-componentes.png  used on input l
+ine 73.
+(pdftex.def)             Requested size: 389.80269pt x 269.93727pt.
+
+
+LaTeX Info: Redefining \. on input line 81.
+LaTeX Info: Redefining \% on input line 81.
+[11 <./Figures/diagrama-de-componentes.png>]
+<./Figures/pipeline-transaccion.png, id=293, 2223.30624pt x 2392.94pt>
 File: ./Figures/pipeline-transaccion.png Graphic file (type png)
 <use ./Figures/pipeline-transaccion.png>
 Package pdftex.def Info: ./Figures/pipeline-transaccion.png  used on input line
- 70.
+ 86.
 (pdftex.def)             Requested size: 389.80269pt x 419.53755pt.
 
 
-LaTeX Info: Redefining \. on input line 80.
-LaTeX Info: Redefining \% on input line 80.
-[15 <./Figures/pipeline-transaccion.png>]
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 9
-5.
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
+[12 <./Figures/pipeline-transaccion.png>]
 
-(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ppl.fd
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)
+LaTeX Info: Redefining \. on input line 111.
+LaTeX Info: Redefining \% on input line 111.
+[13]
 
-LaTeX Info: Redefining \. on input line 117.
-LaTeX Info: Redefining \% on input line 117.
+LaTeX Info: Redefining \. on input line 124.
+LaTeX Info: Redefining \% on input line 124.
+[14]
+
+LaTeX Info: Redefining \. on input line 132.
+LaTeX Info: Redefining \% on input line 132.
+[15])
+
+LaTeX Info: Redefining \. on input line 107.
+LaTeX Info: Redefining \% on input line 107.
 [16]
-
-LaTeX Info: Redefining \. on input line 172.
-LaTeX Info: Redefining \% on input line 172.
-[17]
-
-LaTeX Info: Redefining \. on input line 198.
-LaTeX Info: Redefining \% on input line 198.
-[18]
-
-LaTeX Info: Redefining \. on input line 206.
-LaTeX Info: Redefining \% on input line 206.
-[19])
-
-LaTeX Info: Redefining \. on input line 106.
-LaTeX Info: Redefining \% on input line 106.
-[20]
-Overfull \hbox (17.49973pt too wide) in paragraph at lines 126--126
+Overfull \hbox (17.49973pt too wide) in paragraph at lines 127--127
 \T1/ppl/m/n/10.95 per Do-cu-men-ta-tion. 2025. \T1/ppl/m/sc/10.95 url\T1/ppl/m/
 n/10.95 : [][]$https : / / developer . apple . com / documentation /
  []
 
 
 
-[21
+[17
 
 
 
 ]
-
-LaTeX Info: Redefining \. on input line 126.
-LaTeX Info: Redefining \% on input line 126.
-[22]
-Overfull \hbox (2.6412pt too wide) in paragraph at lines 126--126
+Overfull \hbox (2.6412pt too wide) in paragraph at lines 127--127
 []\T1/ppl/m/n/10.95 Apple Inc. \T1/ppl/m/it/10.95 The Swift Pro-gram-ming Lan-g
 ua-ge: Lan-gua-ge Gui-de\T1/ppl/m/n/10.95 . Vi-si-ta-do el 2026-
  []
 
 
+Overfull \hbox (1.83105pt too wide) in paragraph at lines 127--127
+[]\T1/ppl/m/n/10.95 Jeffrey L El-man. ^^S  Fin-ding struc-tu-re in ti-me^^T. En
+: \T1/ppl/m/it/10.95 Cog-ni-ti-ve scien-ce \T1/ppl/m/n/10.95 14.2 (1990),
+ []
 
-LaTeX Info: Redefining \. on input line 128.
-LaTeX Info: Redefining \% on input line 128.
-[23] (./memorianueva.aux (./portada.aux)
+
+Overfull \hbox (14.30664pt too wide) in paragraph at lines 127--127
+[]\T1/ppl/m/n/10.95 Kyunghyun Cho et al. ^^S  Lear-ning Ph-ra-se Re-pre-sen-ta-
+tions using RNN Encoder--
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 127.
+LaTeX Info: Redefining \% on input line 127.
+[18]
+
+LaTeX Info: Redefining \. on input line 129.
+LaTeX Info: Redefining \% on input line 129.
+[19] (./memorianueva.aux (./portada.aux)
 LaTeX Info: Redefining \sptext on input line 16.
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
@@ -1286,11 +1232,8 @@ L3 programming layer <2020/03/25>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `memorianueva.out' has not changed.
-(rerunfilecheck)             Checksum: 950B6808CFB4B82CD717C412AF42E4E6;4447.
+(rerunfilecheck)             Checksum: D498FE5BB1C24C1BA8D77D52553288A6;3884.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                memorianueva
@@ -1301,24 +1244,25 @@ Package logreq Info: Writing requests to 'memorianueva.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32121 strings out of 473190
- 691410 string characters out of 5715800
- 1838142 words of memory out of 5000000
- 54812 multiletter control sequences out of 15000+600000
- 614688 words of font info for 98 fonts, out of 8000000 for 9000
+ 31680 strings out of 473190
+ 687805 string characters out of 5715800
+ 1454111 words of memory out of 5000000
+ 54469 multiletter control sequences out of 15000+600000
+ 611543 words of font info for 94 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 96i,20n,94p,1969b,2764s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
-/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/
-texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texliv
-e/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/
-texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-d
-ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fon
-ts/type1/urw/palatino/uplri8a.pfb>
-Output written on memorianueva.pdf (33 pages, 539090 bytes).
+ 96i,20n,94p,1969b,2138s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
+local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/
+2025/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2025/t
+exmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-di
+st/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/font
+s/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
+/urw/palatino/uplri8a.pfb>
+Output written on memorianueva.pdf (29 pages, 548729 bytes).
 PDF statistics:
- 588 PDF objects out of 1000 (max. 8388607)
- 525 compressed objects within 6 object streams
- 193 named destinations out of 1000 (max. 500000)
- 192 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 453 PDF objects out of 1000 (max. 8388607)
+ 394 compressed objects within 4 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

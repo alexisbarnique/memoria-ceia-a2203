@@ -382,360 +382,34 @@
     \field{year}{2000}
   \endentry
 
-  \entry{feng2021survey}{article}{}{}
-    \name{author}{7}{}{%
-      {{hash=FSY}{%
-         family={Feng},
-         familyi={F\bibinitperiod},
-         given={Steven\bibnamedelima Y},
-         giveni={S\bibinitperiod\bibinitdelim Y\bibinitperiod},
+  \entry{chen2019bert}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=CQ}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Qian},
+         giveni={Q\bibinitperiod},
       }}%
-      {{hash=GV}{%
-         family={Gangal},
-         familyi={G\bibinitperiod},
-         given={Varun},
-         giveni={V\bibinitperiod},
+      {{hash=ZZ}{%
+         family={Zhuo},
+         familyi={Z\bibinitperiod},
+         given={Zhu},
+         giveni={Z\bibinitperiod},
       }}%
-      {{hash=WJ}{%
-         family={Wei},
+      {{hash=WW}{%
+         family={Wang},
          familyi={W\bibinitperiod},
-         given={Jason},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=CS}{%
-         family={Chandar},
-         familyi={C\bibinitperiod},
-         given={Sarath},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=VS}{%
-         family={Vosoughi},
-         familyi={V\bibinitperiod},
-         given={Soroush},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=MT}{%
-         family={Mitamura},
-         familyi={M\bibinitperiod},
-         given={Teruko},
-         giveni={T\bibinitperiod},
-      }}%
-      {{hash=HE}{%
-         family={Hovy},
-         familyi={H\bibinitperiod},
-         given={Eduard},
-         giveni={E\bibinitperiod},
+         given={Wen},
+         giveni={W\bibinitperiod},
       }}%
     }
-    \strng{namehash}{FSY+1}
-    \strng{fullhash}{FSYGVWJCSVSMTHE1}
+    \strng{namehash}{CQZZWW1}
+    \strng{fullhash}{CQZZWW1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{968\bibrangedash 988}
-    \field{title}{A survey of data augmentation approaches for NLP}
-    \field{journaltitle}{Findings of the Association for Computational
-  Linguistics: ACL-IJCNLP 2021}
-    \field{year}{2021}
-  \endentry
-
-  \entry{apple2026swift}{manual}{}{}
-    \name{author}{1}{}{%
-      {{hash=A}{%
-         family={{Apple Inc.}},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {Apple Developer Documentation}%
-    }
-    \strng{namehash}{A2}
-    \strng{fullhash}{A2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Visitado el 2026-04-02}
-    \field{title}{The Swift Programming Language}
-    \verb{url}
-    \verb https://docs.swift.org/swift-book/
-    \endverb
-    \field{year}{2026}
-  \endentry
-
-  \entry{apple2026xcode}{manual}{}{}
-    \name{author}{1}{}{%
-      {{hash=A}{%
-         family={{Apple Inc.}},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {Apple Developer Documentation}%
-    }
-    \strng{namehash}{A2}
-    \strng{fullhash}{A2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Visitado el 2026-04-02}
-    \field{title}{Xcode: Integrated Development Environment}
-    \verb{url}
-    \verb https://developer.apple.com/xcode/
-    \endverb
-    \field{year}{2026}
-  \endentry
-
-  \entry{apple2026avfoundation}{manual}{}{}
-    \name{author}{1}{}{%
-      {{hash=A}{%
-         family={{Apple Inc.}},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {Apple Developer Documentation}%
-    }
-    \strng{namehash}{A2}
-    \strng{fullhash}{A2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Visitado el 2026-04-02}
-    \field{title}{AVFoundation: Work with audiovisual assets, control device
-  cameras, process audio, and configure system audio interactions}
-    \verb{url}
-    \verb https://developer.apple.com/documentation/avfoundation
-    \endverb
-    \field{year}{2026}
-  \endentry
-
-  \entry{apple2026avaudiosession}{manual}{}{}
-    \name{author}{1}{}{%
-      {{hash=A}{%
-         family={{Apple Inc.}},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {Apple Developer Documentation}%
-    }
-    \strng{namehash}{A2}
-    \strng{fullhash}{A2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Visitado el 2026-04-02}
-    \field{title}{AVAudioSession: Communicate to the system how you intend to
-  use audio in your app}
-    \verb{url}
-    \verb https://developer.apple.com/documentation/avfaudio/avaudiosession
-    \endverb
-    \field{year}{2026}
-  \endentry
-
-  \entry{apple2026avaudioengine}{manual}{}{}
-    \name{author}{1}{}{%
-      {{hash=A}{%
-         family={{Apple Inc.}},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {Apple Developer Documentation}%
-    }
-    \strng{namehash}{A2}
-    \strng{fullhash}{A2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Visitado el 2026-04-02}
-    \field{title}{AVAudioEngine: A group of connected audio node objects used
-  to generate and process audio signals and perform audio input and output}
-    \verb{url}
-    \verb https://developer.apple.com/documentation/avfaudio/avaudioengine
-    \endverb
-    \field{year}{2026}
-  \endentry
-
-  \entry{apple2026coreml}{manual}{}{}
-    \name{author}{1}{}{%
-      {{hash=A}{%
-         family={{Apple Inc.}},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {Apple Developer Documentation}%
-    }
-    \strng{namehash}{A2}
-    \strng{fullhash}{A2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Visitado el 2026-04-02}
-    \field{title}{Core ML: Integrate machine learning models into your app}
-    \verb{url}
-    \verb https://developer.apple.com/documentation/coreml
-    \endverb
-    \field{year}{2026}
-  \endentry
-
-  \entry{gholami2021survey}{article}{}{}
-    \name{author}{6}{}{%
-      {{hash=GA}{%
-         family={Gholami},
-         familyi={G\bibinitperiod},
-         given={Amir},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=KS}{%
-         family={Kim},
-         familyi={K\bibinitperiod},
-         given={Sehoon},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=DZ}{%
-         family={Dong},
-         familyi={D\bibinitperiod},
-         given={Zhen},
-         giveni={Z\bibinitperiod},
-      }}%
-      {{hash=YZ}{%
-         family={Yao},
-         familyi={Y\bibinitperiod},
-         given={Zhewei},
-         giveni={Z\bibinitperiod},
-      }}%
-      {{hash=MMW}{%
-         family={Mahoney},
-         familyi={M\bibinitperiod},
-         given={Michael\bibnamedelima W},
-         giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
-      }}%
-      {{hash=KK}{%
-         family={Keutzer},
-         familyi={K\bibinitperiod},
-         given={Kurt},
-         giveni={K\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{GA+1}
-    \strng{fullhash}{GAKSDZYZMMWKK1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{A survey of quantization methods for efficient neural network
-  inference}
-    \field{journaltitle}{Extending Database Technology (EDBT)}
-    \field{year}{2021}
-  \endentry
-
-  \entry{canete2020spanish}{inproceedings}{}{}
-    \name{author}{6}{}{%
-      {{hash=CJ}{%
-         family={Ca{\~n}ete},
-         familyi={C\bibinitperiod},
-         given={Jos{\'e}},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=CG}{%
-         family={Chaperon},
-         familyi={C\bibinitperiod},
-         given={Gabriel},
-         giveni={G\bibinitperiod},
-      }}%
-      {{hash=FR}{%
-         family={Fuentes},
-         familyi={F\bibinitperiod},
-         given={Rodrigo},
-         giveni={R\bibinitperiod},
-      }}%
-      {{hash=HJH}{%
-         family={Ho},
-         familyi={H\bibinitperiod},
-         given={J-H},
-         giveni={J\bibinithyphendelim H\bibinitperiod},
-      }}%
-      {{hash=KH}{%
-         family={Kang},
-         familyi={K\bibinitperiod},
-         given={Hyesik},
-         giveni={H\bibinitperiod},
-      }}%
-      {{hash=PJ}{%
-         family={P{\'e}rez},
-         familyi={P\bibinitperiod},
-         given={Jorge},
-         giveni={J\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{CJ+1}
-    \strng{fullhash}{CJCGFRHJHKHPJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{PML4DC at ICLR 2020}
-    \field{title}{Spanish pre-trained bert model and evaluation data}
-    \field{year}{2020}
-  \endentry
-
-  \entry{lample2016neural}{inproceedings}{}{}
-    \name{author}{5}{}{%
-      {{hash=LG}{%
-         family={Lample},
-         familyi={L\bibinitperiod},
-         given={Guillaume},
-         giveni={G\bibinitperiod},
-      }}%
-      {{hash=BM}{%
-         family={Ballesteros},
-         familyi={B\bibinitperiod},
-         given={Miguel},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=SS}{%
-         family={Subramanian},
-         familyi={S\bibinitperiod},
-         given={Sandeep},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=KK}{%
-         family={Kawakami},
-         familyi={K\bibinitperiod},
-         given={Kazuya},
-         giveni={K\bibinitperiod},
-      }}%
-      {{hash=DC}{%
-         family={Dyer},
-         familyi={D\bibinitperiod},
-         given={Chris},
-         giveni={C\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{LG+1}
-    \strng{fullhash}{LGBMSSKKDC1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Proceedings of the 2016 Conference of the North American
-  Chapter of the Association for Computational Linguistics: Human Language
-  Technologies}
-    \field{pages}{260\bibrangedash 270}
-    \field{title}{Neural Architectures for Named Entity Recognition}
-    \field{year}{2016}
-  \endentry
-
-  \entry{apple2025naturallanguage}{manual}{}{}
-    \name{author}{1}{}{%
-      {{hash=A}{%
-         family={{Apple Inc.}},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {Apple Developer Documentation}%
-    }
-    \strng{namehash}{A2}
-    \strng{fullhash}{A2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Visitado el 2026-03-29}
-    \field{title}{Natural Language: Analyze natural language text and deduce
-  its language-specific metadata}
-    \verb{url}
-    \verb https://developer.apple.com/documentation/naturallanguage
-    \endverb
-    \field{year}{2025}
+    \field{title}{BERT for joint intent prediction and slot filling}
+    \field{journaltitle}{arXiv preprint arXiv:1902.10909}
+    \field{year}{2019}
   \endentry
 
   \entry{shi2016edge}{article}{}{}
@@ -807,6 +481,454 @@
     \field{year}{2009}
   \endentry
 
+  \entry{apple2026swiftlanguage}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Apple Developer Documentation}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado el 2026-04-03}
+    \field{title}{The Swift Programming Language: Language Guide}
+    \verb{url}
+    \verb https://docs.swift.org/swift-book/
+    \endverb
+    \field{year}{2026}
+  \endentry
+
+  \entry{apple2026xcode}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Apple Developer Documentation}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado el 2026-04-02}
+    \field{title}{Xcode: Integrated Development Environment}
+    \verb{url}
+    \verb https://developer.apple.com/xcode/
+    \endverb
+    \field{year}{2026}
+  \endentry
+
+  \entry{apple2026avfoundation}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Apple Developer Documentation}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado el 2026-04-02}
+    \field{title}{AVFoundation: Work with audiovisual assets, control device
+  cameras, process audio, and configure system audio interactions}
+    \verb{url}
+    \verb https://developer.apple.com/documentation/avfoundation
+    \endverb
+    \field{year}{2026}
+  \endentry
+
+  \entry{apple2026speech}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Apple Developer Documentation}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado el 2026-04-03}
+    \field{title}{Speech: Perform speech recognition on recorded or live audio}
+    \verb{url}
+    \verb https://developer.apple.com/documentation/speech
+    \endverb
+    \field{year}{2026}
+  \endentry
+
+  \entry{apple2026coreml}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Apple Developer Documentation}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado el 2026-04-02}
+    \field{title}{Core ML: Integrate machine learning models into your app}
+    \verb{url}
+    \verb https://developer.apple.com/documentation/coreml
+    \endverb
+    \field{year}{2026}
+  \endentry
+
+  \entry{apple2026coremltools}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Apple Open Source}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado el 2026-04-12}
+    \field{title}{coremltools: Unified conversion API and optimization tools
+  for Core ML}
+    \verb{url}
+    \verb https://coremltools.readme.io/
+    \endverb
+    \field{year}{2026}
+  \endentry
+
+  \entry{lample2016neural}{inproceedings}{}{}
+    \name{author}{5}{}{%
+      {{hash=LG}{%
+         family={Lample},
+         familyi={L\bibinitperiod},
+         given={Guillaume},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Ballesteros},
+         familyi={B\bibinitperiod},
+         given={Miguel},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Subramanian},
+         familyi={S\bibinitperiod},
+         given={Sandeep},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kawakami},
+         familyi={K\bibinitperiod},
+         given={Kazuya},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=DC}{%
+         family={Dyer},
+         familyi={D\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LG+1}
+    \strng{fullhash}{LGBMSSKKDC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 2016 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}
+    \field{pages}{260\bibrangedash 270}
+    \field{title}{Neural Architectures for Named Entity Recognition}
+    \field{year}{2016}
+  \endentry
+
+  \entry{canete2020spanish}{inproceedings}{}{}
+    \name{author}{6}{}{%
+      {{hash=CJ}{%
+         family={Ca{\~n}ete},
+         familyi={C\bibinitperiod},
+         given={Jos{\'e}},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CG}{%
+         family={Chaperon},
+         familyi={C\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=FR}{%
+         family={Fuentes},
+         familyi={F\bibinitperiod},
+         given={Rodrigo},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=HJH}{%
+         family={Ho},
+         familyi={H\bibinitperiod},
+         given={J-H},
+         giveni={J\bibinithyphendelim H\bibinitperiod},
+      }}%
+      {{hash=KH}{%
+         family={Kang},
+         familyi={K\bibinitperiod},
+         given={Hyesik},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={P{\'e}rez},
+         familyi={P\bibinitperiod},
+         given={Jorge},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CJ+1}
+    \strng{fullhash}{CJCGFRHJHKHPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{PML4DC at ICLR 2020}
+    \field{title}{Spanish pre-trained bert model and evaluation data}
+    \field{year}{2020}
+  \endentry
+
+  \entry{elman1990finding}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=EJL}{%
+         family={Elman},
+         familyi={E\bibinitperiod},
+         given={Jeffrey\bibnamedelima L},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{EJL1}
+    \strng{fullhash}{EJL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2}
+    \field{pages}{179\bibrangedash 211}
+    \field{title}{Finding structure in time}
+    \field{volume}{14}
+    \field{journaltitle}{Cognitive science}
+    \field{year}{1990}
+  \endentry
+
+  \entry{hochreiter1997long}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=HS}{%
+         family={Hochreiter},
+         familyi={H\bibinitperiod},
+         given={Sepp},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Schmidhuber},
+         familyi={S\bibinitperiod},
+         given={J{\"u}rgen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{HSSJ1}
+    \strng{fullhash}{HSSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{8}
+    \field{pages}{1735\bibrangedash 1780}
+    \field{title}{Long short-term memory}
+    \field{volume}{9}
+    \field{journaltitle}{Neural computation}
+    \field{year}{1997}
+  \endentry
+
+  \entry{cho2014learning}{inproceedings}{}{}
+    \name{author}{7}{}{%
+      {{hash=CK}{%
+         family={Cho},
+         familyi={C\bibinitperiod},
+         given={Kyunghyun},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=vMB}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Merri{\"e}nboer},
+         familyi={M\bibinitperiod},
+         given={Bart},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={Gulcehre},
+         familyi={G\bibinitperiod},
+         given={Caglar},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Bahdanau},
+         familyi={B\bibinitperiod},
+         given={Dzmitry},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BF}{%
+         family={Bougares},
+         familyi={B\bibinitperiod},
+         given={Fethi},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={Schwenk},
+         familyi={S\bibinitperiod},
+         given={Holger},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CK+1}
+    \strng{fullhash}{CKMBvGCBDBFSHBY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 2014 Conference on Empirical Methods
+  in Natural Language Processing (EMNLP)}
+    \field{pages}{1724\bibrangedash 1734}
+    \field{title}{Learning Phrase Representations using {RNN} Encoder--Decoder
+  for Statistical Machine Translation}
+    \field{year}{2014}
+  \endentry
+
+  \entry{huang2015bidirectional}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=HZ}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Zhiheng},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=XW}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Wei},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=YK}{%
+         family={Yu},
+         familyi={Y\bibinitperiod},
+         given={Kai},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HZXWYK1}
+    \strng{fullhash}{HZXWYK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Bidirectional LSTM-CRF models for sequence tagging}
+    \field{journaltitle}{arXiv preprint arXiv:1508.01991}
+    \field{year}{2015}
+  \endentry
+
+  \entry{dhar2021survey}{article}{}{}
+    \name{author}{6}{}{%
+      {{hash=DS}{%
+         family={Dhar},
+         familyi={D\bibinitperiod},
+         given={Saurabh},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Guo},
+         familyi={G\bibinitperiod},
+         given={Jun},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Jiasi},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=TV}{%
+         family={Tripathi},
+         familyi={T\bibinitperiod},
+         given={Vidya},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=KU}{%
+         family={Kurup},
+         familyi={K\bibinitperiod},
+         given={Udayan},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Shah},
+         familyi={S\bibinitperiod},
+         given={Mohak},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM New York, NY}%
+    }
+    \strng{namehash}{DS+1}
+    \strng{fullhash}{DSGJLJTVKUSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{3}
+    \field{pages}{1\bibrangedash 49}
+    \field{title}{A survey of on-device machine learning: An algorithms and
+  learning theory perspective}
+    \field{volume}{2}
+    \field{journaltitle}{ACM Transactions on Internet of Things (TIOT)}
+    \field{year}{2021}
+  \endentry
+
+  \entry{apple2025naturallanguage}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Apple Developer Documentation}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado el 2026-03-29}
+    \field{title}{Natural Language: Analyze natural language text and deduce
+  its language-specific metadata}
+    \verb{url}
+    \verb https://developer.apple.com/documentation/naturallanguage
+    \endverb
+    \field{year}{2025}
+  \endentry
+
   \entry{apple2026frameworks}{manual}{}{}
     \name{author}{1}{}{%
       {{hash=A}{%
@@ -851,7 +973,63 @@
     \field{year}{2015}
   \endentry
 
-  \entry{apple2026swiftlanguage}{manual}{}{}
+  \entry{feng2021survey}{article}{}{}
+    \name{author}{7}{}{%
+      {{hash=FSY}{%
+         family={Feng},
+         familyi={F\bibinitperiod},
+         given={Steven\bibnamedelima Y},
+         giveni={S\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+      {{hash=GV}{%
+         family={Gangal},
+         familyi={G\bibinitperiod},
+         given={Varun},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wei},
+         familyi={W\bibinitperiod},
+         given={Jason},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Chandar},
+         familyi={C\bibinitperiod},
+         given={Sarath},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=VS}{%
+         family={Vosoughi},
+         familyi={V\bibinitperiod},
+         given={Soroush},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MT}{%
+         family={Mitamura},
+         familyi={M\bibinitperiod},
+         given={Teruko},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=HE}{%
+         family={Hovy},
+         familyi={H\bibinitperiod},
+         given={Eduard},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FSY+1}
+    \strng{fullhash}{FSYGVWJCSVSMTHE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{968\bibrangedash 988}
+    \field{title}{A survey of data augmentation approaches for NLP}
+    \field{journaltitle}{Findings of the Association for Computational
+  Linguistics: ACL-IJCNLP 2021}
+    \field{year}{2021}
+  \endentry
+
+  \entry{apple2026codable}{manual}{}{}
     \name{author}{1}{}{%
       {{hash=A}{%
          family={{Apple Inc.}},
@@ -865,10 +1043,11 @@
     \strng{fullhash}{A2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{Visitado el 2026-04-03}
-    \field{title}{The Swift Programming Language: Language Guide}
+    \field{note}{Visitado el 2026-04-12}
+    \field{title}{Encoding and Decoding Custom Types}
     \verb{url}
-    \verb https://docs.swift.org/swift-book/
+    \verb https://developer.apple.com/documentation/foundation/archives_and_ser
+    \verb ialization/encoding_and_decoding_custom_types
     \endverb
     \field{year}{2026}
   \endentry
@@ -901,28 +1080,6 @@
     }
     \field{type}{RFC}
     \field{year}{2017}
-  \endentry
-
-  \entry{apple2026speech}{manual}{}{}
-    \name{author}{1}{}{%
-      {{hash=A}{%
-         family={{Apple Inc.}},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {Apple Developer Documentation}%
-    }
-    \strng{namehash}{A2}
-    \strng{fullhash}{A2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Visitado el 2026-04-03}
-    \field{title}{Speech: Perform speech recognition on recorded or live audio}
-    \verb{url}
-    \verb https://developer.apple.com/documentation/speech
-    \endverb
-    \field{year}{2026}
   \endentry
 
   \entry{ieee1990glossary}{article}{}{}

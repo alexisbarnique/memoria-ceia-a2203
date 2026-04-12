@@ -21,50 +21,55 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 10180 items from 5000.
+Reallocated field_info (elt_size=4) to 10740 items from 5000.
 Database file #1: memorianueva-blx.bib
 Database file #2: references.bib
+Repeated entry---line 364 of file references.bib
+ : @manual{apple2026codable
+ :                         ,
+I'm skipping whatever remains of this entry
 Biblatex version: 3.20
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 37 entries,
+You've used 41 entries,
             6402 wiz_defined-function locations,
-            1378 strings with 15167 characters,
-and the built_in function-call counts, 208074 in all, are:
-= -- 15703
-> -- 3764
-< -- 1052
-+ -- 5235
-- -- 1248
-* -- 12726
-:= -- 20997
+            1409 strings with 15960 characters,
+and the built_in function-call counts, 245595 in all, are:
+= -- 18879
+> -- 4230
+< -- 1139
++ -- 6603
+- -- 1445
+* -- 15303
+:= -- 25741
 add.period$ -- 0
-call.type$ -- 37
-change.case$ -- 715
+call.type$ -- 41
+change.case$ -- 748
 chr.to.int$ -- 72
-cite$ -- 72
-duplicate$ -- 21958
-empty$ -- 19302
-format.name$ -- 1961
-if$ -- 43639
+cite$ -- 80
+duplicate$ -- 26395
+empty$ -- 22304
+format.name$ -- 2296
+if$ -- 50824
 int.to.chr$ -- 0
-int.to.str$ -- 124
+int.to.str$ -- 132
 missing$ -- 0
-newline$ -- 929
-num.names$ -- 1967
-pop$ -- 12402
+newline$ -- 1085
+num.names$ -- 2122
+pop$ -- 13970
 preamble$ -- 1
-purify$ -- 874
+purify$ -- 946
 quote$ -- 0
-skip$ -- 6973
+skip$ -- 7654
 stack$ -- 0
-substring$ -- 26564
-swap$ -- 4465
-text.length$ -- 682
+substring$ -- 32163
+swap$ -- 5102
+text.length$ -- 781
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1239
+type$ -- 1375
 warning$ -- 0
-while$ -- 2479
+while$ -- 3118
 width$ -- 0
-write$ -- 893
+write$ -- 1045
+(There was 1 error message)

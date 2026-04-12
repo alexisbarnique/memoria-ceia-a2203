@@ -62,35 +62,14 @@ Para alcanzar el objetivo general, se plantean los siguientes objetivos específ
 
 \subsection{Alcance y limitaciones}
 
-Con el propósito de mantener el enfoque en la validación tecnológica del motor de inteligencia artificial y la experiencia de usuario, el trabajo se delimita bajo parámetros estrictos de alcance. En la tabla \ref{tab:alcance_proyecto}, se identifica lo que se encuentra dentro y fuera del alcance del trabajo.
+Con el propósito de mantener el enfoque en la validación tecnológica del motor de inteligencia artificial y la experiencia de usuario, el trabajo se delimita bajo parámetros estrictos de alcance.
 
-\begin{table}[H]
-    \centering
-    \caption[Alcance del proyecto]{Esquema de alto nivel del alcance del proyecto.}
-    \begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}} 
-        \toprule
-        \textbf{Dentro del alcance} & \textbf{Fuera del alcance} \\
-        \midrule
-        
-        Prototipo Nativo iOS: desarrollo de una aplicación independiente con una interfaz de usuario mínima y funcional & 
-        Integración productiva: conexión con el código oficial de Banco Galicia, servicios de \textit{backend}, APIs o bases de datos reales \\
-        \addlinespace 
-        
-        Pipeline de IA On-Device: integración de captura de audio (APIs nativas) y procesamiento 100\% local de modelos ASR y NLU utilizando el framework Core ML & 
-        Despliegue y distribución: puesta en marcha en entornos de producción o publicación de la aplicación en la App Store \\
-        \addlinespace
-        
-        Simulación transaccional: ejecución del flujo de transferencias utilizando exclusivamente datos ficticios (\textit{mock data}), incluyendo pantallas de confirmación y resultados simulados. & 
-        Datos y capital real: manipulación de información verídica de clientes, cuentas o ejecución de transferencias con dinero real \\
-        \addlinespace
-        
-        Preparación para auditoría: documentación arquitectónica y del código fuente orientada a facilitar futuras revisiones por parte del equipo de Ciberseguridad & 
-        Funcionalidades adicionales: implementación de sistemas de autenticación reales (\textit{login}), soporte multilingüe (limitado al español rioplatense) y operaciones financieras distintas a transferencias o consultas de saldo \\
-        
-        \bottomrule
-    \end{tabular}
-    \label{tab:alcance_proyecto}
-\end{table}
+\begin{itemize}
+\item Dentro del alcance: el desarrollo contempla exclusivamente la creación de una aplicación prototipo nativa para iOS, que operará de manera independiente y aislada. El núcleo técnico abarcará la implementación del pipeline de inteligencia artificial en el dispositivo físico, integrando la captura segura de audio, un modelo de reconocimiento automático de habla y un módulo de interpretación de lenguaje natural para extraer intenciones y entidades clave. Dado el carácter de la prueba de concepto, todo el flujo de transacción, la pantalla de confirmación y los resultados de las operaciones se simularán utilizando datos completamente ficticios.
+
+\item Fuera del alcance: el trabajo no contempla la integración del prototipo, ni de sus componentes, con el código fuente de la aplicación productiva oficial, ni la conexión con APIs, servicios de backend o bases de datos reales de la institución financiera. Asimismo, queda excluida la puesta en marcha en producción y la publicación en la App Store. Desde el punto de vista
+del manejo de la información, está estrictamente excluido el uso o acceso a datos reales de clientes, así como la ejecución de transacciones que movilicen dinero real. Finalmente, el sistema se limitará al español rioplatense focalizado, dejando fuera del alcance el soporte multilingüe y operaciones financieras distintas a transferencias y consultas.
+\end{itemize}
 
 
 \section{Motivación: accesibilidad e inclusión}
@@ -100,46 +79,3 @@ El paradigma de diseño predominante en las aplicaciones de banca móvil actuale
 En Argentina, según datos del Instituto Nacional de Estadística y Censos (INDEC), aproximadamente el 10\% de la población presenta algún tipo de dificultad o limitación permanente \citep{indec2018eppd}. Dentro de este universo, las limitaciones visuales y motoras representan una proporción significativa, lo que configura un segmento de usuarios que históricamente ha sido desatendido por el diseño centrado en la interfaz táctil. A nivel global, la Organización Mundial de la Salud (OMS) estima que más de 2.200 millones de personas presentan alguna forma de deficiencia visual, de las cuales una fracción importante se encuentra en edad económicamente activa y requiere acceso a servicios financieros \citep{oms2019vision}. La brecha entre la necesidad de acceso a servicios bancarios y la capacidad de las interfaces actuales para satisfacer dicha necesidad constituye un problema de equidad e inclusión que la tecnología tiene el potencial y la responsabilidad de resolver.
 
 La motivación principal de este trabajo es derribar estas barreras tecnológicas, promoviendo una inclusión financiera real mediante el desarrollo de un canal de interacción alternativo. La implementación de un asistente transaccional por voz no solo genera un impacto social positivo al mejorar radicalmente la accesibilidad, sino que también ofrece una experiencia de usuario superior, simplificando operaciones complejas en un único paso conversacional y reduzca la fricción del proceso. Más aún, al garantizar que todo el procesamiento ocurra de forma local en el dispositivo, se elimina la resistencia que muchos usuarios podrían tener hacia el uso de comandos de voz en entornos de alta sensibilidad, como lo es la gestión de sus finanzas personales.
-
-\section{Análisis de los interesados}
-
-La viabilidad de una solución basada en inteligencia artificial dentro del ecosistema financiero trasciende la mera implementación algorítmica; exige una alineación precisa entre la innovación tecnológica, las normativas de seguridad corporativa y el rigor académico. Por consiguiente, resulta imperativo realizar un mapeo exhaustivo de las partes interesadas (stakeholders) vinculadas al proyecto.
-
-A continuación, en la Tabla \ref{tab:stakeholders}, se identifican los actores clave que ejercen influencia directa o indirecta sobre el desarrollo de la prueba de concepto. El análisis clasifica a cada perfil según su nivel de interés y capacidad de influencia, delineando sus expectativas fundamentales. Esta matriz permite garantizar que la arquitectura propuesta satisfaga integralmente tanto los requisitos de accesibilidad del usuario final, como los rigurosos estándares de auditoría de la institución bancaria y los criterios de evaluación de la especialización.
-
-\begin{table}[H]
-    \centering
-    \caption[Análisis de Interesados]{Identificación y análisis de los interesados (stakeholders) del trabajo.}
-    \begin{tabular}{p{0.22\textwidth} c c p{0.42\textwidth}} 
-        \toprule
-        \textbf{Interesado (stakeholder)} & \textbf{Interés} & \textbf{Influencia} & \textbf{Expectativas y requisitos principales} \\
-        \midrule
-        
-        Usuarios Finales \newline (Clientes con o sin discapacidad visual/motora) & Alto & Media & 
-        Disponer de una interfaz de voz intuitiva, rápida y sin fricciones. Garantía absoluta de que sus datos financieros y biométricos (voz) no se exponen ni se filtran. \\
-        \addlinespace
-        
-        Dirección / Sponsor \newline (Mesa directiva del banco) & Alto & Alta & 
-        Innovación tecnológica en canales digitales. Retención de clientes, mejora en las métricas de accesibilidad e inclusión financiera, y alineación con los objetivos estratégicos de la entidad. \\
-        \addlinespace
-        
-        Equipo de Ciberseguridad y Auditoría TI & Alto & Alta & 
-        Cumplimiento irrestricto de las normativas de privacidad. Validación de que la arquitectura On-Device efectivamente aísla el procesamiento NLU y no envía flujos de audio a la nube. \\
-        \addlinespace
-        
-        Área de Cumplimiento (Compliance) y Legal & Medio & Alta & 
-        Alineación con las normativas del Banco Central (BCRA) respecto a la operación en canales electrónicos y la protección de datos personales. \\
-        \addlinespace
-
-        Desarrolladora / Investigadora \newline (Autora del trabajo) & Alto & Alta & 
-        Cumplir con los objetivos académicos de la especialización en IA. Demostrar la viabilidad técnica de ejecutar modelos cuantizados (Core ML) en un entorno iOS nativo. \\
-        \addlinespace
-        
-        Jurado Académico / Asesores & Alto & Alta & 
-        Rigor científico y metodológico. Aplicación correcta del ciclo de vida CRISP-DM, justificación de las decisiones arquitectónicas y evaluación empírica de los modelos. \\
-        
-        \bottomrule
-    \end{tabular}
-    \label{tab:stakeholders}
-\end{table}
-
