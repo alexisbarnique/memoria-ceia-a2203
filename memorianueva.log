@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  12 APR 2026 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  12 APR 2026 20:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1143,7 +1143,7 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 LaTeX Info: Redefining \. on input line 68.
 LaTeX Info: Redefining \% on input line 68.
 [10]
-<./Figures/diagrama-de-componentes.png, id=283, 1020.81375pt x 706.89093pt>
+<./Figures/diagrama-de-componentes.png, id=285, 1020.81375pt x 706.89093pt>
 File: ./Figures/diagrama-de-componentes.png Graphic file (type png)
 <use ./Figures/diagrama-de-componentes.png>
 Package pdftex.def Info: ./Figures/diagrama-de-componentes.png  used on input l
@@ -1154,7 +1154,7 @@ ine 73.
 LaTeX Info: Redefining \. on input line 81.
 LaTeX Info: Redefining \% on input line 81.
 [11 <./Figures/diagrama-de-componentes.png>]
-<./Figures/pipeline-transaccion.png, id=293, 2223.30624pt x 2392.94pt>
+<./Figures/pipeline-transaccion.png, id=295, 2223.30624pt x 2392.94pt>
 File: ./Figures/pipeline-transaccion.png Graphic file (type png)
 <use ./Figures/pipeline-transaccion.png>
 Package pdftex.def Info: ./Figures/pipeline-transaccion.png  used on input line
@@ -1173,14 +1173,31 @@ LaTeX Info: Redefining \% on input line 111.
 LaTeX Info: Redefining \. on input line 124.
 LaTeX Info: Redefining \% on input line 124.
 [14]
+<./Figures/diagrama-flujo-aurum.png, id=324, 3998.94pt x 5883.9825pt>
+File: ./Figures/diagrama-flujo-aurum.png Graphic file (type png)
+<use ./Figures/diagrama-flujo-aurum.png>
+Package pdftex.def Info: ./Figures/diagrama-flujo-aurum.png  used on input line
+ 130.
+(pdftex.def)             Requested size: 389.80269pt x 573.52888pt.
 
-LaTeX Info: Redefining \. on input line 132.
-LaTeX Info: Redefining \% on input line 132.
-[15])
+
+LaTeX Info: Redefining \. on input line 141.
+LaTeX Info: Redefining \% on input line 141.
+[15]
+
+LaTeX Info: Redefining \. on input line 141.
+LaTeX Info: Redefining \% on input line 141.
+[16 <./Figures/diagrama-flujo-aurum.png>])
 
 LaTeX Info: Redefining \. on input line 107.
 LaTeX Info: Redefining \% on input line 107.
-[16]
+[17]
+
+[18
+
+
+
+]
 Overfull \hbox (17.49973pt too wide) in paragraph at lines 127--127
 \T1/ppl/m/n/10.95 per Do-cu-men-ta-tion. 2025. \T1/ppl/m/sc/10.95 url\T1/ppl/m/
 n/10.95 : [][]$https : / / developer . apple . com / documentation /
@@ -1188,11 +1205,7 @@ n/10.95 : [][]$https : / / developer . apple . com / documentation /
 
 
 
-[17
-
-
-
-]
+[19]
 Overfull \hbox (2.6412pt too wide) in paragraph at lines 127--127
 []\T1/ppl/m/n/10.95 Apple Inc. \T1/ppl/m/it/10.95 The Swift Pro-gram-ming Lan-g
 ua-ge: Lan-gua-ge Gui-de\T1/ppl/m/n/10.95 . Vi-si-ta-do el 2026-
@@ -1214,11 +1227,11 @@ tions using RNN Encoder--
 
 LaTeX Info: Redefining \. on input line 127.
 LaTeX Info: Redefining \% on input line 127.
-[18]
+[20]
 
 LaTeX Info: Redefining \. on input line 129.
 LaTeX Info: Redefining \% on input line 129.
-[19] (./memorianueva.aux (./portada.aux)
+[21] (./memorianueva.aux (./portada.aux)
 LaTeX Info: Redefining \sptext on input line 16.
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
@@ -1233,7 +1246,7 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `memorianueva.out' has not changed.
-(rerunfilecheck)             Checksum: D498FE5BB1C24C1BA8D77D52553288A6;3884.
+(rerunfilecheck)             Checksum: 0CB1B327A9CE22B658AD04F51007C79D;3884.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                memorianueva
@@ -1244,10 +1257,10 @@ Package logreq Info: Writing requests to 'memorianueva.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31680 strings out of 473190
- 687805 string characters out of 5715800
- 1454111 words of memory out of 5000000
- 54469 multiletter control sequences out of 15000+600000
+ 31691 strings out of 473190
+ 688136 string characters out of 5715800
+ 1454170 words of memory out of 5000000
+ 54477 multiletter control sequences out of 15000+600000
  611543 words of font info for 94 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  96i,20n,94p,1969b,2138s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1259,10 +1272,10 @@ exmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-di
 st/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/font
 s/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
 /urw/palatino/uplri8a.pfb>
-Output written on memorianueva.pdf (29 pages, 548729 bytes).
+Output written on memorianueva.pdf (31 pages, 1440804 bytes).
 PDF statistics:
- 453 PDF objects out of 1000 (max. 8388607)
- 394 compressed objects within 4 object streams
- 94 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 405 compressed objects within 5 object streams
+ 97 named destinations out of 1000 (max. 500000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 

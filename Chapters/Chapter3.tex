@@ -122,6 +122,16 @@ Para orquestar la ejecución secuencial de las tareas de procesamiento, se imple
 Una vez establecido el buffer de audio, la clase principal integró el \textit{framework} nativo Speech \citep{apple2026speech} para ejecutar la transcripción de voz a texto. Para cumplir con las estrictas normativas de privacidad del sector financiero, se forzó el procesamiento estrictamente local configurando la propiedad requiresOnDeviceRecognition en verdadero (true). Esta restricción arquitectónica impidió que los paquetes de audio fueran transmitidos a los servidores en la nube de Apple. Posteriormente, la cadena de texto transcrita fue inyectada en el módulo de comprensión de lenguaje natural. En esta instancia, el SDK invocó los modelos de machine learning, previamente entrenados y cuantizados, a través del \textit{framework} Core ML. La ejecución local de estos modelos permitió clasificar la intención transaccional y extraer las entidades relevantes (monto, moneda, destinatario) con una latencia del orden de los milisegundos, aprovechando la aceleración por hardware del dispositivo.
 Para consolidar la integración, el SDK Aurum fue dotado de una Interfaz de Programación de Aplicaciones (API) pública minimalista \citep{ieee1990glossary}. Dado que la captura de audio y la inferencia neuronal son procesos no bloqueantes que ocurren a lo largo del tiempo, la comunicación con la aplicación anfitriona se resolvió utilizando patrones asíncronos nativos de Swift, combinando el uso de delegados ( \textit{Delegates}) y clausuras (\textit{Closures}). De este modo, la aplicación base únicamente necesita invocar un método público de inicio de escucha (por ejemplo, startListening()) y suscribirse para recibir la respuesta. Al finalizar el procesamiento, el SDK ejecuta un callback que retorna el payload de datos estructurado (detallado en la sección anterior) o, en su defecto, un error tipificado. Esta arquitectura basada en eventos asegura que la aplicación consumidora permanezca completamente agnóstica respecto a las operaciones matemáticas de vectorización, etiquetado y transcripción que ocurren bajo la superficie.
 
+
+En la figura \ref{fig:diagAurum} se presenta el diagrama de flujo de los actores principales: la aplicación base (la aplicación del banco) y el SDK Aurum.
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1.0\textwidth]{./Figures/diagrama-flujo-aurum.png}
+\caption{Diagrama de flujo de Aurum.}
+\label{fig:diagAurum}
+\end{figure}
+
 \section{Desarrollo de la aplicación base}
 
 Para evaluar la viabilidad de la integración y el correcto funcionamiento del SDK Aurum, se desarrolló una aplicación móvil de prueba que emula el entorno transaccional de una entidad bancaria. Esta aplicación base se construyó con el propósito de actuar como el contenedor "cliente" que orquesta la experiencia del usuario y consume la API expuesta por el \textit{framework} de procesamiento de lenguaje natural.
