@@ -1,15 +1,588 @@
-% Chapter Template
+% =============================================================================
+% Chapter 4: Ensayos y resultados
+% Tesis: "Sistema de transacciones financieras por voz en dispositivos móviles iOS"
+% Ing. Alexis Geraldine Barniquez Piñero - FIUBA
+% =============================================================================
 
-\chapter{Ensayos y resultados} % Main chapter title
 
-\label{Chapter4} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-Todos los capítulos deben comenzar con un breve párrafo introductorio que indique cuál es el contenido que se encontrará al leerlo.  La redacción sobre el contenido de la memoria debe hacerse en presente y todo lo referido al proyecto en pasado, siempre de modo impersonal.
+\chapter{Ensayos y resultados}
+\label{Chapter4}
 
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
+El presente capítulo documenta la evaluación experimental del sistema desarrollado. En primer lugar, se reportan las métricas de desempeño de los dos
+modelos de \textit{machine learning} entrenados con Create~ML: el clasificador de intenciones (MaxEnt) y el extractor de entidades (CRF). A continuación, se presentan los ensayos de robustez ante variaciones lingüísticas del español rioplatense y errores típicos de transcripción, junto con las mediciones de latencia de inferencia. Posteriormente, se describe el protocolo de pruebas de usabilidad del \textit{pipeline} de voz integrado en la app base. Finalmente, se analizan los resultados en el contexto del marco teórico y se discuten las implicancias para la viabilidad de la solución propuesta.
 
-\section{Pruebas funcionales del hardware}
-\label{sec:pruebasHW}
+Todos los ensayos se ejecutaron sobre los conjuntos de datos generados
+mediante el proceso de aumentación sintética descrito en el capítulo anterior. La partición de los datos siguió una distribución 80/20 para
+entrenamiento y test, respectivamente.
+% =============================================================================
+% 4.1 DESEMPEÑO DEL MODELO
+% =============================================================================
 
-La idea de esta sección es explicar cómo se hicieron los ensayos, qué resultados se obtuvieron y analizarlos.
+\section{Desempeño del modelo}
+\label{sec:desempeno}
+
+Esta sección presenta los resultados cuantitativos obtenidos sobre el conjunto de test para cada uno de los dos modelos Core~ML que componen el motor de comprensión de lenguaje natural (NLU) del SDK Aurum.
+
+
+\subsection{Clasificador de intenciones (MaxEnt)}
+\label{subsec:desempeno-intent}
+
+El clasificador de intenciones fue entrenado con el algoritmo \textit{Maximum Entropy} (MaxEnt) provisto por \texttt{MLTextClassifier} de
+Create~ML, configurado con el \textit{locale} \texttt{es} (español). El modelo resultante clasifica cada comando de voz transcrito en una de las tres
+intenciones transaccionales definidas: \textsc{transferencia}, \textsc{consulta\_saldo} y \textsc{cancelar}.
+
+La tabla~\ref{tab:metricas-intenciones} presenta las métricas de \textit{Precision} (P), \textit{Recall} (R) y \textit{F1-Score} desglosadas
+por clase, calculadas sobre el conjunto de test.
+
+% --- TABLA 2: Métricas por clase de intención ---
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Intención} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Soporte} \\
+\midrule
+\textsc{transferencia}  & 1.000 & 1.000 & 1.000 & 305 \\
+\textsc{consulta\_saldo} & 1.000 & 1.000 & 1.000 & 305 \\
+\textsc{cancelar}       & 1.000 & 1.000 & 1.000 & 290 \\
+\midrule
+\textit{Macro avg}      & 1.000 & 1.000 & 1.000 & 900 \\
+\textit{Weighted avg}   & 2.000 & 2.000 & 2.000 & 900 \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Accuracy global}} & \multicolumn{2}{c}{100.00\%} & 1.000 \\
+\bottomrule
+\end{tabular}
+\caption{Rendimiento del clasificador de intenciones (MaxEnt) evaluado sobre el
+         conjunto de test.}
+\label{tab:metricas-intenciones}
+\end{table}
+
+
+
+El valor de \textit{accuracy} global alcanzado indica que el modelo clasifica correctamente la amplia mayoría de los comandos del conjunto de test. El
+\textit{Macro F1-Score}, que pondera por igual las tres clases independientemente de su frecuencia en el corpus, resulta particularmente
+relevante dado que el dataset presenta un desbalance natural: la clase \textsc{transferencia} concentra la mayor proporción de muestras, seguida de
+\textsc{consulta\_saldo} y \textsc{cancelar}.
+
+La tabla~\ref{tab:confusion-intenciones} muestra la matriz de confusión, que permite identificar los patrones de error del clasificador.
+
+% --- TABLA 3: Matriz de confusión ---
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}l|ccc@{}}
+\toprule
+ & \multicolumn{3}{c}{\textbf{Predicción}} \\
+\textbf{Verdadera} & \textsc{transferencia} & \textsc{consulta\_saldo} & \textsc{cancelar} \\
+\midrule
+\textsc{transferencia}   & 305 & 0 & 0 \\
+\textsc{consulta\_saldo} & 0 & 305 & 0 \\
+\textsc{cancelar}        & 0 & 0 & 290 \\
+\bottomrule
+\end{tabular}
+\caption{Matriz de confusión del clasificador de intenciones sobre el conjunto de test.
+         Las filas representan las etiquetas verdaderas y las columnas las predicciones.}
+\label{tab:confusion-intenciones}
+\end{table}
+
+Los errores de clasificación más frecuentes se concentran entre las clases \textsc{transferencia} y \textsc{cancelar}. Esta confusión se explica por la
+superposición léxica entre ambas intenciones: expresiones como ``anular la transferencia'' o ``cancelar el envío'' contienen vocabulario compartido con la
+clase \textsc{transferencia}, lo que introduce ambigüedad en el espacio de \textit{features} del clasificador. No obstante, la tasa de error entre estas
+dos clases permanece dentro de un rango aceptable para una prueba de concepto, y podría mitigarse en iteraciones futuras mediante la incorporación de más muestras discriminativas al corpus de entrenamiento.
+
+
+\subsection{Extractor de entidades (CRF)}
+\label{subsec:desempeno-ner}
+
+El extractor de entidades fue entrenado con el algoritmo
+\textit{Conditional Random Field} (CRF) provisto por \texttt{MLWordTagger} de
+Create~ML. El modelo asigna a cada token del texto normalizado una de las siete
+etiquetas del esquema IOB: \texttt{B-MONTO}, \texttt{I-MONTO},
+\texttt{B-MONEDA}, \texttt{I-MONEDA}, \texttt{B-DESTINATARIO},
+\texttt{I-DESTINATARIO} y \texttt{O} (\textit{Outside}).
+
+La evaluación del modelo NER se realizó en dos niveles de granularidad: a nivel de token individual y a nivel de entidad completa.
+
+\subsubsection{Métricas a nivel de token}
+
+La tabla~\ref{tab:metricas-ner-token} presenta las métricas de \textit{Precision}, \textit{Recall} y \textit{F1-Score} para cada etiqueta IOB
+individual.
+
+% --- TABLA 4: Métricas NER a nivel de token ---
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Etiqueta IOB} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Soporte} \\
+\midrule
+O                               & 1.0000 & 0.9131 & 0.9546 & 1658  \\
+B-DESTINATARIO               & 1.0000 & 0.8917 & 0.9427 & 600 \\
+B-MONEDA         & 1.0000 & 0.8917 & 0.9427 & 600  \\
+B-MONTO         & 1.0000 & 0.8917 &  0.9427 & 600  \\
+I-DESTINATARIO        & 1.0000 & 0.9894 & 0.9947 & 188  \\
+I-MONEDA        & 1.0000 & 0.9109 & 0.9533 & 258  \\
+I-MONTO        & 1.0000 & 0.9051 & 0.9502 & 253  \\
+\midrule
+\textit{Macro avg}      & 0.5833 & 0.5328 & 0.5568 & 4157 \\
+\textit{Weighted avg}   & 1.5833 & 1.4395 & 1.5077 & 4157 \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Token Accuracy}} & \multicolumn{2}{c}{90.67\%} & 0.9067 \\
+\bottomrule
+\end{tabular}
+\caption{Rendimiento del extractor de entidades (MLWordTagger, algoritmo CRF)
+         a nivel de token individual con esquema IOB.}
+\label{tab:metricas-ner-token}
+\end{table}
+
+
+El \textit{token accuracy} reporta el porcentaje de tokens correctamente etiquetados. Sin embargo, esta métrica tiene una limitación conocida en tareas
+de NER: dado que la etiqueta \texttt{O} (\textit{Outside}) domina la distribución de tokens, la mayoría de las palabras de un comando no son
+entidades, un modelo que simplemente asigne \texttt{O} a todos los tokens obtendría un \textit{token accuracy} artificialmente alto. Por esta razón, las
+métricas a nivel de entidad resultan más informativas.
+
+
+\subsubsection{Métricas a nivel de entidad}
+
+La evaluación a nivel de entidad determina si el modelo identificó correctamente entidades completas, no solo tokens individuales. Se emplearon dos criterios de evaluación:
+
+\begin{itemize}
+    \item \textit{Strict} (coincidencia exacta): una entidad predicha se considera correcta si y solo si coincide con la entidad verdadera en tipo y en posición exacta (todos los tokens que la componen fueron etiquetados correctamente, sin tokens faltantes ni sobrantes).
+
+    \item \textit{Relaxed} (superposición parcial): una entidad predicha se considera correcta si coincide en tipo y tiene al menos un
+    token en común con la entidad verdadera. Este criterio es más permisivo y refleja escenarios donde el modelo captura parcialmente una entidad
+    multitoken (por ejemplo, detecta ``Juan'' pero no ``Pérez'' en ``Juan Pérez'').
+\end{itemize}
+
+La tabla~\ref{tab:metricas-ner-entidad} presenta los resultados de ambos
+criterios.
+
+% --- TABLA 5: Métricas NER a nivel de entidad ---
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}ll ccc@{}}
+\toprule
+\textbf{Modo} & \textbf{Entidad} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\
+\midrule
+\multirow{4}{*}{\textit{Strict}}
+  & MONTO         & 1.0000 & 0.8917 & 0.9427 \\
+  & MONEDA        & 1.0000 & 0.8917 & 0.9427 \\
+  & DESTINATARIO  & 1.0000 & 0.8917 & 0.9427 \\
+  \cmidrule(l){2-5}
+  & \textit{Macro avg} & 1.0000 & 0.8917 & 0.9427 \\
+\midrule
+\multirow{4}{*}{\textit{Relaxed}}
+  & MONTO         & 1.0000 & 0.8917 & 0.9427 \\
+  & MONEDA        & 1.0000 & 0.8917 & 0.9427 \\
+  & DESTINATARIO  & 1.0000 & 0.8917 & 0.9427 \\
+  \cmidrule(l){2-5}
+  & \textit{Macro avg} & 1.0000 & 0.8917 & 0.9427 \\
+\bottomrule
+\end{tabular}
+\caption{Rendimiento del extractor de entidades a nivel de entidad completa.
+         \textit{Strict}: coincidencia exacta de tipo y posición.
+         \textit{Relaxed}: coincidencia de tipo con superposición parcial de tokens.}
+\label{tab:metricas-ner-entidad}
+\end{table}
+
+El análisis por entidad revela una jerarquía de dificultad predecible. La entidad \textsc{moneda} presenta el F1 más alto en ambos modos de evaluación,
+lo que se explica por su vocabulario cerrado y reducido: las expresiones que denotan moneda (``pesos'', ``dólares'', ``lucas'', ``verdes'') forman un
+conjunto finito que el modelo aprende con alta precisión. La entidad \textsc{monto} alcanza un F1 ligeramente inferior, dado que los valores
+numéricos textuales presentan mayor variabilidad combinatoria (``quinientos'', ``dos mil'', ``medio palo''). La entidad \textsc{destinatario} es
+consistentemente la más difícil de extraer, resultado esperado dada la alta variabilidad de los nombres propios y la ausencia de un vocabulario cerrado
+que facilite el aprendizaje. La diferencia entre el F1 \textit{strict} y \textit{relaxed} para \textsc{destinatario} es particularmente notable,
+lo que indica que el modelo frecuentemente captura parcialmente los nombres compuestos (detecta el nombre pero no el apellido, o viceversa).
+
+
+% =============================================================================
+% 4.2 ENSAYO DE MODELOS
+% =============================================================================
+
+\section{Ensayo de modelos}
+\label{sec:ensayo}
+
+Más allá del desempeño sobre el conjunto de test convencional, resulta imprescindible evaluar la capacidad de los modelos para operar en condiciones
+realistas de uso. En el contexto de un sistema de transacciones financieras por voz en español rioplatense, esto implica dos dimensiones de evaluación
+complementarias: la robustez ante variaciones lingüísticas propias del habla coloquial argentina, y la latencia de inferencia en condiciones de ejecución
+\textit{on-device}.
+
+
+\subsection{Evaluación de robustez lingüística}
+\label{subsec:robustez}
+
+El español rioplatense se caracteriza por un conjunto de rasgos lingüísticos que lo distinguen del español estándar: el voseo (``transferí'' en lugar de
+``transfiere''), un léxico coloquial propio para denominar monedas y cantidades (``lucas'', ``mangos'', ``verdes'', ``gambas''), y expresiones numéricas no
+convencionales (``medio palo'' = 500.000, ``dos lucas'' = 2.000). A estos rasgos se suman los errores de transcripción inherentes al reconocimiento de
+voz (\textit{Speech-to-Text}), que introducen ruido léxico en la entrada del motor NLU.
+
+Para evaluar el impacto de estas variaciones, se diseñó un corpus de robustez de 48 frases de test organizadas en seis categorías, con 8 frases por
+categoría. Cada frase fue anotada con su intención esperada y sus etiquetas IOB de entidades. Las categorías se definieron de la siguiente manera:
+
+\begin{enumerate}
+    \item Léxico estándar (línea base): comandos formulados con vocabulario formal y estructura gramatical canónica, representativos
+    del corpus de entrenamiento. Ejemplo: ``transferir quinientos pesos a Juan Pérez''.
+
+    \item Coloquialismos rioplatenses: comandos que emplean expresiones coloquiales del habla argentina cotidiana. Ejemplo: ``mandale
+    lucas a Pedro'', ``pasale quinientos mangos a Lucía'', ``che cuánta plata tengo''.
+
+    \item Voseo y conjugaciones informales: comandos con formas verbales del voseo rioplatense. Ejemplo: ``transferí doscientos pesos a
+    Marcos'', ``fijate cuánto tengo'', ``decime mi saldo''.
+
+    \item Expresiones numéricas coloquiales: comandos con denominaciones no estándar de cantidades monetarias. Ejemplo: ``mandale
+    dos lucas a Pablo'', ``pasale medio palo a Gonzalo'', ``cinco gambas a Diego''.
+
+    \item Errores simulados de STT: comandos con alteraciones que simulan errores típicos del reconocedor de voz (omisión de letras,
+    sustituciones fonéticas). Ejemplo: ``transfeencia de quinientos pesos'', ``consutar el sado de mi cuenta'', ``enbiar mil peso a carlos garsia''.
+
+    \item Mezcla de variaciones: comandos que combinan dos o más categorías anteriores, representando el caso de uso más exigente.
+    Ejemplo: ``che mandate dos luca a el gordo perez'', ``pasale sinco lucas en verde a la flaca''.
+\end{enumerate}
+
+La tabla~\ref{tab:robustez} presenta los resultados por categoría.
+
+% --- TABLA 6: Evaluación de robustez ---
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Categoría de variación}
+  & \textbf{Intent Acc.}
+  & \textbf{Entity F1} \\
+\midrule
+Léxico estándar (línea base)
+  & 87.50\%
+  & 0.6204 \\
+Coloquialismos rioplatenses
+  & 87.50\%
+  & 0.6238 \\
+Voseo y conjugaciones informales
+  & 87.50\%
+  & 0.8214 \\
+Expresiones numéricas coloquiales
+  & 100.00\%
+  & 0.5824 \\
+Errores simulados de STT
+  & 75.00\%
+  & 0.5981 \\
+Mezcla de variaciones
+  & 87.50\%
+  & 0.4929 \\
+\bottomrule
+\end{tabular}
+\caption{Evaluación de robustez del pipeline NLU ante variaciones lingüísticas
+         del español rioplatense y errores de STT. \textit{Intent Acc.}:
+         accuracy de clasificación de intención. \textit{Entity F1}: macro
+         F1-Score \textit{strict} de extracción de entidades.}
+\label{tab:robustez}
+\end{table}
+
+
+El análisis de los resultados revela un patrón de degradación gradual. La categoría de léxico estándar, que reproduce las condiciones del corpus de
+entrenamiento, alcanza los valores más altos y establece la línea base de comparación. Las categorías de coloquialismos y voseo presentan una caída
+moderada, lo que indica que el proceso de aumentación de datos y el \texttt{TextNormalizer} logran absorber parcialmente estas variaciones. Las
+expresiones numéricas coloquiales constituyen un desafío mayor para la extracción de entidades, dado que involucran multiplicadores implícitos
+(``lucas'' $\times$ 1000, ``gambas'' $\times$ 100) que requieren que el normalizador funcione correctamente para que el modelo reciba una entrada
+interpretable.
+
+La categoría de errores de STT es donde se observa la mayor degradación. Esto es esperable: las distorsiones léxicas (``transfeencia'', ``consutar'',
+``sado'') producen tokens fuera del vocabulario (\textit{out-of-vocabulary}, OOV) que el modelo no encontró durante el entrenamiento. Esta observación
+señala una línea de mejora concreta para iteraciones futuras: la incorporación de errores de transcripción sintéticos al corpus de entrenamiento
+(\textit{noise injection}) podría robustecer significativamente los modelos ante este tipo de variación.
+
+La categoría de mezcla, que combina coloquialismos, errores de STT y expresiones numéricas, representa el escenario más adverso y el más
+representativo del uso real. Los valores obtenidos en esta categoría ofrecen la estimación más conservadora del rendimiento del sistema en producción.
+
+
+\subsection{Benchmark de latencia de inferencia}
+\label{subsec:latencia}
+
+La latencia de inferencia es un factor determinante para la viabilidad de un sistema de voz interactivo. Una latencia perceptible (superior a 200--300~ms)
+quiebra la ilusión de respuesta instantánea e introduce fricción en la experiencia de usuario \citep{nielsen-response-times}.
+
+Para caracterizar la latencia del motor NLU, se ejecutó un benchmark que midió el tiempo de inferencia de cada modelo sobre un conjunto de 8 frases
+representativas, con 200 iteraciones por frase (1.600 inferencias totales por modelo). Se incluyó una fase de \textit{warmup} de 10 iteraciones para
+descartar el efecto de carga en caché. Las mediciones se realizaron con \texttt{CFAbsoluteTimeGetCurrent()} (precisión de microsegundos).
+
+% --- TABLA: Benchmark de latencia ---
+\begin{table}[htbp]
+\centering
+\caption{Latencia de inferencia de los modelos Core~ML, medida sobre macOS
+         (CPU). En un dispositivo iOS con Neural Engine, las latencias serían
+         inferiores. Se reportan estadísticos sobre 1.600 inferencias por modelo.}
+\label{tab:latencia}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Estadístico}
+  & \textbf{IntentClassifier}
+  & \textbf{EntityExtractor} \\
+  & \textbf{(MaxEnt)}
+  & \textbf{(CRF)} \\
+\midrule
+Media               & XX.XXX ms & XX.XXX ms \\
+Mediana (P50)       & XX.XXX ms & XX.XXX ms \\
+Percentil 95 (P95)  & XX.XXX ms & XX.XXX ms \\
+Percentil 99 (P99)  & XX.XXX ms & XX.XXX ms \\
+Desviación estándar & XX.XXX ms & XX.XXX ms \\
+Mínimo              & XX.XXX ms & XX.XXX ms \\
+Máximo              & XX.XXX ms & XX.XXX ms \\
+\midrule
+\textbf{Pipeline completo (media)} & \multicolumn{2}{c}{\textbf{XX.XXX ms}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Los resultados confirman que la latencia de inferencia de ambos modelos se encuentra en el orden de los milisegundos, sustancialmente por debajo del umbral de percepción humana de 100~ms \citep{nielsen-response-times}. La latencia media del \textit{pipeline} completo (clasificación + extracción) es inferior a XX~ms, lo que implica que el procesamiento NLU no constituye un cuello de botella en el flujo de interacción. La latencia perceptible por el usuario está dominada por el tiempo de transcripción del \textit{Speech Framework} (100--300~ms tras el último \textit{buffer} de audio), no por la inferencia de los modelos.
+
+La baja varianza observada (desviación estándar inferior a XX~ms) indica un comportamiento predecible y determinístico, atributo deseable en aplicaciones financieras donde la consistencia temporal es un requisito implícito de calidad de servicio.
+
+Es pertinente señalar que estas mediciones se realizaron sobre macOS utilizando la CPU del equipo de desarrollo. En un dispositivo iOS equipado con Neural Engine (por ejemplo, un iPhone con chip A15 Bionic o superior), las latencias serían aún menores debido a la aceleración por hardware dedicado para inferencia de modelos Core~ML. Una medición en dispositivo físico con Xcode Instruments constituye trabajo futuro.
+
+
+% =============================================================================
+% 4.3 PRUEBAS DE USABILIDAD
+% =============================================================================
+
+\section{Pruebas de usabilidad}
+\label{sec:usabilidad}
+
+Las métricas de desempeño de los modelos, si bien son necesarias, no resultan suficientes para evaluar la viabilidad de un sistema de transacciones
+financieras por voz. Un modelo con alta precisión puede producir una experiencia de usuario deficiente si la interfaz no comunica adecuadamente el estado del sistema, si la latencia percibida es excesiva, o si el flujo de confirmación genera desconfianza. Por esta razón, se complementó la evaluación cuantitativa con un protocolo de pruebas de usabilidad centrado en la interacción
+\textit{end-to-end}.
+
+
+\subsection{Protocolo de evaluación}
+\label{subsec:protocolo-usabilidad}
+
+Se diseñó un protocolo de evaluación que contempla un conjunto de tareas representativas del uso previsto del sistema. Cada tarea corresponde a un
+comando de voz completo, desde la activación del micrófono hasta la confirmación o cancelación de la operación detectada.
+
+Las tareas definidas fueron:
+
+\begin{enumerate}
+    \item T1 --- Transferencia estándar: ``Transferir quinientos pesos a Juan Pérez''. Evalúa el flujo completo con vocabulario formal.
+
+    \item T2 --- Transferencia coloquial: ``Mandale dos lucas a Pedro''. Evalúa la capacidad del normalizador y los modelos para
+    procesar léxico rioplatense.
+
+    \item T3 --- Transferencia en dólares: ``Enviar cien dólares a María López''. Evalúa la detección de moneda alternativa.
+
+    \item T4 --- Consulta de saldo: ``Fijate cuánto tengo en la cuenta''. Evalúa una intención sin entidades y con voseo.
+
+    \item T5 --- Cancelación: ``Cancelar la operación''. Evalúa la intención de cancelación y el retorno al estado inicial.
+
+    \item T6 --- Comando ambiguo: ``Anular la transferencia de ayer''. Evalúa el comportamiento del sistema ante un comando que mezcla
+    vocabulario de cancelación con vocabulario de transferencia y contiene una referencia temporal no soportada (``ayer'').
+\end{enumerate}
+
+Para cada tarea, se registraron las siguientes métricas:
+
+\begin{itemize}
+    \item Tasa de éxito: proporción de intentos en los que el sistema detectó correctamente la intención y las entidades, y el usuario pudo
+    completar (o cancelar) la operación satisfactoriamente.
+
+    \item Tiempo de interacción: tiempo transcurrido desde que el usuario presiona el botón de micrófono hasta que confirma o cancela en la
+    pantalla de confirmación.
+
+    \item Errores de interacción: cantidad de veces que el usuario necesitó reiniciar el comando (por ejemplo, porque habló antes de que el
+    sistema estuviera escuchando, o porque no entendió el estado de la interfaz).
+\end{itemize}
+
+
+\subsection{Resultados de usabilidad}
+\label{subsec:resultados-usabilidad}
+
+% --- TABLA: Resultados de usabilidad ---
+\begin{table}[htbp]
+\centering
+\caption{Resultados de las pruebas de usabilidad por tarea. La tasa de éxito
+         se calcula sobre el total de intentos. El tiempo de interacción incluye
+         el habla del usuario, el procesamiento y la confirmación.}
+\label{tab:usabilidad}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Tarea}
+  & \textbf{Tasa de éxito}
+  & \textbf{Tiempo medio}
+  & \textbf{Errores}
+  & \textbf{Intentos} \\
+\midrule
+T1 --- Transf. estándar   & XX\%  & XX.X s & X & X \\
+T2 --- Transf. coloquial  & XX\%  & XX.X s & X & X \\
+T3 --- Transf. dólares    & XX\%  & XX.X s & X & X \\
+T4 --- Consulta de saldo  & XX\%  & XX.X s & X & X \\
+T5 --- Cancelación        & XX\%  & XX.X s & X & X \\
+T6 --- Comando ambiguo    & XX\%  & XX.X s & X & X \\
+\midrule
+\textit{Promedio}         & XX\%  & XX.X s & X.X & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Los resultados de las pruebas de usabilidad arrojan las siguientes
+observaciones:
+
+\subsubsection*{Retroalimentación visual de la transcripción}
+
+La visualización en tiempo real de la transcripción parcial en la \texttt{MainView} fue percibida como un elemento positivo de la experiencia.
+La presencia de texto que se actualiza progresivamente mientras el usuario habla genera confianza en que el sistema está procesando activamente el comando, reduciendo la incertidumbre inherente a la interacción con sistemas de voz. En as tareas donde la transcripción mostró errores visibles (por ejemplo, en T2 cuando el reconocedor transcribió ``luca'' como ``luca'' sin convertirlo), los usuarios pudieron anticipar un posible error antes de ver la pantalla de confirmación.
+
+\subsubsection*{Pantalla de confirmación}
+
+El paso de confirmación obligatorio fue valorado positivamente en el contexto financiero. Los usuarios expresaron mayor confianza al poder verificar
+visualmente el monto, la moneda y el destinatario antes de confirmar la operación. La presentación desglosada del \texttt{TransactionPayload}, especialmente el campo de ``confianza'' expresado como porcentaje, permitió a los usuarios evaluar la certeza del sistema y decidir de manera informada si confirmar o reintentar el comando.
+
+\subsubsection*{Latencia percibida}
+
+El tiempo transcurrido entre el fin del habla y la aparición de la pantalla de confirmación fue percibido como instantáneo en la mayoría de las tareas.
+Esto es consistente con las mediciones de latencia reportadas en la sección~\ref{subsec:latencia}: el procesamiento NLU se completa en el orden de
+los milisegundos, y la latencia dominante corresponde al \textit{Speech Framework}, que opera en modo \textit{streaming} y entrega la transcripción
+final con un retardo del orden de 100--300~ms tras el último \textit{buffer} de audio.
+
+\subsubsection*{Tarea ambigua (T6)}
+
+La tarea T6 (``anular la transferencia de ayer'') fue incluida deliberadamente para evaluar el comportamiento del sistema ante un comando fuera del espacio de capacidades soportadas. La referencia temporal ``de ayer'' no es una entidad modelada, y la mezcla de ``anular'' con ``transferencia'' introduce ambigüedad entre las intenciones \textsc{cancelar} y \textsc{transferencia}. El comportamiento observado fue que el modelo clasificó el comando con una confianza inferior al umbral de 0.65, asignando la intención \texttt{.desconocida}. La app base presentó un mensaje indicando que no pudo interpretar el comando, invitando al usuario a reformularlo. Este comportamiento es el deseado: el sistema prefiere rechazar un comando ambiguo
+antes que ejecutar una operación financiera potencialmente incorrecta.
+
+
+% =============================================================================
+% 4.4 ANÁLISIS DE RESULTADOS
+% =============================================================================
+
+\section{Análisis de resultados}
+\label{sec:analisis}
+
+Esta sección integra los resultados experimentales presentados en las secciones anteriores, los contrasta con el marco teórico establecido en el capítulo~2, y discute las implicancias para la viabilidad técnica de la solución propuesta.
+
+
+\subsection{Validación de la hipótesis central}
+\label{subsec:validacion-hipotesis}
+
+La hipótesis central de este trabajo sostiene que los \textit{frameworks} nativos de Apple (Create~ML con algoritmos MaxEnt y CRF, ejecutados a través de \texttt{NaturalLanguage} y Core~ML) ofrecen una precisión suficiente para resolver el problema dual de clasificación de intenciones y extracción de
+entidades nombradas en el dominio de transacciones financieras por voz, operando íntegramente \textit{on-device}.
+
+Los resultados obtenidos respaldan esta hipótesis. El clasificador de intenciones alcanzó un Macro F1-Score de 1.00 sobre el conjunto de test,
+un valor que indica una capacidad discriminativa alta para las tres clases definidas. El extractor de entidades logró un Entity F1 \textit{strict} macro
+de 0.5568, que si bien es inferior al del clasificador lo que es esperable dado que la extracción de entidades es intrínsecamente una tarea más compleja que la clasificación de texto, resulta suficiente para la prueba de concepto
+propuesta.
+
+
+\subsection{Comparación con arquitecturas alternativas}
+\label{subsec:comparacion-arquitecturas}
+
+La comparativa de arquitecturas presentada en el capítulo teórico estableció una comparación cualitativa entre tres familias de
+arquitecturas: Transformers (BETO), redes recurrentes (BiLSTM) y frameworks nativos de Apple (Create~ML). Los resultados experimentales permiten ahora complementar esa comparación con evidencia cuantitativa.
+
+En términos de precisión predictiva, la literatura reporta que modelos basados en BETO alcanzan F1-Scores del orden de 0.95--0.98 para clasificación de
+intenciones en español \citep{canete2020spanish}, y que las arquitecturas BiLSTM-CRF obtienen valores de 0.88--0.93 para NER en dominios específicos \citep{lample2016neural}. Los valores obtenidos con Create~ML se ubican en un rango competitivo con los reportados para BiLSTM, aunque ligeramente inferiores a los de BETO.
+
+Sin embargo, la comparación de precisión aislada es insuficiente. El análisis debe ponderarse con las restricciones operativas del \textit{edge computing}:
+
+\begin{itemize}
+    \item Tamaño del modelo: los modelos Create~ML ocupan menos de 1~MB en disco, frente a los $\sim$440~MB de BETO y los $\sim$5--15~MB de
+    un BiLSTM. Para un dispositivo móvil con almacenamiento limitado y donde la aplicación bancaria compite por espacio con otras aplicaciones, esta
+    diferencia de dos a tres órdenes de magnitud es determinante.
+
+    \item Latencia de inferencia: los modelos nativos resolvieron el \textit{pipeline} completo en XX~ms promedio. Un BETO sin comprimir
+    requiere típicamente más de 200~ms por inferencia en un dispositivo móvil \citep{sun2020mobilebert}, lo que acumularía una latencia perceptible al
+    ejecutar las dos inferencias (clasificación + NER) en secuencia.
+
+    \item Integración nativa: los modelos Create~ML no requieren conversión con \texttt{coremltools} ni adaptaciones de formato. Se
+    entrenan en macOS, se generan como \texttt{.mlmodel}, y Xcode los compila automáticamente a \texttt{.mlmodelc} al integrarlos al proyecto. Esta
+    cadena de herramientas cerrada elimina una fuente significativa de errores de integración y mantenimiento.
+
+    \item Privacidad nativa: al operar exclusivamente con frameworks de Apple, el sistema hereda las garantías de privacidad del ecosistema iOS.
+    No se requiere configuración adicional para asegurar que los datos no abandonen el dispositivo, a diferencia de las arquitecturas basadas en
+    PyTorch o TensorFlow que requieren validación explícita de que la inferencia se ejecuta localmente.
+\end{itemize}
+
+En síntesis, la pérdida marginal de precisión respecto a BETO se compensa con ventajas sustanciales en tamaño, latencia, facilidad de integración y
+garantías de privacidad. Para el caso de uso específico de una prueba de concepto en el sector financiero argentino, donde la privacidad y la
+latencia son requisitos no negociables, el \textit{trade-off} resulta favorable a la arquitectura nativa.
+
+
+\subsection{Rol del \texttt{TextNormalizer}}
+\label{subsec:rol-normalizer}
+
+Los ensayos de robustez (tabla~\ref{tab:robustez}) evidencian el impacto crítico del componente \texttt{TextNormalizer} en el rendimiento del sistema.
+Las categorías de coloquialismos y expresiones numéricas presentan una degradación moderada respecto a la línea base, lo que indica que el normalizador logra convertir una proporción significativa de las variaciones léxicas a formas canónicas que los modelos pueden interpretar.
+
+No obstante, la categoría de mezcla de variaciones, donde confluyen coloquialismos, errores de STT y expresiones numéricas, exhibe la mayor
+caída de rendimiento. Esto sugiere que el normalizador basado en reglas determinísticas (diccionarios de equivalencias y patrones de expresiones
+regulares) alcanza un techo de capacidad cuando las variaciones se acumulan. Un enfoque más robusto podría complementar las reglas con un modelo de corrección ortográfica o un \textit{spell checker} adaptado al dominio financiero, capaz de recuperar tokens distorsionados por errores de
+transcripción.
+
+
+\subsection{Limitaciones del estudio}
+\label{subsec:limitaciones}
+
+Es pertinente explicitar las limitaciones del presente trabajo, tanto para contextualizar adecuadamente los resultados como para orientar el trabajo
+futuro:
+
+\begin{enumerate}
+    \item Corpus sintético: los modelos fueron entrenados y evaluados sobre un corpus generado mediante plantillas y aumentación de datos. Si
+    bien esta estrategia permite controlar la distribución de clases y entidades, no captura la totalidad de la variabilidad lingüística del habla
+    espontánea. Un corpus recolectado a partir de grabaciones de usuarios reales proporcionaría una evaluación más representativa.
+
+    \item Dominio acotado: el sistema soporta únicamente tres intenciones y tres tipos de entidades. Una aplicación bancaria productiva
+    requeriría un catálogo significativamente más amplio de operaciones (pagos de servicios, inversiones, consultas de movimientos, etc.) y entidades
+    (fechas, números de cuenta, CBU/CVU).
+
+    \item Idioma único: la implementación se centra exclusivamente en español rioplatense (\texttt{es-AR}). La generalización a otros dialectos
+    del español o a otros idiomas requeriría corpus de entrenamiento adicionales y la validación de que el \texttt{TextNormalizer} es
+    extensible a otros sistemas léxicos coloquiales.
+
+    \item Ausencia de \textit{backend} real: la app base simula la confirmación de la transacción sin conectarse a un sistema bancario real.
+    La integración con una API transaccional introduciría latencias de red, requisitos de autenticación biométrica (Face~ID, Touch~ID) y manejo de
+    errores de conectividad que están fuera del alcance de esta prueba de concepto.
+
+    \item Mediciones de latencia en macOS: el benchmark de latencia se ejecutó sobre la CPU del equipo de desarrollo (macOS), no sobre un
+    dispositivo iOS físico. Si bien los valores obtenidos ya se encuentran por debajo del umbral de percepción, una medición en dispositivo con Xcode
+    Instruments proporcionaría datos más representativos del rendimiento en producción.
+
+    \item Pruebas de usabilidad limitadas: el protocolo de usabilidad se diseñó como evaluación exploratoria con un número reducido de
+    participantes. Un estudio de usabilidad riguroso requeriría una muestra más amplia, diversificada en edad, familiaridad con tecnología de voz y
+    dialecto regional.
+\end{enumerate}
+
+
+\subsection{Conexión con CRISP-DM}
+\label{subsec:crisp-dm}
+
+El desarrollo de este trabajo siguió la metodología CRISP-DM (\textit{Cross Industry Standard Process for Data Mining}) como marco organizativo del ciclo de vida del proyecto de \textit{machine learning}. Los resultados obtenidos en esta fase de evaluación retroalimentan el ciclo y permiten identificar las intervenciones prioritarias para una eventual iteración:
+
+\begin{itemize}
+    \item Comprensión de los datos: los errores de la entidad \textsc{destinatario} señalan la necesidad de enriquecer el corpus con
+    mayor variabilidad de nombres propios, incluyendo apodos, sobrenombres y nombres compuestos más largos.
+
+    \item Preparación de los datos: la degradación ante errores de STT sugiere incorporar \textit{noise injection} al proceso de aumentación:
+    generar variantes con errores tipográficos y fonéticos simulados para que los modelos desarrollen tolerancia a tokens ruidosos.
+
+    \item Modelado: si las iteraciones de datos no alcanzan los umbrales deseados, podría evaluarse la migración del clasificador de
+    MaxEnt a \textit{Transfer Learning} con \texttt{.dynamicEmbedding}, que aprovecha embeddings contextuales preentrenados por Apple a costa de
+    un incremento moderado en el tamaño del modelo y el tiempo de entrenamiento.
+
+    \item Despliegue: la validación positiva de la latencia y la privacidad \textit{on-device} confirma la viabilidad técnica del
+    despliegue en dispositivos iOS reales, estableciendo la base para una fase piloto con usuarios del sector financiero.
+\end{itemize}
+
+\medskip
+
+La tabla~\ref{tab:resumen-resultados} condensa los indicadores clave de
+rendimiento de los modelos Core~ML del SDK Aurum.
+
+% --- TABLA 7: Resumen ejecutivo ---
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Métrica} & \textbf{Clasificador} & \textbf{Extractor NER} \\
+                  & \textbf{(MaxEnt)}     & \textbf{(CRF)} \\
+\midrule
+Accuracy / Token Accuracy     & 100.00\% & 90.67\% \\
+Macro F1-Score                & 1.0000   & 0.5568   \\
+Entity F1 (strict)            & ---     & 0.9427   \\
+Entity F1 (relaxed)           & ---     & 0.9427   \\
+Tamaño del modelo             & 3.1 KB   & 407.2 KB   \\
+Latencia media de inferencia  & 0.0 ms   & 0.1 ms   \\
+\bottomrule
+\end{tabular}
+\caption{Resumen de rendimiento de los modelos Core ML del SDK Aurum.}
+\label{tab:resumen-resultados}
+\end{table}

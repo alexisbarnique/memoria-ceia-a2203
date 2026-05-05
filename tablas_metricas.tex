@@ -1,0 +1,79 @@
+% =============================================================================
+% tablas_metricas.tex
+%
+% Tabla LaTeX para la sección de evaluación de modelos de la tesis
+% "Sistema de transacciones financieras por voz en dispositivos móviles iOS"
+%
+% Ing. Alexis Geraldine Barniquez Piñero - FIUBA
+% =============================================================================
+
+
+% =============================================================================
+% TABLA 1: COMPARATIVA DE ARQUITECTURAS (Trade-off)
+% =============================================================================
+% Esta tabla respalda la discusión teórica de la sección 2.x sobre la
+% evaluación de arquitecturas: Transformers vs RNN vs Apple Native.
+
+\begin{table}[htbp]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Criterio}
+  & \textbf{BETO}
+  & \textbf{BiLSTM}
+  & \textbf{Create ML}
+  & \textbf{Create ML} \\
+  & \textbf{(Transformer)}
+  & \textbf{(RNN)}
+  & \textbf{(MaxEnt)}
+  & \textbf{(CRF)} \\
+\midrule
+Tamaño del modelo (MB)
+  & $\sim$440
+  & $\sim$5--15
+  & $<$1
+  & $<$1 \\
+Parámetros (millones)
+  & $\sim$110
+  & $\sim$0.5--2
+  & N/A
+  & N/A \\
+Latencia de inferencia (ms)
+  & $>$200
+  & 20--50
+  & $<$10
+  & $<$10 \\
+Memoria RAM en runtime (MB)
+  & $>$300
+  & 15--40
+  & $<$5
+  & $<$5 \\
+Requiere conversión Core ML
+  & Sí
+  & Sí
+  & No
+  & No \\
+Aceleración Neural Engine
+  & Parcial
+  & Parcial
+  & Nativa
+  & Nativa \\
+Entrenamiento sin GPU
+  & No viable
+  & Posible
+  & Sí (CPU)
+  & Sí (CPU) \\
+Privacidad \textit{on-device}
+  & Sí
+  & Sí
+  & Sí
+  & Sí \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Comparativa de arquitecturas evaluadas para NLU \textit{on-device} en iOS.
+         Los valores de BETO y BiLSTM corresponden a referencias bibliográficas;
+         los de Create ML (MaxEnt/CRF) son resultados experimentales propios.}
+\label{tab:comparativa-arquitecturas}
+\end{table}

@@ -26,6 +26,15 @@
 \usepackage{hyperref}       % Manejo de hipervínculos y marcadores
 \usepackage{float} 
 \usepackage{comment}
+\usepackage{listings}
+\usepackage{seqsplit}
+\usepackage{hyphenat}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{xcolor}
+
 
 % Redefinición de caracteres problemáticos en marcadores
 \hypersetup{
@@ -51,6 +60,41 @@
   \def\textunderscore{\_} % Manejo del subrayado en marcadores
 }
 
+% Definición de estilo para código Swift (si no está definido globalmente)
+\lstdefinelanguage{Swift}{
+  keywords={class, func, var, let, if, else, guard, return, enum, case,
+            struct, protocol, import, switch, self, true, false, nil, try,
+            catch, throw, throws, weak, private, public, internal, static,
+            override, init, deinit, extension, where, associatedtype,
+            typealias, some, await, async, @Published, @StateObject,
+            @State, @main, @ObservedObject},
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  string=[b]",
+  morestring=[b]',
+}
+
+\lstset{
+  language=Swift,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\bfseries\color{blue!70!black},
+  commentstyle=\itshape\color{gray},
+  stringstyle=\color{red!70!black},
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  tabsize=4,
+  showstringspaces=false,
+  captionpos=b,
+}
+
+
+% Ajusta el valor de 'skip' a los puntos (pt), milímetros (mm) o centímetros (cm) que prefieras.
+\captionsetup{skip=15pt}
+\setlength{\abovecaptionskip}{15pt} % Controla el espacio ENTRE la imagen y el caption
+\setlength{\belowcaptionskip}{5pt}  % Controla el espacio DEBAJO del caption
 
 % Definir comandos requeridos por la clase
 \newcommand{\degreename}{Maestría en Ciencias} % Cambia según tu título
@@ -105,7 +149,7 @@ Para su materialización, se utilizaron herramientas del ecosistema Apple como S
 \include{Chapters/Chapter1}
 \include{Chapters/Chapter2}
 \include{Chapters/Chapter3}
-%\include{Chapters/Chapter4}
+\include{Chapters/Chapter4}
 %\include{Chapters/Chapter5}
 
 %----------------------------------------------------------------------------------------

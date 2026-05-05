@@ -313,8 +313,8 @@
          familyi={I\bibinitperiod},
       }}%
     }
-    \strng{namehash}{I2}
-    \strng{fullhash}{I2}
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{Visitado el 2026-03-29}
@@ -1082,24 +1082,224 @@
     \field{year}{2017}
   \endentry
 
-  \entry{ieee1990glossary}{article}{}{}
-    \name{author}{1}{}{%
-      {{hash=I}{%
-         family={{IEEE}},
-         familyi={I\bibinitperiod},
+  \entry{gamma1994design}{book}{}{}
+    \name{author}{4}{}{%
+      {{hash=GE}{%
+         family={Gamma},
+         familyi={G\bibinitperiod},
+         given={Erich},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Helm},
+         familyi={H\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=JR}{%
+         family={Johnson},
+         familyi={J\bibinitperiod},
+         given={Ralph},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=VJ}{%
+         family={Vlissides},
+         familyi={V\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
-      {IEEE}%
+      {Addison-Wesley}%
     }
-    \strng{namehash}{I1}
-    \strng{fullhash}{I1}
+    \strng{namehash}{GE+1}
+    \strng{fullhash}{GEHRJRVJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{1\bibrangedash 84}
-    \field{title}{IEEE Standard Glossary of Software Engineering Terminology}
-    \field{journaltitle}{IEEE Std 610.12-1990}
-    \field{year}{1990}
+    \field{title}{Design Patterns: Elements of Reusable Object-Oriented
+  Software}
+    \field{year}{1994}
+  \endentry
+
+  \entry{apple-naturallanguage}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Natural Language Framework Documentation}
+    \verb{url}
+    \verb https://developer.apple.com/documentation/naturallanguage
+    \endverb
+    \field{year}{2024}
+  \endentry
+
+  \entry{apple-delegation}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Using Delegates to Customize Object Behavior}
+    \verb{url}
+    \verb https://developer.apple.com/documentation/swift/using-delegates-to-cu
+    \verb stomize-object-behavior
+    \endverb
+    \field{year}{2024}
+  \endentry
+
+  \entry{apple-swiftui}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{SwiftUI Documentation}
+    \verb{url}
+    \verb https://developer.apple.com/documentation/swiftui
+    \endverb
+    \field{year}{2024}
+  \endentry
+
+  \entry{nielsen-confirmation}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=NJ}{%
+         family={Nielsen},
+         familyi={N\bibinitperiod},
+         given={Jakob},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NJ1}
+    \strng{fullhash}{NJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Confirmation Dialogs Can Prevent User Errors}
+    \verb{url}
+    \verb https://www.nngroup.com/articles/confirmation-dialog/
+    \endverb
+    \field{year}{2018}
+  \endentry
+
+  \entry{apple-hig}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Apple Inc.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Human Interface Guidelines: Accessing User Data}
+    \verb{url}
+    \verb https://developer.apple.com/design/human-interface-guidelines/accessi
+    \verb ng-private-data
+    \endverb
+    \field{year}{2024}
+  \endentry
+
+  \entry{cavoukian-pbd}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=CA}{%
+         family={Cavoukian},
+         familyi={C\bibinitperiod},
+         given={Ann},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CA1}
+    \strng{fullhash}{CA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Privacy by Design: The 7 Foundational Principles}
+    \field{journaltitle}{Information and Privacy Commissioner of Ontario}
+    \field{year}{2009}
+  \endentry
+
+  \entry{nielsen-response-times}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=NJ}{%
+         family={Nielsen},
+         familyi={N\bibinitperiod},
+         given={Jakob},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NJ1}
+    \strng{fullhash}{NJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Response Times: The 3 Important Limits}
+    \verb{url}
+    \verb https://www.nngroup.com/articles/response-times-3-important-limits/
+    \endverb
+    \field{year}{1993}
+  \endentry
+
+  \entry{sun2020mobilebert}{inproceedings}{}{}
+    \name{author}{6}{}{%
+      {{hash=SZ}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Zhiqing},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=YH}{%
+         family={Yu},
+         familyi={Y\bibinitperiod},
+         given={Hongkun},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=SX}{%
+         family={Song},
+         familyi={S\bibinitperiod},
+         given={Xiaodan},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=LR}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Renjie},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=YY}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Yiming},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=ZD}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Denny},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SZ+1}
+    \strng{fullhash}{SZYHSXLRYYZD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{ACL}
+    \field{title}{MobileBERT: a Compact Task-Agnostic BERT for Resource-Limited
+  Devices}
+    \field{year}{2020}
   \endentry
 \enddatalist
 \endinput
