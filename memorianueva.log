@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  4 MAY 2026 21:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  6 MAY 2026 21:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -799,10 +799,17 @@ Package: seqsplit 2006/08/07 v0.1 Splitting long sequences (DNA, RNA, proteins,
 )
 (/usr/local/texlive/2025/texmf-dist/tex/latex/hyphenat/hyphenat.sty
 Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
+
+
+Package hyphenat Warning: *******************************
+(hyphenat)                * You have used the htt option.
+(hyphenat)                * You are likely to get many Font Warning messages.
+(hyphenat)                * These can usually be ignored.
+(hyphenat)                *******************************.
+
 \langwohyphens=\language92
 LaTeX Info: Redefining \_ on input line 43.
-)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/multirow/multirow.sty
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip82
 \multirow@cntb=\count458
@@ -818,7 +825,8 @@ Package csquotes Info: ... found 'babel' package.
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
  (./Chapters/Chapter1.aux)
-(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux))
+(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux)
+(./Chapters/Chapter5.aux))
 \openout1 = `memorianueva.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
@@ -971,6 +979,122 @@ Package scrbase Info: activating spanish \byname on input line 107.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 10
+7.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10.95> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/m/scsl' undefined
+(Font)              using `T1/pcr/m/sc' instead on input line 107.
+
+LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <10.95> not available
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 107.
+
+LaTeX Font Warning: Font shape `T1/pcr/b/scsl' undefined
+(Font)              using `T1/pcr/b/sc' instead on input line 107.
+
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 107.
+LaTeX Font Info:    Font shape `T1/pcr/bx/it' in size <10.95> not available
+(Font)              Font shape `T1/pcr/b/it' tried instead on input line 107.
+LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <10.95> not available
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 107.
+LaTeX Font Info:    Font shape `T1/pcr/bx/sl' in size <10.95> not available
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 107.
+
+LaTeX Font Warning: Font shape `T1/pcr/bx/scsl' undefined
+(Font)              using `T1/pcr/bx/sc' instead on input line 107.
+
+LaTeX Font Info:    Font shape `T1/pcr/bx/sc' in size <10.95> not available
+(Font)              Font shape `T1/pcr/b/sc' tried instead on input line 107.
+
+LaTeX Font Warning: Font shape `T1/pcr/sbx/sc' undefined
+(Font)              using `T1/pcr/sb/sc' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/sb/n' undefined
+(Font)              using `T1/pcr/m/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/sb/it' undefined
+(Font)              using `T1/pcr/sb/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/sb/sl' undefined
+(Font)              using `T1/pcr/sb/it' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/sb/scit' undefined
+(Font)              using `T1/pcr/sb/sc' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/sb/sc' undefined
+(Font)              using `T1/pcr/sb/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/sbc/sc' undefined
+(Font)              using `T1/pcr/c/sc' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/c/n' undefined
+(Font)              using `T1/pcr/m/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/c/it' undefined
+(Font)              using `T1/pcr/c/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/c/sl' undefined
+(Font)              using `T1/pcr/c/it' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/c/scit' undefined
+(Font)              using `T1/pcr/c/sc' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/c/sc' undefined
+(Font)              using `T1/pcr/c/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/lc/sc' undefined
+(Font)              using `T1/pcr/l/sc' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/l/n' undefined
+(Font)              using `T1/pcr/m/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/l/it' undefined
+(Font)              using `T1/pcr/l/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/l/sl' undefined
+(Font)              using `T1/pcr/l/it' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/l/scit' undefined
+(Font)              using `T1/pcr/l/sc' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/l/sc' undefined
+(Font)              using `T1/pcr/l/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/m/ui' undefined
+(Font)              using `T1/pcr/m/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/bx/ui' undefined
+(Font)              using `T1/pcr/bx/n' instead on input line 107.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/m/In' undefined
+(Font)              using `T1/pcr/m/n' instead on input line 107.
+
 \openout2 = `portada.aux'.
 
 (./portada.tex
@@ -985,7 +1109,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 48.
 
 
-<Figures/fondo.pdf, id=229, 597.55246pt x 845.07718pt>
+<Figures/fondo.pdf, id=221, 597.55246pt x 845.07718pt>
 File: Figures/fondo.pdf Graphic file (type pdf)
 <use Figures/fondo.pdf>
 Package pdftex.def Info: Figures/fondo.pdf  used on input line 51.
@@ -1024,12 +1148,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 20
-.
 
-(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
 
 [3])
 \tf@toc=\write6
@@ -1041,13 +1160,6 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-
-Overfull \hbox (17.64473pt too wide) in paragraph at lines 7--7
- \T1/ppl/m/n/10.95 mues-tra la co-mu-ni-ca-ción en-tre \T1/pcr/m/n/10.95 MainVi
-ew\T1/ppl/m/n/10.95 ,\T1/pcr/m/n/10.95 TransactionViewModel\T1/ppl/m/n/10.95 , 
-
- []
-
 )
 \tf@lof=\write7
 \openout7 = `memorianueva.lof'.
@@ -1102,37 +1214,43 @@ been already used, duplicate ignored
 l.42 
       [2]
 
-LaTeX Info: Redefining \. on input line 72.
-LaTeX Info: Redefining \% on input line 72.
+LaTeX Info: Redefining \. on input line 69.
+LaTeX Info: Redefining \% on input line 69.
 [3])
 
 LaTeX Info: Redefining \. on input line 149.
 LaTeX Info: Redefining \% on input line 149.
 [4]
+
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
+[5]
 \openout2 = `Chapters/Chapter2.aux'.
 
  (./Chapters/Chapter2.tex
-Cap\'{\i }tulo 2.
 
-
-[5
+[6
 
 
 
 
 ]
+Cap\'{\i }tulo 2.
+
+
+[7]
 
 LaTeX Info: Redefining \. on input line 42.
 LaTeX Info: Redefining \% on input line 42.
-[6]
+[8]
 
 LaTeX Info: Redefining \. on input line 56.
 LaTeX Info: Redefining \% on input line 56.
-[7] (./tablas_metricas.tex))
+[9] (./tablas_metricas.tex))
 
 LaTeX Info: Redefining \. on input line 150.
 LaTeX Info: Redefining \% on input line 150.
-[8]
+[10]
 \openout2 = `Chapters/Chapter3.aux'.
 
  (./Chapters/Chapter3.tex
@@ -1144,334 +1262,208 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 
-[9
+[11
 
 
 
 
 ]
-
-LaTeX Info: Redefining \. on input line 68.
-LaTeX Info: Redefining \% on input line 68.
-[10]
-<./Figures/diagrama-de-componentes.png, id=513, 1020.81375pt x 706.89093pt>
+<./Figures/diagrama-de-componentes.png, id=503, 1020.81375pt x 949.89882pt>
 File: ./Figures/diagrama-de-componentes.png Graphic file (type png)
 <use ./Figures/diagrama-de-componentes.png>
 Package pdftex.def Info: ./Figures/diagrama-de-componentes.png  used on input l
-ine 73.
-(pdftex.def)             Requested size: 389.80269pt x 269.93727pt.
+ine 63.
+(pdftex.def)             Requested size: 389.80269pt x 362.7336pt.
 
 
-LaTeX Info: Redefining \. on input line 81.
-LaTeX Info: Redefining \% on input line 81.
-[11 <./Figures/diagrama-de-componentes.png>]
-<./Figures/pipeline-transaccion.png, id=523, 2223.30624pt x 2392.94pt>
+LaTeX Info: Redefining \. on input line 69.
+LaTeX Info: Redefining \% on input line 69.
+[12 <./Figures/diagrama-de-componentes.png>]
+<./Figures/pipeline-transaccion.png, id=512, 682.04813pt x 731.73375pt>
 File: ./Figures/pipeline-transaccion.png Graphic file (type png)
 <use ./Figures/pipeline-transaccion.png>
 Package pdftex.def Info: ./Figures/pipeline-transaccion.png  used on input line
- 86.
-(pdftex.def)             Requested size: 389.80269pt x 419.53755pt.
+ 74.
+(pdftex.def)             Requested size: 389.80269pt x 418.19794pt.
 
 
-LaTeX Info: Redefining \. on input line 96.
-LaTeX Info: Redefining \% on input line 96.
-[12 <./Figures/pipeline-transaccion.png>]
-
-LaTeX Info: Redefining \. on input line 112.
-LaTeX Info: Redefining \% on input line 112.
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+LaTeX Info: Redefining \. on input line 83.
+LaTeX Info: Redefining \% on input line 83.
+[13 <./Figures/pipeline-transaccion.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []|\T1/ppl/m/n/10.95 Fachada prin-ci-
  []
 
 
-Overfull \hbox (8.07872pt too wide) in paragraph at lines 139--140
+Overfull \hbox (8.07872pt too wide) in paragraph at lines 130--130
 []|[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []|\T1/ppl/m/n/10.95 Reconocimiento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []|\T1/ppl/m/n/10.95 Normalización
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []|\T1/ppl/m/n/10.95 Procesamiento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []|[]
  []
 
 
-Overfull \hbox (16.08311pt too wide) in paragraph at lines 130--156
- [][] 
- []
 
-
-
-LaTeX Info: Redefining \. on input line 165.
-LaTeX Info: Redefining \% on input line 165.
+LaTeX Info: Redefining \. on input line 139.
+LaTeX Info: Redefining \% on input line 139.
 [14]
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
-84.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ppl.fd
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)
-Overfull \hbox (1.36485pt too wide) in paragraph at lines 195--199
-\T1/pcr/m/n/10.95 EntityExtractor\T1/ppl/m/n/10.95 ) e ins-tan-ciar los ob-je-t
-os \T1/pcr/m/n/10.95 NLModel \T1/ppl/m/n/10.95 co-rres-pon-dien-tes. Es-ta pre-
-
+Overfull \hbox (3.41293pt too wide) in paragraph at lines 150--151
+\T1/ppl/m/n/10.95 au-dio a ser-vi-do-res ex-ter-nos. Adi-cio-nal-men-te, la pro
+-pie-dad \T1/pcr/l/it/10.95 con-tex-tualStrings
  []
 
 
 
-LaTeX Info: Redefining \. on input line 199.
-LaTeX Info: Redefining \% on input line 199.
+LaTeX Info: Redefining \. on input line 151.
+LaTeX Info: Redefining \% on input line 151.
 [15]
-Overfull \hbox (39.82877pt too wide) in paragraph at lines 241--243
-[]\T1/ppl/m/n/10.95 La de-ten-ción de la cap-tu-ra (\T1/pcr/m/n/10.95 stopCaptu
-re()\T1/ppl/m/n/10.95 ) re-mue-ve el \T1/ppl/m/it/10.95 tap\T1/ppl/m/n/10.95 , 
-de-tie-ne el \T1/pcr/m/n/10.95 AVAudioEngine
- []
 
-
-
-LaTeX Info: Redefining \. on input line 247.
-LaTeX Info: Redefining \% on input line 247.
+LaTeX Info: Redefining \. on input line 177.
+LaTeX Info: Redefining \% on input line 177.
 [16]
-Overfull \hbox (2.01828pt too wide) in paragraph at lines 291--293
-\T1/ppl/m/n/10.95 sa pro-lon-ga-da o el fi-nal del enun-cia-do, emi-te el re-su
-l-ta-do fi-nal (\T1/pcr/m/n/10.95 result.isFinal
+
+LaTeX Info: Redefining \. on input line 219.
+LaTeX Info: Redefining \% on input line 219.
+[17]
+Overfull \hbox (4.59152pt too wide) in paragraph at lines 230--231
+\T1/ppl/m/n/10.95 ple-men-ta en-la-ce de da-tos reac-ti-vo me-dian-te \T1/pcr/l
+/it/10.95 Ob-ser-va-bleObject \T1/ppl/m/n/10.95 y \T1/pcr/l/it/10.95 @Pu-blishe
+d\T1/ppl/m/n/10.95 :
  []
 
 
 
-LaTeX Info: Redefining \. on input line 293.
-LaTeX Info: Redefining \% on input line 293.
-[17]
-
-LaTeX Info: Redefining \. on input line 334.
-LaTeX Info: Redefining \% on input line 334.
+LaTeX Info: Redefining \. on input line 240.
+LaTeX Info: Redefining \% on input line 240.
 [18]
 
-LaTeX Info: Redefining \. on input line 379.
-LaTeX Info: Redefining \% on input line 379.
+LaTeX Info: Redefining \. on input line 285.
+LaTeX Info: Redefining \% on input line 285.
 [19]
-
-LaTeX Info: Redefining \. on input line 430.
-LaTeX Info: Redefining \% on input line 430.
-[20]
-Overfull \hbox (4.98517pt too wide) in paragraph at lines 447--449
-\T1/pcr/m/n/10.95 I-DESTINATARIO\T1/ppl/m/n/10.95 ) o mon-tos con mo-di-fi-ca-d
-o-res (``dos mil qui-nien-tos'' = \T1/pcr/m/n/10.95 B-MONTO
- []
-
-
-Overfull \hbox (1.55727pt too wide) in paragraph at lines 450--451
-\T1/ppl/m/n/10.95 so-por-ta las va-rian-tes co-lo-quia-les me-dian-te el mé-to-
-do es-tá-ti-co \T1/pcr/m/n/10.95 fromColloquial\T1/ppl/m/n/10.95 ),
- []
-
-
-Overfull \hbox (0.1555pt too wide) in paragraph at lines 455--457
-[]\T1/ppl/m/n/10.95 El re-sul-ta-do con-so-li-da-do del pi-pe-li-ne se en-cap-s
-u-la en la es-truc-tu-ra \T1/pcr/m/n/10.95 Transaction
- []
-
-
-Underfull \hbox (badness 1466) in paragraph at lines 455--457
-\T1/pcr/m/n/10.95 Payload\T1/ppl/m/n/10.95 , un \T1/ppl/m/it/10.95 va-lue ty-pe
- \T1/ppl/m/n/10.95 in-mu-ta-ble que adop-ta los pro-to-co-los \T1/pcr/m/n/10.95
- Codable \T1/ppl/m/n/10.95 y
- []
-
-
-
-LaTeX Info: Redefining \. on input line 473.
-LaTeX Info: Redefining \% on input line 473.
-[21]
-
-LaTeX Info: Redefining \. on input line 515.
-LaTeX Info: Redefining \% on input line 515.
-[22]
-
-LaTeX Warning: Reference `sec:app-base' on page 23 undefined on input line 558.
-
-
-Excluding 'comment' comment. Excluding 'comment' comment.
-
-LaTeX Info: Redefining \. on input line 587.
-LaTeX Info: Redefining \% on input line 587.
-[23]
-
-LaTeX Info: Redefining \. on input line 618.
-LaTeX Info: Redefining \% on input line 618.
-[24]
-Underfull \hbox (badness 1097) in paragraph at lines 619--620
-[]\T1/pcr/m/n/10.95 listening $\OMS/cmsy/m/n/10.95 !$ \T1/pcr/m/n/10.95 process
-ing\T1/ppl/m/n/10.95 : el SDK de-tec-ta el fin de ha-bla, in-vo-ca
- []
-
-
-
-LaTeX Info: Redefining \. on input line 659.
-LaTeX Info: Redefining \% on input line 659.
-[25]
-
-LaTeX Info: Redefining \. on input line 716.
-LaTeX Info: Redefining \% on input line 716.
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 738--742
-\T1/ppl/m/n/10.95 li-za-da pro-gre-si-va-men-te me-dian-te el \T1/ppl/m/it/10.9
-5 call-back
- []
-
-
-Overfull \hbox (6.71005pt too wide) in paragraph at lines 738--742
-\T1/pcr/m/n/10.95 aurumDidReceivePartialTranscription(_-:)\T1/ppl/m/n/10.95 . E
-s-ta re-tro-ali-men-ta-ción
- []
-
-
-
-LaTeX Info: Redefining \. on input line 745.
-LaTeX Info: Redefining \% on input line 745.
-[27]
-
-LaTeX Info: Redefining \. on input line 809.
-LaTeX Info: Redefining \% on input line 809.
-[28]
-Overfull \hbox (11.92953pt too wide) in paragraph at lines 809--812
-\T1/ppl/m/n/10.95 rres-pon-dien-te \T1/pcr/m/n/10.95 (AurumError.microphonePerm
-issionDenied \T1/ppl/m/n/10.95 o \T1/pcr/m/n/10.95 AurumError.
- []
-
-
-Overfull \hbox (5.50136pt too wide) in paragraph at lines 809--812
-\T1/pcr/m/n/10.95 speechRecognitionDenied) \T1/ppl/m/n/10.95 me-dian-te el \T1/
-ppl/m/it/10.95 call-back \T1/pcr/m/n/10.95 aurumDidFailWithError\T1/ppl/m/n/10.
-95 ,
- []
-
-
-Overfull \hbox (6.78287pt too wide) in paragraph at lines 821--823
-[]\T1/ppl/m/n/10.95 Inferencia NLU lo-cal: los mo-de-los Co-re ML (\T1/pcr/m/n/
-10.95 IntentClassifier.mlmodel
- []
-
-
-Underfull \hbox (badness 2181) in paragraph at lines 821--823
-\T1/ppl/m/n/10.95 y \T1/pcr/m/n/10.95 EntityExtractor.mlmodel\T1/ppl/m/n/10.95 
-) se eje-cu-tan me-dian-te el fra-me-work
- []
-
-
-
-LaTeX Info: Redefining \. on input line 839.
-LaTeX Info: Redefining \% on input line 839.
-[29]
-Overfull \hbox (7.389pt too wide) in paragraph at lines 852--855
-\T1/ppl/m/n/10.95 me-dian-te \T1/pcr/m/n/10.95 aurumDidReceivePartialTranscript
-ion(_-:)\T1/ppl/m/n/10.95 . La trans-crip-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 866.
-LaTeX Info: Redefining \% on input line 866.
-[30]
-<./Figures/diagrama-flujo-aurum.png, id=946, 3998.94pt x 5883.9825pt>
+<./Figures/diagrama-flujo-aurum.png, id=598, 3998.94pt x 5883.9825pt>
 File: ./Figures/diagrama-flujo-aurum.png Graphic file (type png)
 <use ./Figures/diagrama-flujo-aurum.png>
 Package pdftex.def Info: ./Figures/diagrama-flujo-aurum.png  used on input line
- 883.
+ 292.
 (pdftex.def)             Requested size: 389.80269pt x 573.52888pt.
 )
 
 LaTeX Info: Redefining \. on input line 151.
 LaTeX Info: Redefining \% on input line 151.
-[31]
+[20]
 
 LaTeX Info: Redefining \. on input line 151.
 LaTeX Info: Redefining \% on input line 151.
-[32 <./Figures/diagrama-flujo-aurum.png>]
+[21 <./Figures/diagrama-flujo-aurum.png>]
 \openout2 = `Chapters/Chapter4.aux'.
 
  (./Chapters/Chapter4.tex
-Cap\'{\i }tulo 4.
 
-
-[33
+[22
 
 
 
 
 ]
-Overfull \hbox (16.28662pt too wide) in paragraph at lines 95--101
-\T1/pcr/m/n/10.95 I-MONTO\T1/ppl/m/n/10.95 , \T1/pcr/m/n/10.95 B-MONEDA\T1/ppl/
-m/n/10.95 , \T1/pcr/m/n/10.95 I-MONEDA\T1/ppl/m/n/10.95 , \T1/pcr/m/n/10.95 B-D
-ESTINATARIO\T1/ppl/m/n/10.95 , \T1/pcr/m/n/10.95 I-DESTINATARIO \T1/ppl/m/n/10.
-95 y \T1/pcr/m/n/10.95 O \T1/ppl/m/n/10.95 (\T1/ppl/m/it/10.95 Outsi-
+Cap\'{\i }tulo 4.
+
+
+[23]
+Overfull \hbox (3.14664pt too wide) in paragraph at lines 95--101
+\T1/pcr/l/it/10.95 MONTO\T1/ppl/m/n/10.95 , \T1/pcr/l/it/10.95 B-MONEDA\T1/ppl/
+m/n/10.95 , \T1/pcr/l/it/10.95 I-MONEDA\T1/ppl/m/n/10.95 , \T1/pcr/l/it/10.95 B
+-DESTINATARIO\T1/ppl/m/n/10.95 , \T1/pcr/l/it/10.95 I-DESTINATARIO \T1/ppl/m/n/
+10.95 y \T1/pcr/l/it/10.95 O \T1/ppl/m/n/10.95 (\T1/ppl/m/it/10.95 Outsi-
  []
 
 
 
 LaTeX Info: Redefining \. on input line 140.
 LaTeX Info: Redefining \% on input line 140.
-[34]
+[24]
 
 LaTeX Info: Redefining \. on input line 192.
 LaTeX Info: Redefining \% on input line 192.
-[35]
+[25]
 
 LaTeX Info: Redefining \. on input line 227.
 LaTeX Info: Redefining \% on input line 227.
-[36]
+[26]
 
 LaTeX Info: Redefining \. on input line 293.
 LaTeX Info: Redefining \% on input line 293.
-[37]
+[27]
 
 LaTeX Info: Redefining \. on input line 342.
 LaTeX Info: Redefining \% on input line 342.
-[38]
+[28]
 
 LaTeX Info: Redefining \. on input line 416.
 LaTeX Info: Redefining \% on input line 416.
-[39]
+[29]
 
 LaTeX Info: Redefining \. on input line 442.
 LaTeX Info: Redefining \% on input line 442.
-[40]
-Overfull \hbox (17.8947pt too wide) in paragraph at lines 457--459
-\T1/ppl/m/n/10.95 (Crea-te ML con al-go-rit-mos Ma-xEnt y CRF, eje-cu-ta-dos a 
-tra-vés de \T1/pcr/m/n/10.95 NaturalLanguage
- []
-
-
+[30]
 
 LaTeX Info: Redefining \. on input line 481.
 LaTeX Info: Redefining \% on input line 481.
-[41]
+[31]
 
 LaTeX Info: Redefining \. on input line 522.
 LaTeX Info: Redefining \% on input line 522.
-[42]
+[32]
 
 LaTeX Info: Redefining \. on input line 560.
 LaTeX Info: Redefining \% on input line 560.
-[43])
+[33])
 
 LaTeX Info: Redefining \. on input line 152.
 LaTeX Info: Redefining \% on input line 152.
-[44]
+[34]
+\openout2 = `Chapters/Chapter5.aux'.
+
+ (./Chapters/Chapter5.tex
+Cap\'{\i }tulo 5.
+
+
+[35
+
+
+
+
+]
+
+LaTeX Info: Redefining \. on input line 59.
+LaTeX Info: Redefining \% on input line 59.
+[36])
+
+LaTeX Info: Redefining \. on input line 153.
+LaTeX Info: Redefining \% on input line 153.
+[37]
+
+[38
+
+
+
+]
 Overfull \hbox (17.49973pt too wide) in paragraph at lines 171--171
 \T1/ppl/m/n/10.95 per Do-cu-men-ta-tion. 2025. \T1/ppl/m/sc/10.95 url\T1/ppl/m/
 n/10.95 : [][]$https : / / developer . apple . com / documentation /
@@ -1479,11 +1471,7 @@ n/10.95 : [][]$https : / / developer . apple . com / documentation /
 
 
 
-[45
-
-
-
-]
+[39]
 Overfull \hbox (2.6412pt too wide) in paragraph at lines 171--171
 []\T1/ppl/m/n/10.95 Apple Inc. \T1/ppl/m/it/10.95 The Swift Pro-gram-ming Lan-g
 ua-ge: Lan-gua-ge Gui-de\T1/ppl/m/n/10.95 . Vi-si-ta-do el 2026-
@@ -1505,7 +1493,7 @@ tions using RNN Encoder--
 
 LaTeX Info: Redefining \. on input line 171.
 LaTeX Info: Redefining \% on input line 171.
-[46]
+[40]
 Overfull \hbox (0.20251pt too wide) in paragraph at lines 171--171
 []\T1/ppl/m/n/10.95 Jakob Niel-sen. \T1/ppl/m/it/10.95 Con-fir-ma-tion Dia-logs
  Can Pre-vent User Errors\T1/ppl/m/n/10.95 . 2018. \T1/ppl/m/sc/10.95 url\T1/pp
@@ -1522,31 +1510,26 @@ stic BERT for Resource-
 
 LaTeX Info: Redefining \. on input line 173.
 LaTeX Info: Redefining \% on input line 173.
-[47] (./memorianueva.aux (./portada.aux)
+[41] (./memorianueva.aux (./portada.aux)
 LaTeX Info: Redefining \sptext on input line 16.
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
  (./Chapters/Chapter1.aux)
-(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux))
+(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux)
+(./Chapters/Chapter5.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
 
 
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `memorianueva.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `memorianueva.out':
-(rerunfilecheck)             Before: E2A08026B77420E56E7EBA2B1FF14C88;11740
-(rerunfilecheck)             After:  75F001B958ADFFD7F2CADF07A34F7B79;11740.
+Package rerunfilecheck Info: File `memorianueva.out' has not changed.
+(rerunfilecheck)             Checksum: 01385BAE396BB555896C5E706A6E0899;11005.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                memorianueva
@@ -1557,62 +1540,28 @@ Package logreq Info: Writing requests to 'memorianueva.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33211 strings out of 473190
- 711349 string characters out of 5715800
- 1801707 words of memory out of 5000000
- 55542 multiletter control sequences out of 15000+600000
- 619390 words of font info for 109 fonts, out of 8000000 for 9000
+ 32627 strings out of 473190
+ 702717 string characters out of 5715800
+ 1639003 words of memory out of 5000000
+ 55251 multiletter control sequences out of 15000+600000
+ 618352 words of font info for 108 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  96i,21n,94p,1969b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{table.caption.36} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.31} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.26} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.24} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.22} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix*.38} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section*.27} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section*.25} has been referenced but does not exist
-, replaced by a fixed one
-
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/
-texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/
-2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/te
-xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dis
-t/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2025/texmf-dist/font
-s/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
-/urw/palatino/uplbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/p
-alatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino
-/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8
-a.pfb>
-Output written on memorianueva.pdf (57 pages, 1610742 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/lo
+cal/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texl
+ive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/202
+5/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf
+-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2025/texmf-dist/
+fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
+ype1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/ur
+w/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palat
+ino/uplri8a.pfb>
+Output written on memorianueva.pdf (51 pages, 1444957 bytes).
 PDF statistics:
- 1299 PDF objects out of 1440 (max. 8388607)
- 1192 compressed objects within 12 object streams
- 516 named destinations out of 1000 (max. 500000)
- 469 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 898 PDF objects out of 1000 (max. 8388607)
+ 805 compressed objects within 9 object streams
+ 220 named destinations out of 1000 (max. 500000)
+ 453 words of extra memory for PDF output out of 10000 (max. 10000000)
 

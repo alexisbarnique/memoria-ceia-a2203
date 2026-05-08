@@ -1,37 +1,61 @@
-% Chapter Template
+% Chapter 5: Conclusiones
 
 \chapter{Conclusiones} % Main chapter title
 
-\label{Chapter5} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-Todos los capítulos deben comenzar con un breve párrafo introductorio que indique cuál es el contenido que se encontrará al leerlo.  La redacción sobre el contenido de la memoria debe hacerse en presente y todo lo referido al proyecto en pasado, siempre de modo impersonal.
+\label{Chapter5}
 
+En este capítulo se presentan las conclusiones generales derivadas del desarrollo de la prueba de concepto y se proponen líneas de trabajo futuro que permitirían evolucionar el prototipo hacia un producto integrable en un entorno bancario productivo.
 
-%----------------------------------------------------------------------------------------
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Conclusiones generales }
+\section{Conclusiones generales}
 
-La idea de esta sección es resaltar cuáles son los principales aportes del trabajo realizado y cómo se podría continuar. Debe ser especialmente breve y concisa. Es buena idea usar un listado para enumerar los logros obtenidos.
-
-En esta sección no se deben incluir ni tablas ni gráficos.
-
-Algunas preguntas que pueden servir para completar este capítulo:
+El presente trabajo demostró la viabilidad técnica de implementar un sistema de transacciones financieras por voz que opera de forma completamente local en dispositivos móviles iOS. A continuación se enumeran los principales logros alcanzados:
 
 \begin{itemize}
-\item ¿Cuál es el grado de cumplimiento de los requerimientos?
-\item ¿Cuán fielmente se puedo seguir la planificación original (cronograma incluido)?
-\item ¿Se manifestó algunos de los riesgos identificados en la planificación? ¿Fue efectivo el plan de mitigación? ¿Se debió aplicar alguna otra acción no contemplada previamente?
-\item Si se debieron hacer modificaciones a lo planificado ¿Cuáles fueron las causas y los efectos?
-\item ¿Qué técnicas resultaron útiles para el desarrollo del proyecto y cuáles no tanto?
+\item Se diseñó e implementó el SDK Aurum como \textit{framework} nativo reutilizable, que encapsula la totalidad del \textit{pipeline} de procesamiento de voz: captura de audio, transcripción, normalización e inferencia de modelos de \textit{machine learning}. Su arquitectura basada en el patrón de delegación permite que cualquier aplicación bancaria lo integre implementando un único protocolo público.
+
+\item Se entrenaron dos modelos de \textit{machine learning} con Create~ML (MaxEnt para clasificación de intenciones y CRF para extracción de entidades) que alcanzaron un desempeño satisfactorio para la prueba de concepto: 100\% de \textit{accuracy} en la clasificación de intenciones y un F1 \textit{strict} de 0.9427 en la extracción de entidades, con tamaños de modelo de 3.1~KB y 407.2~KB respectivamente.
+
+\item Se validó que el procesamiento estrictamente local (\textit{on-device}) es factible en el hardware actual de Apple. Los modelos Core~ML resolvieron el \textit{pipeline} completo de inferencia con latencias del orden de fracciones de milisegundo, muy por debajo del umbral de percepción humana de 100~ms establecido por Nielsen.
+
+\item Se garantizó la privacidad por diseño: en ningún momento del flujo los datos de audio ni las transcripciones abandonan el dispositivo físico, lo que satisface las restricciones de confidencialidad exigidas por el sector financiero y se alinea con la Ley argentina de Protección de Datos Personales (Ley 25.326).
+
+\item Se desarrolló una aplicación base funcional con SwiftUI que valida la integración con el SDK y demuestra el flujo completo de interacción: desde la activación del micrófono hasta la presentación del \textit{payload} estructurado en una pantalla de confirmación.
+
+\item La metodología CRISP-DM resultó adecuada para estructurar las fases del proyecto, permitiendo iterar entre la comprensión del dominio financiero, la generación del \textit{dataset} sintético, el entrenamiento de los modelos y la evaluación de resultados.
 \end{itemize}
+
+En cuanto a las dificultades encontradas, la principal fue la ausencia de datos reales de comandos de voz bancarios, resuelta mediante la generación de un corpus sintético con técnicas de aumentación de datos. Adicionalmente, se identificó que el locale \texttt{es-AR} no dispone de modelo de reconocimiento de voz \textit{on-device} en la mayoría de los dispositivos iOS, lo que requirió implementar un mecanismo de selección automática de locale con \textit{fallback} a \texttt{es-MX}.
+
+En síntesis, los resultados obtenidos validan que la convergencia entre los \textit{frameworks} nativos de Apple (Speech, Core~ML, Natural\-Language) y las técnicas de procesamiento de lenguaje natural permite construir soluciones de voz robustas, privadas y de baja latencia para el dominio financiero, sin dependencia de servicios en la nube.
 
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
+
 \section{Próximos pasos}
 
-Acá se indica cómo se podría continuar el trabajo más adelante.
+El presente trabajo establece las bases técnicas para una solución de voz bancaria \textit{on-device}. A continuación se proponen las líneas de trabajo futuro que permitirían acercar el prototipo a un nivel de madurez productivo:
+
+\begin{itemize}
+\item Validación con usuarios reales: ejecutar un estudio de usabilidad con una muestra amplia y diversificada en edad, dialecto regional y familiaridad con tecnología de voz, que permita obtener métricas estadísticamente significativas de tasa de éxito, tiempo de interacción y satisfacción.
+
+\item Ampliación del corpus de entrenamiento: incorporar grabaciones de voz reales (con consentimiento informado) para entrenar los modelos con datos representativos del habla natural, incluyendo ruido ambiental, variaciones prosódicas y errores de dicción.
+
+\item Expansión del dominio transaccional: extender las intenciones soportadas a operaciones como pagos de servicios, consultas de últimos movimientos, inversiones y operaciones con tarjetas, lo que implicaría ampliar el esquema de entidades y reentrenar los modelos.
+
+\item Mediciones en dispositivo físico: ejecutar \textit{benchmarks} de latencia con Xcode Instruments sobre dispositivos iPhone con Neural Engine, lo que proporcionaría datos de rendimiento representativos del entorno de producción.
+
+\item Integración con biometría de voz: investigar la factibilidad de incorporar un módulo de verificación de identidad basado en las características acústicas del hablante (\textit{speaker verification}), que operaría como factor adicional de autenticación previo a la ejecución de la transacción.
+
+\item Soporte multilingüe: adaptar el \textit{pipeline} para soportar otros idiomas y variantes regionales del español, aprovechando la arquitectura modular del SDK que permite intercambiar modelos sin modificar la lógica de orquestación.
+
+\item Evaluación de seguridad adversarial: analizar la robustez del sistema ante ataques de inyección acústica (\textit{adversarial audio attacks}) y definir contramedidas, como umbrales adaptativos de confianza y detección de anomalías en la señal de entrada.
+
+\item Integración con el \textit{core} bancario: diseñar la capa de comunicación segura entre el SDK y los servicios \textit{backend} del banco, incluyendo la firma criptográfica del \textit{payload}, la autenticación mutua TLS y la trazabilidad de las operaciones para auditoría.
+\end{itemize}
