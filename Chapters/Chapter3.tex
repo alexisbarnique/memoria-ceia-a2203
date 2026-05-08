@@ -88,6 +88,51 @@ La síntesis del corpus se estructuró a partir de plantillas gramaticales que m
 
 Los datos resultantes de la inferencia se estructuraron utilizando \textit{structs} en Swift \citep{apple2026swiftlanguage}, garantizando la inmutabilidad de la información una vez procesada. Para la serialización se adoptó el protocolo \texttt{Codable} nativo de Apple \citep{apple2026codable}, estandarizando la comunicación entre el SDK y la aplicación base mediante formatos universales como JSON \citep{rfc8259json}.
 
+\subsection{Composición y distribución del corpus}
+
+El proceso de aumentación produjo dos corpus diferenciados, uno para cada tarea de \textit{machine learning}: clasificación de intenciones y extracción de entidades (NER). Ambos se particionaron en una proporción 80/20 entre entrenamiento y test, respectivamente.
+
+La tabla~\ref{tab:corpus-intenciones} detalla la distribución del corpus de intenciones por clase.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Clase} & \textbf{Train} & \textbf{Test} & \textbf{Total} \\
+\midrule
+\textsc{transferencia}   & 1275 (34.6\%) & 325 (35.3\%) & 1600 \\
+\textsc{consulta\_saldo} & 1195 (32.5\%) & 305 (33.2\%) & 1500 \\
+\textsc{cancelar}        & 1210 (32.9\%) & 290 (31.5\%) & 1500 \\
+\midrule
+\textbf{Total}           & 3680          & 920          & 4600 \\
+\bottomrule
+\end{tabular}
+\caption{Distribución del corpus de clasificación de intenciones por clase y partición.}
+\label{tab:corpus-intenciones}
+\end{table}
+
+La distribución entre clases se mantuvo aproximadamente uniforme para evitar sesgos en el clasificador. La clase \textsc{transferencia} concentra una proporción ligeramente mayor debido a la incorporación de muestras con variaciones coloquiales de moneda, necesarias para cubrir la diversidad léxica del español rioplatense.
+
+Para el corpus de extracción de entidades, cada muestra corresponde a un comando de transferencia tokenizado con etiquetas IOB (\textit{Inside-Outside-Beginning}). La tabla~\ref{tab:corpus-ner} presenta la distribución por moneda, dado que el balance entre pesos argentinos (ARS) y dólares estadounidenses (USD) resulta crítico para que el modelo reconozca ambas divisas con precisión comparable.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Moneda} & \textbf{Train} & \textbf{Test} & \textbf{Total} \\
+\midrule
+ARS (pesos, mangos, lucas) & 1335 (52.4\%) & 355 (55.5\%) & 1690 \\
+USD (dólares, verdes)      & 1215 (47.6\%) & 285 (44.5\%) & 1500 \\
+\midrule
+\textbf{Total}             & 2550          & 640          & 3190 \\
+\bottomrule
+\end{tabular}
+\caption{Distribución del corpus NER por moneda y partición.}
+\label{tab:corpus-ner}
+\end{table}
+
+Las técnicas de aumentación aplicadas incluyeron la inyección de variaciones propias del español rioplatense: formas verbales en voseo (``transferile'', ``mandále'', ``pasale''), expresiones coloquiales de moneda (``lucas'' como multiplicador de miles en pesos, ``verdes'' como sinónimo de dólares, ``mangos'' como sinónimo de pesos) y variaciones en la estructura sintáctica del comando (con y sin la preposición ``en'' antes de la moneda, con y sin el prefijo ``plata'' tras el verbo). Del total de muestras de transferencia, el 76\% incorpora alguna forma de voseo rioplatense, lo que refleja el registro lingüístico predominante en la población objetivo del sistema.
+
 \subsection{Modelo de datos}
 
 El \textit{payload} que los modelos devuelven al sistema se consolidó en una única entidad semántica con campos fuertemente tipados: Intención (acción directiva inferida, como iniciar una transferencia), Monto (valor numérico de tipo \texttt{Double}), Moneda (enumeración con valores finitos como ARS o USD, que elimina la ambigüedad de sinónimos coloquiales) y Destinatario (cadena de texto con la identidad nominal del beneficiario). Este enfoque de modelado determinista abstrae a la aplicación anfitriona de toda la complejidad inherente al procesamiento de lenguaje natural, permitiéndole consumir un \textit{payload} limpio cuya estructura es análoga a la que generaría una interfaz táctil tradicional basada en formularios.
@@ -135,7 +180,7 @@ Procesamiento NLU
 
 \subsection{Clase fachada: \texttt{Aurum\allowbreak{}Engine}}
 
-La clase \texttt{Aurum\allowbreak{}Engine} implementa el patrón de diseño \textit{Facade} \citep{gamma1994design} y constituye el único punto de entrada público del SDK. Internamente mantiene referencias privadas a los cuatro componentes de procesamiento y los instancia durante la fase de configuración. La API pública expone únicamente tres métodos de control: \texttt{configure(bundle:)} para precargar los modelos Core~ML desde el \textit{bundle} de la app (ejecutado una única vez durante el inicio), \texttt{startListening()} para iniciar la captura de audio y el reconocimiento de voz, y \texttt{stopListening()} para detener la captura y forzar el procesamiento del texto acumulado. Un cuarto método, \texttt{cancelListening()}, cancela la operación en curso y libera recursos.
+La clase \texttt{Aurum\allowbreak{}Engine} implementa el patrón de diseño \textit{Facade} \citep{gamma1994design} y constituye el único punto de entrada público del SDK. Internamente mantiene referencias privadas a los cuatro componentes de procesamiento y los instancia durante la fase de configuración. La API pública expone cuatro métodos de control: \texttt{configure(bundle:)} para precargar los modelos Core~ML desde el \textit{bundle} de la app (ejecutado una única vez durante el inicio), \texttt{start\allowbreak{}Listening()} para iniciar la captura de audio y el reconocimiento de voz, \texttt{stop\allowbreak{}Listening()} para detener la captura y forzar el procesamiento del texto acumulado, y \texttt{cancel\allowbreak{}Listening()} para cancelar la operación en curso y liberar recursos sin procesar el audio capturado.
 
 
 \subsection{Captura de audio: \texttt{Audio\allowbreak{}Capture\allowbreak{}Manager}}
@@ -145,7 +190,7 @@ El componente \texttt{Audio\allowbreak{}Capture\allowbreak{}Manager} encapsula l
 
 \subsection{Reconocimiento de voz: \texttt{Speech\allowbreak{}Recognizer}}
 
-El componente \texttt{Speech\allowbreak{}Recognizer} integra el \textit{framework} nativo \texttt{Speech} \citep{apple2026speech} para la transcripción de voz a texto. El reconocedor se instancia con el \textit{locale} \texttt{es-AR} (español de Argentina), que activa los modelos acústicos y de lenguaje optimizados para el habla rioplatense.
+El componente \texttt{Speech\allowbreak{}Recognizer} integra el \textit{framework} nativo \texttt{Speech} \citep{apple2026speech} para la transcripción de voz a texto. El reconocedor implementa un mecanismo de selección automática de \textit{locale} con \textit{fallback}: evalúa secuencialmente los locales \texttt{es-MX}, \texttt{es-ES} y \texttt{es-AR}, y selecciona el primero que disponga de modelo de reconocimiento \textit{on-device} descargado en el dispositivo. Esta estrategia se adoptó tras verificar que \texttt{es-AR} no dispone de modelo local en la mayoría de los dispositivos iOS, mientras que \texttt{es-MX} ofrece cobertura generalizada suficiente para capturar las variaciones fonológicas del español rioplatense.
 
 La propiedad \texttt{requires\allowbreak{}On\allowbreak{}Device\allowbreak{}Recognition = true} es la piedra angular de la estrategia de privacidad: instruye al \textit{Speech Framework} a utilizar exclusivamente el modelo de reconocimiento local, bloqueando cualquier transmisión de audio a servidores externos. Adicionalmente, la propiedad \texttt{contextual\allowbreak{}Strings} proporciona un vocabulario de refuerzo del dominio financiero (``transferencia'', ``saldo'', ``lucas''), que ajusta las probabilidades del modelo de lenguaje durante la decodificación sin modificar el modelo acústico subyacente.
 
@@ -154,7 +199,7 @@ El reconocimiento opera en modo \textit{streaming}: a medida que el usuario habl
 
 \subsection{Normalización de texto: \texttt{Text\allowbreak{}Normalizer}}
 
-La transcripción cruda contiene frecuentemente expresiones coloquiales, numéricas y morfológicas incompatibles con el vocabulario del corpus de entrenamiento. El \texttt{Text\allowbreak{}Normalizer} actúa como capa de estandarización mediante tres categorías de transformaciones: la conversión de expresiones numéricas textuales a su forma numérica (tanto estándar como coloquiales con multiplicadores implícitos: ``lucas'' $\times$ 1000, ``gambas'' $\times$ 100, ``palo'' $\times$ 1\,000\,000), la normalización de léxico coloquial rioplatense mediante un diccionario de equivalencias (``mangos'' $\rightarrow$ ``pesos'', ``verdes'' $\rightarrow$ ``dólares''), y la normalización morfológica de formas verbales del voseo (``transferí'' $\rightarrow$ ``transferir'') con eliminación de partículas coloquiales sin contenido semántico (``che'', ``dale'').
+La transcripción cruda contiene frecuentemente expresiones coloquiales, numéricas y morfológicas incompatibles con el vocabulario del corpus de entrenamiento. El \texttt{Text\allowbreak{}Normalizer} actúa como capa de estandarización mediante tres categorías de transformaciones: la conversión de expresiones numéricas textuales a su forma numérica, tanto estándar (``cinco mil'' $\rightarrow$ ``5000'') como coloquiales con multiplicadores implícitos (``lucas'' $\times$ 1000), la normalización de léxico coloquial rioplatense mediante un diccionario de equivalencias (``mangos'' $\rightarrow$ ``pesos'', ``verdes'' $\rightarrow$ ``dólares''), y la normalización de preposiciones redundantes (``en pesos'' $\rightarrow$ ``pesos'', ``en dólares'' $\rightarrow$ ``dólares'').
 
 
 \subsection{Procesamiento NLU: \texttt{NLU\allowbreak{}Processor}}
@@ -216,7 +261,7 @@ El protocolo extiende \texttt{AnyObject}, lo que restringe su adopción a tipos 
 
 El SDK define un enumerado de errores tipados que cubre los modos de fallo de cada etapa del \textit{pipeline}: denegación de permisos de micrófono o reconocimiento de voz, indisponibilidad del reconocedor, fallos de configuración de la sesión de audio, errores de reconocimiento o de inferencia NLU, y fallos de validación del \textit{payload}. Los errores que envuelven un error subyacente (\texttt{underlying: Error}) preservan la cadena de causalidad para facilitar el diagnóstico durante el desarrollo, sin exponer detalles internos al usuario final.
 
-En síntesis, la aplicación consumidora interactúa exclusivamente con tres métodos públicos y cinco \textit{callbacks} del delegado, permaneciendo completamente agnóstica respecto a las operaciones internas de vectorización, etiquetado y transcripción.
+En síntesis, la aplicación consumidora interactúa exclusivamente con cuatro métodos públicos y cinco \textit{callbacks} del delegado, permaneciendo completamente agnóstica respecto a las operaciones internas de vectorización, etiquetado y transcripción.
 
 
 \section{Desarrollo de la app base}
@@ -234,7 +279,7 @@ El componente central es la clase \texttt{Transaction\allowbreak{}View\allowbrea
 
 \subsection{Integración con el SDK Aurum}
 
-La integración se realiza a través de dos puntos de contacto: \texttt{Aurum\allowbreak{}Engine} (fachada de control) y \texttt{Aurum\allowbreak{}Delegate} (canal de notificaciones). Durante el inicio, el \textit{ViewModel} instancia el motor, registra su referencia como delegado e invoca \texttt{configure\allowbreak{}(bundle: .main)} para precargar los modelos Core~ML. Un único método \texttt{toggle\allowbreak{}Listening()} traduce la acción del usuario en invocaciones a \texttt{start\allowbreak{}Listening()} o \texttt{stop\allowbreak{}Listening()} según el estado actual. Cada \textit{callback} del delegado actualiza las propiedades \texttt{@Published} del \textit{ViewModel} dentro de \texttt{Dispatch\allowbreak{}Queue.\allowbreak{}main.\allowbreak{}async}, garantizando que las mutaciones de estado ocurran en el hilo principal, requisito de SwiftUI para el redibujo seguro de la interfaz.
+La integración se realiza a través de dos puntos de contacto: \texttt{Aurum\allowbreak{}Engine} (fachada de control) y \texttt{Aurum\allowbreak{}Delegate} (canal de notificaciones). Durante el inicio, el \textit{ViewModel} instancia el motor, registra su referencia como delegado e invoca \texttt{configure()} para precargar los modelos Core~ML. Un único método \texttt{toggle\allowbreak{}Listening()} traduce la acción del usuario en invocaciones a \texttt{start\allowbreak{}Listening()} o \texttt{stop\allowbreak{}Listening()} según el estado actual. Cada \textit{callback} del delegado actualiza las propiedades \texttt{@Published} del \textit{ViewModel} dentro de \texttt{Dispatch\allowbreak{}Queue.\allowbreak{}main.\allowbreak{}async}, garantizando que las mutaciones de estado ocurran en el hilo principal, requisito de SwiftUI para el redibujo seguro de la interfaz.
 
 La app base no contiene lógica de procesamiento de lenguaje natural ni de audio. La totalidad de la cadena de inferencia permanece encapsulada dentro del SDK. Esta separación de responsabilidades demuestra la naturaleza reutilizable del framework: cualquier aplicación iOS podría integrar las capacidades de transacciones por voz implementando el mismo protocolo \texttt{Aurum\allowbreak{}Delegate}.
 
@@ -243,7 +288,7 @@ La app base no contiene lógica de procesamiento de lenguaje natural ni de audio
 
 La interfaz gráfica fue desarrollada íntegramente con SwiftUI \citep{apple-swiftui} y se compone de dos vistas principales.
 
-La \texttt{MainView} constituye la pantalla de interacción primaria, diseñada bajo el principio de simplicidad cognitiva. Sus elementos son: un botón de activación por voz (circular, con apariencia visual que muta según el estado: ícono estático en \texttt{idle}, animación de pulsación en \texttt{listening}, \textit{spinner} en \texttt{processing}), un área de transcripción parcial que muestra en tiempo real el texto reconocido, y un indicador de estado textual (``Toque para hablar'', ``Escuchando...'', ``Procesando...'').
+La \texttt{MainView} constituye la pantalla de interacción primaria, diseñada bajo el principio de simplicidad cognitiva. Sus elementos son: un botón de activación por voz (circular, con apariencia visual que muta según el estado: ícono de micrófono en \texttt{idle}, animación de pulsación con color rojo en \texttt{listening}, ícono de cerebro en \texttt{processing}), un área de transcripción parcial que muestra en tiempo real el texto reconocido, y un indicador de estado textual (``Toque el botón y diga su comando'', ``Escuchando...'', ``Procesando...'').
 
 La \texttt{Confirmation\allowbreak{}View} se presenta como hoja modal cuando el SDK entrega un \texttt{Transaction\allowbreak{}Payload}. Exhibe de forma desglosada la intención detectada, el monto formateado, la moneda, el destinatario, el nivel de confianza (como porcentaje) y la transcripción original. Incluye botones de ``Confirmar'' y ``Cancelar'', implementando el patrón de \textit{confirmation dialog} \citep{nielsen-confirmation}, motivado por la naturaleza financiera de las operaciones.
 

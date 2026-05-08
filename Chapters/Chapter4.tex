@@ -41,12 +41,12 @@ por clase, calculadas sobre el conjunto de test.
 \toprule
 \textbf{Intención} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Soporte} \\
 \midrule
-\textsc{transferencia}  & 1.000 & 1.000 & 1.000 & 305 \\
+\textsc{transferencia}  & 1.000 & 1.000 & 1.000 & 325 \\
 \textsc{consulta\_saldo} & 1.000 & 1.000 & 1.000 & 305 \\
 \textsc{cancelar}       & 1.000 & 1.000 & 1.000 & 290 \\
 \midrule
-\textit{Macro avg}      & 1.000 & 1.000 & 1.000 & 900 \\
-\textit{Weighted avg}   & 2.000 & 2.000 & 2.000 & 900 \\
+\textit{Macro avg}      & 1.000 & 1.000 & 1.000 & 920 \\
+\textit{Weighted avg}   & 1.000 & 1.000 & 1.000 & 920 \\
 \midrule
 \multicolumn{2}{@{}l}{\textbf{Accuracy global}} & \multicolumn{2}{c}{100.00\%} & 1.000 \\
 \bottomrule
@@ -73,7 +73,7 @@ La tabla~\ref{tab:confusion-intenciones} muestra la matriz de confusión, que pe
  & \multicolumn{3}{c}{\textbf{Predicción}} \\
 \textbf{Verdadera} & \textsc{transferencia} & \textsc{consulta\_saldo} & \textsc{cancelar} \\
 \midrule
-\textsc{transferencia}   & 305 & 0 & 0 \\
+\textsc{transferencia}   & 325 & 0 & 0 \\
 \textsc{consulta\_saldo} & 0 & 305 & 0 \\
 \textsc{cancelar}        & 0 & 0 & 290 \\
 \bottomrule
@@ -113,18 +113,18 @@ individual.
 \toprule
 \textbf{Etiqueta IOB} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Soporte} \\
 \midrule
-O                               & 1.0000 & 0.9131 & 0.9546 & 1658  \\
-B-DESTINATARIO               & 1.0000 & 0.8917 & 0.9427 & 600 \\
-B-MONEDA         & 1.0000 & 0.8917 & 0.9427 & 600  \\
-B-MONTO         & 1.0000 & 0.8917 &  0.9427 & 600  \\
-I-DESTINATARIO        & 1.0000 & 0.9894 & 0.9947 & 188  \\
-I-MONEDA        & 1.0000 & 0.9109 & 0.9533 & 258  \\
-I-MONTO        & 1.0000 & 0.9051 & 0.9502 & 253  \\
+O                               & 1.0000 & 0.9017 & 0.9483 & 1770  \\
+B-MONTO                         & 1.0000 & 0.8812 & 0.9369 & 640   \\
+I-MONTO                         & 1.0000 & 0.9051 & 0.9502 & 253   \\
+B-MONEDA                        & 1.0000 & 0.8812 & 0.9369 & 640   \\
+I-MONEDA                        & 1.0000 & 0.9109 & 0.9533 & 258   \\
+B-DESTINATARIO                  & 1.0000 & 0.8812 & 0.9369 & 640   \\
+I-DESTINATARIO                  & 1.0000 & 0.9624 & 0.9809 & 213   \\
 \midrule
-\textit{Macro avg}      & 0.5833 & 0.5328 & 0.5568 & 4157 \\
-\textit{Weighted avg}   & 1.5833 & 1.4395 & 1.5077 & 4157 \\
+\textit{Macro avg}      & 1.0000 & 0.9034 & 0.9491 & 4414 \\
+\textit{Weighted avg}   & 1.0000 & 0.8965 & 0.9453 & 4414 \\
 \midrule
-\multicolumn{2}{@{}l}{\textbf{Token Accuracy}} & \multicolumn{2}{c}{90.67\%} & 0.9067 \\
+\multicolumn{2}{@{}l}{\textbf{Token Accuracy}} & \multicolumn{2}{c}{89.65\%} & 0.8965 \\
 \bottomrule
 \end{tabular}
 \caption{Rendimiento del extractor de entidades (MLWordTagger, algoritmo CRF)
@@ -162,18 +162,18 @@ criterios.
 \textbf{Modo} & \textbf{Entidad} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\
 \midrule
 \multirow{4}{*}{\textit{Strict}}
-  & MONTO         & 1.0000 & 0.8917 & 0.9427 \\
-  & MONEDA        & 1.0000 & 0.8917 & 0.9427 \\
-  & DESTINATARIO  & 1.0000 & 0.8917 & 0.9427 \\
+  & MONTO         & 1.0000 & 0.8812 & 0.9369 \\
+  & MONEDA        & 1.0000 & 0.8812 & 0.9369 \\
+  & DESTINATARIO  & 1.0000 & 0.8812 & 0.9369 \\
   \cmidrule(l){2-5}
-  & \textit{Macro avg} & 1.0000 & 0.8917 & 0.9427 \\
+  & \textit{Macro avg} & 1.0000 & 0.8812 & 0.9369 \\
 \midrule
 \multirow{4}{*}{\textit{Relaxed}}
-  & MONTO         & 1.0000 & 0.8917 & 0.9427 \\
-  & MONEDA        & 1.0000 & 0.8917 & 0.9427 \\
-  & DESTINATARIO  & 1.0000 & 0.8917 & 0.9427 \\
+  & MONTO         & 1.0000 & 0.8812 & 0.9369 \\
+  & MONEDA        & 1.0000 & 0.8812 & 0.9369 \\
+  & DESTINATARIO  & 1.0000 & 0.8812 & 0.9369 \\
   \cmidrule(l){2-5}
-  & \textit{Macro avg} & 1.0000 & 0.8917 & 0.9427 \\
+  & \textit{Macro avg} & 1.0000 & 0.8812 & 0.9369 \\
 \bottomrule
 \end{tabular}
 \caption{Rendimiento del extractor de entidades a nivel de entidad completa.
@@ -303,9 +303,6 @@ descartar el efecto de carga en caché. Las mediciones se realizaron con \texttt
 % --- TABLA: Benchmark de latencia ---
 \begin{table}[htbp]
 \centering
-\caption{Latencia de inferencia de los modelos Core~ML, medida sobre macOS
-         (CPU). En un dispositivo iOS con Neural Engine, las latencias serían
-         inferiores. Se reportan estadísticos sobre 1.600 inferencias por modelo.}
 \label{tab:latencia}
 \begin{tabular}{@{}lcc@{}}
 \toprule
@@ -326,11 +323,15 @@ Máximo              & XX.XXX ms & XX.XXX ms \\
 \textbf{Pipeline completo (media)} & \multicolumn{2}{c}{\textbf{XX.XXX ms}} \\
 \bottomrule
 \end{tabular}
+\caption{Latencia de inferencia de los modelos Core~ML, medida sobre macOS
+         (CPU). En un dispositivo iOS con Neural Engine, las latencias serían
+         inferiores. Se reportan estadísticos sobre 1.600 inferencias por modelo.}
+
 \end{table}
 
-Los resultados confirman que la latencia de inferencia de ambos modelos se encuentra en el orden de los milisegundos, sustancialmente por debajo del umbral de percepción humana de 100~ms \citep{nielsen-response-times}. La latencia media del \textit{pipeline} completo (clasificación + extracción) es inferior a XX~ms, lo que implica que el procesamiento NLU no constituye un cuello de botella en el flujo de interacción. La latencia perceptible por el usuario está dominada por el tiempo de transcripción del \textit{Speech Framework} (100--300~ms tras el último \textit{buffer} de audio), no por la inferencia de los modelos.
+Los resultados confirman que la latencia de inferencia de ambos modelos se encuentra en el orden de los milisegundos, sustancialmente por debajo del umbral de percepción humana de 100~ms \citep{nielsen-response-times}. La latencia media del \textit{pipeline} completo (clasificación + extracción) es inferior a 1~ms, lo que implica que el procesamiento NLU no constituye un cuello de botella en el flujo de interacción. La latencia perceptible por el usuario está dominada por el tiempo de transcripción del \textit{Speech Framework} (100--300~ms tras el último \textit{buffer} de audio), no por la inferencia de los modelos.
 
-La baja varianza observada (desviación estándar inferior a XX~ms) indica un comportamiento predecible y determinístico, atributo deseable en aplicaciones financieras donde la consistencia temporal es un requisito implícito de calidad de servicio.
+La baja varianza observada (desviación estándar inferior a 1~ms) indica un comportamiento predecible y determinístico, atributo deseable en aplicaciones financieras donde la consistencia temporal es un requisito implícito de calidad de servicio.
 
 Es pertinente señalar que estas mediciones se realizaron sobre macOS utilizando la CPU del equipo de desarrollo. En un dispositivo iOS equipado con Neural Engine (por ejemplo, un iPhone con chip A15 Bionic o superior), las latencias serían aún menores debido a la aceleración por hardware dedicado para inferencia de modelos Core~ML. Una medición en dispositivo físico con Xcode Instruments constituye trabajo futuro.
 
@@ -384,6 +385,75 @@ Para cada tarea, se registraron las siguientes métricas:
     sistema estuviera escuchando, o porque no entendió el estado de la interfaz).
 \end{itemize}
 
+Las figuras~\ref{fig:app-idle} a~\ref{fig:app-processing} ilustran los estados de la interfaz durante el flujo de interacción del protocolo de evaluación.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.35\textwidth]{./Figures/screenshots/home-app-base.PNG}
+\caption[Pantalla principal de la app base en estado idle]{Pantalla principal de la app base en estado \texttt{idle}. El botón azul con ícono de micrófono indica que el sistema está listo para recibir un comando de voz.}
+\label{fig:app-idle}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=0.78\textwidth]{./Figures/screenshots/solicitud-permiso-microfono.PNG}
+\caption[Solicitud de permiso de acceso al micrófono]{Solicitud de permiso de acceso al micrófono (\texttt{NSMicrophone\allowbreak{}UsageDescription}), presentada la primera vez que el usuario activa la escucha.}
+\label{fig:permiso-mic}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=0.78\textwidth]{./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG}
+\caption[Solicitud de permiso de reconocimiento de voz]{Solicitud de permiso de reconocimiento de voz (\texttt{NSSpeech\allowbreak{}Recognition\allowbreak{}Usage\allowbreak{}Description}).}
+\label{fig:permiso-speech}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=0.78\textwidth]{./Figures/screenshots/transcripcion-dictado.PNG}
+\caption[Estado listening: transcripción en tiempo real]{Estado \texttt{listening}: el botón muta a rojo con animación de pulsación. La transcripción parcial se muestra en tiempo real.}
+\label{fig:app-listening}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=0.78\textwidth]{./Figures/screenshots/procesamiento.PNG}
+\caption[Estado processing: inferencia de modelos Core ML]{Estado \texttt{processing}: el botón se muestra gris con ícono de cerebro mientras los modelos Core~ML ejecutan la inferencia.}
+\label{fig:app-processing}
+\end{minipage}
+\end{figure}
+
+Las figuras~\ref{fig:confirm-transferencia} a~\ref{fig:confirm-saldo} muestran las pantallas de confirmación para cada tipo de intención detectada.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.40\textwidth]{./Figures/screenshots/intencion-confirmacion-transferencia.PNG}
+\caption[Pantalla de confirmación de transferencia]{Pantalla de confirmación para una transferencia exitosa. Se muestra el monto (\$~500,00), la moneda (Pesos Argentinos), el destinatario (Juan Pérez), la transcripción original y la confianza del modelo (98.6\%).}
+\label{fig:confirm-transferencia}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=0.78\textwidth]{./Figures/screenshots/intencion-consulta-saldo.PNG}
+\caption[Confirmación de consulta de saldo]{Confirmación de consulta de saldo. Se presenta el saldo simulado y la confianza del modelo (99.5\%).}
+\label{fig:confirm-saldo}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=0.78\textwidth]{./Figures/screenshots/intencion-cancelar.PNG}
+\caption[Confirmación de intención de cancelación]{Confirmación de intención de cancelación. El modelo clasificó el comando con una confianza de 96.1\%.}
+\label{fig:confirm-cancelar}
+\end{minipage}
+\end{figure}
+
 
 \subsection{Resultados de usabilidad}
 \label{subsec:resultados-usabilidad}
@@ -391,9 +461,6 @@ Para cada tarea, se registraron las siguientes métricas:
 % --- TABLA: Resultados de usabilidad ---
 \begin{table}[htbp]
 \centering
-\caption{Resultados de las pruebas de usabilidad por tarea. La tasa de éxito
-         se calcula sobre el total de intentos. El tiempo de interacción incluye
-         el habla del usuario, el procesamiento y la confirmación.}
 \label{tab:usabilidad}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
@@ -413,6 +480,10 @@ T6 --- Comando ambiguo    & XX\%  & XX.X s & X & X \\
 \textit{Promedio}         & XX\%  & XX.X s & X.X & --- \\
 \bottomrule
 \end{tabular}
+\caption{Resultados de las pruebas de usabilidad por tarea. La tasa de éxito
+         se calcula sobre el total de intentos. El tiempo de interacción incluye
+         el habla del usuario, el procesamiento y la confirmación.}
+
 \end{table}
 
 Los resultados de las pruebas de usabilidad arrojan las siguientes
@@ -459,7 +530,7 @@ entidades nombradas en el dominio de transacciones financieras por voz, operando
 
 Los resultados obtenidos respaldan esta hipótesis. El clasificador de intenciones alcanzó un Macro F1-Score de 1.00 sobre el conjunto de test,
 un valor que indica una capacidad discriminativa alta para las tres clases definidas. El extractor de entidades logró un Entity F1 \textit{strict} macro
-de 0.5568, que si bien es inferior al del clasificador lo que es esperable dado que la extracción de entidades es intrínsecamente una tarea más compleja que la clasificación de texto, resulta suficiente para la prueba de concepto
+de 0.9369, que si bien es inferior al del clasificador ---lo que es esperable dado que la extracción de entidades es intrínsecamente una tarea más compleja que la clasificación de texto--- resulta suficiente para la prueba de concepto
 propuesta.
 
 
@@ -479,7 +550,7 @@ Sin embargo, la comparación de precisión aislada es insuficiente. El análisis
     un BiLSTM. Para un dispositivo móvil con almacenamiento limitado y donde la aplicación bancaria compite por espacio con otras aplicaciones, esta
     diferencia de dos a tres órdenes de magnitud es determinante.
 
-    \item Latencia de inferencia: los modelos nativos resolvieron el \textit{pipeline} completo en XX~ms promedio. Un BETO sin comprimir
+    \item Latencia de inferencia: los modelos nativos resolvieron el \textit{pipeline} completo en menos de 1~ms promedio. Un BETO sin comprimir
     requiere típicamente más de 200~ms por inferencia en un dispositivo móvil \citep{sun2020mobilebert}, lo que acumularía una latencia perceptible al
     ejecutar las dos inferencias (clasificación + NER) en secuencia.
 
@@ -524,9 +595,7 @@ futuro:
     requeriría un catálogo significativamente más amplio de operaciones (pagos de servicios, inversiones, consultas de movimientos, etc.) y entidades
     (fechas, números de cuenta, CBU/CVU).
 
-    \item Idioma único: la implementación se centra exclusivamente en español rioplatense (\texttt{es-AR}). La generalización a otros dialectos
-    del español o a otros idiomas requeriría corpus de entrenamiento adicionales y la validación de que el \texttt{TextNormalizer} es
-    extensible a otros sistemas léxicos coloquiales.
+    \item Idioma único: la implementación se centra exclusivamente en español rioplatense. Si bien el reconocedor de voz utiliza un mecanismo de \textit{fallback} que selecciona automáticamente el locale con soporte \textit{on-device} (\texttt{es-MX} o \texttt{es-ES}), los modelos NLU y el normalizador fueron entrenados y configurados para el léxico rioplatense. La generalización a otros dialectos del español o a otros idiomas requeriría corpus de entrenamiento adicionales y la validación de que el \texttt{Text\allowbreak{}Normalizer} es extensible a otros sistemas léxicos coloquiales.
 
     \item Ausencia de \textit{backend} real: la app base simula la confirmación de la transacción sin conectarse a un sistema bancario real.
     La integración con una API transaccional introduciría latencias de red, requisitos de autenticación biométrica (Face~ID, Touch~ID) y manejo de
@@ -575,10 +644,10 @@ rendimiento de los modelos Core~ML del SDK Aurum.
 \textbf{Métrica} & \textbf{Clasificador} & \textbf{Extractor NER} \\
                   & \textbf{(MaxEnt)}     & \textbf{(CRF)} \\
 \midrule
-Accuracy / Token Accuracy     & 100.00\% & 90.67\% \\
-Macro F1-Score                & 1.0000   & 0.5568   \\
-Entity F1 (strict)            & ---     & 0.9427   \\
-Entity F1 (relaxed)           & ---     & 0.9427   \\
+Accuracy / Token Accuracy     & 100.00\% & 89.65\% \\
+Macro F1-Score                & 1.0000   & 0.9491   \\
+Entity F1 (strict)            & ---     & 0.9369   \\
+Entity F1 (relaxed)           & ---     & 0.9369   \\
 Tamaño del modelo             & 3.1 KB   & 407.2 KB   \\
 Latencia media de inferencia  & 0.0 ms   & 0.1 ms   \\
 \bottomrule

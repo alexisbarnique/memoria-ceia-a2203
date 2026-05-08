@@ -15,41 +15,42 @@
 \contentsline {section}{\numberline {3.1}Arquitectura del sistema}{11}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Tratamiento y preparación de datos}{14}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Creación de plantillas de comandos y aumentación de datos}{14}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Modelo de datos}{14}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Desarrollo del SDK (Aurum)}{14}{section.3.3}%
+\contentsline {subsection}{\numberline {3.2.2}Composición y distribución del corpus}{14}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Modelo de datos}{15}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Desarrollo del SDK (Aurum)}{15}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Clase fachada: \texttt {Aurum\allowbreak {}Engine}}{15}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Captura de audio: \texttt {Audio\allowbreak {}Capture\allowbreak {}Manager}}{15}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Reconocimiento de voz: \texttt {Speech\allowbreak {}Recognizer}}{15}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Normalización de texto: \texttt {Text\allowbreak {}Normalizer}}{16}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Procesamiento NLU: \texttt {NLU\allowbreak {}Processor}}{16}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Modelo de datos: \texttt {Transaction\allowbreak {}Payload}}{16}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}API pública y comunicación asíncrona}{17}{subsection.3.3.7}%
-\contentsline {subsection}{\numberline {3.3.8}Gestión de errores: \texttt {Aurum\allowbreak {}Error}}{17}{subsection.3.3.8}%
-\contentsline {section}{\numberline {3.4}Desarrollo de la app base}{18}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Arquitectura MVVM y flujo de estados}{18}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Integración con el SDK Aurum}{18}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Capa de presentación (SwiftUI)}{19}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Gestión de permisos y privacidad}{19}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Flujo de interacción del usuario}{20}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.3.2}Captura de audio: \texttt {Audio\allowbreak {}Capture\allowbreak {}Manager}}{16}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Reconocimiento de voz: \texttt {Speech\allowbreak {}Recognizer}}{16}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Normalización de texto: \texttt {Text\allowbreak {}Normalizer}}{17}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Procesamiento NLU: \texttt {NLU\allowbreak {}Processor}}{17}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Modelo de datos: \texttt {Transaction\allowbreak {}Payload}}{17}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}API pública y comunicación asíncrona}{18}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.8}Gestión de errores: \texttt {Aurum\allowbreak {}Error}}{18}{subsection.3.3.8}%
+\contentsline {section}{\numberline {3.4}Desarrollo de la app base}{19}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Arquitectura MVVM y flujo de estados}{19}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Integración con el SDK Aurum}{19}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Capa de presentación (SwiftUI)}{20}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Gestión de permisos y privacidad}{20}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Flujo de interacción del usuario}{21}{subsection.3.4.5}%
 \contentsline {chapter}{\numberline {4}Ensayos y resultados}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Desempeño del modelo}{23}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Clasificador de intenciones (MaxEnt)}{23}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Extractor de entidades (CRF)}{24}{subsection.4.1.2}%
-\contentsline {subsubsection}{Métricas a nivel de token}{24}{section*.13}%
-\contentsline {subsubsection}{Métricas a nivel de entidad}{25}{section*.15}%
+\contentsline {subsubsection}{Métricas a nivel de token}{24}{section*.15}%
+\contentsline {subsubsection}{Métricas a nivel de entidad}{25}{section*.17}%
 \contentsline {section}{\numberline {4.2}Ensayo de modelos}{26}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Evaluación de robustez lingüística}{26}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Benchmark de latencia de inferencia}{28}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Pruebas de usabilidad}{29}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Protocolo de evaluación}{29}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Resultados de usabilidad}{30}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Análisis de resultados}{31}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Validación de la hipótesis central}{31}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Comparación con arquitecturas alternativas}{31}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Rol del \texttt {TextNormalizer}}{32}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Limitaciones del estudio}{32}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Conexión con CRISP-DM}{33}{subsection.4.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones generales}{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{36}{section.5.2}%
-\contentsline {chapter}{Bibliografía}{39}{appendix*.26}%
+\contentsline {section}{\numberline {4.4}Análisis de resultados}{35}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Validación de la hipótesis central}{35}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Comparación con arquitecturas alternativas}{36}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Rol del \texttt {TextNormalizer}}{37}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Limitaciones del estudio}{37}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Conexión con CRISP-DM}{38}{subsection.4.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{40}{section.5.2}%
+\contentsline {chapter}{Bibliografía}{43}{appendix*.33}%

@@ -18,7 +18,7 @@ El presente trabajo demostró la viabilidad técnica de implementar un sistema d
 \begin{itemize}
 \item Se diseñó e implementó el SDK Aurum como \textit{framework} nativo reutilizable, que encapsula la totalidad del \textit{pipeline} de procesamiento de voz: captura de audio, transcripción, normalización e inferencia de modelos de \textit{machine learning}. Su arquitectura basada en el patrón de delegación permite que cualquier aplicación bancaria lo integre implementando un único protocolo público.
 
-\item Se entrenaron dos modelos de \textit{machine learning} con Create~ML (MaxEnt para clasificación de intenciones y CRF para extracción de entidades) que alcanzaron un desempeño satisfactorio para la prueba de concepto: 100\% de \textit{accuracy} en la clasificación de intenciones y un F1 \textit{strict} de 0.9427 en la extracción de entidades, con tamaños de modelo de 3.1~KB y 407.2~KB respectivamente.
+\item Se entrenaron dos modelos de \textit{machine learning} con Create~ML (MaxEnt para clasificación de intenciones y CRF para extracción de entidades) que alcanzaron un desempeño satisfactorio para la prueba de concepto: 100\% de \textit{accuracy} en la clasificación de intenciones y un F1 \textit{strict} de 0.9369 en la extracción de entidades, con tamaños de modelo de 3.1~KB y 407.2~KB respectivamente.
 
 \item Se validó que el procesamiento estrictamente local (\textit{on-device}) es factible en el hardware actual de Apple. Los modelos Core~ML resolvieron el \textit{pipeline} completo de inferencia con latencias del orden de fracciones de milisegundo, muy por debajo del umbral de percepción humana de 100~ms establecido por Nielsen.
 
