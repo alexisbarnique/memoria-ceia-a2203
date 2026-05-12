@@ -4,14 +4,13 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama de arquitectura de componentes que conforman la prueba de concepto.}}{12}{figure.caption.6}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Flujo de pipeline de una transacción realizada por voz.}}{13}{figure.caption.7}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama de flujo de Aurum.}}{22}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama de secuencia del protocolo \texttt {Aurum\allowbreak {}Delegate}: comunicación asíncrona entre la aplicación base y los componentes del SDK Aurum.}}{24}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama de flujo de Aurum.}}{28}{figure.caption.24}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Pantalla principal de la app base en estado idle}}{30}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Solicitud de permiso de acceso al micrófono}}{31}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Solicitud de permiso de reconocimiento de voz}}{31}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Estado listening: transcripción en tiempo real}}{32}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Estado processing: inferencia de modelos Core ML}}{32}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Pantalla de confirmación de transferencia}}{33}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Confirmación de consulta de saldo}}{34}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Confirmación de intención de cancelación}}{34}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Capturas de pantalla de las solicitudes de permisos en la aplicación base.}}{36}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Pantalla principal de la aplicación base en estado idle}}{37}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Capturas de pantalla que ilustran el funcionamiento de la transcripción en tiempo real y el procesamiento a texto.}}{38}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Pantalla de confirmación de transferencia}}{39}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Confirmación de consulta de saldo}}{40}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Confirmación de intención de cancelación}}{41}{figure.caption.40}%
 \addvspace {10\p@ }

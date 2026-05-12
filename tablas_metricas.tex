@@ -14,10 +14,15 @@
 % Esta tabla respalda la discusión teórica de la sección 2.x sobre la
 % evaluación de arquitecturas: Transformers vs RNN vs Apple Native.
 
-\begin{table}[htbp]
+\begin{table}[H]
+\caption{Comparativa de arquitecturas evaluadas para NLU \textit{on-device} en iOS.
+         Los valores de BETO y BiLSTM corresponden a referencias bibliográficas;
+         los de Create ML (MaxEnt/CRF) son resultados experimentales propios.}
 \centering
 \resizebox{\textwidth}{!}{%
+
 \begin{tabular}{@{}lcccc@{}}
+
 \toprule
 \textbf{Criterio}
   & \textbf{BETO}
@@ -72,8 +77,5 @@ Privacidad \textit{on-device}
 \bottomrule
 \end{tabular}%
 }
-\caption{Comparativa de arquitecturas evaluadas para NLU \textit{on-device} en iOS.
-         Los valores de BETO y BiLSTM corresponden a referencias bibliográficas;
-         los de Create ML (MaxEnt/CRF) son resultados experimentales propios.}
 \label{tab:comparativa-arquitecturas}
 \end{table}

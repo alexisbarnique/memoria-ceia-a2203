@@ -1,0 +1,43 @@
+sequenceDiagram
+    actor Usuario
+    participant App as App Base<br/>(ViewModel)
+    participant SDK as AurumEngine<br/>(SDK)
+    participant Audio as AudioCapture<br/>Manager
+    participant Speech as Speech<br/>Recognizer
+    participant Norm as Text<br/>Normalizer
+    participant NLU as NLU<br/>Processor
+
+    Usuario->>App: Presiona botón de voz
+    App->>SDK: startListening()
+    SDK->>Audio: iniciar captura
+    Audio->>Speech: buffers PCM
+    SDK-->>App: aurumDidStartListening()
+    Note over App: Estado → listening
+
+    loop Mientras el usuario habla
+        Speech-->>SDK: hipótesis parcial
+        SDK-->>App: aurumDidReceivePartialTranscription(text)
+        Note over App: Actualiza UI en tiempo real
+    end
+
+    Usuario->>App: Suelta botón / fin de habla
+    App->>SDK: stopListening()
+    SDK->>Audio: detener captura
+    SDK-->>App: aurumDidStopListening()
+    Note over App: Estado → processing
+
+    Speech->>SDK: transcripción final
+    SDK->>Norm: normalizar(texto)
+    Norm-->>SDK: texto normalizado
+    SDK->>NLU: procesar(texto)
+    NLU-->>SDK: TransactionPayload
+
+    alt Pipeline exitoso
+        SDK-->>App: aurumDidCompleteWithPayload(payload)
+        Note over App: Estado → confirmation
+        App->>Usuario: Muestra ConfirmationView
+    else Error en alguna etapa
+        SDK-->>App: aurumDidFailWithError(error)
+        Note over App: Estado → error
+        App->>Usuario: Muestra mensaje de error
+    end

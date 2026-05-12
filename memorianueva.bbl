@@ -952,27 +952,6 @@
     \field{year}{2026}
   \endentry
 
-  \entry{sommerville2015software}{book}{}{}
-    \name{author}{1}{}{%
-      {{hash=SI}{%
-         family={Sommerville},
-         familyi={S\bibinitperiod},
-         given={Ian},
-         giveni={I\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Pearson}%
-    }
-    \strng{namehash}{SI1}
-    \strng{fullhash}{SI1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{edition}{10th}
-    \field{title}{Software Engineering}
-    \field{year}{2015}
-  \endentry
-
   \entry{feng2021survey}{article}{}{}
     \name{author}{7}{}{%
       {{hash=FSY}{%
@@ -1080,6 +1059,128 @@
     }
     \field{type}{RFC}
     \field{year}{2017}
+  \endentry
+
+  \entry{berger1996maximum}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=BAL}{%
+         family={Berger},
+         familyi={B\bibinitperiod},
+         given={Adam\bibnamedelima L},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=DPSA}{%
+         family={Della\bibnamedelima Pietra},
+         familyi={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+         given={Stephen\bibnamedelima A},
+         giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=DPVJ}{%
+         family={Della\bibnamedelima Pietra},
+         familyi={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+         given={Vincent\bibnamedelima J},
+         giveni={V\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{BALDPSADPVJ1}
+    \strng{fullhash}{BALDPSADPVJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{39\bibrangedash 71}
+    \field{title}{A maximum entropy approach to natural language processing}
+    \field{volume}{22}
+    \field{journaltitle}{Computational Linguistics}
+    \field{year}{1996}
+  \endentry
+
+  \entry{lafferty2001conditional}{inproceedings}{}{}
+    \name{author}{3}{}{%
+      {{hash=LJD}{%
+         family={Lafferty},
+         familyi={L\bibinitperiod},
+         given={John\bibnamedelima D},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={McCallum},
+         familyi={M\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PFCN}{%
+         family={Pereira},
+         familyi={P\bibinitperiod},
+         given={Fernando C\bibnamedelima N},
+         giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
+  N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Morgan Kaufmann}%
+    }
+    \strng{namehash}{LJDMAPFCN1}
+    \strng{fullhash}{LJDMAPFCN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the Eighteenth International Conference on
+  Machine Learning (ICML)}
+    \field{pages}{282\bibrangedash 289}
+    \field{title}{Conditional Random Fields: Probabilistic Models for
+  Segmenting and Labeling Sequence Data}
+    \field{year}{2001}
+  \endentry
+
+  \entry{viterbi1967error}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=VA}{%
+         family={Viterbi},
+         familyi={V\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{VA1}
+    \strng{fullhash}{VA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2}
+    \field{pages}{260\bibrangedash 269}
+    \field{title}{Error bounds for convolutional codes and an asymptotically
+  optimum decoding algorithm}
+    \field{volume}{13}
+    \field{journaltitle}{IEEE Transactions on Information Theory}
+    \field{year}{1967}
+  \endentry
+
+  \entry{ramshaw1995text}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=RLA}{%
+         family={Ramshaw},
+         familyi={R\bibinitperiod},
+         given={Lance\bibnamedelima A},
+         giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=MMP}{%
+         family={Marcus},
+         familyi={M\bibinitperiod},
+         given={Mitchell\bibnamedelima P},
+         giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RLAMMP1}
+    \strng{fullhash}{RLAMMP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Text chunking using transformation-based learning}
+    \field{journaltitle}{Third Workshop on Very Large Corpora}
+    \field{year}{1995}
   \endentry
 
   \entry{gamma1994design}{book}{}{}

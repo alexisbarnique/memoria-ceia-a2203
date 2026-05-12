@@ -5,15 +5,17 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Distribución del corpus de clasificación de intenciones por clase y partición.}}{14}{table.caption.8}%
 \contentsline {table}{\numberline {3.2}{\ignorespaces Distribución del corpus NER por moneda y partición.}}{15}{table.caption.9}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Componentes del SDK Aurum y sus dependencias de frameworks nativos.}}{16}{table.caption.10}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Permisos requeridos por la app base y su justificación técnica.}}{20}{table.caption.11}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Ejemplo de anotación IOB para el comando \texttt {pasale dos lucas a Juan Pérez}.}}{19}{table.caption.16}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Componentes del SDK Aurum y sus dependencias de frameworks nativos.}}{21}{table.caption.20}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Campos de la estructura \texttt {Transaction\allowbreak {}Payload}.}}{23}{table.caption.21}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Permisos requeridos por la aplicación base y su justificación técnica.}}{26}{table.caption.23}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Rendimiento del clasificador de intenciones (MaxEnt) evaluado sobre el conjunto de test.}}{24}{table.caption.13}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Matriz de confusión del clasificador de intenciones sobre el conjunto de test. Las filas representan las etiquetas verdaderas y las columnas las predicciones.}}{24}{table.caption.14}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Rendimiento del extractor de entidades (MLWordTagger, algoritmo CRF) a nivel de token individual con esquema IOB.}}{25}{table.caption.16}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Rendimiento del extractor de entidades a nivel de entidad completa. \textit {Strict}: coincidencia exacta de tipo y posición. \textit {Relaxed}: coincidencia de tipo con superposición parcial de tokens.}}{26}{table.caption.18}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Evaluación de robustez del pipeline NLU ante variaciones lingüísticas del español rioplatense y errores de STT. \textit {Intent Acc.}: accuracy de clasificación de intención. \textit {Entity F1}: macro F1-Score \textit {strict} de extracción de entidades.}}{27}{table.caption.19}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Latencia de inferencia de los modelos Core~ML, medida sobre macOS (CPU). En un dispositivo iOS con Neural Engine, las latencias serían inferiores. Se reportan estadísticos sobre 1.600 inferencias por modelo.}}{28}{table.caption.20}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados de las pruebas de usabilidad por tarea. La tasa de éxito se calcula sobre el total de intentos. El tiempo de interacción incluye el habla del usuario, el procesamiento y la confirmación.}}{31}{table.caption.26}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Resumen de rendimiento de los modelos Core ML del SDK Aurum.}}{38}{table.caption.31}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Rendimiento del clasificador de intenciones (MaxEnt) evaluado sobre el conjunto de test.}}{29}{table.caption.25}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Matriz de confusión del clasificador de intenciones sobre el conjunto de test. Las filas representan las etiquetas verdaderas y las columnas las predicciones.}}{30}{table.caption.26}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Rendimiento del extractor de entidades (MLWordTagger, algoritmo CRF) a nivel de token individual con esquema IOB.}}{31}{table.caption.28}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Rendimiento del extractor de entidades a nivel de entidad completa. \texttt {Strict}: coincidencia exacta de tipo y posición. \texttt {Relaxed}: coincidencia de tipo con superposición parcial de tokens.}}{32}{table.caption.30}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Evaluación de robustez del pipeline NLU ante variaciones lingüísticas del español rioplatense y errores de STT. \textit {Intent Acc.}: accuracy de clasificación de intención. \textit {Entity F1}: macro F1-Score \textit {strict} de extracción de entidades.}}{33}{table.caption.31}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Latencia de inferencia de los modelos Core~ML, medida sobre macOS (CPU). En un dispositivo iOS con Neural Engine, las latencias serían inferiores. Se reportan estadísticos sobre 1.600 inferencias por modelo.}}{34}{table.caption.32}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados de las pruebas de usabilidad por tarea. La tasa de éxito se calcula sobre el total de intentos. El tiempo de interacción incluye el habla del usuario, el procesamiento y la confirmación.}}{42}{table.caption.43}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Resumen de rendimiento de los modelos Core ML del SDK Aurum.}}{45}{table.caption.44}%
 \addvspace {10\p@ }

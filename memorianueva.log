@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  8 MAY 2026 18:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  12 MAY 2026 18:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1109,7 +1109,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 48.
 
 
-<Figures/fondo.pdf, id=225, 597.55246pt x 845.07718pt>
+<Figures/fondo.pdf, id=293, 597.55246pt x 845.07718pt>
 File: Figures/fondo.pdf Graphic file (type pdf)
 <use Figures/fondo.pdf>
 Package pdftex.def Info: Figures/fondo.pdf  used on input line 51.
@@ -1268,18 +1268,18 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 
 
 ]
-<./Figures/diagrama-de-componentes.png, id=526, 1020.81375pt x 949.89882pt>
-File: ./Figures/diagrama-de-componentes.png Graphic file (type png)
-<use ./Figures/diagrama-de-componentes.png>
-Package pdftex.def Info: ./Figures/diagrama-de-componentes.png  used on input l
-ine 63.
-(pdftex.def)             Requested size: 389.80269pt x 362.7336pt.
+<./Figures/diagrama-de-componentes-1.png, id=621, 1020.9342pt x 949.8687pt>
+File: ./Figures/diagrama-de-componentes-1.png Graphic file (type png)
+<use ./Figures/diagrama-de-componentes-1.png>
+Package pdftex.def Info: ./Figures/diagrama-de-componentes-1.png  used on input
+ line 63.
+(pdftex.def)             Requested size: 389.80269pt x 362.66412pt.
 
 
 LaTeX Info: Redefining \. on input line 69.
 LaTeX Info: Redefining \% on input line 69.
-[12 <./Figures/diagrama-de-componentes.png>]
-<./Figures/pipeline-transaccion.png, id=535, 682.04813pt x 731.73375pt>
+[12 <./Figures/diagrama-de-componentes-1.png>]
+<./Figures/pipeline-transaccion.png, id=630, 682.04813pt x 731.73375pt>
 File: ./Figures/pipeline-transaccion.png Graphic file (type png)
 <use ./Figures/pipeline-transaccion.png>
 Package pdftex.def Info: ./Figures/pipeline-transaccion.png  used on input line
@@ -1291,110 +1291,167 @@ LaTeX Info: Redefining \. on input line 83.
 LaTeX Info: Redefining \% on input line 83.
 [13 <./Figures/pipeline-transaccion.png>]
 
-LaTeX Info: Redefining \. on input line 117.
-LaTeX Info: Redefining \% on input line 117.
+LaTeX Info: Redefining \. on input line 118.
+LaTeX Info: Redefining \% on input line 118.
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 175--175
+
+LaTeX Info: Redefining \. on input line 151.
+LaTeX Info: Redefining \% on input line 151.
+[15]
+Overfull \hbox (23.67369pt too wide) in paragraph at lines 178--179
+[]\T1/ppl/m/n/10.95 El en-tre-na-mien-to con-sis-te en en-con-trar los pe-sos $
+\OML/cmm/m/it/10.95 w[]$ \T1/ppl/m/n/10.95 que ma-xi-mi-zan la log-verosimilitu
+d
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 179.
+LaTeX Info: Redefining \% on input line 179.
+[16]
+
+LaTeX Info: Redefining \. on input line 207.
+LaTeX Info: Redefining \% on input line 207.
+[17]
+
+LaTeX Info: Redefining \. on input line 239.
+LaTeX Info: Redefining \% on input line 239.
+[18]
+
+LaTeX Info: Redefining \. on input line 262.
+LaTeX Info: Redefining \% on input line 262.
+[19]
+
+LaTeX Info: Redefining \. on input line 283.
+LaTeX Info: Redefining \% on input line 283.
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 323--323
 []|\T1/ppl/m/n/10.95 Fachada prin-ci-
  []
 
 
-Overfull \hbox (8.07872pt too wide) in paragraph at lines 175--175
+Overfull \hbox (8.07872pt too wide) in paragraph at lines 323--323
 []|[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--175
+Underfull \hbox (badness 10000) in paragraph at lines 323--323
 []|\T1/ppl/m/n/10.95 Reconocimiento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--175
+Underfull \hbox (badness 10000) in paragraph at lines 323--323
 []|\T1/ppl/m/n/10.95 Normalización
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--175
+Underfull \hbox (badness 10000) in paragraph at lines 323--323
 []|\T1/ppl/m/n/10.95 Procesamiento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--175
+Underfull \hbox (badness 10000) in paragraph at lines 323--323
 []|[]
  []
 
 
 
-LaTeX Info: Redefining \. on input line 184.
-LaTeX Info: Redefining \% on input line 184.
-[15]
-Overfull \hbox (3.41293pt too wide) in paragraph at lines 195--196
+LaTeX Info: Redefining \. on input line 336.
+LaTeX Info: Redefining \% on input line 336.
+[21]
+Overfull \hbox (3.41293pt too wide) in paragraph at lines 342--343
 \T1/ppl/m/n/10.95 au-dio a ser-vi-do-res ex-ter-nos. Adi-cio-nal-men-te, la pro
 -pie-dad \T1/pcr/l/it/10.95 con-tex-tualStrings
  []
 
 
+Overfull \hbox (5.18199pt too wide) in paragraph at lines 342--343
+\T1/ppl/m/n/10.95 pro-por-cio-na un vo-ca-bu-la-rio de re-fuer-zo del do-mi-nio
+ fi-nan-cie-ro (\T1/pcr/l/it/10.95 transferencia\T1/ppl/m/n/10.95 ,
+ []
 
-LaTeX Info: Redefining \. on input line 196.
-LaTeX Info: Redefining \% on input line 196.
-[16]
 
-LaTeX Info: Redefining \. on input line 222.
-LaTeX Info: Redefining \% on input line 222.
-[17]
 
-LaTeX Info: Redefining \. on input line 264.
-LaTeX Info: Redefining \% on input line 264.
-[18]
-Overfull \hbox (4.59152pt too wide) in paragraph at lines 275--276
+LaTeX Info: Redefining \. on input line 355.
+LaTeX Info: Redefining \% on input line 355.
+[22]
+
+LaTeX Info: Redefining \. on input line 392.
+LaTeX Info: Redefining \% on input line 392.
+[23]
+<./Figures/diagrama-secuencia.png, id=722, 3672.72125pt x 3398.6975pt>
+File: ./Figures/diagrama-secuencia.png Graphic file (type png)
+<use ./Figures/diagrama-secuencia.png>
+Package pdftex.def Info: ./Figures/diagrama-secuencia.png  used on input line 3
+97.
+(pdftex.def)             Requested size: 389.80269pt x 360.68547pt.
+
+Underfull \hbox (badness 4279) in paragraph at lines 398--398
+ []\T1/ppl/m/sc/10 Figura 3.3. |\T1/ppl/m/n/10 Dia-gra-ma de se-cuen-cia del pr
+o-to-co-lo \T1/pcr/m/n/10 Aurum 
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 414.
+LaTeX Info: Redefining \% on input line 414.
+[24 <./Figures/diagrama-secuencia.png>]
+Overfull \hbox (4.59152pt too wide) in paragraph at lines 418--419
 \T1/ppl/m/n/10.95 ple-men-ta en-la-ce de da-tos reac-ti-vo me-dian-te \T1/pcr/l
 /it/10.95 Ob-ser-va-bleObject \T1/ppl/m/n/10.95 y \T1/pcr/l/it/10.95 @Pu-blishe
 d\T1/ppl/m/n/10.95 :
  []
 
 
-Overfull \hbox (13.85518pt too wide) in paragraph at lines 282--283
+Overfull \hbox (13.85518pt too wide) in paragraph at lines 425--426
 \T1/pcr/l/it/10.95 Listening() \T1/ppl/m/n/10.95 tra-du-ce la ac-ción del usua-
 rio en in-vo-ca-cio-nes a \T1/pcr/l/it/10.95 startListening()
  []
 
 
+Overfull \hbox (33.9489pt too wide) in paragraph at lines 425--426
+\T1/ppl/m/n/10.95 las pro-pie-da-des \T1/pcr/l/it/10.95 @Pub-lished \T1/ppl/m/n
+/10.95 del \T1/ppl/m/it/10.95 View-Mo-del \T1/ppl/m/n/10.95 den-tro de \T1/pcr/
+l/it/10.95 Dispatch-Queue.main.async\T1/ppl/m/n/10.95 ,
+ []
 
-LaTeX Info: Redefining \. on input line 287.
-LaTeX Info: Redefining \% on input line 287.
-[19]
 
-LaTeX Info: Redefining \. on input line 330.
-LaTeX Info: Redefining \% on input line 330.
-[20]
-<./Figures/diagrama-flujo-aurum.png, id=627, 3998.94pt x 5883.9825pt>
+
+LaTeX Info: Redefining \. on input line 435.
+LaTeX Info: Redefining \% on input line 435.
+[25]
+
+LaTeX Info: Redefining \. on input line 474.
+LaTeX Info: Redefining \% on input line 474.
+[26]
+<./Figures/diagrama-flujo-aurum.png, id=748, 2876.7475pt x 3998.94pt>
 File: ./Figures/diagrama-flujo-aurum.png Graphic file (type png)
 <use ./Figures/diagrama-flujo-aurum.png>
 Package pdftex.def Info: ./Figures/diagrama-flujo-aurum.png  used on input line
- 337.
-(pdftex.def)             Requested size: 389.80269pt x 573.52888pt.
+ 480.
+(pdftex.def)             Requested size: 389.80269pt x 541.84724pt.
 )
 
 LaTeX Info: Redefining \. on input line 151.
 LaTeX Info: Redefining \% on input line 151.
-[21]
+[27]
 
 LaTeX Info: Redefining \. on input line 151.
 LaTeX Info: Redefining \% on input line 151.
-[22 <./Figures/diagrama-flujo-aurum.png>]
+[28 <./Figures/diagrama-flujo-aurum.png>]
 \openout2 = `Chapters/Chapter4.aux'.
 
  (./Chapters/Chapter4.tex
 Cap\'{\i }tulo 4.
 
 
-[23
+[29
 
 
 
 
 ]
-Overfull \hbox (3.14664pt too wide) in paragraph at lines 95--101
+Overfull \hbox (3.14664pt too wide) in paragraph at lines 88--94
 \T1/pcr/l/it/10.95 MONTO\T1/ppl/m/n/10.95 , \T1/pcr/l/it/10.95 B-MONEDA\T1/ppl/
 m/n/10.95 , \T1/pcr/l/it/10.95 I-MONEDA\T1/ppl/m/n/10.95 , \T1/pcr/l/it/10.95 B
 -DESTINATARIO\T1/ppl/m/n/10.95 , \T1/pcr/l/it/10.95 I-DESTINATARIO \T1/ppl/m/n/
@@ -1403,334 +1460,190 @@ m/n/10.95 , \T1/pcr/l/it/10.95 I-MONEDA\T1/ppl/m/n/10.95 , \T1/pcr/l/it/10.95 B
 
 
 
-LaTeX Info: Redefining \. on input line 140.
-LaTeX Info: Redefining \% on input line 140.
-[24]
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
+[30]
 
-LaTeX Info: Redefining \. on input line 192.
-LaTeX Info: Redefining \% on input line 192.
-[25]
+LaTeX Info: Redefining \. on input line 176.
+LaTeX Info: Redefining \% on input line 176.
+[31]
 
-LaTeX Info: Redefining \. on input line 227.
-LaTeX Info: Redefining \% on input line 227.
-[26]
-
-LaTeX Info: Redefining \. on input line 293.
-LaTeX Info: Redefining \% on input line 293.
-[27]
-
-LaTeX Info: Redefining \. on input line 343.
-LaTeX Info: Redefining \% on input line 343.
-[28]
-<./Figures/screenshots/home-app-base.PNG, id=679, 1129.21875pt x 2445.135pt>
-File: ./Figures/screenshots/home-app-base.PNG Graphic file (type png)
-<use ./Figures/screenshots/home-app-base.PNG>
-Package pdftex.def Info: ./Figures/screenshots/home-app-base.PNG  used on input
- line 392.
-(pdftex.def)             Requested size: 136.43332pt x 295.41826pt.
+LaTeX Info: Redefining \. on input line 209.
+LaTeX Info: Redefining \% on input line 209.
+[32]
+Overfull \hbox (3.41583pt too wide) in paragraph at lines 214--216
+\T1/ppl/m/n/10.95 les del ha-bla ar-gen-ti-na co-ti-dia-na. Ejem-plo: \T1/pcr/l
+/it/10.95 man-da-le lu-cas a Pe-dro\T1/ppl/m/n/10.95 , \T1/pcr/l/it/10.95 pa-
+ []
 
 
-LaTeX Info: Redefining \. on input line 395.
-LaTeX Info: Redefining \% on input line 395.
-[29]
-<./Figures/screenshots/solicitud-permiso-microfono.PNG, id=690, 1129.21875pt x 
+Overfull \hbox (16.88058pt too wide) in paragraph at lines 226--228
+\T1/pcr/l/it/10.95 dos lu-ca a el gor-do pe-rez\T1/ppl/m/n/10.95 , \T1/pcr/l/it
+/10.95 pa-sa-le sin-co lu-cas en ver-de a la
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 275.
+LaTeX Info: Redefining \% on input line 275.
+[33]
+
+LaTeX Info: Redefining \. on input line 325.
+LaTeX Info: Redefining \% on input line 325.
+[34]
+Overfull \hbox (1.64938pt too wide) in paragraph at lines 351--352
+[]\T1/ppl/m/n/10.95 T1 --- Trans-fe-ren-cia es-tán-dar: \T1/pcr/l/it/10.95 Tran
+s-fe-rir qui-nien-tos pe-sos a Juan
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 364.
+LaTeX Info: Redefining \% on input line 364.
+[35]
+<./Figures/screenshots/solicitud-permiso-microfono.PNG, id=809, 1129.21875pt x 
 2445.135pt>
 File: ./Figures/screenshots/solicitud-permiso-microfono.PNG Graphic file (type 
 png)
 <use ./Figures/screenshots/solicitud-permiso-microfono.PNG>
 Package pdftex.def Info: ./Figures/screenshots/solicitud-permiso-microfono.PNG 
- used on input line 401.
-(pdftex.def)             Requested size: 136.8196pt x 296.23907pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
- []\T1/ppl/m/sc/10 Figura 4.2. 
- []
-
-
-Underfull \hbox (badness 3375) in paragraph at lines 402--402
- \T1/ppl/m/n/10 mi-so de ac-ce-so 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
- \T1/ppl/m/n/10 al mi-cró-fono 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
- \T1/ppl/m/n/10 (\T1/pcr/m/n/10 NSMicrophone 
- []
-
-
-Overfull \hbox (26.41994pt too wide) in paragraph at lines 402--402
- \T1/pcr/m/n/10 UsageDescription\T1/ppl/m/n/10 ), 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
- \T1/ppl/m/n/10 pre-sen-ta-da la 
- []
-
-<./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG, id=691, 1129.2
+ used on input line 371.
+(pdftex.def)             Requested size: 126.68468pt x 274.30096pt.
+<./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG, id=810, 1129.2
 1875pt x 2445.135pt>
 File: ./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG Graphic fi
 le (type png)
 <use ./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG>
 Package pdftex.def Info: ./Figures/screenshots/solicitud-permiso-reconocimiento
--voz.PNG  used on input line 408.
-(pdftex.def)             Requested size: 136.8196pt x 296.23907pt.
+-voz.PNG  used on input line 378.
+(pdftex.def)             Requested size: 126.68468pt x 274.30096pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--409
- []\T1/ppl/m/sc/10 Figura 4.3. 
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 369--382
+[][]  [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 409--409
- |\T1/ppl/m/n/10 So-li-ci-tud de 
- []
-
-
-Underfull \hbox (badness 5519) in paragraph at lines 409--409
- \T1/ppl/m/n/10 per-mi-so de re- 
- []
+<./Figures/screenshots/home-app-base.PNG, id=812, 1129.21875pt x 2445.135pt>
+File: ./Figures/screenshots/home-app-base.PNG Graphic file (type png)
+<use ./Figures/screenshots/home-app-base.PNG>
+Package pdftex.def Info: ./Figures/screenshots/home-app-base.PNG  used on input
+ line 404.
+(pdftex.def)             Requested size: 292.352pt x 633.03381pt.
 
 
-Underfull \hbox (badness 4846) in paragraph at lines 409--409
- \T1/ppl/m/n/10 voz (\T1/pcr/m/n/10 NSSpeech 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 409--409
- \T1/pcr/m/n/10 Recognition 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 409--409
- \T1/pcr/m/n/10 Usage 
- []
-
-<./Figures/screenshots/transcripcion-dictado.PNG, id=692, 1129.21875pt x 2445.1
+LaTeX Info: Redefining \. on input line 408.
+LaTeX Info: Redefining \% on input line 408.
+[36 <./Figures/screenshots/solicitud-permiso-microfono.PNG> <./Figures/screensh
+ots/solicitud-permiso-reconocimiento-voz.PNG>]
+<./Figures/screenshots/transcripcion-dictado.PNG, id=820, 1129.21875pt x 2445.1
 35pt>
 File: ./Figures/screenshots/transcripcion-dictado.PNG Graphic file (type png)
 <use ./Figures/screenshots/transcripcion-dictado.PNG>
 Package pdftex.def Info: ./Figures/screenshots/transcripcion-dictado.PNG  used 
-on input line 418.
-(pdftex.def)             Requested size: 136.8196pt x 296.23907pt.
+on input line 415.
+(pdftex.def)             Requested size: 149.09958pt x 322.8409pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 419--419
- []\T1/ppl/m/sc/10 Figura 4.4. 
+Underfull \hbox (badness 1412) in paragraph at lines 416--416
+ []\T1/ppl/m/sc/9 (a) |\T1/ppl/m/n/9 Es-ta-do \T1/pcr/m/n/9 listening\T1/ppl/m/
+n/9 : La trans-crip-ción 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--419
- |\T1/ppl/m/n/10 Es-ta-do 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--419
- \T1/pcr/m/n/10 listening\T1/ppl/m/n/10 : 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--419
- \T1/ppl/m/n/10 el bo-tón mu- 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--419
- \T1/ppl/m/n/10 ta a ro-jo con 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--419
- \T1/ppl/m/n/10 ani-ma-ción de 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--419
- \T1/ppl/m/n/10 pul-sa-ción. La 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--419
- \T1/ppl/m/n/10 trans-crip-ción 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--419
- \T1/ppl/m/n/10 tra en tiem-po 
- []
-
-<./Figures/screenshots/procesamiento.PNG, id=693, 1129.21875pt x 2445.135pt>
+<./Figures/screenshots/procesamiento.PNG, id=821, 1129.21875pt x 2445.135pt>
 File: ./Figures/screenshots/procesamiento.PNG Graphic file (type png)
 <use ./Figures/screenshots/procesamiento.PNG>
 Package pdftex.def Info: ./Figures/screenshots/procesamiento.PNG  used on input
- line 425.
-(pdftex.def)             Requested size: 136.8196pt x 296.23907pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 426--426
- []\T1/ppl/m/sc/10 Figura 4.5. 
- []
+ line 422.
+(pdftex.def)             Requested size: 149.09958pt x 322.8409pt.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 426--426
- |\T1/ppl/m/n/10 Es-ta-do 
- []
+LaTeX Info: Redefining \. on input line 428.
+LaTeX Info: Redefining \% on input line 428.
+[37 <./Figures/screenshots/home-app-base.PNG>]
 
-
-Underfull \hbox (badness 3492) in paragraph at lines 426--426
- \T1/ppl/m/n/10 re ML eje-cu-tan 
- []
-
-<./Figures/screenshots/intencion-confirmacion-transferencia.PNG, id=696, 1129.2
+LaTeX Info: Redefining \. on input line 446.
+LaTeX Info: Redefining \% on input line 446.
+[38 <./Figures/screenshots/transcripcion-dictado.PNG> <./Figures/screenshots/pr
+ocesamiento.PNG>]
+<./Figures/screenshots/intencion-confirmacion-transferencia.PNG, id=832, 1129.2
 1875pt x 2445.135pt>
 File: ./Figures/screenshots/intencion-confirmacion-transferencia.PNG Graphic fi
 le (type png)
 <use ./Figures/screenshots/intencion-confirmacion-transferencia.PNG>
 Package pdftex.def Info: ./Figures/screenshots/intencion-confirmacion-transfere
-ncia.PNG  used on input line 435.
-(pdftex.def)             Requested size: 155.91869pt x 337.61554pt.
+ncia.PNG  used on input line 451.
+(pdftex.def)             Requested size: 136.43332pt x 295.41826pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 436.
+(Font)              <7> on input line 452.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 436.
-<./Figures/screenshots/intencion-consulta-saldo.PNG, id=697, 1129.21875pt x 244
+(Font)              <5> on input line 452.
+<./Figures/screenshots/intencion-consulta-saldo.PNG, id=834, 1129.21875pt x 244
 5.135pt>
 File: ./Figures/screenshots/intencion-consulta-saldo.PNG Graphic file (type png
 )
 <use ./Figures/screenshots/intencion-consulta-saldo.PNG>
 Package pdftex.def Info: ./Figures/screenshots/intencion-consulta-saldo.PNG  us
-ed on input line 444.
-(pdftex.def)             Requested size: 136.8196pt x 296.23907pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
- []\T1/ppl/m/sc/10 Figura 4.7. 
- []
+ed on input line 460.
+(pdftex.def)             Requested size: 175.41002pt x 379.81282pt.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
- |\T1/ppl/m/n/10 Con-fir-ma-ción 
- []
-
-
-Underfull \hbox (badness 5548) in paragraph at lines 445--445
- \T1/ppl/m/n/10 de con-sul-ta de 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
- \T1/ppl/m/n/10 sal-do. Se pre- 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
- \T1/ppl/m/n/10 sen-ta el sal-do 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
- \T1/ppl/m/n/10 si-mu-la-do y la 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
- \T1/ppl/m/n/10 con-fian-za del 
- []
-
-<./Figures/screenshots/intencion-cancelar.PNG, id=698, 1129.21875pt x 2445.135p
+LaTeX Info: Redefining \. on input line 464.
+LaTeX Info: Redefining \% on input line 464.
+[39 <./Figures/screenshots/intencion-confirmacion-transferencia.PNG>]
+<./Figures/screenshots/intencion-cancelar.PNG, id=843, 1129.21875pt x 2445.135p
 t>
 File: ./Figures/screenshots/intencion-cancelar.PNG Graphic file (type png)
 <use ./Figures/screenshots/intencion-cancelar.PNG>
 Package pdftex.def Info: ./Figures/screenshots/intencion-cancelar.PNG  used on 
-input line 451.
-(pdftex.def)             Requested size: 136.8196pt x 296.23907pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 452--452
- []\T1/ppl/m/sc/10 Figura 4.8. 
- []
+input line 469.
+(pdftex.def)             Requested size: 175.41002pt x 379.81282pt.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 452--452
- |\T1/ppl/m/n/10 Con-fir-ma-ción 
- []
+LaTeX Info: Redefining \. on input line 473.
+LaTeX Info: Redefining \% on input line 473.
+[40 <./Figures/screenshots/intencion-consulta-saldo.PNG>]
 
+LaTeX Info: Redefining \. on input line 486.
+LaTeX Info: Redefining \% on input line 486.
+[41 <./Figures/screenshots/intencion-cancelar.PNG>]
 
-Underfull \hbox (badness 1484) in paragraph at lines 452--452
- \T1/ppl/m/n/10 de in-ten-ción de 
- []
+LaTeX Info: Redefining \. on input line 544.
+LaTeX Info: Redefining \% on input line 544.
+[42]
 
+LaTeX Info: Redefining \. on input line 583.
+LaTeX Info: Redefining \% on input line 583.
+[43]
 
-Underfull \hbox (badness 10000) in paragraph at lines 452--452
- \T1/ppl/m/n/10 can-ce-la-ción. El 
- []
-
-
-Underfull \hbox (badness 1755) in paragraph at lines 452--452
- \T1/ppl/m/n/10 mo-de-lo cla-si-fi-có 
- []
-
-
-
-LaTeX Info: Redefining \. on input line 501.
-LaTeX Info: Redefining \% on input line 501.
-[30 <./Figures/screenshots/home-app-base.PNG>]
-
-LaTeX Info: Redefining \. on input line 501.
-LaTeX Info: Redefining \% on input line 501.
-[31 <./Figures/screenshots/solicitud-permiso-microfono.PNG> <./Figures/screensh
-ots/solicitud-permiso-reconocimiento-voz.PNG>]
-
-LaTeX Info: Redefining \. on input line 501.
-LaTeX Info: Redefining \% on input line 501.
-[32 <./Figures/screenshots/transcripcion-dictado.PNG> <./Figures/screenshots/pr
-ocesamiento.PNG>]
-
-LaTeX Info: Redefining \. on input line 501.
-LaTeX Info: Redefining \% on input line 501.
-[33 <./Figures/screenshots/intencion-confirmacion-transferencia.PNG>]
-
-LaTeX Info: Redefining \. on input line 501.
-LaTeX Info: Redefining \% on input line 501.
-[34 <./Figures/screenshots/intencion-consulta-saldo.PNG> <./Figures/screenshots
-/intencion-cancelar.PNG>]
-
-LaTeX Info: Redefining \. on input line 537.
-LaTeX Info: Redefining \% on input line 537.
-[35]
-
-LaTeX Info: Redefining \. on input line 576.
-LaTeX Info: Redefining \% on input line 576.
-[36]
-
-LaTeX Info: Redefining \. on input line 608.
-LaTeX Info: Redefining \% on input line 608.
-[37])
+LaTeX Info: Redefining \. on input line 620.
+LaTeX Info: Redefining \% on input line 620.
+[44])
 
 LaTeX Info: Redefining \. on input line 152.
 LaTeX Info: Redefining \% on input line 152.
-[38]
+[45]
 \openout2 = `Chapters/Chapter5.aux'.
 
  (./Chapters/Chapter5.tex
-Cap\'{\i }tulo 5.
 
-
-[39
+[46
 
 
 
 
 ]
+Cap\'{\i }tulo 5.
+
+
+[47]
 
 LaTeX Info: Redefining \. on input line 59.
 LaTeX Info: Redefining \% on input line 59.
-[40])
+[48])
 
 LaTeX Info: Redefining \. on input line 153.
 LaTeX Info: Redefining \% on input line 153.
-[41]
+[49]
 
-[42
+[50
 
 
 
@@ -1742,7 +1655,7 @@ n/10.95 : [][]$https : / / developer . apple . com / documentation /
 
 
 
-[43]
+[51]
 Overfull \hbox (2.6412pt too wide) in paragraph at lines 171--171
 []\T1/ppl/m/n/10.95 Apple Inc. \T1/ppl/m/it/10.95 The Swift Pro-gram-ming Lan-g
 ua-ge: Lan-gua-ge Gui-de\T1/ppl/m/n/10.95 . Vi-si-ta-do el 2026-
@@ -1764,7 +1677,13 @@ tions using RNN Encoder--
 
 LaTeX Info: Redefining \. on input line 171.
 LaTeX Info: Redefining \% on input line 171.
-[44]
+[52]
+Overfull \hbox (11.63483pt too wide) in paragraph at lines 171--171
+[]\T1/ppl/m/n/10.95 Lance A Ramshaw y Mit-chell P Mar-cus. ^^S  Text chun-king 
+using transformation-
+ []
+
+
 Overfull \hbox (0.20251pt too wide) in paragraph at lines 171--171
 []\T1/ppl/m/n/10.95 Jakob Niel-sen. \T1/ppl/m/it/10.95 Con-fir-ma-tion Dia-logs
  Can Pre-vent User Errors\T1/ppl/m/n/10.95 . 2018. \T1/ppl/m/sc/10.95 url\T1/pp
@@ -1772,6 +1691,10 @@ l/m/n/10.95 : [][]$https :
  []
 
 
+
+LaTeX Info: Redefining \. on input line 171.
+LaTeX Info: Redefining \% on input line 171.
+[53]
 Overfull \hbox (13.17114pt too wide) in paragraph at lines 171--171
 []\T1/ppl/m/n/10.95 Zhiqing Sun et al. ^^S  Mo-bi-le-BERT: a Com-pact Task-Agno
 stic BERT for Resource-
@@ -1781,7 +1704,7 @@ stic BERT for Resource-
 
 LaTeX Info: Redefining \. on input line 173.
 LaTeX Info: Redefining \% on input line 173.
-[45] (./memorianueva.aux (./portada.aux)
+[54] (./memorianueva.aux (./portada.aux)
 LaTeX Info: Redefining \sptext on input line 16.
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
@@ -1800,7 +1723,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `memorianueva.out' has not changed.
-(rerunfilecheck)             Checksum: 325DA092CEA158F3F54D7ACC99245E2A;11270.
+(rerunfilecheck)             Checksum: E5196127C5515DF3CA40EBD42147EC00;15625.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                memorianueva
@@ -1811,28 +1734,35 @@ Package logreq Info: Writing requests to 'memorianueva.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32711 strings out of 473190
- 706353 string characters out of 5715800
- 1639622 words of memory out of 5000000
- 55323 multiletter control sequences out of 15000+600000
- 618352 words of font info for 108 fonts, out of 8000000 for 9000
+ 32742 strings out of 473190
+ 707235 string characters out of 5715800
+ 1479600 words of memory out of 5000000
+ 55336 multiletter control sequences out of 15000+600000
+ 624964 words of font info for 121 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  96i,21n,94p,1969b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texl
-ive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/202
-5/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf
--dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2025/texmf-dist/
-fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
-ype1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/ur
-w/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palat
-ino/uplri8a.pfb>
-Output written on memorianueva.pdf (55 pages, 3150592 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
+cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local
+/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2
+025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/texmf-dist/
+fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
+ype1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/u
+rw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/pala
+tino/uplbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/u
+plr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.p
+fb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on memorianueva.pdf (64 pages, 4003421 bytes).
 PDF statistics:
- 954 PDF objects out of 1000 (max. 8388607)
- 849 compressed objects within 9 object streams
- 232 named destinations out of 1000 (max. 500000)
- 501 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1124 PDF objects out of 1200 (max. 8388607)
+ 991 compressed objects within 10 object streams
+ 240 named destinations out of 1000 (max. 500000)
+ 642 words of extra memory for PDF output out of 10000 (max. 10000000)
 

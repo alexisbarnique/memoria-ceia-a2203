@@ -11,14 +11,14 @@ En este capítulo se presentan las conclusiones generales derivadas del desarrol
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Conclusiones generales}
+\section{Resultados generales}
 
 El presente trabajo demostró la viabilidad técnica de implementar un sistema de transacciones financieras por voz que opera de forma completamente local en dispositivos móviles iOS. A continuación se enumeran los principales logros alcanzados:
 
 \begin{itemize}
 \item Se diseñó e implementó el SDK Aurum como \textit{framework} nativo reutilizable, que encapsula la totalidad del \textit{pipeline} de procesamiento de voz: captura de audio, transcripción, normalización e inferencia de modelos de \textit{machine learning}. Su arquitectura basada en el patrón de delegación permite que cualquier aplicación bancaria lo integre implementando un único protocolo público.
 
-\item Se entrenaron dos modelos de \textit{machine learning} con Create~ML (MaxEnt para clasificación de intenciones y CRF para extracción de entidades) que alcanzaron un desempeño satisfactorio para la prueba de concepto: 100\% de \textit{accuracy} en la clasificación de intenciones y un F1 \textit{strict} de 0.9369 en la extracción de entidades, con tamaños de modelo de 3.1~KB y 407.2~KB respectivamente.
+\item Se entrenaron dos modelos de \textit{machine learning} con Create~ML (MaxEnt para clasificación de intenciones y CRF para extracción de entidades) que alcanzaron un desempeño satisfactorio para la prueba de concepto: 100\% de \textit{accuracy} en la clasificación de intenciones y un F1 \textit{strict} de 0,9369 en la extracción de entidades, con tamaños de modelo de 3,1~KB y 407,2~KB respectivamente.
 
 \item Se validó que el procesamiento estrictamente local (\textit{on-device}) es factible en el hardware actual de Apple. Los modelos Core~ML resolvieron el \textit{pipeline} completo de inferencia con latencias del orden de fracciones de milisegundo, muy por debajo del umbral de percepción humana de 100~ms establecido por Nielsen.
 
@@ -26,7 +26,7 @@ El presente trabajo demostró la viabilidad técnica de implementar un sistema d
 
 \item Se desarrolló una aplicación base funcional con SwiftUI que valida la integración con el SDK y demuestra el flujo completo de interacción: desde la activación del micrófono hasta la presentación del \textit{payload} estructurado en una pantalla de confirmación.
 
-\item La metodología CRISP-DM resultó adecuada para estructurar las fases del proyecto, permitiendo iterar entre la comprensión del dominio financiero, la generación del \textit{dataset} sintético, el entrenamiento de los modelos y la evaluación de resultados.
+\item La metodología CRISP-DM resultó adecuada para estructurar las fases del proyecto, lo que permitió iterar entre la comprensión del dominio financiero, la generación del \textit{dataset} sintético, el entrenamiento de los modelos y la evaluación de resultados.
 \end{itemize}
 
 En cuanto a las dificultades encontradas, la principal fue la ausencia de datos reales de comandos de voz bancarios, resuelta mediante la generación de un corpus sintético con técnicas de aumentación de datos. Adicionalmente, se identificó que el locale \texttt{es-AR} no dispone de modelo de reconocimiento de voz \textit{on-device} en la mayoría de los dispositivos iOS, lo que requirió implementar un mecanismo de selección automática de locale con \textit{fallback} a \texttt{es-MX}.
