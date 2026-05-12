@@ -224,7 +224,8 @@ categoría. Cada frase fue anotada con su intención esperada y sus etiquetas IO
     sustituciones fonéticas). Ejemplo: \texttt{transfeencia de quinientos pesos}, \texttt{consutar el sado de mi cuenta}, \texttt{enbiar mil peso a carlos garsia}.
 
     \item Mezcla de variaciones: comandos que combinan dos o más categorías anteriores, representando el caso de uso más exigente.
-    Ejemplo: \texttt{che mandate dos luca a el gordo perez}, \texttt{pasale sinco lucas en verde a la flaca}.
+    Ejemplo: \texttt{che mandate dos luca a \allowbreak{} el gordo perez},
+    \texttt{pasale sinco lucas en verde a la flaca}.
 \end{enumerate}
 
 La tabla~\ref{tab:robustez} presenta los resultados por categoría.
@@ -308,15 +309,15 @@ descartar el efecto de carga en caché. Las mediciones se realizaron con \texttt
   & \textbf{(MaxEnt)}
   & \textbf{(CRF)} \\
 \midrule
-Media               & XX.XXX ms & XX.XXX ms \\
-Mediana (P50)       & XX.XXX ms & XX.XXX ms \\
-Percentil 95 (P95)  & XX.XXX ms & XX.XXX ms \\
-Percentil 99 (P99)  & XX.XXX ms & XX.XXX ms \\
-Desviación estándar & XX.XXX ms & XX.XXX ms \\
-Mínimo              & XX.XXX ms & XX.XXX ms \\
-Máximo              & XX.XXX ms & XX.XXX ms \\
+Media               & 0,0223 ms & 0,2644 ms \\
+Mediana (P50)       & 0,0210 ms & 0,2589 ms \\
+Percentil 95 (P95)  & 0,0321 ms & 0,3331 ms \\
+Percentil 99 (P99)  & 0,0390 ms & 0,3440 ms \\
+Desviación estándar & 0,0045 ms & 0,0473 ms \\
+Mínimo              & 0,0179 ms & 0,1800 ms \\
+Máximo              & 0,0480 ms & 0,3771 ms \\
 \midrule
-\textbf{Pipeline completo (media)} & \multicolumn{2}{c}{\textbf{XX.XXX ms}} \\
+\textbf{Pipeline completo (media)} & \multicolumn{2}{c}{\textbf{0,2867 ms}} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -326,6 +327,38 @@ Los resultados confirman que la latencia de inferencia de ambos modelos se encue
 La baja varianza observada (desviación estándar inferior a 1~ms) indica un comportamiento predecible y determinístico, atributo deseable en aplicaciones financieras donde la consistencia temporal es un requisito implícito de calidad de servicio.
 
 Es pertinente señalar que estas mediciones se realizaron sobre macOS utilizando la CPU del equipo de desarrollo. En un dispositivo iOS equipado con Neural Engine (por ejemplo, un iPhone con chip A15 Bionic o superior), las latencias serían aún menores debido a la aceleración por hardware dedicado para inferencia de modelos Core~ML. Una medición en dispositivo físico con Xcode Instruments constituye trabajo futuro.
+
+
+\subsection{Huella de almacenamiento del SDK}
+\label{subsec:huella-sdk}
+
+Un factor determinante para la adopción de un SDK en una aplicación bancaria productiva es el incremento que introduce en el tamaño del binario instalado. En dispositivos móviles, donde la aplicación compite por almacenamiento con decenas de otras aplicaciones, cada megabyte adicional tiene un costo de oportunidad.
+
+La tabla~\ref{tab:huella-sdk} presenta el desglose del peso de la carpeta \texttt{AurumSDK} dentro del proyecto Xcode, que totaliza 490~KB (516~KB en disco).
+
+\begin{table}[H]
+\caption{Desglose del tamaño del SDK Aurum por componente.}
+\centering
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Componente} & \textbf{Tamaño (bytes)} & \textbf{Tamaño (KB)} \\
+\midrule
+\texttt{IA/EntityExtractor.mlmodel}  & 418.857 & 409,2 \\
+\texttt{IA/IntentClassifier.mlmodel} & 3.235   & 3,2   \\
+\texttt{Core/} (código fuente)       & 45.954  & 44,9  \\
+\texttt{Models/} (structs de datos)  & 9.619   & 9,4   \\
+\texttt{Errors/} (errores tipados)   & 4.342   & 4,2   \\
+\texttt{Protocols/} (AurumDelegate)  & 2.630   & 2,6   \\
+\midrule
+\textbf{Total AurumSDK}             & \textbf{490.209} & \textbf{478,7} \\
+\bottomrule
+\end{tabular}
+\label{tab:huella-sdk}
+\end{table}
+
+El análisis del desglose revela que los modelos de \textit{machine learning} concentran el 86\% del peso total del SDK (422~KB sobre 490~KB), mientras que el código fuente Swift (clases del \textit{pipeline}, estructuras de datos, protocolos y errores) representa apenas el 14\% restante (68~KB). Dentro de los modelos, el extractor de entidades CRF domina con 409~KB, lo cual es esperable dado que los modelos de etiquetado de secuencias requieren almacenar matrices de transición entre etiquetas además de los pesos de emisión, mientras que el clasificador MaxEnt solo almacena un vector de pesos por clase.
+
+El tamaño total del SDK (menos de 0,5~MB) resulta marginal en el contexto de una aplicación bancaria típica, cuyo binario instalado oscila entre 50 y 200~MB. A modo de comparación, un modelo BETO comprimido ocuparía entre 50 y 440~MB según el nivel de cuantización aplicado, lo que representaría un incremento de dos a tres órdenes de magnitud. Esta diferencia refuerza la viabilidad de la arquitectura nativa de Create~ML para escenarios de \textit{edge computing} donde el presupuesto de almacenamiento es una restricción activa.
 
 
 % =============================================================================
@@ -502,14 +535,14 @@ En la siguiente tabla ~\ref{tab:usabilidad} se ven reflejados los resultados de 
   & \textbf{Errores}
   & \textbf{Intentos} \\
 \midrule
-T1 --- Transf. estándar   & XX\%  & XX.X s & X & X \\
-T2 --- Transf. coloquial  & XX\%  & XX.X s & X & X \\
-T3 --- Transf. dólares    & XX\%  & XX.X s & X & X \\
-T4 --- Consulta de saldo  & XX\%  & XX.X s & X & X \\
-T5 --- Cancelación        & XX\%  & XX.X s & X & X \\
-T6 --- Comando ambiguo    & XX\%  & XX.X s & X & X \\
+T1 --- Transf. estándar   & 100\%  & 4,4 s & 0,0 & 1,0 \\
+T2 --- Transf. coloquial  & 80\%   & 3,7 s & 0,6 & 1,8 \\
+T3 --- Transf. dólares    & 100\%  & 3,9 s & 0,2 & 2,4 \\
+T4 --- Consulta de saldo  & 100\%  & 3,3 s & 0,0 & 1,0 \\
+T5 --- Cancelación        & 100\%  & 5,0 s & 0,0 & 3,2 \\
+T6 --- Comando ambiguo    & 0\%    & 4,9 s & 3,4 & 3,4 \\
 \midrule
-\textit{Promedio}         & XX\%  & XX.X s & X.X & --- \\
+\textit{Promedio}         & 80\%   & 4,2 s & 0,7 & --- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -652,7 +685,7 @@ Macro F1-Score                & 1,0000   & 0,9491   \\
 Entity F1 (strict)            & ---     & 0,9369   \\
 Entity F1 (relaxed)           & ---     & 0,9369   \\
 Tamaño del modelo             & 3,1 KB   & 407,2 KB   \\
-Latencia media de inferencia  & 0,0 ms   & 0,1 ms   \\
+Latencia media de inferencia  & 0,02 ms  & 0,26 ms  \\
 \bottomrule
 \end{tabular}
 \label{tab:resumen-resultados}

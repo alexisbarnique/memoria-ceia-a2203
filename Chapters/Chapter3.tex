@@ -175,7 +175,7 @@ Z(x) = \sum_{c' \in C} \exp\left(\sum_{i} w_i \cdot f_i(x, c')\right)
 \label{eq:features}
 \end{equation}
 
-El entrenamiento consiste en encontrar los pesos $w_i$ que maximizan la log\-verosimilitud condicional sobre el corpus etiquetado, típicamente mediante optimización por gradiente ({L-BFGS} o gradiente descendente estocástico) con regularización L1 o L2 para prevenir el sobreajuste.
+El entrenamiento consiste en encontrar los pesos $w_i$ que maximizan la log\mbox{-}vero\-si\-mi\-li\-tud condicional sobre el corpus etiquetado, típicamente mediante optimización por gradiente ({L-BFGS} o gradiente descendente estocástico) con regularización L1 o L2 para prevenir el sobreajuste.
 
 \subsubsection{Extracción de \textit{features} y vectorización}
 
@@ -327,7 +327,11 @@ Procesamiento NLU
 
 \subsection{Clase fachada: \texttt{Aurum\allowbreak{}Engine}}
 
-La clase \texttt{Aurum\allowbreak{}Engine} implementa el patrón de diseño \textit{Facade} \citep{gamma1994design} y constituye el único punto de entrada público del SDK. Internamente mantiene referencias privadas a los cuatro componentes de procesamiento y los instancia durante la fase de configuración. La API pública expone cuatro métodos de control: \texttt{configure(bundle:)} para precargar los modelos Core~ML desde el \textit{bundle} de la aplicación (ejecutado una única vez durante el inicio), \texttt{start\allowbreak{}Listening()} para iniciar la captura de audio y el reconocimiento de voz, \texttt{stop\allowbreak{}Listening()} para detener la captura y forzar el procesamiento del texto acumulado, y \texttt{cancel\allowbreak{}Listening()} para cancelar la operación en curso y liberar recursos sin procesar el audio capturado.
+La clase \texttt{Aurum\allowbreak{}Engine} implementa el patrón de diseño \textit{Facade} \citep{gamma1994design} y constituye el único punto de entrada público del SDK. Internamente mantiene referencias privadas a los cuatro componentes de procesamiento y los instancia durante la fase de configuración. La API pública expone cuatro métodos de control:
+\texttt{configure\allowbreak{}(bundle:)} para precargar los modelos Core~ML desde el \textit{bundle} de la aplicación (ejecutado una única vez durante el inicio),
+\texttt{start\allowbreak{}Listen\-ing()} para iniciar la captura de audio y el reconocimiento de voz,
+\texttt{stop\allowbreak{}Listen\-ing()} para detener la captura y forzar el procesamiento del texto acumulado, y
+\texttt{cancel\allowbreak{}Listen\-ing()} para cancelar la operación en curso y liberar recursos sin procesar el audio capturado.
 
 
 \subsection{Captura de audio: \texttt{Audio\allowbreak{}Capture\allowbreak{}Manager}}
@@ -422,7 +426,7 @@ El componente central es la clase \texttt{Transaction\allowbreak{}View\allowbrea
 
 \subsection{Integración con el SDK Aurum}
 
-La integración se realiza a través de dos puntos de contacto: \texttt{Aurum\allowbreak{}Engine} (fachada de control) y \texttt{Aurum\allowbreak{}Delegate} (canal de notificaciones). Durante el inicio, el \textit{ViewModel} instancia el motor, registra su referencia como delegado e invoca \texttt{configure()} para precargar los modelos Core~ML. Un único método \texttt{toggle\allowbreak{}Listening()} traduce la acción del usuario en invocaciones a \texttt{start\allowbreak{}Listening()} o \texttt{stop\allowbreak{}Listen\-ing()} según el estado actual. Cada \textit{callback} del delegado actualiza las propiedades \texttt{@Pub\-lished} del \textit{ViewModel} dentro de \texttt{Dispatch\-Queue.main.async}, garantizando que las mutaciones de estado ocurran en el hilo principal, requisito de SwiftUI para el redibujo seguro de la interfaz.
+La integración se realiza a través de dos puntos de contacto: \texttt{Aurum\allowbreak{}Engine} (fachada de control) y \texttt{Aurum\allowbreak{}Delegate} (canal de notificaciones). Durante el inicio, el \textit{ViewModel} instancia el motor, registra su referencia como delegado e invoca \texttt{configure()} para precargar los modelos Core~ML. Un único método \texttt{toggleListe\allowbreak{}ning()} traduce la acción del usuario en invocaciones a \texttt{startListe\allowbreak{}ning()} o \texttt{stop\allowbreak{}Listen\-ing()} según el estado actual. Cada \textit{callback} del delegado actualiza las propiedades \texttt{@Pub\-lished} del \textit{ViewModel} dentro de \texttt{Dispatch\allowbreak{}Queue.\allowbreak{}main.\allowbreak{}async}, garantizando que las mutaciones de estado ocurran en el hilo principal, requisito de SwiftUI para el redibujo seguro de la interfaz.
 
 La aplicación base no contiene lógica de procesamiento de lenguaje natural ni de audio. La totalidad de la cadena de inferencia permanece encapsulada dentro del SDK. Esta separación de responsabilidades demuestra la naturaleza reutilizable del framework: cualquier aplicación iOS podría integrar las capacidades de transacciones por voz implementando el mismo protocolo \texttt{Aurum\allowbreak{}Delegate}.
 

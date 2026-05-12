@@ -58,16 +58,17 @@
 \contentsline {section}{\numberline {4.2}Ensayo de modelos}{32}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Evaluación de robustez lingüística}{32}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Benchmark de latencia de inferencia}{34}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Pruebas de usabilidad}{35}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Protocolo de evaluación}{35}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Resultados de usabilidad}{38}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Análisis de resultados}{42}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Validación de la hipótesis central}{42}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Comparación con arquitecturas alternativas}{42}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Rol del \texttt {TextNormalizer}}{43}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Limitaciones del estudio}{44}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Conexión con CRISP-DM}{45}{subsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.2.3}Huella de almacenamiento del SDK}{35}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Pruebas de usabilidad}{36}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Protocolo de evaluación}{36}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Resultados de usabilidad}{39}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Análisis de resultados}{43}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Validación de la hipótesis central}{43}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Comparación con arquitecturas alternativas}{43}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Rol del \texttt {TextNormalizer}}{44}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Limitaciones del estudio}{45}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Conexión con CRISP-DM}{46}{subsection.4.4.5}%
 \contentsline {chapter}{\numberline {5}Conclusiones}{47}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Resultados generales}{47}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Próximos pasos}{48}{section.5.2}%
-\contentsline {chapter}{Bibliografía}{51}{appendix*.46}%
+\contentsline {chapter}{Bibliografía}{51}{appendix*.47}%

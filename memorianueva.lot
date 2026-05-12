@@ -16,6 +16,7 @@
 \contentsline {table}{\numberline {4.4}{\ignorespaces Rendimiento del extractor de entidades a nivel de entidad completa. \texttt {Strict}: coincidencia exacta de tipo y posición. \texttt {Relaxed}: coincidencia de tipo con superposición parcial de tokens.}}{32}{table.caption.30}%
 \contentsline {table}{\numberline {4.5}{\ignorespaces Evaluación de robustez del pipeline NLU ante variaciones lingüísticas del español rioplatense y errores de STT. \textit {Intent Acc.}: accuracy de clasificación de intención. \textit {Entity F1}: macro F1-Score \textit {strict} de extracción de entidades.}}{33}{table.caption.31}%
 \contentsline {table}{\numberline {4.6}{\ignorespaces Latencia de inferencia de los modelos Core~ML, medida sobre macOS (CPU). En un dispositivo iOS con Neural Engine, las latencias serían inferiores. Se reportan estadísticos sobre 1.600 inferencias por modelo.}}{34}{table.caption.32}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados de las pruebas de usabilidad por tarea. La tasa de éxito se calcula sobre el total de intentos. El tiempo de interacción incluye el habla del usuario, el procesamiento y la confirmación.}}{42}{table.caption.43}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Resumen de rendimiento de los modelos Core ML del SDK Aurum.}}{45}{table.caption.44}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Desglose del tamaño del SDK Aurum por componente.}}{35}{table.caption.33}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Resultados de las pruebas de usabilidad por tarea. La tasa de éxito se calcula sobre el total de intentos. El tiempo de interacción incluye el habla del usuario, el procesamiento y la confirmación.}}{43}{table.caption.44}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Resumen de rendimiento de los modelos Core ML del SDK Aurum.}}{46}{table.caption.45}%
 \addvspace {10\p@ }
