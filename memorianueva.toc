@@ -20,18 +20,18 @@
 \contentsline {section}{\numberline {3.3}Modelos de inteligencia artificial}{15}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Justificación de la selección algorítmica}{15}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Clasificador de intenciones: \textit {Maximum Entropy} (MaxEnt)}{16}{subsection.3.3.2}%
-\contentsline {subsubsection}{Fundamento teórico}{16}{section*.10}%
-\contentsline {subsubsection}{Extracción de \textit {features} y vectorización}{17}{section*.11}%
-\contentsline {subsubsection}{Función de decisión y umbral de confianza}{17}{section*.12}%
+\contentsline {subsubsection}{Fundamento teórico}{16}{section*.12}%
+\contentsline {subsubsection}{Extracción de \textit {features} y vectorización}{17}{section*.13}%
+\contentsline {subsubsection}{Función de decisión y umbral de confianza}{17}{section*.14}%
 \contentsline {subsection}{\numberline {3.3.3}Extractor de entidades: \textit {Conditional Random Field} (CRF)}{17}{subsection.3.3.3}%
-\contentsline {subsubsection}{Fundamento teórico}{17}{section*.13}%
-\contentsline {subsubsection}{Decodificación con el algoritmo de Viterbi}{18}{section*.14}%
-\contentsline {subsubsection}{Implementación con \texttt {MLWordTagger}}{18}{section*.15}%
+\contentsline {subsubsection}{Fundamento teórico}{17}{section*.15}%
+\contentsline {subsubsection}{Decodificación con el algoritmo de Viterbi}{18}{section*.16}%
+\contentsline {subsubsection}{Implementación con \texttt {MLWordTagger}}{18}{section*.17}%
 \contentsline {subsection}{\numberline {3.3.4}Esquema de anotación IOB}{18}{subsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.3.5}Proceso de entrenamiento}{19}{subsection.3.3.5}%
-\contentsline {subsubsection}{Entrenamiento del clasificador de intenciones}{19}{section*.17}%
-\contentsline {subsubsection}{Entrenamiento del extractor de entidades}{19}{section*.18}%
-\contentsline {subsubsection}{Integración de modelos en el proyecto}{20}{section*.19}%
+\contentsline {subsubsection}{Entrenamiento del clasificador de intenciones}{19}{section*.19}%
+\contentsline {subsubsection}{Entrenamiento del extractor de entidades}{19}{section*.20}%
+\contentsline {subsubsection}{Integración de modelos en el proyecto}{20}{section*.21}%
 \contentsline {subsection}{\numberline {3.3.6}Preprocesamiento: normalización Unicode}{20}{subsection.3.3.6}%
 \contentsline {subsection}{\numberline {3.3.7}Mecanismo de inferencia de moneda}{20}{subsection.3.3.7}%
 \contentsline {section}{\numberline {3.4}Desarrollo del SDK (Aurum)}{21}{section.3.4}%
@@ -53,8 +53,8 @@
 \contentsline {section}{\numberline {4.1}Desempeño del modelo}{29}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Clasificador de intenciones (MaxEnt)}{29}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Extractor de entidades (CRF)}{30}{subsection.4.1.2}%
-\contentsline {subsubsection}{Métricas a nivel de token}{30}{section*.27}%
-\contentsline {subsubsection}{Métricas a nivel de entidad}{31}{section*.29}%
+\contentsline {subsubsection}{Métricas a nivel de token}{30}{section*.29}%
+\contentsline {subsubsection}{Métricas a nivel de entidad}{31}{section*.31}%
 \contentsline {section}{\numberline {4.2}Ensayo de modelos}{32}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Evaluación de robustez lingüística}{32}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Benchmark de latencia de inferencia}{34}{subsection.4.2.2}%
@@ -71,4 +71,4 @@
 \contentsline {chapter}{\numberline {5}Conclusiones}{47}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Resultados generales}{47}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Próximos pasos}{48}{section.5.2}%
-\contentsline {chapter}{Bibliografía}{51}{appendix*.47}%
+\contentsline {chapter}{Bibliografía}{51}{appendix*.49}%

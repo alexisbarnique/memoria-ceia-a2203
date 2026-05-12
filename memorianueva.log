@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  12 MAY 2026 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  12 MAY 2026 20:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1144,19 +1144,29 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [2
 
+]
+--------------------
+ Agradecimientos
+--------------------
+
+
+[3]
+
+[4
+
 ] (./memorianueva.toc
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
 
-[3])
+[5])
 \tf@toc=\write6
 \openout6 = `memorianueva.toc'.
 
 
 
-[4] (./memorianueva.lof
+[6] (./memorianueva.lof
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -1166,11 +1176,11 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 
-[5
+[7
 
 ]
 
-[6
+[8
 
 ] (./memorianueva.lot
 LaTeX Info: Redefining \sptext on input line 1.
@@ -1182,9 +1192,19 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 
-[7]
+[9]
 
-[8
+[10
+
+]
+--------------------
+ Dedicatory
+--------------------
+
+
+[11]
+
+[12
 
 ]
 \openout2 = `Chapters/Chapter1.aux'.
@@ -1218,12 +1238,12 @@ LaTeX Info: Redefining \. on input line 69.
 LaTeX Info: Redefining \% on input line 69.
 [3])
 
-LaTeX Info: Redefining \. on input line 149.
-LaTeX Info: Redefining \% on input line 149.
+LaTeX Info: Redefining \. on input line 165.
+LaTeX Info: Redefining \% on input line 165.
 [4]
 
-LaTeX Info: Redefining \. on input line 149.
-LaTeX Info: Redefining \% on input line 149.
+LaTeX Info: Redefining \. on input line 165.
+LaTeX Info: Redefining \% on input line 165.
 [5]
 \openout2 = `Chapters/Chapter2.aux'.
 
@@ -1248,8 +1268,8 @@ LaTeX Info: Redefining \. on input line 56.
 LaTeX Info: Redefining \% on input line 56.
 [9] (./tablas_metricas.tex))
 
-LaTeX Info: Redefining \. on input line 150.
-LaTeX Info: Redefining \% on input line 150.
+LaTeX Info: Redefining \. on input line 166.
+LaTeX Info: Redefining \% on input line 166.
 [10]
 \openout2 = `Chapters/Chapter3.aux'.
 
@@ -1268,7 +1288,7 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 
 
 ]
-<./Figures/diagrama-de-componentes-1.png, id=628, 1020.9342pt x 949.8687pt>
+<./Figures/diagrama-de-componentes-1.png, id=649, 1020.9342pt x 949.8687pt>
 File: ./Figures/diagrama-de-componentes-1.png Graphic file (type png)
 <use ./Figures/diagrama-de-componentes-1.png>
 Package pdftex.def Info: ./Figures/diagrama-de-componentes-1.png  used on input
@@ -1279,7 +1299,7 @@ Package pdftex.def Info: ./Figures/diagrama-de-componentes-1.png  used on input
 LaTeX Info: Redefining \. on input line 69.
 LaTeX Info: Redefining \% on input line 69.
 [12 <./Figures/diagrama-de-componentes-1.png>]
-<./Figures/pipeline-transaccion.png, id=637, 682.04813pt x 731.73375pt>
+<./Figures/pipeline-transaccion.png, id=658, 682.04813pt x 731.73375pt>
 File: ./Figures/pipeline-transaccion.png Graphic file (type png)
 <use ./Figures/pipeline-transaccion.png>
 Package pdftex.def Info: ./Figures/pipeline-transaccion.png  used on input line
@@ -1372,7 +1392,7 @@ LaTeX Info: Redefining \% on input line 359.
 LaTeX Info: Redefining \. on input line 396.
 LaTeX Info: Redefining \% on input line 396.
 [23]
-<./Figures/diagrama-secuencia.png, id=729, 3672.72125pt x 3398.6975pt>
+<./Figures/diagrama-secuencia.png, id=750, 3672.72125pt x 3398.6975pt>
 File: ./Figures/diagrama-secuencia.png Graphic file (type png)
 <use ./Figures/diagrama-secuencia.png>
 Package pdftex.def Info: ./Figures/diagrama-secuencia.png  used on input line 4
@@ -1404,7 +1424,7 @@ LaTeX Info: Redefining \% on input line 439.
 LaTeX Info: Redefining \. on input line 478.
 LaTeX Info: Redefining \% on input line 478.
 [26]
-<./Figures/diagrama-flujo-aurum.png, id=755, 2876.7475pt x 3998.94pt>
+<./Figures/diagrama-flujo-aurum.png, id=775, 2876.7475pt x 3998.94pt>
 File: ./Figures/diagrama-flujo-aurum.png Graphic file (type png)
 <use ./Figures/diagrama-flujo-aurum.png>
 Package pdftex.def Info: ./Figures/diagrama-flujo-aurum.png  used on input line
@@ -1412,12 +1432,12 @@ Package pdftex.def Info: ./Figures/diagrama-flujo-aurum.png  used on input line
 (pdftex.def)             Requested size: 389.80269pt x 541.84724pt.
 )
 
-LaTeX Info: Redefining \. on input line 151.
-LaTeX Info: Redefining \% on input line 151.
+LaTeX Info: Redefining \. on input line 167.
+LaTeX Info: Redefining \% on input line 167.
 [27]
 
-LaTeX Info: Redefining \. on input line 151.
-LaTeX Info: Redefining \% on input line 151.
+LaTeX Info: Redefining \. on input line 167.
+LaTeX Info: Redefining \% on input line 167.
 [28 <./Figures/diagrama-flujo-aurum.png>]
 \openout2 = `Chapters/Chapter4.aux'.
 
@@ -1480,7 +1500,7 @@ Overfull \hbox (1.64938pt too wide) in paragraph at lines 384--385
 s-fe-rir qui-nien-tos pe-sos a Juan
  []
 
-<./Figures/screenshots/solicitud-permiso-microfono.PNG, id=812, 1129.21875pt x 
+<./Figures/screenshots/solicitud-permiso-microfono.PNG, id=832, 1129.21875pt x 
 2445.135pt>
 File: ./Figures/screenshots/solicitud-permiso-microfono.PNG Graphic file (type 
 png)
@@ -1488,7 +1508,7 @@ png)
 Package pdftex.def Info: ./Figures/screenshots/solicitud-permiso-microfono.PNG 
  used on input line 404.
 (pdftex.def)             Requested size: 126.68468pt x 274.30096pt.
-<./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG, id=813, 1129.2
+<./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG, id=833, 1129.2
 1875pt x 2445.135pt>
 File: ./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG Graphic fi
 le (type png)
@@ -1506,7 +1526,7 @@ Overfull \hbox (2.08049pt too wide) in paragraph at lines 402--415
 LaTeX Info: Redefining \. on input line 425.
 LaTeX Info: Redefining \% on input line 425.
 [36]
-<./Figures/screenshots/home-app-base.PNG, id=825, 1129.21875pt x 2445.135pt>
+<./Figures/screenshots/home-app-base.PNG, id=846, 1129.21875pt x 2445.135pt>
 File: ./Figures/screenshots/home-app-base.PNG Graphic file (type png)
 <use ./Figures/screenshots/home-app-base.PNG>
 Package pdftex.def Info: ./Figures/screenshots/home-app-base.PNG  used on input
@@ -1518,7 +1538,7 @@ LaTeX Info: Redefining \. on input line 441.
 LaTeX Info: Redefining \% on input line 441.
 [37 <./Figures/screenshots/solicitud-permiso-microfono.PNG> <./Figures/screensh
 ots/solicitud-permiso-reconocimiento-voz.PNG>]
-<./Figures/screenshots/transcripcion-dictado.PNG, id=832, 1129.21875pt x 2445.1
+<./Figures/screenshots/transcripcion-dictado.PNG, id=853, 1129.21875pt x 2445.1
 35pt>
 File: ./Figures/screenshots/transcripcion-dictado.PNG Graphic file (type png)
 <use ./Figures/screenshots/transcripcion-dictado.PNG>
@@ -1531,7 +1551,7 @@ Underfull \hbox (badness 1412) in paragraph at lines 449--449
 n/9 : La trans-crip-ción 
  []
 
-<./Figures/screenshots/procesamiento.PNG, id=833, 1129.21875pt x 2445.135pt>
+<./Figures/screenshots/procesamiento.PNG, id=854, 1129.21875pt x 2445.135pt>
 File: ./Figures/screenshots/procesamiento.PNG Graphic file (type png)
 <use ./Figures/screenshots/procesamiento.PNG>
 Package pdftex.def Info: ./Figures/screenshots/procesamiento.PNG  used on input
@@ -1547,7 +1567,7 @@ LaTeX Info: Redefining \. on input line 479.
 LaTeX Info: Redefining \% on input line 479.
 [39 <./Figures/screenshots/transcripcion-dictado.PNG> <./Figures/screenshots/pr
 ocesamiento.PNG>]
-<./Figures/screenshots/intencion-confirmacion-transferencia.PNG, id=846, 1129.2
+<./Figures/screenshots/intencion-confirmacion-transferencia.PNG, id=865, 1129.2
 1875pt x 2445.135pt>
 File: ./Figures/screenshots/intencion-confirmacion-transferencia.PNG Graphic fi
 le (type png)
@@ -1559,7 +1579,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 485.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 485.
-<./Figures/screenshots/intencion-consulta-saldo.PNG, id=848, 1129.21875pt x 244
+<./Figures/screenshots/intencion-consulta-saldo.PNG, id=867, 1129.21875pt x 244
 5.135pt>
 File: ./Figures/screenshots/intencion-consulta-saldo.PNG Graphic file (type png
 )
@@ -1572,7 +1592,7 @@ ed on input line 493.
 LaTeX Info: Redefining \. on input line 497.
 LaTeX Info: Redefining \% on input line 497.
 [40 <./Figures/screenshots/intencion-confirmacion-transferencia.PNG>]
-<./Figures/screenshots/intencion-cancelar.PNG, id=855, 1129.21875pt x 2445.135p
+<./Figures/screenshots/intencion-cancelar.PNG, id=874, 1129.21875pt x 2445.135p
 t>
 File: ./Figures/screenshots/intencion-cancelar.PNG Graphic file (type png)
 <use ./Figures/screenshots/intencion-cancelar.PNG>
@@ -1601,8 +1621,8 @@ LaTeX Info: Redefining \. on input line 653.
 LaTeX Info: Redefining \% on input line 653.
 [45])
 
-LaTeX Info: Redefining \. on input line 152.
-LaTeX Info: Redefining \% on input line 152.
+LaTeX Info: Redefining \. on input line 168.
+LaTeX Info: Redefining \% on input line 168.
 [46]
 \openout2 = `Chapters/Chapter5.aux'.
 
@@ -1621,8 +1641,8 @@ LaTeX Info: Redefining \. on input line 59.
 LaTeX Info: Redefining \% on input line 59.
 [48])
 
-LaTeX Info: Redefining \. on input line 153.
-LaTeX Info: Redefining \% on input line 153.
+LaTeX Info: Redefining \. on input line 169.
+LaTeX Info: Redefining \% on input line 169.
 [49]
 
 [50
@@ -1630,7 +1650,7 @@ LaTeX Info: Redefining \% on input line 153.
 
 
 ]
-Overfull \hbox (17.49973pt too wide) in paragraph at lines 171--171
+Overfull \hbox (17.49973pt too wide) in paragraph at lines 187--187
 \T1/ppl/m/n/10.95 per Do-cu-men-ta-tion. 2025. \T1/ppl/m/sc/10.95 url\T1/ppl/m/
 n/10.95 : [][]$https : / / developer . apple . com / documentation /
  []
@@ -1638,35 +1658,35 @@ n/10.95 : [][]$https : / / developer . apple . com / documentation /
 
 
 [51]
-Overfull \hbox (2.6412pt too wide) in paragraph at lines 171--171
+Overfull \hbox (2.6412pt too wide) in paragraph at lines 187--187
 []\T1/ppl/m/n/10.95 Apple Inc. \T1/ppl/m/it/10.95 The Swift Pro-gram-ming Lan-g
 ua-ge: Lan-gua-ge Gui-de\T1/ppl/m/n/10.95 . Vi-si-ta-do el 2026-
  []
 
 
-Overfull \hbox (1.83105pt too wide) in paragraph at lines 171--171
+Overfull \hbox (1.83105pt too wide) in paragraph at lines 187--187
 []\T1/ppl/m/n/10.95 Jeffrey L El-man. ^^S  Fin-ding struc-tu-re in ti-me^^T. En
 : \T1/ppl/m/it/10.95 Cog-ni-ti-ve scien-ce \T1/ppl/m/n/10.95 14.2 (1990),
  []
 
 
-Overfull \hbox (14.30664pt too wide) in paragraph at lines 171--171
+Overfull \hbox (14.30664pt too wide) in paragraph at lines 187--187
 []\T1/ppl/m/n/10.95 Kyunghyun Cho et al. ^^S  Lear-ning Ph-ra-se Re-pre-sen-ta-
 tions using RNN Encoder--
  []
 
 
 
-LaTeX Info: Redefining \. on input line 171.
-LaTeX Info: Redefining \% on input line 171.
+LaTeX Info: Redefining \. on input line 187.
+LaTeX Info: Redefining \% on input line 187.
 [52]
-Overfull \hbox (11.63483pt too wide) in paragraph at lines 171--171
+Overfull \hbox (11.63483pt too wide) in paragraph at lines 187--187
 []\T1/ppl/m/n/10.95 Lance A Ramshaw y Mit-chell P Mar-cus. ^^S  Text chun-king 
 using transformation-
  []
 
 
-Overfull \hbox (0.20251pt too wide) in paragraph at lines 171--171
+Overfull \hbox (0.20251pt too wide) in paragraph at lines 187--187
 []\T1/ppl/m/n/10.95 Jakob Niel-sen. \T1/ppl/m/it/10.95 Con-fir-ma-tion Dia-logs
  Can Pre-vent User Errors\T1/ppl/m/n/10.95 . 2018. \T1/ppl/m/sc/10.95 url\T1/pp
 l/m/n/10.95 : [][]$https :
@@ -1674,18 +1694,18 @@ l/m/n/10.95 : [][]$https :
 
 
 
-LaTeX Info: Redefining \. on input line 171.
-LaTeX Info: Redefining \% on input line 171.
+LaTeX Info: Redefining \. on input line 187.
+LaTeX Info: Redefining \% on input line 187.
 [53]
-Overfull \hbox (13.17114pt too wide) in paragraph at lines 171--171
+Overfull \hbox (13.17114pt too wide) in paragraph at lines 187--187
 []\T1/ppl/m/n/10.95 Zhiqing Sun et al. ^^S  Mo-bi-le-BERT: a Com-pact Task-Agno
 stic BERT for Resource-
  []
 
 
 
-LaTeX Info: Redefining \. on input line 173.
-LaTeX Info: Redefining \% on input line 173.
+LaTeX Info: Redefining \. on input line 189.
+LaTeX Info: Redefining \% on input line 189.
 [54] (./memorianueva.aux (./portada.aux)
 LaTeX Info: Redefining \sptext on input line 16.
 LaTeX Info: Redefining \. on input line 16.
@@ -1705,7 +1725,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `memorianueva.out' has not changed.
-(rerunfilecheck)             Checksum: 4B35387385D1060339ED25F967D25D20;15859.
+(rerunfilecheck)             Checksum: BA8A89B409669413753F8043CCDE510D;15859.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                memorianueva
@@ -1716,11 +1736,11 @@ Package logreq Info: Writing requests to 'memorianueva.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32747 strings out of 473190
- 707320 string characters out of 5715800
- 1479749 words of memory out of 5000000
- 55339 multiletter control sequences out of 15000+600000
- 624964 words of font info for 121 fonts, out of 8000000 for 9000
+ 32759 strings out of 473190
+ 707492 string characters out of 5715800
+ 1479751 words of memory out of 5000000
+ 55343 multiletter control sequences out of 15000+600000
+ 627449 words of font info for 124 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  96i,21n,94p,1969b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -1738,13 +1758,14 @@ f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/texmf-dist/
 fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
 ype1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/pala
-tino/uplbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/u
-plr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.p
-fb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on memorianueva.pdf (64 pages, 4005782 bytes).
+tino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/up
+lbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.p
+fb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
+r/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on memorianueva.pdf (68 pages, 4022736 bytes).
 PDF statistics:
- 1133 PDF objects out of 1200 (max. 8388607)
- 1000 compressed objects within 10 object streams
- 242 named destinations out of 1000 (max. 500000)
+ 1159 PDF objects out of 1200 (max. 8388607)
+ 1019 compressed objects within 11 object streams
+ 248 named destinations out of 1000 (max. 500000)
  650 words of extra memory for PDF output out of 10000 (max. 10000000)
 
