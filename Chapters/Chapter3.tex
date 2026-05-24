@@ -142,7 +142,7 @@ El \textit{payload} que los modelos devuelven al sistema se consolidó en una ú
 \section{Modelos de inteligencia artificial}
 \label{sec:modelos-ia}
 
-Tras la exploración teórica de arquitecturas presentada en el capítulo~2, se seleccionaron los algoritmos provistos de forma nativa por el ecosistema de Apple a través de Create~ML: un clasificador de \textit{Maximum Entropy} (MaxEnt) para la clasificación de intenciones y un \textit{Conditional Random Field} (CRF) para la extracción de entidades nombradas. Esta sección detalla los fundamentos algorítmicos de cada modelo, el esquema de anotación adoptado, el proceso de entrenamiento y las decisiones de preprocesamiento que determinan la calidad de la inferencia.
+Tras la exploración teórica de arquitecturas presentada en el capítulo~\ref{Chapter2}, se seleccionaron los algoritmos provistos de forma nativa por el ecosistema de Apple a través de Create~ML: un clasificador de \textit{Maximum Entropy} (MaxEnt) para la clasificación de intenciones y un \textit{Conditional Random Field} (CRF) para la extracción de entidades nombradas. Esta sección detalla cómo se configuraron e integraron estos modelos en el proyecto, el esquema de anotación adoptado, el proceso de entrenamiento y las decisiones de preprocesamiento que determinan la calidad de la inferencia.
 
 
 \subsection{Justificación de la selección algorítmica}
@@ -157,70 +157,41 @@ El compromiso inherente a esta elección es la menor expresividad representacion
 \subsection{Clasificador de intenciones: \textit{Maximum Entropy} (MaxEnt)}
 \label{subsec:maxent}
 
-El clasificador de intenciones resuelve un problema de clasificación multiclase a nivel de oración: dado un comando de voz transcrito y normalizado, el modelo debe asignarle una de las tres intenciones soportadas (\textsc{transferencia}, \textsc{consulta\_saldo}, \textsc{cancelar}).
+El clasificador de intenciones resuelve un problema de clasificación multiclase a nivel de oración: dado un comando de voz transcrito y normalizado, el modelo debe asignarle una de las tres intenciones soportadas (\textsc{transferencia}, \textsc{consulta\_saldo}, \textsc{cancelar}). Como se describió en el capítulo~\ref{Chapter2}, el modelo MaxEnt \citep{berger1996maximum} calcula probabilidades \textit{softmax} sobre \textit{features} extraídas de la entrada y selecciona la clase de mayor probabilidad.
 
-\subsubsection{Fundamento teórico}
+\subsubsection{Configuración del clasificador en Create~ML}
 
-El modelo de \textit{Maximum Entropy} \citep{berger1996maximum}, también conocido como regresión logística multinomial, se fundamenta en el principio de máxima entropía de Jaynes: entre todas las distribuciones de probabilidad consistentes con las restricciones observadas en los datos, se selecciona aquella que maximiza la entropía, es decir, la que realiza el menor número de suposiciones adicionales. Formalmente, la probabilidad de asignar la clase $c$ a una entrada $x$ se define como \ref{eq:maxent}:
+Se utilizó la clase \texttt{MLText\-Classifier} de Create~ML con el algoritmo \texttt{maxEnt}. Esta clase implementa la extracción de \textit{features} de forma automática: transforma cada comando textual en un vector numérico de alta dimensión mediante la combinación de unigramas y bigramas de palabras. Para un comando como \texttt{pasale dos lucas a Pedro}, el extractor genera \textit{features} del tipo: presencia de \texttt{pasale}, presencia de \texttt{lucas}, presencia del bigrama \texttt{dos lucas}, presencia del bigrama \texttt{a Pedro}, entre otras. Este conjunto de \textit{features} dispersas (\textit{sparse}) alimenta el modelo MaxEnt, que aprende qué combinaciones son discriminativas para cada intención.
 
-\begin{equation}
-P(c \mid x) = \frac{1}{Z(x)} \exp\left(\sum_{i} w_i \cdot f_i(x, c)\right)
-\label{eq:maxent}
-\end{equation}
+Los bigramas capturan colocaciones relevantes para el dominio: \texttt{cuánto tengo} es un indicador fuerte de \textsc{consulta\_saldo}, mientras que \texttt{a Pedro} lo es de \textsc{transferencia}. Si bien este enfoque no modela dependencias de largo alcance, resulta aceptable dado que los comandos bancarios raramente exceden las 15 palabras.
 
-donde $f_i(x, c)$ son funciones de \textit{features} binarias o reales que capturan propiedades relevantes de la entrada (por ejemplo, la presencia de un \textit{n-gram} específico), $w_i$ son los pesos aprendidos durante el entrenamiento, y $Z(x)$ es la función de partición que normaliza la distribución para que las probabilidades sumen 1 \ref{eq:features}:
+\subsubsection{Umbral de confianza}
 
-\begin{equation}
-Z(x) = \sum_{c' \in C} \exp\left(\sum_{i} w_i \cdot f_i(x, c')\right)
-\label{eq:features}
-\end{equation}
-
-El entrenamiento consiste en encontrar los pesos $w_i$ que maximizan la log\mbox{-}vero\-si\-mi\-li\-tud condicional sobre el corpus etiquetado, típicamente mediante optimización por gradiente ({L-BFGS} o gradiente descendente estocástico) con regularización L1 o L2 para prevenir el sobreajuste.
-
-\subsubsection{Extracción de \textit{features} y vectorización}
-
-Create~ML implementa la extracción de \textit{features} de forma automática a través de \texttt{MLText\-Classifier}. El proceso de vectorización transforma cada comando textual en un vector numérico de alta dimensión mediante la combinación de unigramas y bigramas de palabras. Para un comando como \texttt{pasale dos lucas a Pedro}, el extractor genera \textit{features} del tipo: presencia de \texttt{pasale}, presencia de \texttt{lucas}, presencia del bigrama \texttt{dos lucas}, presencia del bigrama \texttt{a Pedro}, entre otras. Este conjunto de \textit{features} dispersas (\textit{sparse}) alimenta el modelo MaxEnt, que aprende qué combinaciones son discriminativas para cada intención.
-
-La ventaja de este enfoque sobre una representación de \textit{bag-of-words} puro es que los bigramas capturan colocaciones relevantes: \texttt{cuánto tengo} es un indicador fuerte de \textsc{consulta\_saldo}, mientras que \texttt{a Pedro} lo es de \textsc{transferencia}. La desventaja es que no modela dependencias de largo alcance, lo cual resulta aceptable dado que los comandos bancarios raramente exceden las 15 palabras.
-
-\subsubsection{Función de decisión y umbral de confianza}
-
-Durante la inferencia, el modelo calcula las probabilidades \textit{softmax} para cada clase y selecciona la de mayor probabilidad. Sin embargo, en una aplicación financiera, aceptar ciegamente la clase más probable puede conducir a la ejecución de operaciones incorrectas cuando el comando es ambiguo. Por esta razón, se implementó un umbral de confianza configurable de 0,65: si la probabilidad máxima no lo alcanza, el sistema asigna la intención \texttt{.desconocida} y solicita al usuario que reformule el comando. Este umbral fue calibrado empíricamente, buscando un punto de equilibrio entre la tasa de rechazo de comandos legítimos (\textit{false negatives}) y la aceptación errónea de comandos ambiguos (\textit{false positives}).
+En una aplicación financiera, aceptar ciegamente la clase más probable puede conducir a la ejecución de operaciones incorrectas cuando el comando es ambiguo. Por esta razón, se implementó un umbral de confianza configurable de 0,65: si la probabilidad máxima no lo alcanza, el sistema asigna la intención \texttt{.desconocida} y solicita al usuario que reformule el comando. Este umbral fue calibrado empíricamente, buscando un punto de equilibrio entre la tasa de rechazo de comandos legítimos (\textit{false negatives}) y la aceptación errónea de comandos ambiguos (\textit{false positives}).
 
 
 \subsection{Extractor de entidades: \textit{Conditional Random Field} (CRF)}
 \label{subsec:crf}
 
-La extracción de entidades nombradas (NER) constituye un problema de etiquetado de secuencias: dado un comando tokenizado, el modelo debe asignar a cada token una etiqueta que identifique si pertenece a una entidad transaccional (monto, moneda, destinatario) o no.
+La extracción de entidades nombradas (NER) constituye un problema de etiquetado de secuencias: dado un comando tokenizado, el modelo debe asignar a cada token una etiqueta que identifique si pertenece a una entidad transaccional (monto, moneda, destinatario) o no. Como se desarrolló en el capítulo~\ref{Chapter2}, el modelo CRF \citep{lafferty2001conditional} modela las dependencias entre etiquetas consecutivas, lo que resulta crucial para garantizar la coherencia de las secuencias IOB producidas.
 
-\subsubsection{Fundamento teórico}
+\subsubsection{Configuración del extractor en Create~ML}
 
-A diferencia de los clasificadores independientes que etiquetan cada token de forma aislada, los \textit{Conditional Random Fields} \citep{lafferty2001conditional} modelan la distribución condicional de la secuencia completa de etiquetas $\mathbf{y} = (y_1, y_2, \ldots, y_T)$ dado el texto de entrada $\mathbf{x} = (x_1, x_2, \ldots, x_T)$ como figura en la ecuación \ref{eq:crf} :
+Se utilizó la clase \texttt{MLWord\-Tagger} de Create~ML con el algoritmo CRF (predeterminado para tareas de etiquetado de secuencias). Esta clase acepta corpus en formato JSON con pares de tokens y etiquetas, y abstrae la complejidad del entrenamiento: extracción de \textit{features}, optimización de pesos y regularización. El modelo resultante se exporta en formato \lstinline|.mlmodel|, listo para su integración con Core~ML.
 
-\begin{equation}
-P(\mathbf{y} \mid \mathbf{x}) = \frac{1}{Z(\mathbf{x})} \exp\left(\sum_{t=1}^{T} \sum_{k} \lambda_k \cdot f_k(y_{t-1}, y_t, \mathbf{x}, t)\right)
-\label{eq:crf}
-\end{equation}
+Internamente, \texttt{MLWord\-Tagger} extrae \textit{features} a nivel de token que incluyen: el token actual y sus vecinos (ventana contextual), prefijos y sufijos de longitud variable, la presencia de dígitos o caracteres especiales, y la capitalización. Estas \textit{features} alimentan el CRF lineal, que aprende simultáneamente los pesos de emisión (qué \textit{features} son indicativas de cada etiqueta) y los pesos de transición (qué pares de etiquetas consecutivas son válidos).
 
-donde $f_k$ son funciones de \textit{features} que dependen de la etiqueta actual $y_t$, la etiqueta anterior $y_{t-1}$ (modelando transiciones), la secuencia de entrada $\mathbf{x}$ y la posición $t$; $\lambda_k$ son los pesos aprendidos; y $Z(\mathbf{x})$ es la función de partición que normaliza sobre todas las secuencias de etiquetas posibles.
+\subsubsection{Impacto en la latencia de inferencia}
 
-La ventaja fundamental del CRF sobre un clasificador \textit{token-by-token} es que modela las dependencias entre etiquetas consecutivas. Esto es crucial para el esquema IOB: una etiqueta \texttt{I-MONTO} solo es válida si la etiqueta anterior es \texttt{B-MONTO} o \texttt{I-MONTO}. El CRF aprende estas restricciones de transición directamente de los datos, lo que reduce drásticamente la producción de secuencias inválidas como \texttt{I-MONTO} después de \texttt{B-DESTINATARIO}.
-
-\subsubsection{Decodificación con el algoritmo de Viterbi}
-
-Durante la inferencia, encontrar la secuencia de etiquetas más probable requiere evaluar $|C|^T$ combinaciones posibles (donde $|C|$ es el número de etiquetas y $T$ la longitud de la secuencia), lo cual es computacionalmente intratable. El algoritmo de Viterbi \citep{viterbi1967error} resuelve este problema mediante programación dinámica, encontrando la secuencia óptima en tiempo $O(T \cdot |C|^2)$. Para el caso del SDK Aurum, con 7 etiquetas IOB y comandos de hasta 15 tokens, el espacio de búsqueda se reduce de $7^{15} \approx 4,7 \times 10^{12}$ combinaciones a $15 \times 49 = 735$ operaciones, lo que explica la latencia submilesegundo de la inferencia.
-
-\subsubsection{Implementación con \texttt{MLWordTagger}}
-
-Create~ML expone el entrenamiento de modelos CRF a través de la clase \texttt{MLWord\-Tagger}, que acepta corpus en formato JSON con pares de tokens y etiquetas. La API abstrae la complejidad del entrenamiento (extracción de \textit{features}, optimización de pesos, regularización) y genera un modelo \lstinline|.mlmodel| listo para integración con Core~ML. Internamente, \texttt{MLWord\-Tagger} extrae \textit{features} a nivel de token que incluyen: el token actual y sus vecinos (ventana contextual), prefijos y sufijos de longitud variable, la presencia de dígitos o caracteres especiales, y la capitalización. Estas \textit{features} alimentan el CRF lineal, que aprende simultáneamente los pesos de emisión (qué \textit{features} son indicativas de cada etiqueta) y los pesos de transición (qué pares de etiquetas consecutivas son válidos).
+La decodificación del CRF emplea el algoritmo de Viterbi \citep{viterbi1967error}, cuya complejidad es $O(T \cdot |C|^2)$, donde $|C|$ es el número de etiquetas y $T$ la longitud de la secuencia. Para la configuración específica del SDK Aurum, con 7 etiquetas IOB y comandos de hasta 15 tokens, el espacio de búsqueda se reduce de $7^{15} \approx 4,7 \times 10^{12}$ combinaciones a $15 \times 49 = 735$ operaciones, lo que explica la latencia submilesegundo observada en las mediciones del capítulo~4.
 
 
-\subsection{Esquema de anotación IOB}
+\subsection{Esquema de anotación adoptado}
 \label{subsec:esquema-iob}
 
-El esquema IOB (\textit{Inside-Outside-Beginning}) \citep{ramshaw1995text} es el estándar de facto para la anotación de entidades nombradas en tareas de etiquetado de secuencias. Cada token recibe una de tres categorías: \texttt{B-X} (\textit{Beginning}) marca el primer token de una entidad de tipo \texttt{X}, \texttt{I-X} (\textit{Inside}) marca los tokens subsiguientes de la misma entidad, y \texttt{O} (\textit{Outside}) marca los tokens que no pertenecen a ninguna entidad.
+Para la anotación del corpus de entidades se adoptó el esquema IOB (\textit{Inside-Outside-Beginning}) \citep{ramshaw1995text}, descrito en el capítulo~\ref{Chapter2}. La elección de IOB frente a esquemas alternativos como IOB2, IOBES o BILOU responde a la compatibilidad nativa con \texttt{MLWord\-Tagger} de Create~ML, que utiliza IOB como formato de anotación estándar.
 
-Para el dominio del SDK Aurum, se definieron tres tipos de entidades, lo que resulta en siete etiquetas posibles: \texttt{B-MONTO}, \texttt{I-MONTO}, \texttt{B-MONEDA}, \texttt{I-MONEDA}, \texttt{B-DESTINATARIO}, \texttt{I-DESTINATARIO} y \texttt{O}. La tabla~\ref{tab:ejemplo-iob} ilustra la anotación de un comando típico.
+Para el dominio del SDK Aurum, se definieron tres tipos de entidades transaccionales, lo que resulta en siete etiquetas posibles: \texttt{B-MONTO}, \texttt{I-MONTO}, \texttt{B-MONEDA}, \texttt{I-MONEDA}, \texttt{B-DESTINATARIO}, \texttt{I-DESTINATARIO} y \texttt{O}. La tabla~\ref{tab:ejemplo-iob} ilustra la anotación de un comando típico.
 
 \begin{table}[H]
 \caption{Ejemplo de anotación IOB para el comando \texttt{pasale dos lucas a Juan Pérez}.}
@@ -237,9 +208,7 @@ Para el dominio del SDK Aurum, se definieron tres tipos de entidades, lo que res
 \label{tab:ejemplo-iob}
 \end{table}
 
-La elección de IOB frente a esquemas alternativos como IOB2, IOBES o BILOU responde a la compatibilidad nativa con \texttt{MLWord\-Tagger} de Create~ML, que utiliza IOB como formato de anotación estándar. Para entidades de un solo token (como \texttt{lucas} en el ejemplo), la etiqueta \texttt{B-X} es suficiente. Para entidades multitoken (como \texttt{Juan Pérez}), la combinación \texttt{B-X} + \texttt{I-X} demarca los límites con precisión.
-
-La reconstrucción de entidades a partir de las etiquetas IOB sigue un algoritmo lineal de complejidad $O(T)$: se recorre la secuencia de etiquetas de izquierda a derecha; al encontrar \texttt{B-X}, se inicia una nueva entidad de tipo \texttt{X}; las etiquetas \texttt{I-X} consecutivas la extienden; cualquier otra etiqueta (\texttt{O} o \texttt{B-Y}) la cierra. Este algoritmo se implementó en el método \texttt{extract\-Entities()} de la clase \texttt{NLU\-Processor}.
+Para entidades de un solo token (como \texttt{lucas} en el ejemplo), la etiqueta \texttt{B-X} es suficiente. Para entidades multitoken (como \texttt{Juan Pérez}), la combinación \texttt{B-X} + \texttt{I-X} demarca los límites con precisión. La reconstrucción de entidades a partir de estas etiquetas se implementó en el método \texttt{extract\-Entities()} de la clase \texttt{NLU\-Processor}, que recorre la secuencia de izquierda a derecha en complejidad $O(T)$: al encontrar \texttt{B-X} inicia una nueva entidad, las etiquetas \texttt{I-X} consecutivas la extienden, y cualquier otra etiqueta la cierra.
 
 
 \subsection{Proceso de entrenamiento}
@@ -408,7 +377,7 @@ La figura~\ref{fig:diagrama-delegate} presenta el diagrama de secuencia que ilus
 
 El SDK define un enumerado de errores tipados que cubre los modos de fallo de cada etapa del \textit{pipeline}: denegación de permisos de micrófono o reconocimiento de voz, indisponibilidad del reconocedor, fallos de configuración de la sesión de audio, errores de reconocimiento o de inferencia NLU, y fallos de validación del \textit{payload}. Los errores que envuelven un error subyacente (\texttt{underlying: Error}) preservan la cadena de causalidad para facilitar el diagnóstico durante el desarrollo, sin exponer detalles internos al usuario final.
 
-En síntesis, la aplicación consumidora interactúa exclusivamente con cuatro métodos públicos y cinco \textit{callbacks} del delegado, permaneciendo completamente agnóstica respecto a las operaciones internas de vectorización, etiquetado y transcripción.
+En síntesis, la aplicación consumidora interactúa exclusivamente con cuatro métodos públicos y cinco \textit{callbacks} del delegado, esto la deja completamente agnóstica respecto a las operaciones internas de vectorización, etiquetado y transcripción.
 
 
 \section{Desarrollo de la aplicación base}
@@ -443,27 +412,7 @@ La \texttt{Confirmation\allowbreak{}View} se presenta como hoja modal cuando el 
 \subsection{Gestión de permisos y privacidad}
 \label{subsec:permisos}
 
-El procesamiento de voz en iOS requiere autorización explícita para acceder al micrófono y al motor de reconocimiento de voz. La tabla~\ref{tab:permisos} detalla los permisos requeridos.
-
-\begin{table}[H]
-\caption{Permisos requeridos por la aplicación base y su justificación técnica.}
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}lll@{}}
-\toprule
-\textbf{Clave en Info.plist} & \textbf{Recurso} & \textbf{Justificación} \\
-\midrule
-\lstinline|NSMicrophoneUsageDescription|
-    & Micrófono
-    & Captura de audio para reconocimiento de voz \\
-\lstinline|NSSpeechRecognitionUsageDescription|
-    & Speech Framework
-    & Transcripción \textit{on-device} del audio capturado \\
-\bottomrule
-\end{tabular}%
-}
-\label{tab:permisos}
-\end{table}
+El procesamiento de voz en iOS requiere autorización explícita del usuario para acceder a dos recursos del sistema. El primero es el micrófono, declarado mediante la clave \texttt{NSMicrophone\-Usage\-Description} en el archivo \texttt{Info.plist}, necesario para la captura de audio. El segundo es el motor de reconocimiento de voz, declarado mediante \texttt{NSSpeech\-Recognition\-Usage\-Description}, que habilita la transcripción \textit{on-device} del audio capturado a través del \textit{Speech Framework}.
 
 Los permisos se solicitan de forma progresiva (\textit{just-in-time}), en el momento exacto en que el usuario presiona el botón de micrófono por primera vez, siguiendo las recomendaciones de las \textit{Human Interface Guidelines} de Apple \citep{apple-hig}. Si el usuario deniega algún permiso, el SDK reporta el error tipado correspondiente.
 
@@ -481,7 +430,7 @@ En la figura~\ref{fig:diagAurum} se presenta el diagrama de flujo de los actores
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.0\textwidth]{./Figures/diagrama-flujo-aurum.png}
+\includegraphics[width=0.85\textwidth]{./Figures/diagrama-flujo-aurum.png}
 \vspace{0.5cm}
 \caption{Diagrama de flujo de Aurum.}
 \label{fig:diagAurum}

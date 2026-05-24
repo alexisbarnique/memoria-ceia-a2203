@@ -20,55 +20,53 @@
 \contentsline {section}{\numberline {3.3}Modelos de inteligencia artificial}{15}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Justificación de la selección algorítmica}{15}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Clasificador de intenciones: \textit {Maximum Entropy} (MaxEnt)}{16}{subsection.3.3.2}%
-\contentsline {subsubsection}{Fundamento teórico}{16}{section*.12}%
-\contentsline {subsubsection}{Extracción de \textit {features} y vectorización}{17}{section*.13}%
-\contentsline {subsubsection}{Función de decisión y umbral de confianza}{17}{section*.14}%
+\contentsline {subsubsection}{Configuración del clasificador en Create~ML}{16}{section*.12}%
+\contentsline {subsubsection}{Umbral de confianza}{17}{section*.13}%
 \contentsline {subsection}{\numberline {3.3.3}Extractor de entidades: \textit {Conditional Random Field} (CRF)}{17}{subsection.3.3.3}%
-\contentsline {subsubsection}{Fundamento teórico}{17}{section*.15}%
-\contentsline {subsubsection}{Decodificación con el algoritmo de Viterbi}{18}{section*.16}%
-\contentsline {subsubsection}{Implementación con \texttt {MLWordTagger}}{18}{section*.17}%
-\contentsline {subsection}{\numberline {3.3.4}Esquema de anotación IOB}{18}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Proceso de entrenamiento}{19}{subsection.3.3.5}%
-\contentsline {subsubsection}{Entrenamiento del clasificador de intenciones}{19}{section*.19}%
-\contentsline {subsubsection}{Entrenamiento del extractor de entidades}{19}{section*.20}%
-\contentsline {subsubsection}{Integración de modelos en el proyecto}{20}{section*.21}%
-\contentsline {subsection}{\numberline {3.3.6}Preprocesamiento: normalización Unicode}{20}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Mecanismo de inferencia de moneda}{20}{subsection.3.3.7}%
-\contentsline {section}{\numberline {3.4}Desarrollo del SDK (Aurum)}{21}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Clase fachada: \texttt {Aurum\allowbreak {}Engine}}{21}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Captura de audio: \texttt {Audio\allowbreak {}Capture\allowbreak {}Manager}}{22}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Reconocimiento de voz: \texttt {Speech\allowbreak {}Recognizer}}{22}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Normalización de texto: \texttt {Text\allowbreak {}Normalizer}}{22}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Procesamiento NLU: \texttt {NLU\allowbreak {}Processor}}{22}{subsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.4.6}Modelo de datos: \texttt {Transaction\allowbreak {}Payload}}{23}{subsection.3.4.6}%
-\contentsline {subsection}{\numberline {3.4.7}API pública y comunicación asíncrona}{23}{subsection.3.4.7}%
-\contentsline {subsection}{\numberline {3.4.8}Gestión de errores: \texttt {Aurum\allowbreak {}Error}}{24}{subsection.3.4.8}%
-\contentsline {section}{\numberline {3.5}Desarrollo de la aplicación base}{25}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Arquitectura MVVM y flujo de estados}{25}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Integración con el SDK Aurum}{25}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Capa de presentación (SwiftUI)}{25}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Gestión de permisos y privacidad}{26}{subsection.3.5.4}%
-\contentsline {subsection}{\numberline {3.5.5}Flujo de interacción del usuario}{26}{subsection.3.5.5}%
-\contentsline {chapter}{\numberline {4}Ensayos y resultados}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Desempeño del modelo}{29}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Clasificador de intenciones (MaxEnt)}{29}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Extractor de entidades (CRF)}{30}{subsection.4.1.2}%
-\contentsline {subsubsection}{Métricas a nivel de token}{30}{section*.29}%
-\contentsline {subsubsection}{Métricas a nivel de entidad}{31}{section*.31}%
-\contentsline {section}{\numberline {4.2}Ensayo de modelos}{32}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Evaluación de robustez lingüística}{32}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Benchmark de latencia de inferencia}{34}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Huella de almacenamiento del SDK}{35}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Pruebas de usabilidad}{36}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Protocolo de evaluación}{36}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Resultados de usabilidad}{39}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Análisis de resultados}{43}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Validación de la hipótesis central}{43}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Comparación con arquitecturas alternativas}{43}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Rol del \texttt {TextNormalizer}}{44}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Limitaciones del estudio}{45}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Conexión con CRISP-DM}{46}{subsection.4.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Resultados generales}{47}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{48}{section.5.2}%
-\contentsline {chapter}{Bibliografía}{51}{appendix*.49}%
+\contentsline {subsubsection}{Configuración del extractor en Create~ML}{17}{section*.14}%
+\contentsline {subsubsection}{Impacto en la latencia de inferencia}{17}{section*.15}%
+\contentsline {subsection}{\numberline {3.3.4}Esquema de anotación adoptado}{17}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Proceso de entrenamiento}{18}{subsection.3.3.5}%
+\contentsline {subsubsection}{Entrenamiento del clasificador de intenciones}{18}{section*.17}%
+\contentsline {subsubsection}{Entrenamiento del extractor de entidades}{18}{section*.18}%
+\contentsline {subsubsection}{Integración de modelos en el proyecto}{19}{section*.19}%
+\contentsline {subsection}{\numberline {3.3.6}Preprocesamiento: normalización Unicode}{19}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Mecanismo de inferencia de moneda}{19}{subsection.3.3.7}%
+\contentsline {section}{\numberline {3.4}Desarrollo del SDK (Aurum)}{20}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Clase fachada: \texttt {Aurum\allowbreak {}Engine}}{20}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Captura de audio: \texttt {Audio\allowbreak {}Capture\allowbreak {}Manager}}{21}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Reconocimiento de voz: \texttt {Speech\allowbreak {}Recognizer}}{21}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Normalización de texto: \texttt {Text\allowbreak {}Normalizer}}{21}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Procesamiento NLU: \texttt {NLU\allowbreak {}Processor}}{21}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Modelo de datos: \texttt {Transaction\allowbreak {}Payload}}{22}{subsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.4.7}API pública y comunicación asíncrona}{22}{subsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.4.8}Gestión de errores: \texttt {Aurum\allowbreak {}Error}}{23}{subsection.3.4.8}%
+\contentsline {section}{\numberline {3.5}Desarrollo de la aplicación base}{24}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Arquitectura MVVM y flujo de estados}{24}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Integración con el SDK Aurum}{24}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Capa de presentación (SwiftUI)}{24}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Gestión de permisos y privacidad}{25}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Flujo de interacción del usuario}{25}{subsection.3.5.5}%
+\contentsline {chapter}{\numberline {4}Ensayos y resultados}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Desempeño del modelo}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Clasificador de intenciones (MaxEnt)}{27}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Extractor de entidades (CRF)}{28}{subsection.4.1.2}%
+\contentsline {subsubsection}{Métricas a nivel de token}{29}{section*.26}%
+\contentsline {subsubsection}{Métricas a nivel de entidad}{29}{section*.28}%
+\contentsline {section}{\numberline {4.2}Ensayo de modelos}{30}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Evaluación de robustez lingüística}{30}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Benchmark de latencia de inferencia}{32}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Huella de almacenamiento del SDK}{33}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Pruebas de usabilidad}{34}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Protocolo de evaluación}{34}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Resultados de usabilidad}{37}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Análisis de resultados}{41}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Validación de la hipótesis central}{41}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Comparación con arquitecturas alternativas}{42}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Rol del \texttt {TextNormalizer}}{42}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Limitaciones del estudio}{43}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Conexión con CRISP-DM}{44}{subsection.4.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Resultados generales}{45}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{46}{section.5.2}%
+\contentsline {chapter}{Bibliografía}{49}{appendix*.46}%

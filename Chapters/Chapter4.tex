@@ -40,7 +40,6 @@ por clase, calculadas sobre el conjunto de test.
 \texttt{transferencia}  & 1,000 & 1,000 & 1,000 & 325 \\
 \texttt{consulta\_saldo} & 1,000 & 1,000 & 1,000 & 305 \\
 \texttt{cancelar}       & 1,000 & 1,000 & 1,000 & 290 \\
-\midrule
 Macro avg      & 1,000 & 1,000 & 1,000 & 920 \\
 Weighted avg   & 1,000 & 1,000 & 1,000 & 920 \\
 \midrule
@@ -57,24 +56,16 @@ El valor de \textit{accuracy} global alcanzado indica que el modelo clasifica co
 relevante dado que el dataset presenta un desbalance natural: la clase \textsc{transferencia} concentra la mayor proporción de muestras, seguida de
 \textsc{consulta\_saldo} y \textsc{cancelar}.
 
-La tabla~\ref{tab:confusion-intenciones} muestra la matriz de confusión, que permite identificar los patrones de error del clasificador.
+La figura~\ref{fig:confusion-intenciones} muestra la matriz de confusión, que permite identificar los patrones de error del clasificador.
 
-% --- TABLA 3: Matriz de confusión ---
-\begin{table}[H]
-\caption{Matriz de confusión del clasificador de intenciones sobre el conjunto de test. Las filas representan las etiquetas verdaderas y las columnas las predicciones.}
+% ---  Matriz de confusión ---
+\begin{figure}[H]
 \centering
-\begin{tabular}{@{}l|ccc@{}}
-\toprule
- & \multicolumn{3}{c}{\textbf{Predicción}} \\
-\textbf{Verdadera} & \textsc{transferencia} & \textsc{consulta\_saldo} & \textsc{cancelar} \\
-\midrule
-\texttt{transferencia}   & 325 & 0 & 0 \\
-\texttt{consulta\_saldo} & 0 & 305 & 0 \\
-\texttt{cancelar}        & 0 & 0 & 290 \\
-\bottomrule
-\end{tabular}
-\label{tab:confusion-intenciones}
-\end{table}
+\includegraphics[width=0.75\textwidth]{./Figures/confusion-intenciones.png}
+\caption{Matriz de confusión del clasificador de intenciones sobre el conjunto de test.
+Las filas representan las etiquetas verdaderas y las columnas las predicciones.}
+\label{fig:confusion-intenciones}
+\end{figure}
 
 Los errores de clasificación más frecuentes se concentran entre las clases \textsc{transferencia} y \textsc{cancelar}. Esta confusión se explica por la
 superposición léxica entre ambas intenciones: expresiones como \texttt{anular la transferencia} o \texttt{cancelar el envío} contienen vocabulario compartido con la
@@ -343,20 +334,20 @@ La tabla~\ref{tab:huella-sdk} presenta el desglose del peso de la carpeta \textt
 \toprule
 \textbf{Componente} & \textbf{Tamaño (bytes)} & \textbf{Tamaño (KB)} \\
 \midrule
-\texttt{IA/EntityExtractor.mlmodel}  & 418.857 & 409,2 \\
-\texttt{IA/IntentClassifier.mlmodel} & 3.235   & 3,2   \\
-\texttt{Core/} (código fuente)       & 45.954  & 44,9  \\
-\texttt{Models/} (structs de datos)  & 9.619   & 9,4   \\
-\texttt{Errors/} (errores tipados)   & 4.342   & 4,2   \\
-\texttt{Protocols/} (AurumDelegate)  & 2.630   & 2,6   \\
+\texttt{IA/EntityExtractor.mlmodel}  & 418 857 & 409,2 \\
+\texttt{IA/IntentClassifier.mlmodel} & 3235   & 3,2   \\
+\texttt{Core/} (código fuente)       & 45 954  & 44,9  \\
+\texttt{Models/} (structs de datos)  & 9619   & 9,4   \\
+\texttt{Errors/} (errores tipados)   & 4342   & 4,2   \\
+\texttt{Protocols/} (AurumDelegate)  & 2630   & 2,6   \\
 \midrule
-\textbf{Total AurumSDK}             & \textbf{490.209} & \textbf{478,7} \\
+\textbf{Total AurumSDK}             & \textbf{490 209} & \textbf{478,7} \\
 \bottomrule
 \end{tabular}
 \label{tab:huella-sdk}
 \end{table}
 
-El análisis del desglose revela que los modelos de \textit{machine learning} concentran el 86\% del peso total del SDK (422~KB sobre 490~KB), mientras que el código fuente Swift (clases del \textit{pipeline}, estructuras de datos, protocolos y errores) representa apenas el 14\% restante (68~KB). Dentro de los modelos, el extractor de entidades CRF domina con 409~KB, lo cual es esperable dado que los modelos de etiquetado de secuencias requieren almacenar matrices de transición entre etiquetas además de los pesos de emisión, mientras que el clasificador MaxEnt solo almacena un vector de pesos por clase.
+El análisis del desglose revela que los modelos de \textit{machine learning} concentran el 86\% del peso total del SDK (422~KB sobre 490~KB), mientras que el código fuente Swift (clases del \textit{pipeline}, estructuras de datos, protocolos y errores) representa apenas el 14\% restante (68~KB). Dentro de los modelos, el extractor de entidades CRF domina con 409~KB, lo que es esperable dado que los modelos de etiquetado de secuencias requieren almacenar matrices de transición entre etiquetas además de los pesos de emisión, mientras que el clasificador MaxEnt solo almacena un vector de pesos por clase.
 
 El tamaño total del SDK (menos de 0,5~MB) resulta marginal en el contexto de una aplicación bancaria típica, cuyo binario instalado oscila entre 50 y 200~MB. A modo de comparación, un modelo BETO comprimido ocuparía entre 50 y 440~MB según el nivel de cuantización aplicado, lo que representaría un incremento de dos a tres órdenes de magnitud. Esta diferencia refuerza la viabilidad de la arquitectura nativa de Create~ML para escenarios de \textit{edge computing} donde el presupuesto de almacenamiento es una restricción activa.
 
@@ -396,26 +387,6 @@ Las tareas definidas fueron:
     vocabulario de cancelación con vocabulario de transferencia y contiene una referencia temporal no soportada (\texttt{ayer}).
 \end{enumerate}
 
-Las pantallas a continuación, ~\ref{fig:permiso-mic} y ~\ref{fig:permiso-speech} muestran la solicitud de los permisos al uso del micrófono y reconocimiento de voz. Las pruebas se hicieron en un dispositivo físico iPhone 11.
-
-\begin{figure}[!htpb]
-     \begin{subfigure}[b]{0.5\textwidth}
-         \centering
-         \includegraphics[width=0.65\textwidth]{./Figures/screenshots/solicitud-permiso-microfono.PNG}
-         \caption[Solicitud de permiso de acceso al micrófono]{Permiso para uso del micrófono.}
-         \label{fig:permiso-mic}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.5\textwidth}
-         \centering
-         \includegraphics[width=0.65\textwidth]{./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG}
-         \caption[Solicitud de permiso de reconocimiento de voz]{Permiso para el reconocimiento de voz.}
-         \label{fig:permiso-speech}
-     \end{subfigure}
-        \caption{Capturas de pantalla de las solicitudes de permisos en la aplicación base.}
-        \label{fig:initial-state}
-\end{figure}
-
 Para cada tarea, se registraron las siguientes métricas:
 
 \begin{itemize}
@@ -429,6 +400,25 @@ Para cada tarea, se registraron las siguientes métricas:
     sistema estuviera escuchando, o porque no entendió el estado de la interfaz).
 \end{itemize}
 
+Las figuras \ref{fig:permiso-mic} y ~\ref{fig:permiso-speech} muestran la solicitud de los permisos al uso del micrófono y reconocimiento de voz. Las pruebas se hicieron en un dispositivo físico iPhone 11.
+
+\begin{figure}[!htpb]
+     \begin{subfigure}[b]{0.5\textwidth}
+         \centering
+         \includegraphics[width=0.95\textwidth]{./Figures/screenshots/solicitud-permiso-microfono.PNG}
+         \caption[Solicitud de permiso de acceso al micrófono]{Permiso para uso del micrófono.}
+         \label{fig:permiso-mic}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.5\textwidth}
+         \centering
+         \includegraphics[width=0.95\textwidth]{./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG}
+         \caption[Solicitud de permiso de reconocimiento de voz]{Permiso para el reconocimiento de voz.}
+         \label{fig:permiso-speech}
+     \end{subfigure}
+        \caption{Capturas de pantalla de las solicitudes de permisos en la aplicación base.}
+        \label{fig:initial-state}
+\end{figure}
 
 La figura ~\ref{fig:app-idle} ilustra el estado inicial de la interfaz en la applicación base. El botón azul con ícono de micrófono indica que el sistema está listo para recibir un comando de voz.
 
@@ -470,7 +460,7 @@ observaciones:
 \subsubsection*{Retroalimentación visual de la transcripción}
 
 La visualización en tiempo real de la transcripción parcial en la \texttt{MainView} fue percibida como un elemento positivo de la experiencia.
-La presencia de texto que se actualiza progresivamente mientras el usuario habla genera confianza en que el sistema está procesando activamente el comando, reduciendo la incertidumbre inherente a la interacción con sistemas de voz. En as tareas donde la transcripción mostró errores visibles (por ejemplo, en T2 cuando el reconocedor transcribió \texttt{luca} como \texttt{luca} sin convertirlo), los usuarios pudieron anticipar un posible error antes de ver la pantalla de confirmación.
+La presencia de texto que se actualiza progresivamente mientras el usuario habla genera confianza en que el sistema está procesando activamente el comando, esto reduce la incertidumbre inherente a la interacción con sistemas de voz. En las tareas donde la transcripción mostró errores visibles (por ejemplo, en T2 cuando el reconocedor transcribió \texttt{luca} como \texttt{luca} sin convertirlo), los usuarios pudieron anticipar un posible error antes de ver la pantalla de confirmación.
 
 \subsubsection*{Pantalla de confirmación}
 
@@ -481,7 +471,7 @@ La figura ~\ref{fig:confirm-transferencia} muestra la pantalla de confirmación 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.35\textwidth]{./Figures/screenshots/intencion-confirmacion-transferencia.PNG}
+	\includegraphics[width=0.55\textwidth]{./Figures/screenshots/intencion-confirmacion-transferencia.PNG}
 	\caption[Pantalla de confirmación de transferencia]{Pantalla de confirmación para una transferencia exitosa. Se muestra el monto (\$~500,00), la moneda (Pesos Argentinos), el destinatario (Juan Pérez), la transcripción original y la confianza del modelo (98,6\%).}
 	\label{fig:confirm-transferencia}
 \end{figure}
@@ -490,7 +480,7 @@ La figura ~\ref{fig:confirm-saldo} muestra la pantalla de confirmación de una c
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.45\textwidth]{./Figures/screenshots/intencion-consulta-saldo.PNG}
+	\includegraphics[width=0.55\textwidth]{./Figures/screenshots/intencion-consulta-saldo.PNG}
 	\caption[Confirmación de consulta de saldo]{Confirmación de consulta de saldo. Se presenta el saldo simulado y la confianza del modelo (99,5\%).}
 	\label{fig:confirm-saldo}
 \end{figure}
@@ -499,7 +489,7 @@ La figura ~\ref{fig:confirm-cancelar} muestra la pantalla de confirmación de un
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.45\textwidth]{./Figures/screenshots/intencion-cancelar.PNG}
+	\includegraphics[width=0.50\textwidth]{./Figures/screenshots/intencion-cancelar.PNG}
 	\caption[Confirmación de intención de cancelación]{Confirmación de intención de cancelación. El modelo clasificó el comando con una confianza de 96,1\%.}
 	\label{fig:confirm-cancelar}
 \end{figure}
@@ -517,13 +507,11 @@ final con un retardo del orden de 100--300~ms tras el último \textit{buffer} de
 La tarea T6 (\texttt{anular la transferencia de ayer}) fue incluida deliberadamente para evaluar el comportamiento del sistema ante un comando fuera del espacio de capacidades soportadas. La referencia temporal \texttt{de ayer} no es una entidad modelada, y la mezcla de \texttt{anular} con \texttt{transferencia} introduce ambigüedad entre las intenciones \textsc{cancelar} y \textsc{transferencia}. El comportamiento observado fue que el modelo clasificó el comando con una confianza inferior al umbral de 0,65, asignando la intención \texttt{.desconocida}. La aplicación base presentó un mensaje indicando que no pudo interpretar el comando, invitando al usuario a reformularlo. Este comportamiento es el deseado: el sistema prefiere rechazar un comando ambiguo
 antes que ejecutar una operación financiera potencialmente incorrecta.
 
-En la siguiente tabla ~\ref{tab:usabilidad} se ven reflejados los resultados de las pruebas realizadas:
+En la tabla \ref{tab:usabilidad} se ven reflejados los resultados de las pruebas realizadas. La tasa de éxito se calcula sobre el total de intentos. El tiempo de interacción incluye el habla del usuario, el procesamiento y la confirmación.
 
 % --- TABLA: Resultados de usabilidad ---
 \begin{table}[H]
-\caption{Resultados de las pruebas de usabilidad por tarea. La tasa de éxito
-         se calcula sobre el total de intentos. El tiempo de interacción incluye
-         el habla del usuario, el procesamiento y la confirmación.}
+\caption{Resultados de las pruebas de usabilidad por tarea.}
 
 \centering
 \label{tab:usabilidad}
@@ -542,7 +530,7 @@ T4 --- Consulta de saldo  & 100\%  & 3,3 s & 0,0 & 1,0 \\
 T5 --- Cancelación        & 100\%  & 5,0 s & 0,0 & 3,2 \\
 T6 --- Comando ambiguo    & 0\%    & 4,9 s & 3,4 & 3,4 \\
 \midrule
-\textit{Promedio}         & 80\%   & 4,2 s & 0,7 & --- \\
+\textbf{Promedio}         & 80\%   & 4,2 s & 0,7 & --- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -663,7 +651,7 @@ El desarrollo de este trabajo siguió la metodología CRISP-DM (\textit{Cross In
     un incremento moderado en el tamaño del modelo y el tiempo de entrenamiento.
 
     \item Despliegue: la validación positiva de la latencia y la privacidad \textit{on-device} confirma la viabilidad técnica del
-    despliegue en dispositivos iOS reales, estableciendo la base para una fase piloto con usuarios del sector financiero.
+    despliegue en dispositivos iOS reales, y da lugar a la base para una fase piloto con usuarios del sector financiero.
 \end{itemize}
 
 \medskip
