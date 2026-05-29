@@ -3,8 +3,6 @@
 % Tesis: "Sistema de transacciones financieras por voz en dispositivos móviles iOS"
 % Ing. Alexis Geraldine Barniquez Piñero - FIUBA
 % =============================================================================
-
-
 \chapter{Ensayos y resultados}
 \label{Chapter4}
 
@@ -18,7 +16,6 @@ El presente capítulo documenta la evaluación experimental del sistema desarrol
 
 Esta sección presenta los resultados cuantitativos obtenidos sobre el conjunto de test para cada uno de los dos modelos Core~ML que componen el motor de comprensión de lenguaje natural (NLU) del SDK Aurum.
 
-
 \subsection{Clasificador de intenciones (MaxEnt)}
 \label{subsec:desempeno-intent}
 
@@ -28,7 +25,6 @@ intenciones transaccionales definidas: \textsc{transferencia}, \textsc{consulta\
 
 La tabla~\ref{tab:metricas-intenciones} presenta las métricas de \textit{Precision} (P), \textit{Recall} (R) y \textit{F1-Score} desglosadas
 por clase, calculadas sobre el conjunto de test.
-
 % --- TABLA 2: Métricas por clase de intención ---
 \begin{table}[H]
 \caption{Rendimiento del clasificador de intenciones (MaxEnt) evaluado sobre el conjunto de test.}
@@ -48,8 +44,6 @@ Weighted avg   & 1,000 & 1,000 & 1,000 & 920 \\
 \end{tabular}
 \label{tab:metricas-intenciones}
 \end{table}
-
-
 
 El valor de \textit{accuracy} global alcanzado indica que el modelo clasifica correctamente la amplia mayoría de los comandos del conjunto de test. El
 \textit{Macro F1-Score}, que pondera por igual las tres clases independientemente de su frecuencia en el corpus, resulta particularmente
@@ -71,7 +65,6 @@ Los errores de clasificación más frecuentes se concentran entre las clases \te
 superposición léxica entre ambas intenciones: expresiones como \texttt{anular la transferencia} o \texttt{cancelar el envío} contienen vocabulario compartido con la
 clase \textsc{transferencia}, lo que introduce ambigüedad en el espacio de \textit{features} del clasificador. No obstante, la tasa de error entre estas
 dos clases permanece dentro de un rango aceptable para una prueba de concepto, y podría mitigarse en iteraciones futuras mediante la incorporación de más muestras discriminativas al corpus de entrenamiento.
-
 
 \subsection{Extractor de entidades (CRF)}
 \label{subsec:desempeno-ner}
@@ -115,12 +108,10 @@ Weighted avg   & 1,0000 & 0,8965 & 0,9453 & 4414 \\
 \label{tab:metricas-ner-token}
 \end{table}
 
-
 El \textit{token accuracy} reporta el porcentaje de tokens correctamente etiquetados. Sin embargo, esta métrica tiene una limitación conocida en tareas
 de NER: dado que la etiqueta \texttt{O} (\textit{Outside}) domina la distribución de tokens, la mayoría de las palabras de un comando no son
 entidades, un modelo que simplemente asigne \texttt{O} a todos los tokens obtendría un \textit{token accuracy} artificialmente alto. Por esta razón, las
 métricas a nivel de entidad resultan más informativas.
-
 
 \subsubsection{Métricas a nivel de entidad}
 
@@ -134,14 +125,12 @@ La evaluación a nivel de entidad determina si el modelo identificó correctamen
     multitoken (por ejemplo, detecta \texttt{Juan} pero no \texttt{Pérez} en \texttt{Juan Pérez}).
 \end{itemize}
 
-La tabla~\ref{tab:metricas-ner-entidad} presenta los resultados de ambos
-criterios.
+La tabla~\ref{tab:metricas-ner-entidad} presenta los resultados de ambos criterios, \texttt{Strict}: coincidencia exacta de tipo y posición.
+         \texttt{Relaxed}: coincidencia de tipo con superposición parcial de tokens.
 
 % --- TABLA 5: Métricas NER a nivel de entidad ---
 \begin{table}[H]
-\caption{Rendimiento del extractor de entidades a nivel de entidad completa.
-         \texttt{Strict}: coincidencia exacta de tipo y posición.
-         \texttt{Relaxed}: coincidencia de tipo con superposición parcial de tokens.}
+\caption{Rendimiento del extractor de entidades a nivel de entidad completa.}
 \centering
 \begin{tabular}{@{}ll ccc@{}}
 \toprule
@@ -165,19 +154,17 @@ criterios.
 \label{tab:metricas-ner-entidad}
 \end{table}
 
-El análisis por entidad revela una jerarquía de dificultad predecible. La entidad \textsc{moneda} presenta el F1 más alto en ambos modos de evaluación,
+El análisis por entidad revela una jerarquía de dificultad predecible. La entidad \texttt{moneda} presenta el F1 más alto en ambos modos de evaluación,
 lo que se explica por su vocabulario cerrado y reducido: las expresiones que denotan moneda (\texttt{pesos}, \texttt{dólares}, \texttt{lucas}, \texttt{verdes}) forman un
-conjunto finito que el modelo aprende con alta precisión. La entidad \textsc{monto} alcanza un F1 ligeramente inferior, dado que los valores
-numéricos textuales presentan mayor variabilidad combinatoria (\texttt{quinientos}, \texttt{dos mil}, \texttt{medio palo}). La entidad \textsc{destinatario} es
+conjunto finito que el modelo aprende con alta precisión. La entidad \texttt{monto} alcanza un F1 ligeramente inferior, dado que los valores
+numéricos textuales presentan mayor variabilidad combinatoria (\texttt{quinientos}, \texttt{dos mil}, \texttt{medio palo}). La entidad \texttt{destinatario} es
 consistentemente la más difícil de extraer, resultado esperado dada la alta variabilidad de los nombres propios y la ausencia de un vocabulario cerrado
-que facilite el aprendizaje. La diferencia entre el F1 \textit{strict} y \textit{relaxed} para \textsc{destinatario} es particularmente notable,
+que facilite el aprendizaje. La diferencia entre el F1 \textit{strict} y \textit{relaxed} para \texttt{destinatario} es particularmente notable,
 lo que indica que el modelo frecuentemente captura parcialmente los nombres compuestos (detecta el nombre pero no el apellido, o viceversa).
-
 
 % =============================================================================
 % 4.2 ENSAYO DE MODELOS
 % =============================================================================
-
 \section{Ensayo de modelos}
 \label{sec:ensayo}
 
@@ -185,7 +172,6 @@ Más allá del desempeño sobre el conjunto de test convencional, resulta impres
 realistas de uso. En el contexto de un sistema de transacciones financieras por voz en español rioplatense, esto implica dos dimensiones de evaluación
 complementarias: la robustez ante variaciones lingüísticas propias del habla coloquial argentina, y la latencia de inferencia en condiciones de ejecución
 \textit{on-device}.
-
 
 \subsection{Evaluación de robustez lingüística}
 \label{subsec:robustez}
@@ -219,14 +205,14 @@ categoría. Cada frase fue anotada con su intención esperada y sus etiquetas IO
     \texttt{pasale sinco lucas en verde a la flaca}.
 \end{enumerate}
 
-La tabla~\ref{tab:robustez} presenta los resultados por categoría.
+La tabla~\ref{tab:robustez} presenta la evaluación de robustez del pipeline NLU ante variaciones lingüísticas
+         del español rioplatense y errores de STT. \textit{Intent Acc.}:
+         accuracy de clasificación de intención. \textit{Entity F1}: macro
+         F1-Score \textit{strict} de extracción de entidades.
 
 % --- TABLA 6: Evaluación de robustez ---
 \begin{table}[H]
-\caption{Evaluación de robustez del pipeline NLU ante variaciones lingüísticas
-         del español rioplatense y errores de STT. \textit{Intent Acc.}:
-         accuracy de clasificación de intención. \textit{Entity F1}: macro
-         F1-Score \textit{strict} de extracción de entidades.}
+\caption{Resultados del pipeline NLU por categoría.}
 \centering
 \begin{tabular}{@{}lcc@{}}
 \toprule
@@ -257,7 +243,6 @@ Mezcla de variaciones
 \label{tab:robustez}
 \end{table}
 
-
 El análisis de los resultados revela un patrón de degradación gradual. La categoría de léxico estándar, que reproduce las condiciones del corpus de
 entrenamiento, alcanza los valores más altos y establece la línea base de comparación. Las categorías de coloquialismos y voseo presentan una caída
 moderada, lo que indica que el proceso de aumentación de datos y el \texttt{TextNormalizer} logran absorber parcialmente estas variaciones. Las
@@ -272,7 +257,6 @@ señala una línea de mejora concreta para iteraciones futuras: la incorporació
 
 La categoría de mezcla, que combina coloquialismos, errores de STT y expresiones numéricas, representa el escenario más adverso y el más
 representativo del uso real. Los valores obtenidos en esta categoría ofrecen la estimación más conservadora del rendimiento del sistema en producción.
-
 
 \subsection{Benchmark de latencia de inferencia}
 \label{subsec:latencia}
@@ -319,20 +303,19 @@ La baja varianza observada (desviación estándar inferior a 1~ms) indica un com
 
 Es pertinente señalar que estas mediciones se realizaron sobre macOS utilizando la CPU del equipo de desarrollo. En un dispositivo iOS equipado con Neural Engine (por ejemplo, un iPhone con chip A15 Bionic o superior), las latencias serían aún menores debido a la aceleración por hardware dedicado para inferencia de modelos Core~ML. Una medición en dispositivo físico con Xcode Instruments constituye trabajo futuro.
 
-
 \subsection{Huella de almacenamiento del SDK}
 \label{subsec:huella-sdk}
 
 Un factor determinante para la adopción de un SDK en una aplicación bancaria productiva es el incremento que introduce en el tamaño del binario instalado. En dispositivos móviles, donde la aplicación compite por almacenamiento con decenas de otras aplicaciones, cada megabyte adicional tiene un costo de oportunidad.
 
-La tabla~\ref{tab:huella-sdk} presenta el desglose del peso de la carpeta \texttt{AurumSDK} dentro del proyecto Xcode, que totaliza 490~KB (516~KB en disco).
+La tabla~\ref{tab:huella-sdk} presenta el desglose del peso de la carpeta \texttt{AurumSDK} dentro del proyecto Xcode, que totaliza 490~kB (516~kB en disco).
 
 \begin{table}[H]
 \caption{Desglose del tamaño del SDK Aurum por componente.}
 \centering
 \begin{tabular}{@{}lrr@{}}
 \toprule
-\textbf{Componente} & \textbf{Tamaño (bytes)} & \textbf{Tamaño (KB)} \\
+\textbf{Componente} & \textbf{Tamaño (bytes)} & \textbf{Tamaño (kB)} \\
 \midrule
 \texttt{IA/EntityExtractor.mlmodel}  & 418 857 & 409,2 \\
 \texttt{IA/IntentClassifier.mlmodel} & 3235   & 3,2   \\
@@ -347,15 +330,13 @@ La tabla~\ref{tab:huella-sdk} presenta el desglose del peso de la carpeta \textt
 \label{tab:huella-sdk}
 \end{table}
 
-El análisis del desglose revela que los modelos de \textit{machine learning} concentran el 86\% del peso total del SDK (422~KB sobre 490~KB), mientras que el código fuente Swift (clases del \textit{pipeline}, estructuras de datos, protocolos y errores) representa apenas el 14\% restante (68~KB). Dentro de los modelos, el extractor de entidades CRF domina con 409~KB, lo que es esperable dado que los modelos de etiquetado de secuencias requieren almacenar matrices de transición entre etiquetas además de los pesos de emisión, mientras que el clasificador MaxEnt solo almacena un vector de pesos por clase.
+El análisis del desglose revela que los modelos de \textit{machine learning} concentran el 86\% del peso total del SDK (422~kB sobre 490~kB), mientras que el código fuente Swift (clases del \textit{pipeline}, estructuras de datos, protocolos y errores) representa apenas el 14\% restante (68~kB). Dentro de los modelos, el extractor de entidades CRF domina con 409~kB, lo que es esperable dado que los modelos de etiquetado de secuencias requieren almacenar matrices de transición entre etiquetas además de los pesos de emisión, mientras que el clasificador MaxEnt solo almacena un vector de pesos por clase.
 
 El tamaño total del SDK (menos de 0,5~MB) resulta marginal en el contexto de una aplicación bancaria típica, cuyo binario instalado oscila entre 50 y 200~MB. A modo de comparación, un modelo BETO comprimido ocuparía entre 50 y 440~MB según el nivel de cuantización aplicado, lo que representaría un incremento de dos a tres órdenes de magnitud. Esta diferencia refuerza la viabilidad de la arquitectura nativa de Create~ML para escenarios de \textit{edge computing} donde el presupuesto de almacenamiento es una restricción activa.
-
 
 % =============================================================================
 % 4.3 PRUEBAS DE USABILIDAD
 % =============================================================================
-
 \section{Pruebas de usabilidad}
 \label{sec:usabilidad}
 
@@ -420,37 +401,6 @@ Las figuras \ref{fig:permiso-mic} y ~\ref{fig:permiso-speech} muestran la solici
         \label{fig:initial-state}
 \end{figure}
 
-La figura ~\ref{fig:app-idle} ilustra el estado inicial de la interfaz en la applicación base. El botón azul con ícono de micrófono indica que el sistema está listo para recibir un comando de voz.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.75\textwidth]{./Figures/screenshots/home-app-base.PNG}
-	\caption[Pantalla principal de la aplicación base en estado idle]{Pantalla principal de la aplicación base en estado \texttt{idle}. El botón azul con ícono de micrófono indica que el sistema está listo para recibir un comando de voz.}
-	\label{fig:app-idle}
-\end{figure}
-
-
-En la figura ~\ref{fig:app-listening} se observa como se transcribe el audio en tiempo real y en ~\ref{fig:app-processing} se muestra el procesamiento del texto.
-
-\begin{figure}[!htpb]
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=0.85\textwidth]{./Figures/screenshots/transcripcion-dictado.PNG}
-         \caption[Estado escuchando]{Estado \texttt{listening}: La transcripción parcial se muestra en tiempo real.}
-         \label{fig:app-listening}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=0.85\textwidth]{./Figures/screenshots/procesamiento.PNG}
-         \caption[Estado procesando audio a texto]{Estado \texttt{processing}: en este punto los modelos Core~ML ejecutan la inferencia.}
-         \label{fig:app-processing}
-     \end{subfigure}
-        \caption{Capturas de pantalla que ilustran el funcionamiento de la transcripción en tiempo real y el procesamiento a texto.}
-        \label{fig:working-state}
-\end{figure}
-
-
 \subsection{Resultados de usabilidad}
 \label{subsec:resultados-usabilidad}
 
@@ -462,38 +412,64 @@ observaciones:
 La visualización en tiempo real de la transcripción parcial en la \texttt{MainView} fue percibida como un elemento positivo de la experiencia.
 La presencia de texto que se actualiza progresivamente mientras el usuario habla genera confianza en que el sistema está procesando activamente el comando, esto reduce la incertidumbre inherente a la interacción con sistemas de voz. En las tareas donde la transcripción mostró errores visibles (por ejemplo, en T2 cuando el reconocedor transcribió \texttt{luca} como \texttt{luca} sin convertirlo), los usuarios pudieron anticipar un posible error antes de ver la pantalla de confirmación.
 
+La figura \ref{fig:app-idle} ilustra el estado inicial de la interfaz en la applicación base. El botón azul con ícono de micrófono indica que el sistema está listo para recibir un comando de voz. Luego, en la figura \ref{fig:app-listening} se observa como se transcribe el audio en tiempo real y en \ref{fig:app-processing} se muestra el procesamiento del texto.
+
+\begin{figure}[!htpb]
+   \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=0.9\textwidth]{./Figures/screenshots/home-app-base.PNG}
+         \caption[Pantalla principal de la aplicación base en estado idle]{Pantalla principal de la aplicación base en estado \texttt{idle}.}
+         \label{fig:app-idle}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=0.9\textwidth]{./Figures/screenshots/transcripcion-dictado.PNG}
+         \caption[Estado escuchando]{Estado \texttt{listening}: La transcripción parcial se muestra en tiempo real.}
+         \label{fig:app-listening}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=0.9\textwidth]{./Figures/screenshots/procesamiento.PNG}
+         \caption[Estado procesando audio a texto]{Estado \texttt{processing}: en este punto los modelos Core~ML ejecutan la inferencia.}
+         \label{fig:app-processing}
+     \end{subfigure}
+        \caption{Capturas de pantalla que ilustran el funcionamiento de la transcripción en tiempo real y el procesamiento a texto.}
+        \label{fig:working-state}
+\end{figure}
+
 \subsubsection*{Pantalla de confirmación}
 
 El paso de confirmación obligatorio fue valorado positivamente en el contexto financiero. Los usuarios expresaron mayor confianza al poder verificar
 visualmente el monto, la moneda y el destinatario antes de confirmar la operación. La presentación desglosada del \texttt{TransactionPayload}, especialmente el campo de \texttt{confianza} expresado como porcentaje, permitió a los usuarios evaluar la certeza del sistema y decidir de manera informada si confirmar o reintentar el comando.
 
-La figura ~\ref{fig:confirm-transferencia} muestra la pantalla de confirmación de una transferencia detectada.
+La figura \ref{fig:confirm-transferencia} muestra la pantalla de confirmación para una transferencia. Se muestra el monto (\$~500,00), la moneda (Pesos Argentinos), el destinatario (Juan Pérez), la transcripción original y la confianza del modelo (98,6\%). En la figura \ref{fig:confirm-saldo} se presenta el saldo simulado y la confianza del modelo (99,5\%). Y en la figura \ref{fig:confirm-cancelar} se ve como el modelo clasificó el comando para cancelación con una confianza de 96,1\%.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.55\textwidth]{./Figures/screenshots/intencion-confirmacion-transferencia.PNG}
-	\caption[Pantalla de confirmación de transferencia]{Pantalla de confirmación para una transferencia exitosa. Se muestra el monto (\$~500,00), la moneda (Pesos Argentinos), el destinatario (Juan Pérez), la transcripción original y la confianza del modelo (98,6\%).}
+\begin{figure}[!htpb]
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=0.9\textwidth]{./Figures/screenshots/intencion-confirmacion-transferencia.PNG}
+         \caption[Pantalla de confirmación de transferencia]{Pantalla de confirmación de una transferencia.}
 	\label{fig:confirm-transferencia}
-\end{figure}
-
-La figura ~\ref{fig:confirm-saldo} muestra la pantalla de confirmación de una consulta de saldo.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.55\textwidth]{./Figures/screenshots/intencion-consulta-saldo.PNG}
-	\caption[Confirmación de consulta de saldo]{Confirmación de consulta de saldo. Se presenta el saldo simulado y la confianza del modelo (99,5\%).}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=0.9\textwidth]{./Figures/screenshots/intencion-consulta-saldo.PNG}
+         \caption[Confirmación de consulta de saldo]{Confirmación de consulta de saldo.}
 	\label{fig:confirm-saldo}
-\end{figure}
-
-La figura ~\ref{fig:confirm-cancelar} muestra la pantalla de confirmación de una anulación o cancelación de operación.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.50\textwidth]{./Figures/screenshots/intencion-cancelar.PNG}
-	\caption[Confirmación de intención de cancelación]{Confirmación de intención de cancelación. El modelo clasificó el comando con una confianza de 96,1\%.}
+     \end{subfigure}
+      \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=0.9\textwidth]{./Figures/screenshots/intencion-cancelar.PNG}
+         \caption[Confirmación de intención de cancelación]{Confirmación de intención de cancelación.}
 	\label{fig:confirm-cancelar}
+     \end{subfigure}
+        \caption{Pantallas de confirmación de intenciones.}
+        \label{fig:working-state}
 \end{figure}
-
 
 \subsubsection*{Latencia percibida}
 
@@ -535,17 +511,13 @@ T6 --- Comando ambiguo    & 0\%    & 4,9 s & 3,4 & 3,4 \\
 \end{tabular}
 \end{table}
 
-
-
 % =============================================================================
 % 4.4 ANÁLISIS DE RESULTADOS
 % =============================================================================
-
 \section{Análisis de resultados}
 \label{sec:analisis}
 
 Esta sección integra los resultados experimentales presentados en las secciones anteriores, los contrasta con el marco teórico establecido en el capítulo~2, y discute las implicancias para la viabilidad técnica de la solución propuesta.
-
 
 \subsection{Validación de la hipótesis central}
 \label{subsec:validacion-hipotesis}
@@ -553,9 +525,7 @@ Esta sección integra los resultados experimentales presentados en las secciones
 La hipótesis central de este trabajo sostiene que es posible resolver, de forma íntegra en el dispositivo móvil, el problema dual de clasificar intenciones y extraer entidades nombradas a partir de comandos de voz financieros, utilizando exclusivamente los \textit{frameworks} nativos de Apple: Create~ML para el entrenamiento de modelos (MaxEnt para clasificación, CRF para etiquetado de secuencias) y los \textit{frameworks} \texttt{NaturalLanguage} y Core~ML para la inferencia local.
 
 Los resultados obtenidos respaldan esta hipótesis. El clasificador de intenciones alcanzó un Macro F1-Score de 1,00 sobre el conjunto de test,
-un valor que indica una capacidad discriminativa alta para las tres clases definidas. El extractor de entidades logró un Entity F1 \textit{strict} macro de 0,9369, que si bien es inferior al del clasificador, lo que es esperable dado que la extracción de entidades es intrínsecamente una tarea más compleja que la clasificación de texto, resulta suficiente para la prueba de concepto
-propuesta.
-
+un valor que indica una capacidad discriminativa alta para las tres clases definidas. El extractor de entidades logró un Entity F1 \textit{strict} macro de 0,9369, que si bien es inferior al del clasificador, lo que es esperable dado que la extracción de entidades es intrínsecamente una tarea más compleja que la clasificación de texto, resulta suficiente para la prueba de concepto propuesta.
 
 \subsection{Comparación con arquitecturas alternativas}
 \label{subsec:comparacion-arquitecturas}
@@ -586,10 +556,9 @@ Sin embargo, la comparación de precisión aislada es insuficiente. El análisis
     PyTorch o TensorFlow que requieren validación explícita de que la inferencia se ejecuta localmente.
 \end{itemize}
 
-En síntesis, la pérdida marginal de precisión respecto a BETO se compensa con ventajas sustanciales en tamaño, latencia, facilidad de integración y
+La pérdida marginal de precisión respecto a BETO se compensa con ventajas sustanciales en tamaño, latencia, facilidad de integración y
 garantías de privacidad. Para el caso de uso específico de una prueba de concepto en el sector financiero argentino, donde la privacidad y la
 latencia son requisitos no negociables, el \textit{trade-off} resulta favorable a la arquitectura nativa.
-
 
 \subsection{Rol del \texttt{TextNormalizer}}
 \label{subsec:rol-normalizer}
@@ -601,7 +570,6 @@ No obstante, la categoría de mezcla de variaciones, donde confluyen coloquialis
 caída de rendimiento. Esto sugiere que el normalizador basado en reglas determinísticas (diccionarios de equivalencias y patrones de expresiones
 regulares) alcanza un techo de capacidad cuando las variaciones se acumulan. Un enfoque más robusto podría complementar las reglas con un modelo de corrección ortográfica o un \textit{spell checker} adaptado al dominio financiero, capaz de recuperar tokens distorsionados por errores de
 transcripción.
-
 
 \subsection{Limitaciones del estudio}
 \label{subsec:limitaciones}
@@ -632,7 +600,6 @@ futuro:
     participantes. Un estudio de usabilidad riguroso requeriría una muestra más amplia, diversificada en edad, familiaridad con tecnología de voz y
     dialecto regional.
 \end{enumerate}
-
 
 \subsection{Conexión con CRISP-DM}
 \label{subsec:crisp-dm}
@@ -672,7 +639,7 @@ Accuracy / Token Accuracy     & 100,00\% & 89,65\% \\
 Macro F1-Score                & 1,0000   & 0,9491   \\
 Entity F1 (strict)            & ---     & 0,9369   \\
 Entity F1 (relaxed)           & ---     & 0,9369   \\
-Tamaño del modelo             & 3,1 KB   & 407,2 KB   \\
+Tamaño del modelo             & 3,1 kB   & 407,2 kB   \\
 Latencia media de inferencia  & 0,02 ms  & 0,26 ms  \\
 \bottomrule
 \end{tabular}

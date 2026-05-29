@@ -9,9 +9,6 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Matriz de confusión del clasificador de intenciones sobre el conjunto de test. Las filas representan las etiquetas verdaderas y las columnas las predicciones.}}{28}{figure.caption.25}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Capturas de pantalla de las solicitudes de permisos en la aplicación base.}}{35}{figure.caption.33}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Pantalla principal de la aplicación base en estado idle}}{36}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Capturas de pantalla que ilustran el funcionamiento de la transcripción en tiempo real y el procesamiento a texto.}}{37}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Pantalla de confirmación de transferencia}}{38}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Confirmación de consulta de saldo}}{39}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Confirmación de intención de cancelación}}{40}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Capturas de pantalla que ilustran el funcionamiento de la transcripción en tiempo real y el procesamiento a texto.}}{36}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Pantallas de confirmación de intenciones.}}{37}{figure.caption.37}%
 \addvspace {10\p@ }

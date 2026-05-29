@@ -59,14 +59,14 @@
 \contentsline {subsection}{\numberline {4.2.3}Huella de almacenamiento del SDK}{33}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}Pruebas de usabilidad}{34}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Protocolo de evaluación}{34}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Resultados de usabilidad}{37}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Análisis de resultados}{41}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Validación de la hipótesis central}{41}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Comparación con arquitecturas alternativas}{42}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Rol del \texttt {TextNormalizer}}{42}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Limitaciones del estudio}{43}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Conexión con CRISP-DM}{44}{subsection.4.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Resultados generales}{45}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{46}{section.5.2}%
-\contentsline {chapter}{Bibliografía}{49}{appendix*.46}%
+\contentsline {subsection}{\numberline {4.3.2}Resultados de usabilidad}{35}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Análisis de resultados}{38}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Validación de la hipótesis central}{38}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Comparación con arquitecturas alternativas}{38}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Rol del \texttt {TextNormalizer}}{39}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Limitaciones del estudio}{40}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Conexión con CRISP-DM}{40}{subsection.4.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{44}{section.5.2}%
+\contentsline {chapter}{Bibliografía}{47}{appendix*.43}%

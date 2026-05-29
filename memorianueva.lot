@@ -11,10 +11,10 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Rendimiento del clasificador de intenciones (MaxEnt) evaluado sobre el conjunto de test.}}{27}{table.caption.24}%
 \contentsline {table}{\numberline {4.2}{\ignorespaces Rendimiento del extractor de entidades (MLWordTagger, algoritmo CRF) a nivel de token individual con esquema IOB.}}{29}{table.caption.27}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Rendimiento del extractor de entidades a nivel de entidad completa. \texttt {Strict}: coincidencia exacta de tipo y posición. \texttt {Relaxed}: coincidencia de tipo con superposición parcial de tokens.}}{30}{table.caption.29}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Evaluación de robustez del pipeline NLU ante variaciones lingüísticas del español rioplatense y errores de STT. \textit {Intent Acc.}: accuracy de clasificación de intención. \textit {Entity F1}: macro F1-Score \textit {strict} de extracción de entidades.}}{31}{table.caption.30}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Rendimiento del extractor de entidades a nivel de entidad completa.}}{30}{table.caption.29}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Resultados del pipeline NLU por categoría.}}{31}{table.caption.30}%
 \contentsline {table}{\numberline {4.5}{\ignorespaces Latencia de inferencia de los modelos Core~ML, medida sobre macOS (CPU). En un dispositivo iOS con Neural Engine, las latencias serían inferiores. Se reportan estadísticos sobre 1.600 inferencias por modelo.}}{32}{table.caption.31}%
 \contentsline {table}{\numberline {4.6}{\ignorespaces Desglose del tamaño del SDK Aurum por componente.}}{33}{table.caption.32}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados de las pruebas de usabilidad por tarea.}}{41}{table.caption.43}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Resumen de rendimiento de los modelos Core ML del SDK Aurum.}}{44}{table.caption.44}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados de las pruebas de usabilidad por tarea.}}{38}{table.caption.40}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Resumen de rendimiento de los modelos Core ML del SDK Aurum.}}{41}{table.caption.41}%
 \addvspace {10\p@ }

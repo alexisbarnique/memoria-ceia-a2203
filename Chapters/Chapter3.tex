@@ -42,7 +42,7 @@ Este capítulo expone el proceso técnico de implementación y desarrollo del si
 
 El diseño arquitectónico se fundamenta en el paradigma de computación \textit{Edge AI}, que traslada la carga computacional de los algoritmos de inteligencia artificial directamente al dispositivo móvil del usuario. Esta decisión persigue un doble objetivo: minimizar la latencia inherente a las comunicaciones de red y garantizar un entorno de privacidad por diseño. Al ejecutar los modelos a través del \textit{framework} Core~ML, los flujos de audio y las transcripciones de índole financiera no abandonan en ningún momento el hardware de Apple.
 
-El sistema fue concebido bajo el principio de separación de responsabilidades y se estructura en dos bloques funcionales independientes: la aplicación base anfitriona y el SDK nativo Aurum \citep{apple2026frameworks}. Es necesario establecer una restricción arquitectónica crítica: el proyecto no incluye algoritmos de validación biométrica de voz. La autenticación del cliente, el manejo de tokens de sesión y las medidas de seguridad perimetral recaen exclusivamente sobre la aplicación móvil del banco. El SDK Aurum opera bajo la premisa de que es invocado dentro de un contexto transaccional previamente asegurado por la entidad financiera, y limita su dominio de responsabilidad a la captura acústica, la transcripción y la extracción semántica de intenciones y entidades.
+El sistema fue concebido bajo el principio de separación de responsabilidades y se estructura en dos bloques funcionales independientes: la aplicación base anfitriona y el SDK nativo Aurum \citep{apple2026frameworks}. Es necesario establecer una restricción arquitectónica crítica: el trabajo no incluye algoritmos de validación biométrica de voz. La autenticación del cliente, el manejo de tokens de sesión y las medidas de seguridad perimetral recaen exclusivamente sobre la aplicación móvil del banco. El SDK Aurum opera bajo la premisa de que es invocado dentro de un contexto transaccional previamente asegurado por la entidad financiera, y limita su dominio de responsabilidad a la captura acústica, la transcripción y la extracción semántica de intenciones y entidades.
 
 El proceso de desarrollo se articuló siguiendo las fases de la metodología CRISP-DM:
 
@@ -81,12 +81,11 @@ En la figura~\ref{fig:pipelineVoz} se muestra el flujo del \textit{pipeline}.
 
 El desarrollo de modelos de procesamiento de lenguaje natural aplicados al sector bancario enfrenta el problema del arranque en frío (\textit{cold start}): las normativas de privacidad y el secreto bancario imposibilitan el uso de corpus conversacionales de clientes reales, y al tratarse de una prueba de concepto no existe telemetría histórica de comandos transaccionales. Ante esta restricción, se determinó la generación de un conjunto de datos sintéticos (\textit{mock data}), lo que permite superar la ausencia de datos iniciales y ejercer control sobre la distribución probabilística de las clases y la cobertura de los casos límite.
 
-
 \subsection{Creación de plantillas de comandos y aumentación de datos}
 
 La síntesis del corpus se estructuró a partir de plantillas gramaticales que modelan las posibles estructuras sintácticas de interacción con el sistema bancario, abstrayendo los valores concretos: \texttt{[ACCIÓN] [MONTO] [MONEDA] a [DESTINATARIO]} . Una vez consolidadas las estructuras base, se implementaron técnicas de aumentación de datos (\textit{data augmentation}) para inyectar la variabilidad inherente al lenguaje natural \citep{feng2021survey}.
 
-Los datos resultantes de la inferencia se estructuraron utilizando \textit{structs} en Swift \citep{apple2026swiftlanguage}, garantizando la inmutabilidad de la información una vez procesada. Para la serialización se adoptó el protocolo \texttt{Codable} nativo de Apple \citep{apple2026codable}, estandarizando la comunicación entre el SDK y la aplicación base mediante formatos universales como JSON \citep{rfc8259json}.
+Los datos resultantes de la inferencia se estructuraron utilizando \textit{structs} en Swift \citep{apple2026swiftlanguage}, garantizando la inmutabilidad de la información una vez procesada. Para la serialización se adoptó el protocolo \texttt{Codable} nativo de Apple \citep{apple2026codable}, estandarizando la comunicación entre el SDK y la aplicación base mediante formatos universales como \texttt{JSON} \citep{rfc8259json}.
 
 \subsection{Composición y distribución del corpus}
 
@@ -137,22 +136,20 @@ Las técnicas de aumentación aplicadas incluyeron la inyección de variaciones 
 
 \subsection{Modelo de datos}
 
-El \textit{payload} que los modelos devuelven al sistema se consolidó en una única entidad semántica con campos fuertemente tipados: Intención (acción directiva inferida, como iniciar una transferencia), Monto (valor numérico de tipo \texttt{Double}), Moneda (enumeración con valores finitos como ARS o USD, que elimina la ambigüedad de sinónimos coloquiales) y Destinatario (cadena de texto con la identidad nominal del beneficiario). Este enfoque de modelado determinista abstrae a la aplicación anfitriona de toda la complejidad inherente al procesamiento de lenguaje natural, permitiéndole consumir un \textit{payload} limpio cuya estructura es análoga a la que generaría una interfaz táctil tradicional basada en formularios.
+El \textit{payload} que los modelos devuelven al sistema se consolidó en una única entidad semántica con campos fuertemente tipados: \texttt{Intención} (acción directiva inferida, como iniciar una transferencia), \texttt{Monto} (valor numérico de tipo \texttt{Double}), \texttt{Moneda} (enumeración con valores finitos como ARS o USD, que elimina la ambigüedad de sinónimos coloquiales) y \texttt{Destinatario} (cadena de texto con la identidad nominal del beneficiario). Este enfoque de modelado determinista abstrae a la aplicación anfitriona de toda la complejidad inherente al procesamiento de lenguaje natural, permitiéndole consumir un \textit{payload} limpio cuya estructura es análoga a la que generaría una interfaz táctil tradicional basada en formularios.
 
 \section{Modelos de inteligencia artificial}
 \label{sec:modelos-ia}
 
-Tras la exploración teórica de arquitecturas presentada en el capítulo~\ref{Chapter2}, se seleccionaron los algoritmos provistos de forma nativa por el ecosistema de Apple a través de Create~ML: un clasificador de \textit{Maximum Entropy} (MaxEnt) para la clasificación de intenciones y un \textit{Conditional Random Field} (CRF) para la extracción de entidades nombradas. Esta sección detalla cómo se configuraron e integraron estos modelos en el proyecto, el esquema de anotación adoptado, el proceso de entrenamiento y las decisiones de preprocesamiento que determinan la calidad de la inferencia.
-
+Tras la exploración teórica de arquitecturas presentada en el capítulo~\ref{Chapter2}, se seleccionaron los algoritmos provistos de forma nativa por el ecosistema de Apple a través de Create~ML: un clasificador de \textit{Maximum Entropy} (MaxEnt) para la clasificación de intenciones y un \textit{Conditional Random Field} (CRF) para la extracción de entidades nombradas. Esta sección detalla cómo se configuraron e integraron estos modelos en el trabajo, el esquema de anotación adoptado, el proceso de entrenamiento y las decisiones de preprocesamiento que determinan la calidad de la inferencia.
 
 \subsection{Justificación de la selección algorítmica}
 
-La decisión de adoptar los algoritmos nativos de Create~ML responde a la convergencia de tres restricciones del proyecto: ejecución íntegramente local (\textit{on-device}), tamaño de modelo compatible con el almacenamiento de un dispositivo móvil, y latencia de inferencia imperceptible para el usuario. Como se analizó en la comparativa de arquitecturas del capítulo~2 (tabla~\ref{tab:comparativa-arquitecturas}), tanto las arquitecturas basadas en Transformers (BETO) como las redes recurrentes (BiLSTM) ofrecen una capacidad de modelado superior, pero imponen requisitos de memoria y cómputo que dificultan su despliegue directo en el \textit{edge} sin recurrir a técnicas de compresión.
+La decisión de adoptar los algoritmos nativos de Create~ML responde a la convergencia de tres restricciones del trabajo: ejecución íntegramente local (\textit{on-device}), tamaño de modelo compatible con el almacenamiento de un dispositivo móvil, y latencia de inferencia imperceptible para el usuario. Como se analizó en la comparativa de arquitecturas del capítulo~2 (tabla~\ref{tab:comparativa-arquitecturas}), tanto las arquitecturas basadas en Transformers (BETO) como las redes recurrentes (BiLSTM) ofrecen una capacidad de modelado superior, pero imponen requisitos de memoria y cómputo que dificultan su despliegue directo en el \textit{edge} sin recurrir a técnicas de compresión.
 
 Los modelos de Create~ML, en cambio, están diseñados nativamente para el ecosistema de Apple. Al compilarse a formato \lstinline|.mlpackage|, delegan la ejecución al \textit{Neural Engine} del dispositivo, lo que garantiza latencias del orden de fracciones de milisegundo y un consumo energético marginal. Adicionalmente, el entrenamiento con Create~ML no requiere GPU dedicada y puede ejecutarse íntegramente en la CPU de un equipo macOS, lo que reduce la barrera de entrada para la iteración rápida sobre el corpus.
 
-El compromiso inherente a esta elección es la menor expresividad representacional frente a modelos de \textit{deep learning}: MaxEnt y CRF operan sobre \textit{features} manualmente definidas (o extraídas automáticamente por Create~ML a partir de \textit{n-grams}), sin la capacidad de aprender representaciones contextuales profundas como las que generan los mecanismos de autoatención de los Transformers. No obstante, para el dominio acotado de transacciones bancarias, con un vocabulario finito y estructuras sintácticas predecibles, esta limitación resulta aceptable, como lo confirman los resultados experimentales presentados en el capítulo~4.
-
+El compromiso inherente a esta elección es la menor expresividad representacional frente a modelos de \textit{deep learning}: MaxEnt y CRF operan sobre \textit{features} manualmente definidas (o extraídas automáticamente por Create~ML a partir de \textit{n-grams}), sin la capacidad de aprender representaciones contextuales profundas como las que generan los mecanismos de autoatención de los Transformers. No obstante, para el dominio acotado de transacciones bancarias, con un vocabulario finito y estructuras sintácticas predecibles, esta limitación resulta aceptable, como lo confirman los resultados experimentales presentados en el capítulo~\ref{Chapter4}.
 
 \subsection{Clasificador de intenciones: \textit{Maximum Entropy} (MaxEnt)}
 \label{subsec:maxent}
@@ -169,7 +166,6 @@ Los bigramas capturan colocaciones relevantes para el dominio: \texttt{cuánto t
 
 En una aplicación financiera, aceptar ciegamente la clase más probable puede conducir a la ejecución de operaciones incorrectas cuando el comando es ambiguo. Por esta razón, se implementó un umbral de confianza configurable de 0,65: si la probabilidad máxima no lo alcanza, el sistema asigna la intención \texttt{.desconocida} y solicita al usuario que reformule el comando. Este umbral fue calibrado empíricamente, buscando un punto de equilibrio entre la tasa de rechazo de comandos legítimos (\textit{false negatives}) y la aceptación errónea de comandos ambiguos (\textit{false positives}).
 
-
 \subsection{Extractor de entidades: \textit{Conditional Random Field} (CRF)}
 \label{subsec:crf}
 
@@ -177,14 +173,13 @@ La extracción de entidades nombradas (NER) constituye un problema de etiquetado
 
 \subsubsection{Configuración del extractor en Create~ML}
 
-Se utilizó la clase \texttt{MLWord\-Tagger} de Create~ML con el algoritmo CRF (predeterminado para tareas de etiquetado de secuencias). Esta clase acepta corpus en formato JSON con pares de tokens y etiquetas, y abstrae la complejidad del entrenamiento: extracción de \textit{features}, optimización de pesos y regularización. El modelo resultante se exporta en formato \lstinline|.mlmodel|, listo para su integración con Core~ML.
+Se utilizó la clase \texttt{MLWord\-Tagger} de Create~ML con el algoritmo CRF (predeterminado para tareas de etiquetado de secuencias). Esta clase acepta corpus en formato \texttt{JSON} con pares de tokens y etiquetas, y abstrae la complejidad del entrenamiento: extracción de \textit{features}, optimización de pesos y regularización. El modelo resultante se exporta en formato \texttt{.mlmodel}, listo para su integración con Core~ML.
 
 Internamente, \texttt{MLWord\-Tagger} extrae \textit{features} a nivel de token que incluyen: el token actual y sus vecinos (ventana contextual), prefijos y sufijos de longitud variable, la presencia de dígitos o caracteres especiales, y la capitalización. Estas \textit{features} alimentan el CRF lineal, que aprende simultáneamente los pesos de emisión (qué \textit{features} son indicativas de cada etiqueta) y los pesos de transición (qué pares de etiquetas consecutivas son válidos).
 
 \subsubsection{Impacto en la latencia de inferencia}
 
-La decodificación del CRF emplea el algoritmo de Viterbi \citep{viterbi1967error}, cuya complejidad es $O(T \cdot |C|^2)$, donde $|C|$ es el número de etiquetas y $T$ la longitud de la secuencia. Para la configuración específica del SDK Aurum, con 7 etiquetas IOB y comandos de hasta 15 tokens, el espacio de búsqueda se reduce de $7^{15} \approx 4,7 \times 10^{12}$ combinaciones a $15 \times 49 = 735$ operaciones, lo que explica la latencia submilesegundo observada en las mediciones del capítulo~4.
-
+La decodificación del CRF emplea el algoritmo de Viterbi \citep{viterbi1967error}, cuya complejidad es $O(T \cdot |C|^2)$, donde $|C|$ es el número de etiquetas y $T$ la longitud de la secuencia. Para la configuración específica del SDK Aurum, con 7 etiquetas IOB y comandos de hasta 15 tokens, el espacio de búsqueda se reduce de $7^{15} \approx 4,7 \times 10^{12}$ combinaciones a $15 \times 49 = 735$ operaciones, lo que explica la latencia submilisegundo observada en las mediciones del capítulo~\ref{Chapter4}.
 
 \subsection{Esquema de anotación adoptado}
 \label{subsec:esquema-iob}
@@ -210,7 +205,6 @@ Para el dominio del SDK Aurum, se definieron tres tipos de entidades transaccion
 
 Para entidades de un solo token (como \texttt{lucas} en el ejemplo), la etiqueta \texttt{B-X} es suficiente. Para entidades multitoken (como \texttt{Juan Pérez}), la combinación \texttt{B-X} + \texttt{I-X} demarca los límites con precisión. La reconstrucción de entidades a partir de estas etiquetas se implementó en el método \texttt{extract\-Entities()} de la clase \texttt{NLU\-Processor}, que recorre la secuencia de izquierda a derecha en complejidad $O(T)$: al encontrar \texttt{B-X} inicia una nueva entidad, las etiquetas \texttt{I-X} consecutivas la extienden, y cualquier otra etiqueta la cierra.
 
-
 \subsection{Proceso de entrenamiento}
 \label{subsec:entrenamiento}
 
@@ -218,20 +212,19 @@ El entrenamiento de ambos modelos se automatizó en un \textit{script} Swift eje
 
 \subsubsection{Entrenamiento del clasificador de intenciones}
 
-El clasificador se entrenó con \texttt{MLText\-Classifier} de Create~ML, que acepta como entrada un archivo JSON donde cada muestra contiene un campo de texto y un campo de etiqueta de clase. El entrenamiento siguió los pasos: carga del corpus de entrenamiento (3680 muestras), inicialización del clasificador con el algoritmo \texttt{maxEnt}, ejecución del ciclo de optimización (automático en Create~ML), evaluación sobre el conjunto de test (920 muestras) y exportación del modelo en formato \lstinline|.mlmodel|.
+El clasificador se entrenó con \texttt{MLText\-Classifier} de Create~ML, que acepta como entrada un archivo \texttt{JSON} donde cada muestra contiene un campo de texto y un campo de etiqueta de clase. El entrenamiento siguió los pasos: carga del corpus de entrenamiento (3680 muestras), inicialización del clasificador con el algoritmo \texttt{maxEnt}, ejecución del ciclo de optimización (automático en Create~ML), evaluación sobre el conjunto de test (920 muestras) y exportación del modelo en formato \texttt{.mlmodel}.
 
-Create~ML reporta las métricas de \textit{accuracy} al finalizar el entrenamiento, pero no expone directamente la matriz de confusión ni las métricas por clase. Estas se obtuvieron mediante la evaluación manual del modelo sobre el conjunto de test, como se documenta en el capítulo~4.
+Create~ML reporta las métricas de \textit{accuracy} al finalizar el entrenamiento, pero no expone directamente la matriz de confusión ni las métricas por clase. Estas se obtuvieron mediante la evaluación manual del modelo sobre el conjunto de test, como se documenta en el capítulo~\ref{Chapter4}.
 
 \subsubsection{Entrenamiento del extractor de entidades}
 
 El extractor se entrenó con \texttt{MLWord\-Tagger}, que acepta un corpus en formato JSON donde cada muestra contiene un arreglo de tokens y un arreglo de etiquetas IOB de igual longitud. Se utilizó el algoritmo CRF, que es el predeterminado de \texttt{MLWord\-Tagger} para tareas de etiquetado de secuencias.
 
-A diferencia del clasificador, \texttt{MLWord\-Tagger} solo expone una métrica agregada (\texttt{tagging\-Error}) al finalizar el entrenamiento, que resulta insuficiente para diagnosticar el comportamiento del modelo a nivel de entidad. Por esta razón, se desarrolló un \textit{script} de evaluación independiente (\texttt{evaluate\_ner.swift}) que calcula métricas detalladas a nivel de token (Precision, Recall, F1-Score por etiqueta IOB) y a nivel de entidad (coincidencia estricta y relajada), como se documenta en el capítulo~4.
+A diferencia del clasificador, \texttt{MLWord\-Tagger} solo expone una métrica agregada (\texttt{tagging\-Error}) al finalizar el entrenamiento, que resulta insuficiente para diagnosticar el comportamiento del modelo a nivel de entidad. Por esta razón, se desarrolló un \textit{script} de evaluación independiente (\texttt{evaluate\_ner.swift}) que calcula métricas detalladas a nivel de token (Precision, Recall, F1-Score por etiqueta IOB) y a nivel de entidad (coincidencia estricta y relajada), como se documenta en el capítulo~\ref{Chapter4}.
 
 \subsubsection{Integración de modelos en el proyecto}
 
-Los archivos \lstinline|.mlmodel| generados por Create~ML se integraron directamente en el proyecto Xcode, dentro del directorio \texttt{AurumSDK/IA/}. Al compilar el proyecto, Xcode genera automáticamente las clases Swift de acceso al modelo, que son invocadas por \texttt{NLU\-Processor} a través de las APIs de \texttt{Natural\-Language} (\texttt{NLModel} para clasificación, \texttt{NLTagger} para etiquetado). Esta integración nativa elimina la necesidad de conversiones intermedias y garantiza que los modelos se ejecuten con las optimizaciones de hardware del dispositivo.
-
+Los archivos \texttt{.mlmodel} generados por Create~ML se integraron directamente en el proyecto Xcode, dentro del directorio \texttt{AurumSDK/IA/}. Al compilar el proyecto, Xcode genera automáticamente las clases Swift de acceso al modelo, que son invocadas por \texttt{NLU\-Processor} a través de las APIs de \texttt{Natural\-Language} (\texttt{NLModel} para clasificación, \texttt{NLTagger} para etiquetado). Esta integración nativa elimina la necesidad de conversiones intermedias y garantiza que los modelos se ejecuten con las optimizaciones de hardware del dispositivo.
 
 \subsection{Preprocesamiento: normalización Unicode}
 \label{subsec:unicode-nfc}
@@ -242,7 +235,6 @@ Esta distinción es relevante porque el \textit{Speech Framework} de iOS puede e
 
 Para prevenir este problema, se incorporó como primer paso del \textit{pipeline} de normalización la conversión a forma NFC mediante la propiedad \texttt{precomposed\-String\-With\-Canonical\-Mapping} de \texttt{Foundation}. Esta operación, de complejidad $O(n)$ sobre la longitud del texto, garantiza que todos los caracteres acentuados se representen como \textit{code points} únicos antes de cualquier transformación posterior.
 
-
 \subsection{Mecanismo de inferencia de moneda}
 \label{subsec:fallback-moneda}
 
@@ -251,7 +243,6 @@ El pipeline de NLU produce tres entidades independientes: monto, moneda y destin
 Para resolver los casos en que el modelo NER no detecta una entidad \texttt{MONEDA} explícita, se implementó un mecanismo de inferencia por contexto léxico en el \texttt{NLU\-Processor}. Cuando el monto fue extraído exitosamente pero la moneda es \texttt{nil}, el sistema ejecuta una búsqueda de palabras clave en el texto normalizado: si encuentra términos asociados a dólares (\texttt{dólares}, \texttt{dólar}, \texttt{verdes}, \texttt{usd}, \texttt{dólares americanos}), asigna la moneda \texttt{.usd}; en caso contrario, aplica el valor predeterminado \texttt{.ars}, dado que los pesos argentinos constituyen la moneda de uso predominante en el contexto de operación del sistema.
 
 Esta estrategia de \textit{fallback} complementa al modelo NER sin requerir reentrenamiento y opera como una capa de seguridad que mejora la cobertura funcional del sistema ante variaciones no contempladas en el corpus de entrenamiento.
-
 
 \section{Desarrollo del SDK (Aurum)}
 
@@ -293,7 +284,6 @@ Procesamiento NLU
 \label{tab:componentes-sdk}
 \end{table}
 
-
 \subsection{Clase fachada: \texttt{Aurum\allowbreak{}Engine}}
 
 La clase \texttt{Aurum\allowbreak{}Engine} implementa el patrón de diseño \textit{Facade} \citep{gamma1994design} y constituye el único punto de entrada público del SDK. Internamente mantiene referencias privadas a los cuatro componentes de procesamiento y los instancia durante la fase de configuración. La API pública expone cuatro métodos de control:
@@ -302,11 +292,9 @@ La clase \texttt{Aurum\allowbreak{}Engine} implementa el patrón de diseño \tex
 \texttt{stop\allowbreak{}Listen\-ing()} para detener la captura y forzar el procesamiento del texto acumulado, y
 \texttt{cancel\allowbreak{}Listen\-ing()} para cancelar la operación en curso y liberar recursos sin procesar el audio capturado.
 
-
 \subsection{Captura de audio: \texttt{Audio\allowbreak{}Capture\allowbreak{}Manager}}
 
 El componente \texttt{Audio\allowbreak{}Capture\allowbreak{}Manager} encapsula la interacción con los frameworks \texttt{AV\allowbreak{}Audio\allowbreak{}Session} y \texttt{AV\allowbreak{}Audio\allowbreak{}Engine} de Apple, y resuelve tres tareas: la solicitud de permisos del micrófono (reportando \texttt{AurumError.\allowbreak{}microphone\allowbreak{}Permission\allowbreak{}Denied} en caso de denegación), la configuración de la sesión de audio con categoría \texttt{.playAndRecord} y modo \texttt{.measurement} (que desactiva los filtros de ecualización del sistema para obtener una señal cruda óptima), y la instalación de un \textit{tap} de audio en el nodo de entrada del \texttt{AV\allowbreak{}Audio\allowbreak{}Engine} que captura \textit{buffers} en formato PCM a la frecuencia de muestreo nativa del micrófono y los canaliza al \texttt{Speech\allowbreak{}Recognizer}.
-
 
 \subsection{Reconocimiento de voz: \texttt{Speech\allowbreak{}Recognizer}}
 
@@ -316,11 +304,9 @@ La propiedad \texttt{requires\allowbreak{}On\allowbreak{}Device\allowbreak{}Reco
 
 El reconocimiento opera en modo \textit{streaming}: a medida que el usuario habla, el \textit{framework} genera hipótesis parciales que se entregan progresivamente al delegado para su visualización en tiempo real. Cuando el motor detecta el final del enunciado, emite el resultado final que constituye la entrada para la etapa de normalización.
 
-
 \subsection{Normalización de texto: \texttt{Text\allowbreak{}Normalizer}}
 
 La transcripción cruda contiene frecuentemente expresiones coloquiales, numéricas y morfológicas incompatibles con el vocabulario del corpus de entrenamiento. El \texttt{Text\allowbreak{}Normalizer} actúa como capa de estandarización mediante tres categorías de transformaciones: la conversión de expresiones numéricas textuales a su forma numérica, tanto estándar (\texttt{cinco mil} $\rightarrow$ \texttt{5000}) como coloquiales con multiplicadores implícitos (\texttt{lucas} $\times$ 1000), la normalización de léxico coloquial rioplatense mediante un diccionario de equivalencias (\texttt{mangos} $\rightarrow$ \texttt{pesos}, \texttt{verdes} $\rightarrow$ \texttt{dólares}), y la normalización de preposiciones redundantes (\texttt{en pesos} $\rightarrow$ \texttt{pesos}, \texttt{en dólares} $\rightarrow$ \texttt{dólares}).
-
 
 \subsection{Procesamiento NLU: \texttt{NLU\allowbreak{}Processor}}
 
@@ -329,7 +315,6 @@ El \texttt{NLU\allowbreak{}Processor} constituye el núcleo de inteligencia arti
 La clasificación de intenciones emplea el modelo \texttt{Intent\allowbreak{}Classifier} (MaxEnt) para determinar cuál de las tres operaciones soportadas (\texttt{TRANSFERENCIA}, \texttt{CONSULTA\_SALDO}, \texttt{CANCELAR}) corresponde al comando. Un umbral de confianza configurable (0,65) actúa como mecanismo de seguridad: si ninguna clase lo alcanza, se asigna la intención \texttt{.desconocida}, evitando la ejecución de operaciones financieras basadas en clasificaciones inciertas. El valor de 0,65 fue seleccionado empíricamente como punto de equilibrio entre la tasa de rechazo de comandos legítimos y la aceptación errónea de comandos ambiguos.
 
 La extracción de entidades emplea el modelo \texttt{Entity\allowbreak{}Extractor} (CRF), que etiqueta cada token con una de las siete clases del esquema IOB: \texttt{B-MONTO}, \texttt{I-MONTO}, \texttt{B-MONEDA}, \texttt{I-MONEDA}, \texttt{B-DESTINATARIO}, \texttt{I-DESTINATARIO} y \texttt{O}. La reconstrucción sigue un algoritmo lineal: al encontrar \texttt{B-X} se inicia una nueva entidad; las etiquetas \texttt{I-X} consecutivas la extienden; cualquier otra etiqueta la cierra. Este esquema permite capturar entidades de longitud variable, como nombres compuestos (\texttt{Juan Pérez} = \texttt{B-DESTINATARIO} + \texttt{I-DESTINATARIO}).
-
 
 \subsection{Modelo de datos: \texttt{Transaction\allowbreak{}Payload}}
 
@@ -358,7 +343,6 @@ El resultado consolidado del \textit{pipeline} se encapsula en la estructura \te
 
 La elección de una \texttt{struct} en lugar de una \texttt{class} es deliberada: al ser inmutable y copiarse por valor, el \textit{payload} no puede ser modificado accidentalmente tras su recepción. Los campos \texttt{amount}, \texttt{currency} y \texttt{recipient} son opcionales porque no todas las intenciones requieren entidades (una consulta de saldo no tiene monto ni destinatario). La adopción de \texttt{Codable} permite serializar el \textit{payload} a JSON con una única invocación, y \texttt{Equatable} habilita las comparaciones por valor para pruebas unitarias.
 
-
 \subsection{API pública y comunicación asíncrona}
 
 La comunicación entre el SDK y la aplicación anfitriona se resolvió mediante el patrón \textit{Delegate} de Cocoa \citep{apple-delegation}. Este patrón define un protocolo formal (\texttt{Aurum\allowbreak{}Delegate}) que la aplicación consumidora implementa para recibir notificaciones asíncronas. El protocolo extiende \texttt{AnyObject}, lo que restringe su adopción a tipos por referencia y permite que \texttt{Aurum\allowbreak{}Engine} mantenga una referencia débil (\texttt{weak var delegate}) al delegado, evitando ciclos de retención de memoria. Los cinco \textit{callbacks} cubren la totalidad del ciclo de vida de una transacción de voz.
@@ -372,19 +356,16 @@ La figura~\ref{fig:diagrama-delegate} presenta el diagrama de secuencia que ilus
 \label{fig:diagrama-delegate}
 \end{figure}
 
-
 \subsection{Gestión de errores: \texttt{Aurum\allowbreak{}Error}}
 
 El SDK define un enumerado de errores tipados que cubre los modos de fallo de cada etapa del \textit{pipeline}: denegación de permisos de micrófono o reconocimiento de voz, indisponibilidad del reconocedor, fallos de configuración de la sesión de audio, errores de reconocimiento o de inferencia NLU, y fallos de validación del \textit{payload}. Los errores que envuelven un error subyacente (\texttt{underlying: Error}) preservan la cadena de causalidad para facilitar el diagnóstico durante el desarrollo, sin exponer detalles internos al usuario final.
 
 En síntesis, la aplicación consumidora interactúa exclusivamente con cuatro métodos públicos y cinco \textit{callbacks} del delegado, esto la deja completamente agnóstica respecto a las operaciones internas de vectorización, etiquetado y transcripción.
 
-
 \section{Desarrollo de la aplicación base}
 \label{sec:app-base}
 
 Con el objetivo de validar la viabilidad funcional del SDK Aurum, se desarrolló una aplicación base que opera como prueba de concepto (\textit{Proof of Concept}, PoC). Esta aplicación no constituye un producto bancario completo, sino el artefacto mínimo necesario para demostrar la ejecución integral del \textit{pipeline} de voz: desde la activación del micrófono hasta la presentación del \texttt{Transaction\allowbreak{}Payload} en la interfaz gráfica. La aplicación evidencia que un consumidor externo puede integrar el SDK mediante el protocolo \texttt{Aurum\allowbreak{}Delegate} sin conocer los detalles internos, y proporciona el escenario de ejecución para las mediciones reportadas en el capítulo de resultados.
-
 
 \subsection{Arquitectura MVVM y flujo de estados}
 
@@ -392,13 +373,11 @@ La aplicación adopta el patrón \textit{Model-View-ViewModel} (MVVM), paradigma
 
 El componente central es la clase \texttt{Transaction\allowbreak{}View\allowbreak{}Model}, que implementa \texttt{Observable\allowbreak{}Object} y adopta \texttt{Aurum\allowbreak{}Delegate}. Su responsabilidad es modelar una máquina de estados finita con cinco estados: \texttt{idle} (esperando activación), \texttt{listening} (micrófono activo), \texttt{processing} (ejecutando NLU), \texttt{confirmation} (\textit{payload} listo) y \texttt{error}. Las transiciones se disparan exclusivamente por los \textit{callbacks} del delegado, garantizando que el \textit{ViewModel} nunca manipule directamente los componentes internos del SDK.
 
-
 \subsection{Integración con el SDK Aurum}
 
 La integración se realiza a través de dos puntos de contacto: \texttt{Aurum\allowbreak{}Engine} (fachada de control) y \texttt{Aurum\allowbreak{}Delegate} (canal de notificaciones). Durante el inicio, el \textit{ViewModel} instancia el motor, registra su referencia como delegado e invoca \texttt{configure()} para precargar los modelos Core~ML. Un único método \texttt{toggleListe\allowbreak{}ning()} traduce la acción del usuario en invocaciones a \texttt{startListe\allowbreak{}ning()} o \texttt{stop\allowbreak{}Listen\-ing()} según el estado actual. Cada \textit{callback} del delegado actualiza las propiedades \texttt{@Pub\-lished} del \textit{ViewModel} dentro de \texttt{Dispatch\allowbreak{}Queue.\allowbreak{}main.\allowbreak{}async}, garantizando que las mutaciones de estado ocurran en el hilo principal, requisito de SwiftUI para el redibujo seguro de la interfaz.
 
 La aplicación base no contiene lógica de procesamiento de lenguaje natural ni de audio. La totalidad de la cadena de inferencia permanece encapsulada dentro del SDK. Esta separación de responsabilidades demuestra la naturaleza reutilizable del framework: cualquier aplicación iOS podría integrar las capacidades de transacciones por voz implementando el mismo protocolo \texttt{Aurum\allowbreak{}Delegate}.
-
 
 \subsection{Capa de presentación (SwiftUI)}
 
@@ -407,7 +386,6 @@ La interfaz gráfica fue desarrollada íntegramente con SwiftUI \citep{apple-swi
 La \texttt{MainView} constituye la pantalla de interacción primaria, diseñada bajo el principio de simplicidad cognitiva. Sus elementos son: un botón de activación por voz (circular, con apariencia visual que muta según el estado: ícono de micrófono en \texttt{idle}, animación de pulsación con color rojo en \texttt{listening}, ícono de cerebro en \texttt{processing}), un área de transcripción parcial que muestra en tiempo real el texto reconocido, y un indicador de estado textual (\texttt{Toque el botón y diga su comando}, \texttt{ Escuchando}, \texttt{ Procesando}).
 
 La \texttt{Confirmation\allowbreak{}View} se presenta como hoja modal cuando el SDK entrega un \texttt{Transaction\allowbreak{}Payload}. Exhibe de forma desglosada la intención detectada, el monto formateado, la moneda, el destinatario, el nivel de confianza (como porcentaje) y la transcripción original. Incluye botones de \texttt{Confirmar} y \texttt{Cancelar}, implementando el patrón de \textit{confirmation dialog} \citep{nielsen-confirmation}, motivado por la naturaleza financiera de las operaciones.
-
 
 \subsection{Gestión de permisos y privacidad}
 \label{subsec:permisos}
@@ -418,12 +396,10 @@ Los permisos se solicitan de forma progresiva (\textit{just-in-time}), en el mom
 
 Un aspecto central del diseño es que ningún dato de audio ni de texto abandona el dispositivo. Esta garantía se sustenta en tres pilares: el reconocimiento de voz local (\texttt{requires\allowbreak{}On\allowbreak{}Device\allowbreak{}Recognition = true}), la inferencia NLU local mediante modelos Core~ML ejecutados en el \textit{Neural Engine} o la CPU, y la ausencia de SDKs de terceros para \textit{analytics} o telemetría. Esta arquitectura \textit{edge AI} se alinea con la normativa argentina de protección de datos personales (Ley 25.326) y los principios de \textit{Privacy by Design} de Cavoukian \citep{cavoukian-pbd}.
 
-
 \subsection{Flujo de interacción del usuario}
 \label{subsec:flujo-interaccion}
 
 El recorrido completo de una interacción típica comprende las siguientes etapas: el usuario presiona el botón de micrófono en estado \texttt{idle}; iOS solicita los permisos necesarios (solo la primera vez); el \texttt{Audio\allowbreak{}Capture\allowbreak{}Manager} configura la sesión de audio e instala el \textit{tap} de captura; el \texttt{Speech\allowbreak{}Recognizer} genera hipótesis parciales que se muestran en tiempo real; al detectar el fin de habla, el texto se pasa al \texttt{Text\allowbreak{}Normalizer} para convertir expresiones coloquiales a formas canónicas; el \texttt{NLUProcessor} clasifica la intención y extrae las entidades; el SDK construye el \texttt{Transaction\allowbreak{}Payload} inmutable y lo entrega al delegado; y finalmente la aplicación presenta la \texttt{Confirmation\allowbreak{}View} donde el usuario verifica y confirma o cancela la operación.
-
 La latencia total del \textit{pipeline}, medida desde el fin de habla hasta la presentación del \textit{payload}, depende principalmente del tiempo de transcripción del \textit{Speech Framework} (100--300~ms tras el último \textit{buffer} de audio) y del tiempo de inferencia de los modelos Core~ML (inferior a 10~ms en conjunto). Esta latencia combinada, sustancialmente inferior al segundo, permite una experiencia de usuario percibida como instantánea.
 
 En la figura~\ref{fig:diagAurum} se presenta el diagrama de flujo de los actores principales.
