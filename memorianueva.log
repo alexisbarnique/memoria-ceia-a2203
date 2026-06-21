@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  25 MAY 2026 19:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  21 JUN 2026 14:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1291,7 +1291,7 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 
 
 ]
-<./Figures/diagrama-de-componentes-1.png, id=626, 1020.9342pt x 949.8687pt>
+<./Figures/diagrama-de-componentes-1.png, id=623, 1020.9342pt x 949.8687pt>
 File: ./Figures/diagrama-de-componentes-1.png Graphic file (type png)
 <use ./Figures/diagrama-de-componentes-1.png>
 Package pdftex.def Info: ./Figures/diagrama-de-componentes-1.png  used on input
@@ -1302,7 +1302,7 @@ Package pdftex.def Info: ./Figures/diagrama-de-componentes-1.png  used on input
 LaTeX Info: Redefining \. on input line 69.
 LaTeX Info: Redefining \% on input line 69.
 [12 <./Figures/diagrama-de-componentes-1.png>]
-<./Figures/pipeline-transaccion.png, id=635, 682.04813pt x 731.73375pt>
+<./Figures/pipeline-transaccion.png, id=632, 682.04813pt x 731.73375pt>
 File: ./Figures/pipeline-transaccion.png Graphic file (type png)
 <use ./Figures/pipeline-transaccion.png>
 Package pdftex.def Info: ./Figures/pipeline-transaccion.png  used on input line
@@ -1391,7 +1391,7 @@ LaTeX Info: Redefining \% on input line 314.
 LaTeX Info: Redefining \. on input line 349.
 LaTeX Info: Redefining \% on input line 349.
 [22]
-<./Figures/diagrama-secuencia.png, id=719, 3672.72125pt x 3398.6975pt>
+<./Figures/diagrama-secuencia.png, id=716, 3672.72125pt x 3398.6975pt>
 File: ./Figures/diagrama-secuencia.png Graphic file (type png)
 <use ./Figures/diagrama-secuencia.png>
 Package pdftex.def Info: ./Figures/diagrama-secuencia.png  used on input line 3
@@ -1423,12 +1423,12 @@ LaTeX Info: Redefining \% on input line 387.
 LaTeX Info: Redefining \. on input line 404.
 LaTeX Info: Redefining \% on input line 404.
 [25]
-<./Figures/diagrama-flujo-aurum.png, id=745, 2879.75874pt x 3998.94pt>
+<./Figures/diagrama-flujo-aurum.png, id=742, 461.725pt x 627.34375pt>
 File: ./Figures/diagrama-flujo-aurum.png Graphic file (type png)
 <use ./Figures/diagrama-flujo-aurum.png>
 Package pdftex.def Info: ./Figures/diagrama-flujo-aurum.png  used on input line
  409.
-(pdftex.def)             Requested size: 331.33466pt x 460.082pt.
+(pdftex.def)             Requested size: 331.33466pt x 450.18427pt.
 )
 
 LaTeX Info: Redefining \. on input line 167.
@@ -1446,7 +1446,7 @@ Cap\'{\i }tulo 4.
 
 
 ]
-<./Figures/confusion-intenciones.png, id=757, 427.8384pt x 351.9549pt>
+<./Figures/confusion-intenciones.png, id=754, 427.8384pt x 351.9549pt>
 File: ./Figures/confusion-intenciones.png Graphic file (type png)
 <use ./Figures/confusion-intenciones.png>
 Package pdftex.def Info: ./Figures/confusion-intenciones.png  used on input lin
@@ -1507,7 +1507,7 @@ s-fe-rir qui-nien-tos pe-sos a Juan
 LaTeX Info: Redefining \. on input line 380.
 LaTeX Info: Redefining \% on input line 380.
 [34]
-<./Figures/screenshots/solicitud-permiso-microfono.PNG, id=809, 1129.21875pt x 
+<./Figures/screenshots/solicitud-permiso-microfono.PNG, id=806, 1129.21875pt x 
 2445.135pt>
 File: ./Figures/screenshots/solicitud-permiso-microfono.PNG Graphic file (type 
 png)
@@ -1515,7 +1515,7 @@ png)
 Package pdftex.def Info: ./Figures/screenshots/solicitud-permiso-microfono.PNG 
  used on input line 389.
 (pdftex.def)             Requested size: 185.15567pt x 400.8928pt.
-<./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG, id=810, 1129.2
+<./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG, id=807, 1129.2
 1875pt x 2445.135pt>
 File: ./Figures/screenshots/solicitud-permiso-reconocimiento-voz.PNG Graphic fi
 le (type png)
@@ -1534,7 +1534,7 @@ LaTeX Info: Redefining \. on input line 414.
 LaTeX Info: Redefining \% on input line 414.
 [35 <./Figures/screenshots/solicitud-permiso-microfono.PNG> <./Figures/screensh
 ots/solicitud-permiso-reconocimiento-voz.PNG>]
-<./Figures/screenshots/home-app-base.PNG, id=819, 1129.21875pt x 2445.135pt>
+<./Figures/screenshots/home-app-base.PNG, id=816, 1129.21875pt x 2445.135pt>
 File: ./Figures/screenshots/home-app-base.PNG Graphic file (type png)
 <use ./Figures/screenshots/home-app-base.PNG>
 Package pdftex.def Info: ./Figures/screenshots/home-app-base.PNG  used on input
@@ -1545,7 +1545,7 @@ Underfull \hbox (badness 6944) in paragraph at lines 421--421
  \T1/ppl/m/n/9 apli-ca-ción ba-se en es-ta-do 
  []
 
-<./Figures/screenshots/transcripcion-dictado.PNG, id=820, 1129.21875pt x 2445.1
+<./Figures/screenshots/transcripcion-dictado.PNG, id=817, 1129.21875pt x 2445.1
 35pt>
 File: ./Figures/screenshots/transcripcion-dictado.PNG Graphic file (type png)
 <use ./Figures/screenshots/transcripcion-dictado.PNG>
@@ -1563,7 +1563,7 @@ Underfull \hbox (badness 3039) in paragraph at lines 428--428
  \T1/ppl/m/n/9 La trans-crip-ción par-cial se 
  []
 
-<./Figures/screenshots/procesamiento.PNG, id=821, 1129.21875pt x 2445.135pt>
+<./Figures/screenshots/procesamiento.PNG, id=818, 1129.21875pt x 2445.135pt>
 File: ./Figures/screenshots/procesamiento.PNG Graphic file (type png)
 <use ./Figures/screenshots/procesamiento.PNG>
 Package pdftex.def Info: ./Figures/screenshots/procesamiento.PNG  used on input
@@ -1575,7 +1575,7 @@ LaTeX Info: Redefining \. on input line 448.
 LaTeX Info: Redefining \% on input line 448.
 [36 <./Figures/screenshots/home-app-base.PNG> <./Figures/screenshots/transcripc
 ion-dictado.PNG> <./Figures/screenshots/procesamiento.PNG>]
-<./Figures/screenshots/intencion-confirmacion-transferencia.PNG, id=831, 1129.2
+<./Figures/screenshots/intencion-confirmacion-transferencia.PNG, id=828, 1129.2
 1875pt x 2445.135pt>
 File: ./Figures/screenshots/intencion-confirmacion-transferencia.PNG Graphic fi
 le (type png)
@@ -1583,7 +1583,7 @@ le (type png)
 Package pdftex.def Info: ./Figures/screenshots/intencion-confirmacion-transfere
 ncia.PNG  used on input line 452.
 (pdftex.def)             Requested size: 105.24707pt x 227.8877pt.
-<./Figures/screenshots/intencion-consulta-saldo.PNG, id=832, 1129.21875pt x 244
+<./Figures/screenshots/intencion-consulta-saldo.PNG, id=829, 1129.21875pt x 244
 5.135pt>
 File: ./Figures/screenshots/intencion-consulta-saldo.PNG Graphic file (type png
 )
@@ -1591,7 +1591,7 @@ File: ./Figures/screenshots/intencion-consulta-saldo.PNG Graphic file (type png
 Package pdftex.def Info: ./Figures/screenshots/intencion-consulta-saldo.PNG  us
 ed on input line 459.
 (pdftex.def)             Requested size: 105.24707pt x 227.8877pt.
-<./Figures/screenshots/intencion-cancelar.PNG, id=833, 1129.21875pt x 2445.135p
+<./Figures/screenshots/intencion-cancelar.PNG, id=830, 1129.21875pt x 2445.135p
 t>
 File: ./Figures/screenshots/intencion-cancelar.PNG Graphic file (type png)
 <use ./Figures/screenshots/intencion-cancelar.PNG>
@@ -1745,7 +1745,7 @@ Package logreq Info: Writing requests to 'memorianueva.run.xml'.
 Here is how much of TeX's memory you used:
  32726 strings out of 473190
  707241 string characters out of 5715800
- 1478208 words of memory out of 5000000
+ 1477779 words of memory out of 5000000
  55330 multiletter control sequences out of 15000+600000
  623698 words of font info for 115 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
@@ -1764,10 +1764,10 @@ urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/pal
 atino/uplbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/
 uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.
 pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on memorianueva.pdf (64 pages, 4093041 bytes).
+Output written on memorianueva.pdf (64 pages, 3612121 bytes).
 PDF statistics:
- 1095 PDF objects out of 1200 (max. 8388607)
- 968 compressed objects within 10 object streams
+ 1092 PDF objects out of 1200 (max. 8388607)
+ 965 compressed objects within 10 object streams
  235 named destinations out of 1000 (max. 500000)
  639 words of extra memory for PDF output out of 10000 (max. 10000000)
 
